@@ -6,6 +6,7 @@ EXAMPLE_DIRS = \
 	Tutorial \
 	UnitTests \
 	UnitTestsCredits \
+	Credits2 \
 
 
 # $(shell find . -type d -depth 1)
