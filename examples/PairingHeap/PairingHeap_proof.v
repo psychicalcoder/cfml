@@ -227,7 +227,6 @@ Proof using.
 Qed.
 
 
-
 (* ********************************************************************** *)
 (* ********************************************************************** *)
 (* ********************************************************************** *)
@@ -334,7 +333,7 @@ Proof using. intros. xunfold Heap. unfold Contents. xsimpl*. Qed.
 Lemma Triple_create :
   SPEC (create tt)
     PRE (\$ 1)
-    POST (fun p => p ~> Heap \{}).
+    POST (fun p => (p ~> Heap \{}) \* \$ 0).
 Proof using.
   xcf_pay. xapp. xunfold Heap. unfold Contents. xsimpl*.
 Qed.
@@ -344,7 +343,7 @@ Hint Extern 1 (RegisterSpec create) => Provide Triple_create.
 Lemma Triple_is_empty : forall p E,
   SPEC (is_empty p)
     PRE (\$ 1) \* (p ~> Heap E)
-    POST (fun b => \[b = isTrue (E = \{})] \* p ~> Heap E).
+    POST (fun b => \[b = isTrue (E = \{})] \* p ~> Heap E \* \$ 0).
 Proof using.
   xcf_pay. xunfolds Heap ;=> q. xapp. xapp.
   xchanges~ Contents_is_empty.
@@ -354,8 +353,8 @@ Hint Extern 1 (RegisterSpec (is_empty)) => Provide Triple_is_empty.
 
 Lemma Triple_merge : forall q1 q2 E1 E2,
   SPEC (merge q1 q2)
-    PRE (\$ 1 \* q1 ~> Repr E1 \* q2 ~> Repr E2)
-    POST (fun q => q ~> Repr (E1 \u E2)).
+    PRE (\$ 2 \* q1 ~> Repr E1 \* q2 ~> Repr E2)
+    POST (fun q => q ~> Repr (E1 \u E2) \* \$0).
 Proof using.
   xcf_pay. xchange (Repr_eq q1) ;=> [x1 hs1] I1.
   xchange (Repr_eq q2) ;=> [x2 hs2] I2.
@@ -375,7 +374,7 @@ Hint Extern 1 (RegisterSpec merge) => Provide Triple_merge.
 
 Lemma Triple_insert : forall p x E,
   SPEC (insert p x)
-    PRE (\$ 2 \* p ~> Heap E)
+    PRE (\$ 4 \* p ~> Heap E)
     POST (fun (_:unit) => p ~> Heap (E \u \{x})).
 Proof using.
   xcf_pay. xchange Heap_eq ;=> q. xapp ;=> l. xapp ;=> q2.

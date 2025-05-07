@@ -87,39 +87,39 @@ Implicit Types x : A.
 
 Lemma Triple_is_empty : forall L p,
   SPEC (is_empty p)
-    PRE (p ~> MList (L:list A))
-    POST (fun (b:bool) => \[b = isTrue (L = nil)] \* p ~> MList L).
+    PRE (p ~> MList (L:list A)) \* \$1
+    POST (fun (b:bool) => \[b = isTrue (L = nil)] \* p ~> MList L \* \$0).
 Proof using.
-  xcf. xchange MList_eq ;=> v. xchange MList_contents_iff ;=> HL. xmatch.
+  xcf_pay. xchange MList_eq ;=> v. xchange MList_contents_iff ;=> HL. xmatch.
   { xvals*. xchanges <- MList_eq. }
   { xvals. { auto_false*. } xchanges <- MList_eq. }
 Qed.
 
 Lemma Triple_create :
   SPEC (create tt)
-    PRE \[]
-    POST (fun p => p ~> MList (@nil A)).
+    PRE \$1
+    POST (fun p => p ~> MList (@nil A) \* \$0).
 Proof using.
-  xcf. xapp ;=> p. xchanges <- MList_nil.
+  xcf_pay. xapp ;=> p. xchanges <- MList_nil.
 Qed.
 
 Lemma Triple_push : forall L p x,
   SPEC (push p x)
-    PRE (p ~> MList L)
-    POST (fun (_:unit) => p ~> MList (x::L)).
+    PRE (p ~> MList L) \* \$1 
+    POST (fun (_:unit) => p ~> MList (x::L) \* \$0).
 Proof using.
-  xcf. xchange MList_eq ;=> v. xapp. xapp ;=> q. xapp.
+  xcf_pay. xchange MList_eq ;=> v. xapp. xapp ;=> q. xapp.
   xchanges <- (@MList_eq q). xchanges <- (@MList_cons p).
 Qed.
 
 Lemma Triple_pop : forall L p,
   L <> nil ->
   SPEC (pop p)
-    PRE (p ~> MList L)
+    PRE (p ~> MList L) \* \$ 1
     POST (fun x =>
-      \exists L', \[L = x::L'] \* p ~> MList L').
+      \exists L', \[L = x::L'] \* p ~> MList L' \* \$0).
 Proof using.
-  xcf. xchange MList_eq ;=> v. xchange MList_contents_iff ;=> HL.
+  xcf_pay. xchange MList_eq ;=> v. xchange MList_contents_iff ;=> HL.
   xmatch; destruct L as [|x' L']; auto_false*.
   unfold MList_contents. xpull ;=> q' E. inverts E.
   xchange MList_eq ;=> v'. xapp. xapp. xval. xchanges* <- (@MList_eq p).
@@ -199,8 +199,8 @@ Implicit Types X : TA.
 
 Lemma Triple_create' :
   SPEC (create tt)
-    PRE \[]
-    POST (fun p => p ~> MListOf R nil).
+    PRE \$ 1
+    POST (fun p => p ~> MListOf R nil \* \$0).
 Proof using.
   xtriple. xapp (>> Triple_create EA) ;=> p. xunfold MListOf. xsimpl*.
   { rew_heapx. xsimpl. }
@@ -216,8 +216,8 @@ Ltac applys_base E ::=
 
 Lemma Triple_is_empty' : forall L p,
   SPEC (is_empty p)
-    PRE (p ~> MListOf R L)
-    POST (fun b => \[b = isTrue (L = nil)] \* p ~> MListOf R L).
+    PRE (p ~> MListOf R L) \* \$1
+    POST (fun b => \[b = isTrue (L = nil)] \* p ~> MListOf R L \* \$ 0).
 Proof using.
   xtriple. xunfold MListOf. xpull ;=> l E. xapp. xsimpl*.
   { applys* LibSepTLCbuffer.list_same_length_inv_nil. }
@@ -225,8 +225,8 @@ Qed.
 
 Lemma Triple_push' : forall L p x X,
   SPEC (push p x)
-    PRE (p ~> MListOf R L \* x ~> R X)
-    POST (fun (_:unit) => p ~> MListOf R (X::L)).
+    PRE (p ~> MListOf R L \* x ~> R X \* \$ 1)
+    POST (fun (_:unit) => p ~> MListOf R (X::L) \* \$ 0).
 Proof using.
   xtriple. xunfold MListOf. xpull ;=> l E. xapp.
   xsimpl (x::l). { rew_list. math. } { rew_heapx. xsimpl. }
@@ -235,8 +235,8 @@ Qed.
 Lemma Triple_pop' : forall L p,
   L <> nil ->
   SPEC (pop p)
-    PRE (p ~> MListOf R L)
-    POST (fun x => \exists X L', \[L = X::L'] \* x ~> R X \* p ~> MListOf R L').
+    PRE (p ~> MListOf R L) \* \$ 1 
+    POST (fun x => \exists X L', \[L = X::L'] \* x ~> R X \* p ~> MListOf R L' \* \$0).
 Proof using.
   xtriple. xunfold MListOf. xpull ;=> l E. xapp.
   { rewrites~ (>> LibSepTLCbuffer.list_same_length_inv_nil L). }
