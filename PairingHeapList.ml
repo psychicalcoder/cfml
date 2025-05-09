@@ -1,5 +1,6 @@
 
-type 'a contents = Nil | Head of 'a * 'a hlist | Tail of 'a
+type 'a contents = Nil | Head of int * 'a hlist * 'a hlist | Tail of 'a
+
 and 'a hlist = ('a contents) ref
 (*Nil: No parent
   Tail: End of list, there is a parent
@@ -29,6 +30,16 @@ let pop p =
   | Nil -> assert false 
   | Tail(_) -> assert false 
   | Head(x, r) -> p := !r; x 
+
+let merge p1 p2 = 
+  match !p1 with 
+  | Nil -> p2 
+  | Tail(p) -> assert false 
+  | Head(v1, _, _) -> 
+      match !p2 with
+      | Nil -> p1 
+      | Tail(p0) -> assert false 
+      | Head(v2, _, _) -> if v1 > v2 then push p1  
 
 let rec foreach p f t = 
   match !p with 

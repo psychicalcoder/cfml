@@ -5,5 +5,21 @@ let () = PairingHeap.insert x 7 in
 let y = PairingHeap.create () in 
 let () = PairingHeap.insert y 1 in 
 let () = PairingHeap.insert y 2 in 
-let () = PairingHeap.insert x 3 in 
-PairingHeap.print (PairingHeap.merge x y)
+let () = PairingHeap.insert y 3 in 
+let z = (PairingHeap.merge x y) in 
+let a  = PairingHeap.create () in 
+let () = PairingHeap.insert a 11 in 
+let () = PairingHeap.insert a 12 in 
+let () = PairingHeap.insert a 13 in 
+let b = PairingHeap.create () in 
+let () = PairingHeap.insert b 14 in 
+let () = PairingHeap.insert b 15 in 
+let () = PairingHeap.insert b 16 in 
+let c = (PairingHeap.merge a b) in
+let d = PairingHeap.merge c z in 
+let e = PairingHeap.create () in 
+let () = PairingHeap.insert e 20 in 
+let () = PairingHeap.insert e 21 in 
+let () = PairingHeap.insert e 22 in 
+let () = PairingHeap.insert e 23 in
+PairingHeap.dot (PairingHeap.merge e d) 
