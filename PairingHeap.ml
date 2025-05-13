@@ -69,17 +69,17 @@ let dot h =
   match !h with 
   | Empty -> print_endline ""
   | Nonempty q -> 
-    let rec recurser p lastval = 
+    let rec recurser p lastval is_sib = 
     (match !p with
       | Empty -> ""
       | Nonempty {value = v; child = c; sibling = s; parent = p} -> 
-        ((Printf.sprintf "%d -> %d [label=\"child\"]\n" lastval v) ^ 
-        (recurser c v) ^
-        (recurser s v)) ^
+        ((Printf.sprintf "%d -> %d [label=\"%s\"]\n" lastval v (if is_sib then "sibling" else "child")) ^ 
+        (recurser c v false) ^
+        (recurser s v true)) ^
         (match !p with 
         | Empty -> ""
         | Nonempty daddy -> Printf.sprintf "%d -> %d [label=\"parent\"]\n" v daddy.value)
-    ) in print_endline (Printf.sprintf "digraph {\n%s}" (ranks q ^ (recurser q.child q.value)))
+    ) in print_endline (Printf.sprintf "digraph {\n%s}" (ranks q ^ (recurser q.child q.value false)))
 
 
 
