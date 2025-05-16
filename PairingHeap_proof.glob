@@ -1,0 +1,404 @@
+DIGEST 78b8ccd33170236c9358193c199ca611
+FEXAMPLES.PairingHeap.PairingHeap_proof
+R49:53 CFML.WPLib <> <> lib
+R81:86 CFML.Stdlib.Stdlib <> <> lib
+R118:131 EXAMPLES.PairingHeap.PairingHeap_ml <> <> lib
+R133:143 EXAMPLES.MList.MList_proof <> <> lib
+R170:177 TLC.LibListZ <> <> lib
+R179:189 TLC.LibMultiset <> <> lib
+R199:209 EXAMPLES.MList.MList_proof SpecMListOf <> mod
+R1074:1076 TLC.LibInt <> ::Int_scope:'int' not
+not 1061:1061 <> :::'elem'
+R1103:1110 TLC.LibMultiset <> multiset def
+R1112:1115 EXAMPLES.PairingHeap.PairingHeap_proof <> :::'elem' not
+not 1089:1089 <> :::'elems'
+def 1317:1326 <> list_union
+R1332:1335 Coq.Init.Datatypes <> list ind
+R1337:1341 EXAMPLES.PairingHeap.PairingHeap_proof <> :::'elems' not
+binder 1329:1330 <> Es:1
+R1346:1350 EXAMPLES.PairingHeap.PairingHeap_proof <> :::'elems' not
+R1357:1374 TLC.LibList <> fold_right def
+R1386:1387 EXAMPLES.PairingHeap.PairingHeap_proof <> Es:1 var
+R1382:1384 TLC.LibContainer <> ::container_scope:'\{}' not
+R1376:1380 TLC.LibContainer <> union meth
+prf 1444:1457 <> list_union_nil
+R1486:1488 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1463:1472 EXAMPLES.PairingHeap.PairingHeap_proof <> list_union def
+R1476:1478 Coq.Init.Datatypes <> nil constr
+R1480:1484 EXAMPLES.PairingHeap.PairingHeap_proof <> :::'elems' not
+R1489:1491 TLC.LibContainer <> ::container_scope:'\{}' not
+prf 1525:1539 <> list_union_cons
+binder 1550:1550 <> E:2
+binder 1552:1553 <> Es:3
+R1576:1578 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R1558:1567 EXAMPLES.PairingHeap.PairingHeap_proof <> list_union def
+R1571:1572 TLC.LibList <> ::liblist_scope:x_'::'_x not
+R1570:1570 EXAMPLES.PairingHeap.PairingHeap_proof <> E:2 var
+R1573:1574 EXAMPLES.PairingHeap.PairingHeap_proof <> Es:3 var
+R1580:1583 TLC.LibContainer <> ::container_scope:x_'\u'_x not
+R1579:1579 EXAMPLES.PairingHeap.PairingHeap_proof <> E:2 var
+R1584:1593 EXAMPLES.PairingHeap.PairingHeap_proof <> list_union def
+R1595:1596 EXAMPLES.PairingHeap.PairingHeap_proof <> Es:3 var
+R1651:1664 EXAMPLES.PairingHeap.PairingHeap_proof <> list_union_nil thm
+R1666:1680 EXAMPLES.PairingHeap.PairingHeap_proof <> list_union_cons thm
+R1710:1722 TLC.LibContainer <> union_empty_r meth
+R1724:1728 EXAMPLES.PairingHeap.PairingHeap_proof <> :::'elems' not
+R1739:1751 TLC.LibContainer <> union_empty_l meth
+R1753:1757 EXAMPLES.PairingHeap.PairingHeap_proof <> :::'elems' not
+R1798:1803 EXAMPLES.PairingHeap.PairingHeap_proof <> Forall ind
+R1805:1811 EXAMPLES.PairingHeap.PairingHeap_proof <> Forall2 ind
+R1813:1820 EXAMPLES.PairingHeap.PairingHeap_proof <> list_sub ind
+def 1989:1994 <> min_of
+R1999:2003 EXAMPLES.PairingHeap.PairingHeap_proof <> :::'elems' not
+binder 1997:1997 <> E:4
+R2009:2012 EXAMPLES.PairingHeap.PairingHeap_proof <> :::'elem' not
+binder 2007:2007 <> x:5
+R2034:2037 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2028:2032 TLC.LibContainer <> ::container_scope:x_'\in'_x not
+R2027:2027 EXAMPLES.PairingHeap.PairingHeap_proof <> x:5 var
+R2033:2033 EXAMPLES.PairingHeap.PairingHeap_proof <> E:4 var
+R2038:2045 TLC.LibContainer <> ::container_scope:'forall_'_x_'\in'_x_','_x not
+R2047:2051 TLC.LibContainer <> ::container_scope:'forall_'_x_'\in'_x_','_x not
+R2053:2054 TLC.LibContainer <> ::container_scope:'forall_'_x_'\in'_x_','_x not
+binder 2046:2046 <> y:6
+binder 2046:2046 <> y:7
+binder 2046:2046 <> y:8
+R2052:2052 EXAMPLES.PairingHeap.PairingHeap_proof <> E:4 var
+R2056:2059 TLC.LibOrder <> ::comp_scope:x_'<='_x not
+R2055:2055 EXAMPLES.PairingHeap.PairingHeap_proof <> x:5 var
+R2060:2060 EXAMPLES.PairingHeap.PairingHeap_proof <> y:6 var
+def 2210:2214 <> is_ge
+R2221:2224 EXAMPLES.PairingHeap.PairingHeap_proof <> :::'elem' not
+binder 2217:2217 <> x:9
+binder 2219:2219 <> y:10
+R2240:2243 TLC.LibOrder <> ::comp_scope:x_'<='_x not
+R2239:2239 EXAMPLES.PairingHeap.PairingHeap_proof <> x:9 var
+R2244:2244 EXAMPLES.PairingHeap.PairingHeap_proof <> y:10 var
+R2274:2278 EXAMPLES.PairingHeap.PairingHeap_proof <> is_ge def
+R2297:2299 TLC.LibOrder <> ::comp_scope:x_'<'_x not
+R2335:2338 TLC.LibOrder <> ::comp_scope:x_'<='_x not
+R2374:2376 Coq.Init.Logic <> ::type_scope:x_'='_x_':>'_x not
+R2378:2381 Coq.Init.Logic <> ::type_scope:x_'='_x_':>'_x not
+R2382:2389 TLC.LibMultiset <> multiset def
+R2437:2441 TLC.LibContainer <> ::container_scope:x_'\in'_x not
+prf 2543:2566 <> Forall_foreach_is_ge_inv
+binder 2577:2577 <> x:11
+binder 2579:2579 <> y:12
+binder 2581:2582 <> Es:13
+R2616:2621 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2587:2592 TLC.LibList <> Forall ind
+R2614:2615 EXAMPLES.PairingHeap.PairingHeap_proof <> Es:13 var
+R2595:2601 TLC.LibContainer <> foreach def
+R2604:2608 EXAMPLES.PairingHeap.PairingHeap_proof <> is_ge def
+R2610:2610 EXAMPLES.PairingHeap.PairingHeap_proof <> x:11 var
+R2641:2646 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2623:2627 TLC.LibContainer <> ::container_scope:x_'\in'_x not
+R2622:2622 EXAMPLES.PairingHeap.PairingHeap_proof <> y:12 var
+R2628:2637 EXAMPLES.PairingHeap.PairingHeap_proof <> list_union def
+R2639:2640 EXAMPLES.PairingHeap.PairingHeap_proof <> Es:13 var
+R2648:2651 TLC.LibOrder <> ::comp_scope:x_'<='_x not
+R2647:2647 EXAMPLES.PairingHeap.PairingHeap_proof <> x:11 var
+R2652:2652 EXAMPLES.PairingHeap.PairingHeap_proof <> y:12 var
+R2691:2700 EXAMPLES.PairingHeap.PairingHeap_proof <> list_union def
+R2691:2700 EXAMPLES.PairingHeap.PairingHeap_proof <> list_union def
+prf 2820:2837 <> foreach_list_union
+binder 2848:2848 <> P:14
+binder 2850:2851 <> Es:15
+R2877:2882 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2856:2861 TLC.LibList <> Forall ind
+R2875:2876 EXAMPLES.PairingHeap.PairingHeap_proof <> Es:15 var
+R2864:2870 TLC.LibContainer <> foreach def
+R2872:2872 EXAMPLES.PairingHeap.PairingHeap_proof <> P:14 var
+R2883:2889 TLC.LibContainer <> foreach def
+R2894:2903 EXAMPLES.PairingHeap.PairingHeap_proof <> list_union def
+R2905:2906 EXAMPLES.PairingHeap.PairingHeap_proof <> Es:15 var
+R2891:2891 EXAMPLES.PairingHeap.PairingHeap_proof <> P:14 var
+R2959:2971 TLC.LibMultiset <> foreach_empty thm
+R2959:2971 TLC.LibMultiset <> foreach_empty thm
+R2987:2996 EXAMPLES.PairingHeap.PairingHeap_proof <> list_union def
+R3018:3030 TLC.LibMultiset <> foreach_union thm
+R3018:3030 TLC.LibMultiset <> foreach_union thm
+prf 3047:3059 <> pop_min_lemma
+binder 3070:3070 <> x:16
+binder 3072:3073 <> Es:17
+R3107:3112 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3078:3083 TLC.LibList <> Forall ind
+R3105:3106 EXAMPLES.PairingHeap.PairingHeap_proof <> Es:17 var
+R3086:3092 TLC.LibContainer <> foreach def
+R3095:3099 EXAMPLES.PairingHeap.PairingHeap_proof <> is_ge def
+R3101:3101 EXAMPLES.PairingHeap.PairingHeap_proof <> x:16 var
+R3113:3118 EXAMPLES.PairingHeap.PairingHeap_proof <> min_of def
+R3144:3144 EXAMPLES.PairingHeap.PairingHeap_proof <> x:16 var
+R3125:3128 TLC.LibContainer <> ::container_scope:x_'\u'_x not
+R3121:3122 TLC.LibContainer <> ::container_scope:'\{'_x_'}' not
+R3124:3124 TLC.LibContainer <> ::container_scope:'\{'_x_'}' not
+R3123:3123 EXAMPLES.PairingHeap.PairingHeap_proof <> x:16 var
+R3129:3138 EXAMPLES.PairingHeap.PairingHeap_proof <> list_union def
+R3140:3141 EXAMPLES.PairingHeap.PairingHeap_proof <> Es:17 var
+R3242:3265 EXAMPLES.PairingHeap.PairingHeap_proof <> Forall_foreach_is_ge_inv thm
+R3242:3265 EXAMPLES.PairingHeap.PairingHeap_proof <> Forall_foreach_is_ge_inv thm
+ind 3737:3740 <> node
+constr 3756:3759 <> Node
+R3767:3770 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3763:3766 EXAMPLES.PairingHeap.PairingHeap_proof <> :::'elem' not
+R3780:3783 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3771:3774 Coq.Init.Datatypes <> list ind
+R3776:3779 EXAMPLES.PairingHeap.PairingHeap_proof <> node:18 ind
+R3784:3787 EXAMPLES.PairingHeap.PairingHeap_proof <> node:18 ind
+scheme 3737:3740 <> node_rect
+scheme 3737:3740 <> node_ind
+scheme 3737:3740 <> node_rec
+scheme 3737:3740 <> node_sind
+inst 3800:3809 <> Inhab_node
+R3813:3817 TLC.LibLogic <> Inhab class
+R3819:3822 EXAMPLES.PairingHeap.PairingHeap_proof <> node ind
+R3845:3856 TLC.LibLogic <> Inhab_of_val thm
+R3859:3862 EXAMPLES.PairingHeap.PairingHeap_proof <> Node constr
+R3874:3876 Coq.Init.Datatypes <> nil constr
+R3864:3872 TLC.LibLogic <> arbitrary def
+R3845:3856 TLC.LibLogic <> Inhab_of_val thm
+R3859:3862 EXAMPLES.PairingHeap.PairingHeap_proof <> Node constr
+R3874:3876 Coq.Init.Datatypes <> nil constr
+R3864:3872 TLC.LibLogic <> arbitrary def
+def 3964:3967 <> heap
+R3972:3977 Coq.Init.Datatypes <> option ind
+R3979:3982 EXAMPLES.PairingHeap.PairingHeap_proof <> node ind
+inst 3995:4004 <> Inhab_heap
+R4008:4012 TLC.LibLogic <> Inhab class
+R4014:4017 EXAMPLES.PairingHeap.PairingHeap_proof <> heap def
+R4040:4051 TLC.LibLogic <> Inhab_of_val thm
+R4055:4058 Coq.Init.Datatypes <> None constr
+R4060:4063 EXAMPLES.PairingHeap.PairingHeap_proof <> node ind
+R4040:4051 TLC.LibLogic <> Inhab_of_val thm
+R4055:4058 Coq.Init.Datatypes <> None constr
+R4060:4063 EXAMPLES.PairingHeap.PairingHeap_proof <> node ind
+ind 4192:4194 <> inv
+constr 4227:4234 <> inv_Node
+R4202:4205 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4198:4201 EXAMPLES.PairingHeap.PairingHeap_proof <> node ind
+R4211:4214 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4206:4210 EXAMPLES.PairingHeap.PairingHeap_proof <> :::'elems' not
+binder 4245:4245 <> x:22
+binder 4247:4248 <> ns:23
+binder 4250:4251 <> Es:24
+binder 4253:4253 <> E:25
+R4279:4288 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4262:4268 TLC.LibList <> Forall2 ind
+R4277:4278 EXAMPLES.PairingHeap.PairingHeap_proof <> Es:24 var
+R4274:4275 EXAMPLES.PairingHeap.PairingHeap_proof <> ns:23 var
+R4270:4272 EXAMPLES.PairingHeap.PairingHeap_proof <> inv:20 ind
+R4318:4327 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4289:4294 TLC.LibList <> Forall ind
+R4316:4317 EXAMPLES.PairingHeap.PairingHeap_proof <> Es:24 var
+R4297:4303 TLC.LibContainer <> foreach def
+R4306:4310 EXAMPLES.PairingHeap.PairingHeap_proof <> is_ge def
+R4312:4312 EXAMPLES.PairingHeap.PairingHeap_proof <> x:22 var
+R4355:4364 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4329:4331 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4328:4328 EXAMPLES.PairingHeap.PairingHeap_proof <> E:25 var
+R4336:4340 TLC.LibContainer <> ::container_scope:x_'\u'_x not
+R4354:4354 TLC.LibContainer <> ::container_scope:x_'\u'_x not
+R4332:4333 TLC.LibContainer <> ::container_scope:'\{'_x_'}' not
+R4335:4335 TLC.LibContainer <> ::container_scope:'\{'_x_'}' not
+R4334:4334 EXAMPLES.PairingHeap.PairingHeap_proof <> x:22 var
+R4341:4350 EXAMPLES.PairingHeap.PairingHeap_proof <> list_union def
+R4352:4353 EXAMPLES.PairingHeap.PairingHeap_proof <> Es:24 var
+R4365:4367 EXAMPLES.PairingHeap.PairingHeap_proof <> inv:20 ind
+R4381:4381 EXAMPLES.PairingHeap.PairingHeap_proof <> E:25 var
+R4370:4373 EXAMPLES.PairingHeap.PairingHeap_proof <> Node constr
+R4377:4378 EXAMPLES.PairingHeap.PairingHeap_proof <> ns:23 var
+R4375:4375 EXAMPLES.PairingHeap.PairingHeap_proof <> x:22 var
+scheme 4192:4194 <> inv_ind
+scheme 4192:4194 <> inv_sind
+sec 4564:4574 <> Node_induct
+var 4588:4588 Node_induct P
+var 4607:4607 Node_induct Q
+var 4631:4632 Node_induct P2
+var 4670:4671 Node_induct Q1
+var 4683:4684 Node_induct Q2
+R4596:4599 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4592:4595 EXAMPLES.PairingHeap.PairingHeap_proof <> node ind
+R4620:4623 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4611:4614 Coq.Init.Datatypes <> list ind
+R4616:4619 EXAMPLES.PairingHeap.PairingHeap_proof <> node ind
+binder 4643:4643 <> x:30
+binder 4645:4645 <> l:31
+R4651:4654 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4648:4648 EXAMPLES.PairingHeap.PairingHeap_proof <> Q:29 var
+R4650:4650 EXAMPLES.PairingHeap.PairingHeap_proof <> l:31 var
+R4655:4655 EXAMPLES.PairingHeap.PairingHeap_proof <> P:27 var
+R4658:4661 EXAMPLES.PairingHeap.PairingHeap_proof <> Node constr
+R4665:4665 EXAMPLES.PairingHeap.PairingHeap_proof <> l:31 var
+R4663:4663 EXAMPLES.PairingHeap.PairingHeap_proof <> x:30 var
+R4675:4675 EXAMPLES.PairingHeap.PairingHeap_proof <> Q:29 var
+R4677:4679 Coq.Init.Datatypes <> nil constr
+binder 4695:4695 <> t:36
+binder 4697:4697 <> l:37
+R4703:4706 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4700:4700 EXAMPLES.PairingHeap.PairingHeap_proof <> P:27 var
+R4702:4702 EXAMPLES.PairingHeap.PairingHeap_proof <> t:36 var
+R4710:4713 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4707:4707 EXAMPLES.PairingHeap.PairingHeap_proof <> Q:29 var
+R4709:4709 EXAMPLES.PairingHeap.PairingHeap_proof <> l:37 var
+R4714:4714 EXAMPLES.PairingHeap.PairingHeap_proof <> Q:29 var
+R4718:4719 TLC.LibList <> ::liblist_scope:x_'::'_x not
+R4717:4717 EXAMPLES.PairingHeap.PairingHeap_proof <> t:36 var
+R4720:4720 EXAMPLES.PairingHeap.PairingHeap_proof <> l:37 var
+def 4735:4749 <> node_induct_gen
+R4756:4759 EXAMPLES.PairingHeap.PairingHeap_proof <> node ind
+binder 4752:4752 <> n:40
+R4764:4764 EXAMPLES.PairingHeap.PairingHeap_proof <> Node_induct.P var
+R4766:4766 EXAMPLES.PairingHeap.PairingHeap_proof <> n:40 var
+R4779:4779 EXAMPLES.PairingHeap.PairingHeap_proof <> n:40 var
+R4793:4793 EXAMPLES.PairingHeap.PairingHeap_proof <> Node_induct.P var
+R4795:4795 EXAMPLES.PairingHeap.PairingHeap_proof <> x:42 var
+R4806:4809 EXAMPLES.PairingHeap.PairingHeap_proof <> Node constr
+R4818:4819 EXAMPLES.PairingHeap.PairingHeap_proof <> Node_induct.P2 var
+R4857:4860 Coq.Init.Datatypes <> list ind
+R4862:4865 EXAMPLES.PairingHeap.PairingHeap_proof <> node ind
+binder 4853:4853 <> l:43
+R4870:4870 EXAMPLES.PairingHeap.PairingHeap_proof <> Node_induct.Q var
+R4872:4872 EXAMPLES.PairingHeap.PairingHeap_proof <> l:43 var
+R4889:4889 EXAMPLES.PairingHeap.PairingHeap_proof <> l:43 var
+R4903:4903 EXAMPLES.PairingHeap.PairingHeap_proof <> Node_induct.Q var
+R4905:4905 EXAMPLES.PairingHeap.PairingHeap_proof <> x:45 var
+R4920:4922 Coq.Init.Datatypes <> nil constr
+R4929:4930 EXAMPLES.PairingHeap.PairingHeap_proof <> Node_induct.Q1 var
+R4941:4942 TLC.LibList <> ::liblist_scope:x_'::'_x not
+R4949:4950 EXAMPLES.PairingHeap.PairingHeap_proof <> Node_induct.Q2 var
+R4973:4988 EXAMPLES.PairingHeap.PairingHeap_proof <> node_list_induct:44 var
+R4953:4967 EXAMPLES.PairingHeap.PairingHeap_proof <> node_induct_gen:41 def
+R5020:5030 EXAMPLES.PairingHeap.PairingHeap_proof Node_induct <> sec
+prf 5040:5050 <> node_induct
+R5070:5073 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5066:5069 EXAMPLES.PairingHeap.PairingHeap_proof <> node ind
+binder 5062:5062 <> P:46
+R5083:5083 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5164:5170 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5096:5098 TLC.LibInt <> ::Int_scope:'int' not
+binder 5092:5092 <> x:47
+R5106:5109 Coq.Init.Datatypes <> list ind
+R5111:5114 EXAMPLES.PairingHeap.PairingHeap_proof <> node ind
+binder 5102:5102 <> l:48
+R5122:5122 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5147:5151 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 5130:5130 <> n:49
+R5140:5143 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5133:5135 TLC.LibList <> mem ind
+R5139:5139 EXAMPLES.PairingHeap.PairingHeap_proof <> l:48 var
+R5137:5137 EXAMPLES.PairingHeap.PairingHeap_proof <> n:49 var
+R5144:5144 EXAMPLES.PairingHeap.PairingHeap_proof <> P:46 var
+R5146:5146 EXAMPLES.PairingHeap.PairingHeap_proof <> n:49 var
+R5152:5152 EXAMPLES.PairingHeap.PairingHeap_proof <> P:46 var
+R5155:5158 EXAMPLES.PairingHeap.PairingHeap_proof <> Node constr
+R5162:5162 EXAMPLES.PairingHeap.PairingHeap_proof <> l:48 var
+R5160:5160 EXAMPLES.PairingHeap.PairingHeap_proof <> x:47 var
+R5182:5185 EXAMPLES.PairingHeap.PairingHeap_proof <> node ind
+binder 5178:5178 <> n:50
+R5188:5188 EXAMPLES.PairingHeap.PairingHeap_proof <> P:46 var
+R5190:5190 EXAMPLES.PairingHeap.PairingHeap_proof <> n:50 var
+binder 5257:5257 <> l:51
+binder 5273:5273 <> t:52
+R5283:5286 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5276:5278 TLC.LibList <> mem ind
+R5282:5282 EXAMPLES.PairingHeap.PairingHeap_proof <> l:51 var
+R5280:5280 EXAMPLES.PairingHeap.PairingHeap_proof <> t:52 var
+R5289:5289 EXAMPLES.PairingHeap.PairingHeap_proof <> t:52 var
+R5226:5240 EXAMPLES.PairingHeap.PairingHeap_proof <> node_induct_gen def
+binder 5257:5257 <> l:53
+binder 5273:5273 <> t:54
+R5283:5286 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5276:5278 TLC.LibList <> mem ind
+R5282:5282 EXAMPLES.PairingHeap.PairingHeap_proof <> l:53 var
+R5280:5280 EXAMPLES.PairingHeap.PairingHeap_proof <> t:54 var
+R5289:5289 EXAMPLES.PairingHeap.PairingHeap_proof <> t:54 var
+R5226:5240 EXAMPLES.PairingHeap.PairingHeap_proof <> node_induct_gen def
+R5393:5396 EXAMPLES.PairingHeap.PairingHeap_proof <> node ind
+R5422:5424 CFML.Semantics <> loc def
+R5448:5451 EXAMPLES.PairingHeap.PairingHeap_proof <> :::'elem' not
+R5473:5476 EXAMPLES.PairingHeap.PairingHeap_proof <> heap def
+R5499:5502 Coq.Init.Datatypes <> list ind
+R5504:5507 EXAMPLES.PairingHeap.PairingHeap_proof <> node ind
+R5529:5533 EXAMPLES.PairingHeap.PairingHeap_proof <> :::'elems' not
+R5556:5559 Coq.Init.Datatypes <> list ind
+R5561:5565 EXAMPLES.PairingHeap.PairingHeap_proof <> :::'elems' not
+prf 5697:5709 <> inv_not_empty
+binder 5720:5720 <> n:55
+binder 5722:5722 <> E:56
+R5734:5739 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5727:5729 EXAMPLES.PairingHeap.PairingHeap_proof <> inv ind
+R5733:5733 EXAMPLES.PairingHeap.PairingHeap_proof <> E:56 var
+R5731:5731 EXAMPLES.PairingHeap.PairingHeap_proof <> n:55 var
+R5741:5744 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R5740:5740 EXAMPLES.PairingHeap.PairingHeap_proof <> E:56 var
+R5745:5747 TLC.LibContainer <> ::container_scope:'\{}' not
+prf 5810:5820 <> merge_lemma
+binder 5831:5832 <> x1:57
+binder 5834:5835 <> x2:58
+binder 5837:5839 <> ns1:59
+binder 5841:5843 <> ns2:60
+binder 5845:5847 <> Es1:61
+binder 5849:5851 <> Es2:62
+R5875:5880 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5856:5862 TLC.LibList <> Forall2 ind
+R5872:5874 EXAMPLES.PairingHeap.PairingHeap_proof <> Es1:61 var
+R5868:5870 EXAMPLES.PairingHeap.PairingHeap_proof <> ns1:59 var
+R5864:5866 EXAMPLES.PairingHeap.PairingHeap_proof <> inv ind
+R5900:5905 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5881:5887 TLC.LibList <> Forall2 ind
+R5897:5899 EXAMPLES.PairingHeap.PairingHeap_proof <> Es2:62 var
+R5893:5895 EXAMPLES.PairingHeap.PairingHeap_proof <> ns2:60 var
+R5889:5891 EXAMPLES.PairingHeap.PairingHeap_proof <> inv ind
+R5937:5942 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5906:5911 TLC.LibList <> Forall ind
+R5934:5936 EXAMPLES.PairingHeap.PairingHeap_proof <> Es1:61 var
+R5914:5920 TLC.LibContainer <> foreach def
+R5923:5927 EXAMPLES.PairingHeap.PairingHeap_proof <> is_ge def
+R5929:5930 EXAMPLES.PairingHeap.PairingHeap_proof <> x2:58 var
+R5974:5979 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5943:5948 TLC.LibList <> Forall ind
+R5971:5973 EXAMPLES.PairingHeap.PairingHeap_proof <> Es2:62 var
+R5951:5957 TLC.LibContainer <> foreach def
+R5960:5964 EXAMPLES.PairingHeap.PairingHeap_proof <> is_ge def
+R5966:5967 EXAMPLES.PairingHeap.PairingHeap_proof <> x1:57 var
+R5988:5993 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5982:5985 TLC.LibOrder <> ::comp_scope:x_'<='_x not
+R5980:5981 EXAMPLES.PairingHeap.PairingHeap_proof <> x1:57 var
+R5986:5987 EXAMPLES.PairingHeap.PairingHeap_proof <> x2:58 var
+R5994:5996 EXAMPLES.PairingHeap.PairingHeap_proof <> inv ind
+R6035:6038 TLC.LibContainer <> ::container_scope:x_'\u'_x not
+R6030:6031 TLC.LibContainer <> ::container_scope:'''{'_x_'}' not
+R6034:6034 TLC.LibContainer <> ::container_scope:'''{'_x_'}' not
+R6032:6033 EXAMPLES.PairingHeap.PairingHeap_proof <> x1:57 var
+R6044:6047 TLC.LibContainer <> ::container_scope:x_'\u'_x not
+R6039:6040 TLC.LibContainer <> ::container_scope:'''{'_x_'}' not
+R6043:6043 TLC.LibContainer <> ::container_scope:'''{'_x_'}' not
+R6041:6042 EXAMPLES.PairingHeap.PairingHeap_proof <> x2:58 var
+R6062:6065 TLC.LibContainer <> ::container_scope:x_'\u'_x not
+R6048:6057 EXAMPLES.PairingHeap.PairingHeap_proof <> list_union def
+R6059:6061 EXAMPLES.PairingHeap.PairingHeap_proof <> Es1:61 var
+R6066:6075 EXAMPLES.PairingHeap.PairingHeap_proof <> list_union def
+R6077:6079 EXAMPLES.PairingHeap.PairingHeap_proof <> Es2:62 var
+R5999:6002 EXAMPLES.PairingHeap.PairingHeap_proof <> Node constr
+R6019:6022 TLC.LibList <> ::liblist_scope:x_'::'_x not
+R6008:6011 EXAMPLES.PairingHeap.PairingHeap_proof <> Node constr
+R6016:6018 EXAMPLES.PairingHeap.PairingHeap_proof <> ns1:59 var
+R6013:6014 EXAMPLES.PairingHeap.PairingHeap_proof <> x2:58 var
+R6023:6025 EXAMPLES.PairingHeap.PairingHeap_proof <> ns2:60 var
+R6004:6005 EXAMPLES.PairingHeap.PairingHeap_proof <> x1:57 var
+R6134:6141 EXAMPLES.PairingHeap.PairingHeap_proof <> inv_Node constr
+R6134:6141 EXAMPLES.PairingHeap.PairingHeap_proof <> inv_Node constr
+R6169:6176 EXAMPLES.PairingHeap.PairingHeap_proof <> inv_Node constr
+R6169:6176 EXAMPLES.PairingHeap.PairingHeap_proof <> inv_Node constr
+R6225:6237 TLC.LibMultiset <> foreach_union thm
+R6225:6237 TLC.LibMultiset <> foreach_union thm
+R6256:6269 TLC.LibMultiset <> foreach_single thm
+R6256:6269 TLC.LibMultiset <> foreach_single thm
+R6290:6307 EXAMPLES.PairingHeap.PairingHeap_proof <> foreach_list_union thm
+R6290:6307 EXAMPLES.PairingHeap.PairingHeap_proof <> foreach_list_union thm
+R6317:6332 TLC.LibList <> Forall_pred_incl thm
+R6317:6332 TLC.LibList <> Forall_pred_incl thm
+R6370:6383 TLC.LibMultiset <> foreach_weaken thm
+R6370:6383 TLC.LibMultiset <> foreach_weaken thm
+R6410:6414 EXAMPLES.PairingHeap.PairingHeap_proof <> is_ge def
+R6410:6414 EXAMPLES.PairingHeap.PairingHeap_proof <> is_ge def

@@ -16,10 +16,14 @@ let () = PairingHeap.insert b 14 in
 let () = PairingHeap.insert b 15 in 
 let () = PairingHeap.insert b 16 in 
 let c = (PairingHeap.merge a b) in
-let d = PairingHeap.merge c z in 
+let d = PairingHeap.merge c z in  
 let e = PairingHeap.create () in 
 let () = PairingHeap.insert e 20 in 
 let () = PairingHeap.insert e 21 in 
 let () = PairingHeap.insert e 22 in 
 let () = PairingHeap.insert e 23 in
-PairingHeap.dot (PairingHeap.merge e d) 
+let f = PairingHeap.merge e d in 
+let g = PairingHeap.pop_min f in
+let h = PairingHeap.pop_min f in 
+let i = PairingHeap.decrease_key b 3 in 
+PairingHeap.dot i

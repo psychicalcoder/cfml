@@ -1,0 +1,1766 @@
+DIGEST e195dac830bb489bab084db622031e25
+FEXAMPLES.PairingHeap.PairingHeap_ml
+R33:49 Coq.ZArith.BinInt <> <> lib
+R51:62 TLC.LibLogic <> <> lib
+R64:78 TLC.LibRelation <> <> lib
+R80:89 TLC.LibInt <> <> lib
+R91:102 TLC.LibListZ <> <> lib
+R114:125 CFML.SepBase <> <> lib
+R127:140 CFML.SepLifted <> <> lib
+R142:154 CFML.WPLifted <> <> lib
+R156:168 CFML.WPRecord <> <> lib
+R170:181 CFML.WPArray <> <> lib
+R183:196 CFML.WPBuiltin <> <> lib
+R208:227 CFML.Stdlib.Array_ml <> <> lib
+R229:247 CFML.Stdlib.List_ml <> <> lib
+R249:266 CFML.Stdlib.Sys_ml <> <> lib
+R285:304 Coq.ZArith.BinIntDef <> <> lib
+R306:319 CFML.Semantics <> <> lib
+R321:333 CFML.WPHeader <> <> lib
+R386:413 CFML.WPHeader Use_Enc_any Enc_any defax
+def 433:437 <> node_
+R446:463 CFML.Semantics <> loc def
+def 478:483 <> value'
+R487:506 CFML.Semantics <> field def
+def 532:537 <> child'
+R541:560 CFML.Semantics <> field def
+def 586:593 <> sibling'
+R597:616 CFML.Semantics <> field def
+def 642:648 <> parent'
+R652:671 CFML.Semantics <> field def
+ind 696:704 <> contents_
+constr 718:722 <> Empty
+constr 738:745 <> Nonempty
+R726:734 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_:1 ind
+R754:757 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R749:753 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R758:766 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_:1 ind
+scheme 696:704 <> contents__rect
+scheme 696:704 <> contents__ind
+scheme 696:704 <> contents__rec
+scheme 696:704 <> contents__sind
+ax 780:805 <> polymorphic_eq_arg_Empty__
+R811:843 CFML.WPBuiltin <> polymorphic_eq_arg prfax
+R845:849 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+ax 922:950 <> polymorphic_eq_arg_Nonempty__
+R970:974 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 963:966 <> x0__:5
+R1017:1022 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R979:1011 CFML.WPBuiltin <> polymorphic_eq_arg prfax
+R1013:1016 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:5 var
+R1023:1055 CFML.WPBuiltin <> polymorphic_eq_arg prfax
+R1059:1066 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R1068:1071 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:5 var
+R1156:1164 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+def 1201:1205 <> heap_
+R1217:1234 CFML.Semantics <> loc def
+R1250:1254 EXAMPLES.PairingHeap.PairingHeap_ml <> heap_ def
+ax 1290:1295 <> create
+R1299:1316 CFML.Semantics <> val ind
+ax 1330:1340 <> create_cf__
+R1346:1369 CFML.WPLifted <> Wpgen_body def
+R1391:1413 Coq.Init.Datatypes <> unit ind
+binder 1384:1387 <> x0__:10
+R1431:1482 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 1427:1427 <> H:11
+binder 1496:1496 <> A:12
+R1522:1539 CFML.SepLifted <> Enc class
+R1541:1541 EXAMPLES.PairingHeap.PairingHeap_ml <> A:12 var
+binder 1517:1518 <> EA:13
+R1560:1563 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1559:1559 EXAMPLES.PairingHeap.PairingHeap_ml <> A:12 var
+R1564:1615 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 1555:1555 <> Q:14
+R2125:2132 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R1622:1673 CFML.SepBase SepBasicSetup.SepSimplArgsCredits himpl def
+R1686:1704 CFML.WPLifted <> Wptag def
+R1728:1750 CFML.WPLifted <> Wpgen_app def
+R1803:1821 Coq.Lists.List <> cons abbrev
+R1910:1927 Coq.Lists.List <> nil abbrev
+R1840:1862 CFML.SepLifted <> dyn_make constr
+R1864:1872 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R1885:1893 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R1877:1881 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R1771:1787 CFML.Stdlib.Pervasives_ml <> ref defax
+R1752:1769 CFML.Semantics <> loc def
+binder 1977:1981 <> res__:15
+R1998:2049 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hstar def
+R2061:2110 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hgc def
+R2052:2052 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:14 var
+R2054:2058 EXAMPLES.PairingHeap.PairingHeap_ml <> res__:15 var
+R1675:1675 EXAMPLES.PairingHeap.PairingHeap_ml <> H:11 var
+R2133:2153 CFML.SepLifted <> Triple def
+R2337:2337 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:14 var
+R2335:2335 EXAMPLES.PairingHeap.PairingHeap_ml <> H:11 var
+R2163:2185 CFML.SepLifted <> Trm_apps def
+R2204:2222 Coq.Lists.List <> cons abbrev
+R2302:2319 Coq.Lists.List <> nil abbrev
+R2237:2259 CFML.SepLifted <> dyn_make constr
+R2261:2283 Coq.Init.Datatypes <> unit ind
+R2287:2290 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:10 var
+R2187:2192 EXAMPLES.PairingHeap.PairingHeap_ml <> create defax
+R2360:2380 CFML.WPHeader <> ::wptactics_scope:'WPHeader_Register_CF'_x not
+R2381:2386 EXAMPLES.PairingHeap.PairingHeap_ml <> create defax
+ax 2433:2440 <> is_empty
+R2444:2461 CFML.Semantics <> val ind
+ax 2475:2487 <> is_empty_cf__
+R2493:2516 CFML.WPLifted <> Wpgen_body def
+R2535:2552 CFML.Semantics <> loc def
+binder 2531:2531 <> p:20
+R2570:2621 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 2566:2566 <> H:21
+binder 2635:2635 <> A:22
+R2661:2678 CFML.SepLifted <> Enc class
+R2680:2680 EXAMPLES.PairingHeap.PairingHeap_ml <> A:22 var
+binder 2656:2657 <> EA:23
+R2699:2702 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2698:2698 EXAMPLES.PairingHeap.PairingHeap_ml <> A:22 var
+R2703:2754 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 2694:2694 <> Q:24
+R3965:3972 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2761:2812 CFML.SepBase SepBasicSetup.SepSimplArgsCredits himpl def
+R2825:2843 CFML.WPLifted <> Wptag def
+R2867:2893 CFML.WPLifted <> Wpgen_let_trm def
+R3260:3268 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 3253:3256 <> x0__:25
+R3286:3304 CFML.WPLifted <> Wptag def
+R3340:3362 CFML.WPLifted <> Wpgen_app def
+R3433:3451 Coq.Lists.List <> cons abbrev
+R3559:3577 Coq.Lists.List <> cons abbrev
+R3682:3699 Coq.Lists.List <> nil abbrev
+R3604:3626 CFML.SepLifted <> dyn_make constr
+R3628:3636 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R3649:3657 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R3641:3645 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R3476:3498 CFML.SepLifted <> dyn_make constr
+R3500:3508 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R3512:3515 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:25 var
+R3388:3411 CFML.Stdlib.Pervasives_ml <> infix_eq__ defax
+R3364:3386 Coq.Init.Datatypes <> bool ind
+R2910:2928 CFML.WPLifted <> Wptag def
+R2964:2986 CFML.WPLifted <> Wpgen_app def
+R3046:3064 Coq.Lists.List <> cons abbrev
+R3156:3173 Coq.Lists.List <> nil abbrev
+R3089:3111 CFML.SepLifted <> dyn_make constr
+R3113:3130 CFML.Semantics <> loc def
+R3134:3134 EXAMPLES.PairingHeap.PairingHeap_ml <> p:20 var
+R2998:3024 CFML.Stdlib.Pervasives_ml <> infix_emark__ defax
+R2988:2996 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 3817:3821 <> res__:26
+R3838:3889 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hstar def
+R3901:3950 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hgc def
+R3892:3892 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:24 var
+R3894:3898 EXAMPLES.PairingHeap.PairingHeap_ml <> res__:26 var
+R2814:2814 EXAMPLES.PairingHeap.PairingHeap_ml <> H:21 var
+R3973:3993 CFML.SepLifted <> Triple def
+R4151:4151 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:24 var
+R4149:4149 EXAMPLES.PairingHeap.PairingHeap_ml <> H:21 var
+R4003:4025 CFML.SepLifted <> Trm_apps def
+R4046:4064 Coq.Lists.List <> cons abbrev
+R4116:4133 Coq.Lists.List <> nil abbrev
+R4068:4090 CFML.SepLifted <> dyn_make constr
+R4092:4109 CFML.Semantics <> loc def
+R4113:4113 EXAMPLES.PairingHeap.PairingHeap_ml <> p:20 var
+R4027:4034 EXAMPLES.PairingHeap.PairingHeap_ml <> is_empty defax
+R4174:4194 CFML.WPHeader <> ::wptactics_scope:'WPHeader_Register_CF'_x not
+R4195:4202 EXAMPLES.PairingHeap.PairingHeap_ml <> is_empty defax
+ax 4251:4261 <> merge_nodes
+R4265:4282 CFML.Semantics <> val ind
+ax 4296:4311 <> merge_nodes_cf__
+R4317:4340 CFML.WPLifted <> Wpgen_body def
+R4360:4364 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 4355:4356 <> q1:31
+R4383:4387 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 4378:4379 <> q2:32
+R4405:4456 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 4401:4401 <> H:33
+binder 4470:4470 <> A:34
+R4496:4513 CFML.SepLifted <> Enc class
+R4515:4515 EXAMPLES.PairingHeap.PairingHeap_ml <> A:34 var
+binder 4491:4492 <> EA:35
+R4534:4537 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4533:4533 EXAMPLES.PairingHeap.PairingHeap_ml <> A:34 var
+R4538:4589 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 4529:4529 <> Q:36
+R53169:53176 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4596:4647 CFML.SepBase SepBasicSetup.SepSimplArgsCredits himpl def
+R4660:4678 CFML.WPLifted <> Wptag def
+R4702:4728 CFML.WPLifted <> Wpgen_let_trm def
+R5098:5116 Coq.ZArith.BinInt <> Z abbrev
+binder 5091:5094 <> x1__:37
+R5134:5152 CFML.WPLifted <> Wptag def
+R5188:5214 CFML.WPLifted <> Wpgen_let_trm def
+R5702:5720 Coq.ZArith.BinInt <> Z abbrev
+binder 5695:5698 <> x0__:38
+R5744:5762 CFML.WPLifted <> Wptag def
+R5810:5831 CFML.WPLifted <> Wpgen_if def
+R29553:29571 CFML.WPLifted <> Wptag def
+R29631:29657 CFML.WPLifted <> Wpgen_let_trm def
+R30300:30317 CFML.Semantics <> loc def
+binder 30293:30296 <> x3__:39
+R30353:30371 CFML.WPLifted <> Wptag def
+R30443:30469 CFML.WPLifted <> Wpgen_let_trm def
+R31103:31111 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 31096:31099 <> x4__:40
+R31153:31171 CFML.WPLifted <> Wptag def
+R31255:31281 CFML.WPLifted <> Wpgen_let_trm def
+R38007:38015 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 38000:38003 <> x5__:41
+R38063:38081 CFML.WPLifted <> Wptag def
+R38177:38203 CFML.WPLifted <> Wpgen_let_trm def
+R39081:39098 CFML.Semantics <> loc def
+binder 39074:39077 <> x2__:42
+R39152:39170 CFML.WPLifted <> Wptag def
+R39278:39300 CFML.WPLifted <> Wpgen_seq def
+R40457:40475 CFML.WPLifted <> Wptag def
+R40595:40621 CFML.WPLifted <> Wpgen_let_trm def
+R41716:41733 CFML.Semantics <> loc def
+binder 41647:41650 <> x7__:43
+R41859:41877 CFML.WPLifted <> Wptag def
+R42009:42035 CFML.WPLifted <> Wpgen_let_trm def
+R43067:43075 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 42992:42995 <> x8__:44
+R43213:43231 CFML.WPLifted <> Wptag def
+R43375:43401 CFML.WPLifted <> Wpgen_let_trm def
+R44666:44683 CFML.Semantics <> loc def
+binder 44585:44588 <> x6__:45
+R44833:44851 CFML.WPLifted <> Wptag def
+R45007:45029 CFML.WPLifted <> Wpgen_seq def
+R46546:46564 CFML.WPLifted <> Wptag def
+R46732:46758 CFML.WPLifted <> Wpgen_let_trm def
+R48189:48206 CFML.Semantics <> loc def
+binder 48096:48099 <> x9__:46
+R48380:48398 CFML.WPLifted <> Wptag def
+R48578:48600 CFML.WPLifted <> Wpgen_seq def
+R50522:50540 CFML.WPLifted <> Wptag def
+R50732:50754 CFML.WPLifted <> Wpgen_val def
+R50756:50757 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:32 var
+R48695:48713 CFML.WPLifted <> Wptag def
+R48905:48927 CFML.WPLifted <> Wpgen_app def
+R49082:49100 Coq.Lists.List <> cons abbrev
+R49451:49469 Coq.Lists.List <> cons abbrev
+R49940:49957 Coq.Lists.List <> nil abbrev
+R49574:49596 CFML.SepLifted <> dyn_make constr
+R49598:49606 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R49728:49736 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R49714:49721 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R49723:49724 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:31 var
+R49203:49225 CFML.SepLifted <> dyn_make constr
+R49227:49244 CFML.Semantics <> loc def
+R49248:49251 EXAMPLES.PairingHeap.PairingHeap_ml <> x9__:46 var
+R48953:48982 CFML.Stdlib.Pervasives_ml <> infix_colon_eq__ defax
+R48929:48951 Coq.Init.Datatypes <> unit ind
+R46847:46865 CFML.WPLifted <> Wptag def
+R47045:47067 CFML.WPLifted <> Wpgen_app def
+R47397:47415 Coq.Lists.List <> cons abbrev
+R47639:47656 Coq.Lists.List <> nil abbrev
+R47512:47534 CFML.SepLifted <> dyn_make constr
+R47536:47540 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R47544:47545 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:32 var
+R47180:47206 CFML.WPRecord <> val_get_field def
+R47208:47213 EXAMPLES.PairingHeap.PairingHeap_ml <> child' def
+R47069:47086 CFML.Semantics <> loc def
+R45112:45130 CFML.WPLifted <> Wptag def
+R45298:45320 CFML.WPLifted <> Wpgen_app def
+R45463:45481 Coq.Lists.List <> cons abbrev
+R45796:45814 Coq.Lists.List <> cons abbrev
+R46036:46053 Coq.Lists.List <> nil abbrev
+R45907:45929 CFML.SepLifted <> dyn_make constr
+R45931:45939 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R45943:45946 EXAMPLES.PairingHeap.PairingHeap_ml <> x8__:44 var
+R45572:45594 CFML.SepLifted <> dyn_make constr
+R45596:45613 CFML.Semantics <> loc def
+R45617:45620 EXAMPLES.PairingHeap.PairingHeap_ml <> x6__:45 var
+R45346:45375 CFML.Stdlib.Pervasives_ml <> infix_colon_eq__ defax
+R45322:45344 Coq.Init.Datatypes <> unit ind
+R43478:43496 CFML.WPLifted <> Wptag def
+R43652:43674 CFML.WPLifted <> Wpgen_app def
+R43970:43988 Coq.Lists.List <> cons abbrev
+R44188:44205 Coq.Lists.List <> nil abbrev
+R44073:44095 CFML.SepLifted <> dyn_make constr
+R44097:44101 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R44105:44106 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:31 var
+R43775:43801 CFML.WPRecord <> val_get_field def
+R43803:43810 EXAMPLES.PairingHeap.PairingHeap_ml <> sibling' def
+R43676:43693 CFML.Semantics <> loc def
+R42106:42124 CFML.WPLifted <> Wptag def
+R42268:42290 CFML.WPLifted <> Wpgen_app def
+R42404:42422 Coq.Lists.List <> cons abbrev
+R42625:42642 Coq.Lists.List <> nil abbrev
+R42501:42523 CFML.SepLifted <> dyn_make constr
+R42525:42542 CFML.Semantics <> loc def
+R42546:42549 EXAMPLES.PairingHeap.PairingHeap_ml <> x7__:43 var
+R42302:42328 CFML.Stdlib.Pervasives_ml <> infix_emark__ defax
+R42292:42300 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R40686:40704 CFML.WPLifted <> Wptag def
+R40836:40858 CFML.WPLifted <> Wpgen_app def
+R41116:41134 Coq.Lists.List <> cons abbrev
+R41310:41327 Coq.Lists.List <> nil abbrev
+R41207:41229 CFML.SepLifted <> dyn_make constr
+R41231:41235 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R41239:41240 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:32 var
+R40947:40973 CFML.WPRecord <> val_get_field def
+R40975:40980 EXAMPLES.PairingHeap.PairingHeap_ml <> child' def
+R40860:40877 CFML.Semantics <> loc def
+R39359:39377 CFML.WPLifted <> Wptag def
+R39497:39519 CFML.WPLifted <> Wpgen_app def
+R39638:39656 Coq.Lists.List <> cons abbrev
+R39899:39917 Coq.Lists.List <> cons abbrev
+R40091:40108 Coq.Lists.List <> nil abbrev
+R39986:40008 CFML.SepLifted <> dyn_make constr
+R40010:40018 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R40022:40025 EXAMPLES.PairingHeap.PairingHeap_ml <> x5__:41 var
+R39723:39745 CFML.SepLifted <> dyn_make constr
+R39747:39764 CFML.Semantics <> loc def
+R39768:39771 EXAMPLES.PairingHeap.PairingHeap_ml <> x2__:42 var
+R39545:39574 CFML.Stdlib.Pervasives_ml <> infix_colon_eq__ defax
+R39521:39543 Coq.Init.Datatypes <> unit ind
+R38256:38274 CFML.WPLifted <> Wptag def
+R38382:38404 CFML.WPLifted <> Wpgen_app def
+R38627:38645 Coq.Lists.List <> cons abbrev
+R38797:38814 Coq.Lists.List <> nil abbrev
+R38706:38728 CFML.SepLifted <> dyn_make constr
+R38730:38734 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R38738:38739 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:31 var
+R38481:38507 CFML.WPRecord <> val_get_field def
+R38509:38515 EXAMPLES.PairingHeap.PairingHeap_ml <> parent' def
+R38406:38423 CFML.Semantics <> loc def
+R31328:31346 CFML.WPLifted <> Wptag def
+R31442:31466 CFML.WPLifted <> Wpgen_match def
+R31524:31542 CFML.WPLifted <> Wptag def
+R31650:31673 CFML.WPLifted <> Wpgen_case def
+R34005:34023 CFML.WPLifted <> Wptag def
+R34143:34166 CFML.WPLifted <> Wpgen_case def
+R37270:37288 CFML.WPLifted <> Wptag def
+R37355:37378 CFML.WPLifted <> Wpgen_done def
+R36515:36540 CFML.WPLifted <> Wpgen_negpat def
+R36684:36688 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 36613:36616 <> p0__:47
+R36753:36770 Coq.Init.Logic <> not def
+R36838:36854 Coq.Init.Logic <> eq ind
+R36945:36953 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R36929:36936 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R36938:36941 EXAMPLES.PairingHeap.PairingHeap_ml <> p0__:47 var
+R36856:36859 EXAMPLES.PairingHeap.PairingHeap_ml <> x4__:40 var
+binder 34234:34234 <> A:48
+R34377:34394 CFML.SepLifted <> Enc class
+R34396:34396 EXAMPLES.PairingHeap.PairingHeap_ml <> A:48 var
+binder 34310:34311 <> EA:49
+R34592:34657 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34591:34591 EXAMPLES.PairingHeap.PairingHeap_ml <> A:48 var
+R34658:34709 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 34525:34525 <> Q:50
+R34834:34887 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hforall def
+R35028:35032 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 34957:34960 <> p0__:51
+R35161:35212 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R35785:35803 CFML.WPLifted <> Wptag def
+R35943:35965 CFML.WPLifted <> Wpgen_val def
+R36047:36055 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R36039:36043 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R36265:36265 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:50 var
+R35280:35331 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R35401:35417 Coq.Init.Logic <> eq ind
+R35510:35518 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R35494:35501 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R35503:35506 EXAMPLES.PairingHeap.PairingHeap_ml <> p0__:51 var
+R35419:35422 EXAMPLES.PairingHeap.PairingHeap_ml <> x4__:40 var
+R33453:33478 CFML.WPLifted <> Wpgen_negpat def
+R33538:33555 Coq.Init.Logic <> not def
+R33617:33633 Coq.Init.Logic <> eq ind
+R33710:33718 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R33702:33706 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R33635:33638 EXAMPLES.PairingHeap.PairingHeap_ml <> x4__:40 var
+binder 31735:31735 <> A:52
+R31866:31883 CFML.SepLifted <> Enc class
+R31885:31885 EXAMPLES.PairingHeap.PairingHeap_ml <> A:52 var
+binder 31805:31806 <> EA:53
+R32063:32122 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R32062:32062 EXAMPLES.PairingHeap.PairingHeap_ml <> A:52 var
+R32123:32174 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 32002:32002 <> Q:54
+R32287:32338 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R32847:32865 CFML.WPLifted <> Wptag def
+R32989:33011 CFML.WPLifted <> Wpgen_val def
+R33091:33099 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R33077:33084 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R33086:33087 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:32 var
+R33285:33285 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:54 var
+R32398:32449 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R32511:32527 Coq.Init.Logic <> eq ind
+R32604:32612 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R32596:32600 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R32529:32532 EXAMPLES.PairingHeap.PairingHeap_ml <> x4__:40 var
+R31468:31471 EXAMPLES.PairingHeap.PairingHeap_ml <> x4__:40 var
+R30510:30528 CFML.WPLifted <> Wptag def
+R30612:30634 CFML.WPLifted <> Wpgen_app def
+R30718:30736 Coq.Lists.List <> cons abbrev
+R30879:30896 Coq.Lists.List <> nil abbrev
+R30785:30807 CFML.SepLifted <> dyn_make constr
+R30809:30826 CFML.Semantics <> loc def
+R30830:30833 EXAMPLES.PairingHeap.PairingHeap_ml <> x3__:39 var
+R30646:30672 CFML.Stdlib.Pervasives_ml <> infix_emark__ defax
+R30636:30644 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R29692:29710 CFML.WPLifted <> Wptag def
+R29782:29804 CFML.WPLifted <> Wpgen_app def
+R29972:29990 Coq.Lists.List <> cons abbrev
+R30106:30123 Coq.Lists.List <> nil abbrev
+R30033:30055 CFML.SepLifted <> dyn_make constr
+R30057:30061 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R30065:30066 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:32 var
+R29863:29889 CFML.WPRecord <> val_get_field def
+R29891:29896 EXAMPLES.PairingHeap.PairingHeap_ml <> child' def
+R29806:29823 CFML.Semantics <> loc def
+R6078:6096 CFML.WPLifted <> Wptag def
+R6156:6182 CFML.WPLifted <> Wpgen_let_trm def
+R6826:6843 CFML.Semantics <> loc def
+binder 6818:6822 <> x11__:55
+R6879:6897 CFML.WPLifted <> Wptag def
+R6969:6995 CFML.WPLifted <> Wpgen_let_trm def
+R7631:7639 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 7623:7627 <> x12__:56
+R7681:7699 CFML.WPLifted <> Wptag def
+R7783:7809 CFML.WPLifted <> Wpgen_let_trm def
+R14541:14549 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 14533:14537 <> x13__:57
+R14597:14615 CFML.WPLifted <> Wptag def
+R14711:14737 CFML.WPLifted <> Wpgen_let_trm def
+R15666:15683 CFML.Semantics <> loc def
+binder 15608:15612 <> x10__:58
+R15785:15803 CFML.WPLifted <> Wptag def
+R15911:15933 CFML.WPLifted <> Wpgen_seq def
+R17092:17110 CFML.WPLifted <> Wptag def
+R17230:17256 CFML.WPLifted <> Wpgen_let_trm def
+R18352:18369 CFML.Semantics <> loc def
+binder 18282:18286 <> x15__:59
+R18495:18513 CFML.WPLifted <> Wptag def
+R18645:18671 CFML.WPLifted <> Wpgen_let_trm def
+R19705:19713 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 19629:19633 <> x16__:60
+R19851:19869 CFML.WPLifted <> Wptag def
+R20013:20039 CFML.WPLifted <> Wpgen_let_trm def
+R21305:21322 CFML.Semantics <> loc def
+binder 21223:21227 <> x14__:61
+R21472:21490 CFML.WPLifted <> Wptag def
+R21646:21668 CFML.WPLifted <> Wpgen_seq def
+R23187:23205 CFML.WPLifted <> Wptag def
+R23373:23399 CFML.WPLifted <> Wpgen_let_trm def
+R24831:24848 CFML.Semantics <> loc def
+binder 24737:24741 <> x17__:62
+R25022:25040 CFML.WPLifted <> Wptag def
+R25220:25242 CFML.WPLifted <> Wpgen_seq def
+R27165:27183 CFML.WPLifted <> Wptag def
+R27375:27397 CFML.WPLifted <> Wpgen_val def
+R27399:27400 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:31 var
+R25337:25355 CFML.WPLifted <> Wptag def
+R25547:25569 CFML.WPLifted <> Wpgen_app def
+R25724:25742 Coq.Lists.List <> cons abbrev
+R26094:26112 Coq.Lists.List <> cons abbrev
+R26583:26600 Coq.Lists.List <> nil abbrev
+R26217:26239 CFML.SepLifted <> dyn_make constr
+R26241:26249 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R26371:26379 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R26357:26364 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R26366:26367 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:32 var
+R25845:25867 CFML.SepLifted <> dyn_make constr
+R25869:25886 CFML.Semantics <> loc def
+R25890:25894 EXAMPLES.PairingHeap.PairingHeap_ml <> x17__:62 var
+R25595:25624 CFML.Stdlib.Pervasives_ml <> infix_colon_eq__ defax
+R25571:25593 Coq.Init.Datatypes <> unit ind
+R23488:23506 CFML.WPLifted <> Wptag def
+R23686:23708 CFML.WPLifted <> Wpgen_app def
+R24038:24056 Coq.Lists.List <> cons abbrev
+R24280:24297 Coq.Lists.List <> nil abbrev
+R24153:24175 CFML.SepLifted <> dyn_make constr
+R24177:24181 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R24185:24186 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:31 var
+R23821:23847 CFML.WPRecord <> val_get_field def
+R23849:23854 EXAMPLES.PairingHeap.PairingHeap_ml <> child' def
+R23710:23727 CFML.Semantics <> loc def
+R21751:21769 CFML.WPLifted <> Wptag def
+R21937:21959 CFML.WPLifted <> Wpgen_app def
+R22102:22120 Coq.Lists.List <> cons abbrev
+R22436:22454 Coq.Lists.List <> cons abbrev
+R22677:22694 Coq.Lists.List <> nil abbrev
+R22547:22569 CFML.SepLifted <> dyn_make constr
+R22571:22579 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R22583:22587 EXAMPLES.PairingHeap.PairingHeap_ml <> x16__:60 var
+R22211:22233 CFML.SepLifted <> dyn_make constr
+R22235:22252 CFML.Semantics <> loc def
+R22256:22260 EXAMPLES.PairingHeap.PairingHeap_ml <> x14__:61 var
+R21985:22014 CFML.Stdlib.Pervasives_ml <> infix_colon_eq__ defax
+R21961:21983 Coq.Init.Datatypes <> unit ind
+R20116:20134 CFML.WPLifted <> Wptag def
+R20290:20312 CFML.WPLifted <> Wpgen_app def
+R20608:20626 Coq.Lists.List <> cons abbrev
+R20826:20843 Coq.Lists.List <> nil abbrev
+R20711:20733 CFML.SepLifted <> dyn_make constr
+R20735:20739 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R20743:20744 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:32 var
+R20413:20439 CFML.WPRecord <> val_get_field def
+R20441:20448 EXAMPLES.PairingHeap.PairingHeap_ml <> sibling' def
+R20314:20331 CFML.Semantics <> loc def
+R18742:18760 CFML.WPLifted <> Wptag def
+R18904:18926 CFML.WPLifted <> Wpgen_app def
+R19040:19058 Coq.Lists.List <> cons abbrev
+R19262:19279 Coq.Lists.List <> nil abbrev
+R19137:19159 CFML.SepLifted <> dyn_make constr
+R19161:19178 CFML.Semantics <> loc def
+R19182:19186 EXAMPLES.PairingHeap.PairingHeap_ml <> x15__:59 var
+R18938:18964 CFML.Stdlib.Pervasives_ml <> infix_emark__ defax
+R18928:18936 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R17321:17339 CFML.WPLifted <> Wptag def
+R17471:17493 CFML.WPLifted <> Wpgen_app def
+R17751:17769 Coq.Lists.List <> cons abbrev
+R17945:17962 Coq.Lists.List <> nil abbrev
+R17842:17864 CFML.SepLifted <> dyn_make constr
+R17866:17870 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R17874:17875 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:31 var
+R17582:17608 CFML.WPRecord <> val_get_field def
+R17610:17615 EXAMPLES.PairingHeap.PairingHeap_ml <> child' def
+R17495:17512 CFML.Semantics <> loc def
+R15992:16010 CFML.WPLifted <> Wptag def
+R16130:16152 CFML.WPLifted <> Wpgen_app def
+R16271:16289 Coq.Lists.List <> cons abbrev
+R16533:16551 Coq.Lists.List <> cons abbrev
+R16726:16743 Coq.Lists.List <> nil abbrev
+R16620:16642 CFML.SepLifted <> dyn_make constr
+R16644:16652 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R16656:16660 EXAMPLES.PairingHeap.PairingHeap_ml <> x13__:57 var
+R16356:16378 CFML.SepLifted <> dyn_make constr
+R16380:16397 CFML.Semantics <> loc def
+R16401:16405 EXAMPLES.PairingHeap.PairingHeap_ml <> x10__:58 var
+R16178:16207 CFML.Stdlib.Pervasives_ml <> infix_colon_eq__ defax
+R16154:16176 Coq.Init.Datatypes <> unit ind
+R14790:14808 CFML.WPLifted <> Wptag def
+R14916:14938 CFML.WPLifted <> Wpgen_app def
+R15161:15179 Coq.Lists.List <> cons abbrev
+R15331:15348 Coq.Lists.List <> nil abbrev
+R15240:15262 CFML.SepLifted <> dyn_make constr
+R15264:15268 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R15272:15273 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:32 var
+R15015:15041 CFML.WPRecord <> val_get_field def
+R15043:15049 EXAMPLES.PairingHeap.PairingHeap_ml <> parent' def
+R14940:14957 CFML.Semantics <> loc def
+R7856:7874 CFML.WPLifted <> Wptag def
+R7970:7994 CFML.WPLifted <> Wpgen_match def
+R8053:8071 CFML.WPLifted <> Wptag def
+R8179:8202 CFML.WPLifted <> Wpgen_case def
+R10536:10554 CFML.WPLifted <> Wptag def
+R10674:10697 CFML.WPLifted <> Wpgen_case def
+R13803:13821 CFML.WPLifted <> Wptag def
+R13888:13911 CFML.WPLifted <> Wpgen_done def
+R13047:13072 CFML.WPLifted <> Wpgen_negpat def
+R13216:13220 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 13145:13148 <> p0__:63
+R13285:13302 Coq.Init.Logic <> not def
+R13370:13386 Coq.Init.Logic <> eq ind
+R13478:13486 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R13462:13469 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R13471:13474 EXAMPLES.PairingHeap.PairingHeap_ml <> p0__:63 var
+R13388:13392 EXAMPLES.PairingHeap.PairingHeap_ml <> x12__:56 var
+binder 10765:10765 <> A:64
+R10908:10925 CFML.SepLifted <> Enc class
+R10927:10927 EXAMPLES.PairingHeap.PairingHeap_ml <> A:64 var
+binder 10841:10842 <> EA:65
+R11123:11188 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11122:11122 EXAMPLES.PairingHeap.PairingHeap_ml <> A:64 var
+R11189:11240 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 11056:11056 <> Q:66
+R11365:11418 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hforall def
+R11559:11563 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 11488:11491 <> p0__:67
+R11692:11743 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R12317:12335 CFML.WPLifted <> Wptag def
+R12475:12497 CFML.WPLifted <> Wpgen_val def
+R12579:12587 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R12571:12575 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R12797:12797 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:66 var
+R11811:11862 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R11932:11948 Coq.Init.Logic <> eq ind
+R12042:12050 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R12026:12033 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R12035:12038 EXAMPLES.PairingHeap.PairingHeap_ml <> p0__:67 var
+R11950:11954 EXAMPLES.PairingHeap.PairingHeap_ml <> x12__:56 var
+R9983:10008 CFML.WPLifted <> Wpgen_negpat def
+R10068:10085 Coq.Init.Logic <> not def
+R10147:10163 Coq.Init.Logic <> eq ind
+R10241:10249 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R10233:10237 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R10165:10169 EXAMPLES.PairingHeap.PairingHeap_ml <> x12__:56 var
+binder 8264:8264 <> A:68
+R8395:8412 CFML.SepLifted <> Enc class
+R8414:8414 EXAMPLES.PairingHeap.PairingHeap_ml <> A:68 var
+binder 8334:8335 <> EA:69
+R8592:8651 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8591:8591 EXAMPLES.PairingHeap.PairingHeap_ml <> A:68 var
+R8652:8703 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 8531:8531 <> Q:70
+R8816:8867 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R9377:9395 CFML.WPLifted <> Wptag def
+R9519:9541 CFML.WPLifted <> Wpgen_val def
+R9621:9629 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R9607:9614 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R9616:9617 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:31 var
+R9815:9815 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:70 var
+R8927:8978 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R9040:9056 Coq.Init.Logic <> eq ind
+R9134:9142 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R9126:9130 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R9058:9062 EXAMPLES.PairingHeap.PairingHeap_ml <> x12__:56 var
+R7996:8000 EXAMPLES.PairingHeap.PairingHeap_ml <> x12__:56 var
+R7036:7054 CFML.WPLifted <> Wptag def
+R7138:7160 CFML.WPLifted <> Wpgen_app def
+R7244:7262 Coq.Lists.List <> cons abbrev
+R7406:7423 Coq.Lists.List <> nil abbrev
+R7311:7333 CFML.SepLifted <> dyn_make constr
+R7335:7352 CFML.Semantics <> loc def
+R7356:7360 EXAMPLES.PairingHeap.PairingHeap_ml <> x11__:55 var
+R7172:7198 CFML.Stdlib.Pervasives_ml <> infix_emark__ defax
+R7162:7170 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R6217:6235 CFML.WPLifted <> Wptag def
+R6307:6329 CFML.WPLifted <> Wpgen_app def
+R6497:6515 Coq.Lists.List <> cons abbrev
+R6631:6648 Coq.Lists.List <> nil abbrev
+R6558:6580 CFML.SepLifted <> dyn_make constr
+R6582:6586 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R6590:6591 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:31 var
+R6388:6414 CFML.WPRecord <> val_get_field def
+R6416:6421 EXAMPLES.PairingHeap.PairingHeap_ml <> child' def
+R6331:6348 CFML.Semantics <> loc def
+R5874:5892 Coq.ZArith.BinInt <> Z abbrev
+binder 5864:5866 <> x__:71
+binder 5868:5870 <> y__:72
+R5897:5917 TLC.LibReflect <> isTrue def
+R5921:5935 TLC.LibOrder <> lt meth
+R5941:5961 TLC.LibOrder <> lt_of_le inst
+R5963:5981 Coq.ZArith.BinInt <> Z abbrev
+R5983:6004 TLC.LibInt <> le_int_inst inst
+R6007:6009 EXAMPLES.PairingHeap.PairingHeap_ml <> x__:71 var
+R6011:6013 EXAMPLES.PairingHeap.PairingHeap_ml <> y__:72 var
+R6017:6020 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:38 var
+R6022:6025 EXAMPLES.PairingHeap.PairingHeap_ml <> x1__:37 var
+R5237:5255 CFML.WPLifted <> Wptag def
+R5303:5325 CFML.WPLifted <> Wpgen_app def
+R5458:5476 Coq.Lists.List <> cons abbrev
+R5568:5585 Coq.Lists.List <> nil abbrev
+R5507:5529 CFML.SepLifted <> dyn_make constr
+R5531:5535 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R5539:5540 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:31 var
+R5373:5399 CFML.WPRecord <> val_get_field def
+R5401:5406 EXAMPLES.PairingHeap.PairingHeap_ml <> value' def
+R5327:5345 Coq.ZArith.BinInt <> Z abbrev
+R4745:4763 CFML.WPLifted <> Wptag def
+R4799:4821 CFML.WPLifted <> Wpgen_app def
+R4936:4954 Coq.Lists.List <> cons abbrev
+R4994:5011 Coq.Lists.List <> nil abbrev
+R4958:4980 CFML.SepLifted <> dyn_make constr
+R4982:4986 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R4990:4991 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:32 var
+R4863:4889 CFML.WPRecord <> val_get_field def
+R4891:4896 EXAMPLES.PairingHeap.PairingHeap_ml <> value' def
+R4823:4841 Coq.ZArith.BinInt <> Z abbrev
+binder 53021:53025 <> res__:73
+R53042:53093 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hstar def
+R53105:53154 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hgc def
+R53096:53096 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:36 var
+R53098:53102 EXAMPLES.PairingHeap.PairingHeap_ml <> res__:73 var
+R4649:4649 EXAMPLES.PairingHeap.PairingHeap_ml <> H:33 var
+R53177:53197 CFML.SepLifted <> Triple def
+R53426:53426 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:36 var
+R53424:53424 EXAMPLES.PairingHeap.PairingHeap_ml <> H:33 var
+R53207:53229 CFML.SepLifted <> Trm_apps def
+R53253:53271 Coq.Lists.List <> cons abbrev
+R53323:53341 Coq.Lists.List <> cons abbrev
+R53381:53398 Coq.Lists.List <> nil abbrev
+R53345:53367 CFML.SepLifted <> dyn_make constr
+R53369:53373 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R53377:53378 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:32 var
+R53275:53297 CFML.SepLifted <> dyn_make constr
+R53299:53303 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R53307:53308 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:31 var
+R53231:53241 EXAMPLES.PairingHeap.PairingHeap_ml <> merge_nodes defax
+R53449:53469 CFML.WPHeader <> ::wptactics_scope:'WPHeader_Register_CF'_x not
+R53470:53480 EXAMPLES.PairingHeap.PairingHeap_ml <> merge_nodes defax
+ax 53532:53536 <> merge
+R53540:53557 CFML.Semantics <> val ind
+ax 53571:53580 <> merge_cf__
+R53586:53609 CFML.WPLifted <> Wpgen_body def
+R53629:53646 CFML.Semantics <> loc def
+binder 53624:53625 <> h1:78
+R53665:53682 CFML.Semantics <> loc def
+binder 53660:53661 <> h2:79
+R53700:53751 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 53696:53696 <> H:80
+binder 53765:53765 <> A:81
+R53791:53808 CFML.SepLifted <> Enc class
+R53810:53810 EXAMPLES.PairingHeap.PairingHeap_ml <> A:81 var
+binder 53786:53787 <> EA:82
+R53829:53832 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R53828:53828 EXAMPLES.PairingHeap.PairingHeap_ml <> A:81 var
+R53833:53884 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 53824:53824 <> Q:83
+R64244:64251 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R53891:53942 CFML.SepBase SepBasicSetup.SepSimplArgsCredits himpl def
+R53955:53973 CFML.WPLifted <> Wptag def
+R53997:54023 CFML.WPLifted <> Wpgen_let_trm def
+R54391:54399 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 54384:54387 <> x1__:84
+R54417:54435 CFML.WPLifted <> Wptag def
+R54471:54497 CFML.WPLifted <> Wpgen_let_trm def
+R54931:54939 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 54924:54927 <> x0__:85
+R54963:54981 CFML.WPLifted <> Wptag def
+R55029:55053 CFML.WPLifted <> Wpgen_match def
+R55095:55113 CFML.WPLifted <> Wptag def
+R55173:55196 CFML.WPLifted <> Wpgen_case def
+R56863:56881 CFML.WPLifted <> Wptag def
+R56953:56976 CFML.WPLifted <> Wpgen_case def
+R58841:58859 CFML.WPLifted <> Wptag def
+R58943:58966 CFML.WPLifted <> Wpgen_case def
+R63492:63510 CFML.WPLifted <> Wptag def
+R63559:63582 CFML.WPLifted <> Wpgen_done def
+R62819:62844 CFML.WPLifted <> Wpgen_negpat def
+R62904:62908 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 62899:62900 <> q1:86
+R62967:62971 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 62962:62963 <> q2:87
+R63018:63035 Coq.Init.Logic <> not def
+R63085:63101 Coq.Init.Logic <> eq ind
+R63116:63166 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R63190:63241 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R63265:63313 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R63181:63189 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R63167:63174 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R63176:63177 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:86 var
+R63256:63264 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R63242:63249 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R63251:63252 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:87 var
+R63103:63103 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R63108:63109 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R63114:63114 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R63104:63107 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:85 var
+R63110:63113 EXAMPLES.PairingHeap.PairingHeap_ml <> x1__:84 var
+binder 59016:59016 <> A:88
+R59079:59096 CFML.SepLifted <> Enc class
+R59098:59098 EXAMPLES.PairingHeap.PairingHeap_ml <> A:88 var
+binder 59074:59075 <> EA:89
+R59198:59245 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R59197:59197 EXAMPLES.PairingHeap.PairingHeap_ml <> A:88 var
+R59246:59297 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 59149:59149 <> Q:90
+R59386:59439 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hforall def
+R59496:59500 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 59491:59492 <> q1:91
+R59549:59602 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hforall def
+R59661:59665 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 59656:59657 <> q2:92
+R59716:59767 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R60315:60333 CFML.WPLifted <> Wptag def
+R60441:60467 CFML.WPLifted <> Wpgen_let_trm def
+R61576:61580 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 61569:61572 <> x2__:93
+R61640:61658 CFML.WPLifted <> Wptag def
+R61778:61800 CFML.WPLifted <> Wpgen_app def
+R61901:61919 Coq.Lists.List <> cons abbrev
+R62240:62257 Coq.Lists.List <> nil abbrev
+R61986:62008 CFML.SepLifted <> dyn_make constr
+R62010:62018 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R62104:62112 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R62088:62095 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R62097:62100 EXAMPLES.PairingHeap.PairingHeap_ml <> x2__:93 var
+R61821:61837 CFML.Stdlib.Pervasives_ml <> ref defax
+R61802:61819 CFML.Semantics <> loc def
+R60526:60544 CFML.WPLifted <> Wptag def
+R60664:60686 CFML.WPLifted <> Wpgen_app def
+R60768:60786 Coq.Lists.List <> cons abbrev
+R61014:61032 Coq.Lists.List <> cons abbrev
+R61200:61217 Coq.Lists.List <> nil abbrev
+R61101:61123 CFML.SepLifted <> dyn_make constr
+R61125:61129 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R61133:61134 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:92 var
+R60853:60875 CFML.SepLifted <> dyn_make constr
+R60877:60881 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R60885:60886 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:91 var
+R60694:60704 EXAMPLES.PairingHeap.PairingHeap_ml <> merge_nodes defax
+R60688:60692 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R62593:62593 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:90 var
+R59819:59870 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R59924:59940 Coq.Init.Logic <> eq ind
+R59955:60009 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R60033:60088 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R60112:60164 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R60024:60032 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R60010:60017 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R60019:60020 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:91 var
+R60103:60111 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R60089:60096 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R60098:60099 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:92 var
+R59942:59942 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R59947:59948 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R59953:59953 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R59943:59946 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:85 var
+R59949:59952 EXAMPLES.PairingHeap.PairingHeap_ml <> x1__:84 var
+R58312:58337 CFML.WPLifted <> Wpgen_negpat def
+R58393:58401 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 58386:58389 <> p0__:94
+R58442:58459 Coq.Init.Logic <> not def
+R58503:58519 Coq.Init.Logic <> eq ind
+R58534:58577 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R58582:58626 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R58644:58686 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R58578:58581 EXAMPLES.PairingHeap.PairingHeap_ml <> p0__:94 var
+R58635:58643 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R58627:58631 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R58521:58521 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R58526:58527 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R58532:58532 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R58522:58525 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:85 var
+R58528:58531 EXAMPLES.PairingHeap.PairingHeap_ml <> x1__:84 var
+binder 57020:57020 <> A:95
+R57077:57094 CFML.SepLifted <> Enc class
+R57096:57096 EXAMPLES.PairingHeap.PairingHeap_ml <> A:95 var
+binder 57072:57073 <> EA:96
+R57184:57225 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R57183:57183 EXAMPLES.PairingHeap.PairingHeap_ml <> A:95 var
+R57226:57277 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 57141:57141 <> Q:97
+R57354:57407 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hforall def
+R57460:57468 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 57453:57456 <> p0__:98
+R57511:57562 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R58019:58037 CFML.WPLifted <> Wptag def
+R58084:58106 CFML.WPLifted <> Wpgen_val def
+R58108:58109 EXAMPLES.PairingHeap.PairingHeap_ml <> h1:78 var
+R58158:58158 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:97 var
+R57606:57657 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R57703:57719 Coq.Init.Logic <> eq ind
+R57734:57779 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R57784:57830 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R57848:57892 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R57780:57783 EXAMPLES.PairingHeap.PairingHeap_ml <> p0__:98 var
+R57839:57847 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R57831:57835 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R57721:57721 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R57726:57727 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R57732:57732 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R57722:57725 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:85 var
+R57728:57731 EXAMPLES.PairingHeap.PairingHeap_ml <> x1__:84 var
+R56394:56419 CFML.WPLifted <> Wpgen_negpat def
+R56469:56477 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 56462:56465 <> p0__:99
+R56512:56529 Coq.Init.Logic <> not def
+R56567:56583 Coq.Init.Logic <> eq ind
+R56598:56636 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R56654:56692 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R56697:56732 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R56645:56653 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R56637:56641 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R56693:56696 EXAMPLES.PairingHeap.PairingHeap_ml <> p0__:99 var
+R56585:56585 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R56590:56591 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R56596:56596 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R56586:56589 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:85 var
+R56592:56595 EXAMPLES.PairingHeap.PairingHeap_ml <> x1__:84 var
+binder 55234:55234 <> A:100
+R55285:55302 CFML.SepLifted <> Enc class
+R55304:55304 EXAMPLES.PairingHeap.PairingHeap_ml <> A:100 var
+binder 55280:55281 <> EA:101
+R55380:55415 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R55379:55379 EXAMPLES.PairingHeap.PairingHeap_ml <> A:100 var
+R55416:55467 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 55343:55343 <> Q:102
+R55532:55585 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hforall def
+R55632:55640 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 55625:55628 <> p0__:103
+R55677:55728 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R56137:56155 CFML.WPLifted <> Wptag def
+R56196:56218 CFML.WPLifted <> Wpgen_val def
+R56220:56221 EXAMPLES.PairingHeap.PairingHeap_ml <> h2:79 var
+R56264:56264 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:102 var
+R55766:55817 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R55857:55873 Coq.Init.Logic <> eq ind
+R55888:55928 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R55946:55986 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R55991:56028 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R55937:55945 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R55929:55933 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R55987:55990 EXAMPLES.PairingHeap.PairingHeap_ml <> p0__:103 var
+R55875:55875 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R55880:55881 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R55886:55886 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R55876:55879 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:85 var
+R55882:55885 EXAMPLES.PairingHeap.PairingHeap_ml <> x1__:84 var
+R55055:55055 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R55060:55061 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R55066:55066 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R55056:55059 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:85 var
+R55062:55065 EXAMPLES.PairingHeap.PairingHeap_ml <> x1__:84 var
+R54520:54538 CFML.WPLifted <> Wptag def
+R54586:54608 CFML.WPLifted <> Wpgen_app def
+R54674:54692 Coq.Lists.List <> cons abbrev
+R54797:54814 Coq.Lists.List <> nil abbrev
+R54723:54745 CFML.SepLifted <> dyn_make constr
+R54747:54764 CFML.Semantics <> loc def
+R54768:54769 EXAMPLES.PairingHeap.PairingHeap_ml <> h1:78 var
+R54620:54646 CFML.Stdlib.Pervasives_ml <> infix_emark__ defax
+R54610:54618 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R54040:54058 CFML.WPLifted <> Wptag def
+R54094:54116 CFML.WPLifted <> Wpgen_app def
+R54176:54194 Coq.Lists.List <> cons abbrev
+R54287:54304 Coq.Lists.List <> nil abbrev
+R54219:54241 CFML.SepLifted <> dyn_make constr
+R54243:54260 CFML.Semantics <> loc def
+R54264:54265 EXAMPLES.PairingHeap.PairingHeap_ml <> h2:79 var
+R54128:54154 CFML.Stdlib.Pervasives_ml <> infix_emark__ defax
+R54118:54126 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 64096:64100 <> res__:104
+R64117:64168 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hstar def
+R64180:64229 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hgc def
+R64171:64171 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:83 var
+R64173:64177 EXAMPLES.PairingHeap.PairingHeap_ml <> res__:104 var
+R53944:53944 EXAMPLES.PairingHeap.PairingHeap_ml <> H:80 var
+R64252:64272 CFML.SepLifted <> Triple def
+R64521:64521 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:83 var
+R64519:64519 EXAMPLES.PairingHeap.PairingHeap_ml <> H:80 var
+R64282:64304 CFML.SepLifted <> Trm_apps def
+R64322:64340 Coq.Lists.List <> cons abbrev
+R64405:64423 Coq.Lists.List <> cons abbrev
+R64476:64493 Coq.Lists.List <> nil abbrev
+R64427:64449 CFML.SepLifted <> dyn_make constr
+R64451:64468 CFML.Semantics <> loc def
+R64472:64473 EXAMPLES.PairingHeap.PairingHeap_ml <> h2:79 var
+R64344:64366 CFML.SepLifted <> dyn_make constr
+R64368:64385 CFML.Semantics <> loc def
+R64389:64390 EXAMPLES.PairingHeap.PairingHeap_ml <> h1:78 var
+R64306:64310 EXAMPLES.PairingHeap.PairingHeap_ml <> merge defax
+R64544:64564 CFML.WPHeader <> ::wptactics_scope:'WPHeader_Register_CF'_x not
+R64565:64569 EXAMPLES.PairingHeap.PairingHeap_ml <> merge defax
+ax 64615:64620 <> insert
+R64624:64641 CFML.Semantics <> val ind
+ax 64655:64665 <> insert_cf__
+R64671:64694 CFML.WPLifted <> Wpgen_body def
+R64713:64730 CFML.Semantics <> loc def
+binder 64709:64709 <> p:109
+R64748:64766 Coq.ZArith.BinInt <> Z abbrev
+binder 64744:64744 <> x:110
+R64784:64835 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 64780:64780 <> H:111
+binder 64849:64849 <> A:112
+R64875:64892 CFML.SepLifted <> Enc class
+R64894:64894 EXAMPLES.PairingHeap.PairingHeap_ml <> A:112 var
+binder 64870:64871 <> EA:113
+R64913:64916 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R64912:64912 EXAMPLES.PairingHeap.PairingHeap_ml <> A:112 var
+R64917:64968 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 64908:64908 <> Q:114
+R85848:85855 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R64975:65026 CFML.SepBase SepBasicSetup.SepSimplArgsCredits himpl def
+R65039:65057 CFML.WPLifted <> Wptag def
+R65081:65107 CFML.WPLifted <> Wpgen_let_trm def
+R68908:68912 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 68903:68904 <> q2:115
+R68930:68948 CFML.WPLifted <> Wptag def
+R68984:69010 CFML.WPLifted <> Wpgen_let_trm def
+R69443:69451 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 69436:69439 <> x3__:116
+R69475:69493 CFML.WPLifted <> Wptag def
+R69541:69565 CFML.WPLifted <> Wpgen_match def
+R69599:69617 CFML.WPLifted <> Wptag def
+R69677:69700 CFML.WPLifted <> Wpgen_case def
+R71573:71591 CFML.WPLifted <> Wptag def
+R71663:71686 CFML.WPLifted <> Wpgen_case def
+R85228:85246 CFML.WPLifted <> Wptag def
+R85289:85312 CFML.WPLifted <> Wpgen_done def
+R84757:84782 CFML.WPLifted <> Wpgen_negpat def
+R84836:84840 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 84831:84832 <> q1:117
+R84881:84898 Coq.Init.Logic <> not def
+R84942:84958 Coq.Init.Logic <> eq ind
+R85023:85031 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R85009:85016 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R85018:85019 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:117 var
+R84960:84963 EXAMPLES.PairingHeap.PairingHeap_ml <> x3__:116 var
+binder 71730:71730 <> A:118
+R71787:71804 CFML.SepLifted <> Enc class
+R71806:71806 EXAMPLES.PairingHeap.PairingHeap_ml <> A:118 var
+binder 71782:71783 <> EA:119
+R71894:71935 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R71893:71893 EXAMPLES.PairingHeap.PairingHeap_ml <> A:118 var
+R71936:71987 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 71851:71851 <> Q:120
+R72064:72117 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hforall def
+R72168:72172 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 72163:72164 <> q1:121
+R72215:72266 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R72669:72687 CFML.WPLifted <> Wptag def
+R72779:72805 CFML.WPLifted <> Wpgen_let_trm def
+R73656:73673 CFML.Semantics <> loc def
+binder 73649:73652 <> x4__:122
+R73725:73743 CFML.WPLifted <> Wptag def
+R73847:73873 CFML.WPLifted <> Wpgen_let_trm def
+R74732:74754 Coq.Init.Datatypes <> bool ind
+binder 74671:74674 <> x5__:123
+R74864:74882 CFML.WPLifted <> Wptag def
+R74998:75020 CFML.WPLifted <> Wpgen_seq def
+R81049:81067 CFML.WPLifted <> Wptag def
+R81195:81221 CFML.WPLifted <> Wpgen_let_trm def
+R82546:82550 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 82473:82476 <> x8__:124
+R82684:82702 CFML.WPLifted <> Wptag def
+R82842:82864 CFML.WPLifted <> Wpgen_app def
+R82993:83011 Coq.Lists.List <> cons abbrev
+R83281:83299 Coq.Lists.List <> cons abbrev
+R83668:83685 Coq.Lists.List <> nil abbrev
+R83378:83400 CFML.SepLifted <> dyn_make constr
+R83402:83410 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R83508:83516 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R83492:83499 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R83501:83504 EXAMPLES.PairingHeap.PairingHeap_ml <> x8__:124 var
+R83088:83110 CFML.SepLifted <> dyn_make constr
+R83112:83129 CFML.Semantics <> loc def
+R83133:83133 EXAMPLES.PairingHeap.PairingHeap_ml <> p:109 var
+R82890:82919 CFML.Stdlib.Pervasives_ml <> infix_colon_eq__ defax
+R82866:82888 Coq.Init.Datatypes <> unit ind
+R81290:81308 CFML.WPLifted <> Wptag def
+R81448:81470 CFML.WPLifted <> Wpgen_app def
+R81562:81580 Coq.Lists.List <> cons abbrev
+R81838:81856 Coq.Lists.List <> cons abbrev
+R82044:82061 Coq.Lists.List <> nil abbrev
+R81935:81957 CFML.SepLifted <> dyn_make constr
+R81959:81963 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R81967:81968 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:115 var
+R81657:81679 CFML.SepLifted <> dyn_make constr
+R81681:81685 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R81689:81690 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:121 var
+R81478:81488 EXAMPLES.PairingHeap.PairingHeap_ml <> merge_nodes defax
+R81472:81476 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R75083:75101 CFML.WPLifted <> Wptag def
+R75229:75250 CFML.WPLifted <> Wpgen_if def
+R80238:80256 CFML.WPLifted <> Wptag def
+R80396:80418 CFML.WPLifted <> Wpgen_val def
+R80516:80538 Coq.Init.Datatypes <> unit ind
+R80492:80512 Coq.Init.Datatypes <> tt constr
+R75324:75342 CFML.WPLifted <> Wptag def
+R75482:75508 CFML.WPLifted <> Wpgen_let_trm def
+R76585:76593 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 76506:76509 <> x7__:125
+R76739:76757 CFML.WPLifted <> Wptag def
+R76909:76935 CFML.WPLifted <> Wpgen_let_trm def
+R78255:78272 CFML.Semantics <> loc def
+binder 78170:78173 <> x6__:126
+R78430:78448 CFML.WPLifted <> Wptag def
+R78612:78634 CFML.WPLifted <> Wpgen_app def
+R78775:78793 Coq.Lists.List <> cons abbrev
+R79102:79120 Coq.Lists.List <> cons abbrev
+R79338:79355 Coq.Lists.List <> nil abbrev
+R79211:79233 CFML.SepLifted <> dyn_make constr
+R79235:79243 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R79247:79250 EXAMPLES.PairingHeap.PairingHeap_ml <> x7__:125 var
+R78882:78904 CFML.SepLifted <> dyn_make constr
+R78906:78923 CFML.Semantics <> loc def
+R78927:78930 EXAMPLES.PairingHeap.PairingHeap_ml <> x6__:126 var
+R78660:78689 CFML.Stdlib.Pervasives_ml <> infix_colon_eq__ defax
+R78636:78658 Coq.Init.Datatypes <> unit ind
+R77016:77034 CFML.WPLifted <> Wptag def
+R77198:77220 CFML.WPLifted <> Wpgen_app def
+R77527:77545 Coq.Lists.List <> cons abbrev
+R77753:77770 Coq.Lists.List <> nil abbrev
+R77634:77656 CFML.SepLifted <> dyn_make constr
+R77658:77662 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R77666:77667 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:115 var
+R77325:77351 CFML.WPRecord <> val_get_field def
+R77353:77359 EXAMPLES.PairingHeap.PairingHeap_ml <> parent' def
+R77222:77239 CFML.Semantics <> loc def
+R75583:75601 CFML.WPLifted <> Wptag def
+R75753:75775 CFML.WPLifted <> Wpgen_app def
+R75893:75911 Coq.Lists.List <> cons abbrev
+R76119:76136 Coq.Lists.List <> nil abbrev
+R75994:76016 CFML.SepLifted <> dyn_make constr
+R76018:76035 CFML.Semantics <> loc def
+R76039:76039 EXAMPLES.PairingHeap.PairingHeap_ml <> p:109 var
+R75787:75813 CFML.Stdlib.Pervasives_ml <> infix_emark__ defax
+R75777:75785 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R75252:75255 EXAMPLES.PairingHeap.PairingHeap_ml <> x5__:123 var
+R73930:73948 CFML.WPLifted <> Wptag def
+R74064:74086 CFML.WPLifted <> Wpgen_app def
+R74181:74199 Coq.Lists.List <> cons abbrev
+R74374:74391 Coq.Lists.List <> nil abbrev
+R74264:74286 CFML.SepLifted <> dyn_make constr
+R74288:74305 CFML.Semantics <> loc def
+R74309:74312 EXAMPLES.PairingHeap.PairingHeap_ml <> x4__:122 var
+R74112:74119 EXAMPLES.PairingHeap.PairingHeap_ml <> is_empty defax
+R74088:74110 Coq.Init.Datatypes <> bool ind
+R72856:72874 CFML.WPLifted <> Wptag def
+R72978:73000 CFML.WPLifted <> Wpgen_app def
+R73216:73234 Coq.Lists.List <> cons abbrev
+R73382:73399 Coq.Lists.List <> nil abbrev
+R73293:73315 CFML.SepLifted <> dyn_make constr
+R73317:73321 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R73325:73326 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:121 var
+R73075:73101 CFML.WPRecord <> val_get_field def
+R73103:73108 EXAMPLES.PairingHeap.PairingHeap_ml <> child' def
+R73002:73019 CFML.Semantics <> loc def
+R84603:84603 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:120 var
+R72310:72361 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R72407:72423 Coq.Init.Logic <> eq ind
+R72490:72498 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R72476:72483 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R72485:72486 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:121 var
+R72425:72428 EXAMPLES.PairingHeap.PairingHeap_ml <> x3__:116 var
+R71285:71310 CFML.WPLifted <> Wpgen_negpat def
+R71346:71363 Coq.Init.Logic <> not def
+R71401:71417 Coq.Init.Logic <> eq ind
+R71433:71441 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R71425:71429 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R71419:71422 EXAMPLES.PairingHeap.PairingHeap_ml <> x3__:116 var
+binder 69738:69738 <> A:127
+R69789:69806 CFML.SepLifted <> Enc class
+R69808:69808 EXAMPLES.PairingHeap.PairingHeap_ml <> A:127 var
+binder 69784:69785 <> EA:128
+R69884:69919 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R69883:69883 EXAMPLES.PairingHeap.PairingHeap_ml <> A:127 var
+R69920:69971 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 69847:69847 <> Q:129
+R70036:70087 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R70356:70374 CFML.WPLifted <> Wptag def
+R70450:70472 CFML.WPLifted <> Wpgen_app def
+R70569:70587 Coq.Lists.List <> cons abbrev
+R70761:70779 Coq.Lists.List <> cons abbrev
+R71018:71035 Coq.Lists.List <> nil abbrev
+R70826:70848 CFML.SepLifted <> dyn_make constr
+R70850:70858 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R70922:70930 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R70908:70915 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R70917:70918 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:115 var
+R70632:70654 CFML.SepLifted <> dyn_make constr
+R70656:70673 CFML.Semantics <> loc def
+R70677:70677 EXAMPLES.PairingHeap.PairingHeap_ml <> p:109 var
+R70498:70527 CFML.Stdlib.Pervasives_ml <> infix_colon_eq__ defax
+R70474:70496 Coq.Init.Datatypes <> unit ind
+R71189:71189 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:129 var
+R70123:70174 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R70212:70228 Coq.Init.Logic <> eq ind
+R70244:70252 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R70236:70240 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R70230:70233 EXAMPLES.PairingHeap.PairingHeap_ml <> x3__:116 var
+R69567:69570 EXAMPLES.PairingHeap.PairingHeap_ml <> x3__:116 var
+R69033:69051 CFML.WPLifted <> Wptag def
+R69099:69121 CFML.WPLifted <> Wpgen_app def
+R69187:69205 Coq.Lists.List <> cons abbrev
+R69309:69326 Coq.Lists.List <> nil abbrev
+R69236:69258 CFML.SepLifted <> dyn_make constr
+R69260:69277 CFML.Semantics <> loc def
+R69281:69281 EXAMPLES.PairingHeap.PairingHeap_ml <> p:109 var
+R69133:69159 CFML.Stdlib.Pervasives_ml <> infix_emark__ defax
+R69123:69131 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R65124:65142 CFML.WPLifted <> Wptag def
+R65178:65204 CFML.WPLifted <> Wpgen_let_trm def
+R65701:65718 CFML.Semantics <> loc def
+binder 65694:65697 <> x0__:130
+R65742:65760 CFML.WPLifted <> Wptag def
+R65808:65834 CFML.WPLifted <> Wpgen_let_trm def
+R66409:66426 CFML.Semantics <> loc def
+binder 66402:66405 <> x1__:131
+R66456:66474 CFML.WPLifted <> Wptag def
+R66534:66560 CFML.WPLifted <> Wpgen_let_trm def
+R67213:67230 CFML.Semantics <> loc def
+binder 67206:67209 <> x2__:132
+R67266:67284 CFML.WPLifted <> Wptag def
+R67356:67385 CFML.WPRecord <> Wpgen_record_new def
+R67433:67450 CFML.Semantics <> loc def
+R67491:67509 Coq.Lists.List <> cons abbrev
+R67724:67742 Coq.Lists.List <> cons abbrev
+R67967:67985 Coq.Lists.List <> cons abbrev
+R68220:68238 Coq.Lists.List <> cons abbrev
+R68434:68451 Coq.Lists.List <> nil abbrev
+R68240:68285 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R68293:68338 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R68389:68432 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R68286:68292 EXAMPLES.PairingHeap.PairingHeap_ml <> parent' def
+R68340:68362 CFML.SepLifted <> dyn_make constr
+R68364:68381 CFML.Semantics <> loc def
+R68385:68388 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:130 var
+R67987:68030 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R68039:68082 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R68133:68174 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R68031:68038 EXAMPLES.PairingHeap.PairingHeap_ml <> sibling' def
+R68084:68106 CFML.SepLifted <> dyn_make constr
+R68108:68125 CFML.Semantics <> loc def
+R68129:68132 EXAMPLES.PairingHeap.PairingHeap_ml <> x1__:131 var
+R67744:67785 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R67792:67833 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R67884:67923 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R67786:67791 EXAMPLES.PairingHeap.PairingHeap_ml <> child' def
+R67835:67857 CFML.SepLifted <> dyn_make constr
+R67859:67876 CFML.Semantics <> loc def
+R67880:67883 EXAMPLES.PairingHeap.PairingHeap_ml <> x2__:132 var
+R67511:67550 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R67557:67596 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R67645:67682 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R67551:67556 EXAMPLES.PairingHeap.PairingHeap_ml <> value' def
+R67598:67620 CFML.SepLifted <> dyn_make constr
+R67622:67640 Coq.ZArith.BinInt <> Z abbrev
+R67644:67644 EXAMPLES.PairingHeap.PairingHeap_ml <> x:110 var
+R66595:66613 CFML.WPLifted <> Wptag def
+R66685:66707 CFML.WPLifted <> Wpgen_app def
+R66784:66802 Coq.Lists.List <> cons abbrev
+R67019:67036 Coq.Lists.List <> nil abbrev
+R66845:66867 CFML.SepLifted <> dyn_make constr
+R66869:66877 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R66931:66939 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R66923:66927 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R66728:66744 CFML.Stdlib.Pervasives_ml <> ref defax
+R66709:66726 CFML.Semantics <> loc def
+R65863:65881 CFML.WPLifted <> Wptag def
+R65941:65963 CFML.WPLifted <> Wpgen_app def
+R66034:66052 Coq.Lists.List <> cons abbrev
+R66245:66262 Coq.Lists.List <> nil abbrev
+R66089:66111 CFML.SepLifted <> dyn_make constr
+R66113:66121 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R66169:66177 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R66161:66165 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R65984:66000 CFML.Stdlib.Pervasives_ml <> ref defax
+R65965:65982 CFML.Semantics <> loc def
+R65227:65245 CFML.WPLifted <> Wptag def
+R65293:65315 CFML.WPLifted <> Wpgen_app def
+R65380:65398 Coq.Lists.List <> cons abbrev
+R65567:65584 Coq.Lists.List <> nil abbrev
+R65429:65451 CFML.SepLifted <> dyn_make constr
+R65453:65461 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R65503:65511 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R65495:65499 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R65336:65352 CFML.Stdlib.Pervasives_ml <> ref defax
+R65317:65334 CFML.Semantics <> loc def
+binder 85700:85704 <> res__:133
+R85721:85772 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hstar def
+R85784:85833 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hgc def
+R85775:85775 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:114 var
+R85777:85781 EXAMPLES.PairingHeap.PairingHeap_ml <> res__:133 var
+R65028:65028 EXAMPLES.PairingHeap.PairingHeap_ml <> H:111 var
+R85856:85876 CFML.SepLifted <> Triple def
+R86125:86125 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:114 var
+R86123:86123 EXAMPLES.PairingHeap.PairingHeap_ml <> H:111 var
+R85886:85908 CFML.SepLifted <> Trm_apps def
+R85927:85945 Coq.Lists.List <> cons abbrev
+R86009:86027 Coq.Lists.List <> cons abbrev
+R86080:86097 Coq.Lists.List <> nil abbrev
+R86031:86053 CFML.SepLifted <> dyn_make constr
+R86055:86073 Coq.ZArith.BinInt <> Z abbrev
+R86077:86077 EXAMPLES.PairingHeap.PairingHeap_ml <> x:110 var
+R85949:85971 CFML.SepLifted <> dyn_make constr
+R85973:85990 CFML.Semantics <> loc def
+R85994:85994 EXAMPLES.PairingHeap.PairingHeap_ml <> p:109 var
+R85910:85915 EXAMPLES.PairingHeap.PairingHeap_ml <> insert defax
+R86148:86168 CFML.WPHeader <> ::wptactics_scope:'WPHeader_Register_CF'_x not
+R86169:86174 EXAMPLES.PairingHeap.PairingHeap_ml <> insert defax
+ax 86221:86234 <> merge_siblings
+R86238:86255 CFML.Semantics <> val ind
+ax 86269:86287 <> merge_siblings_cf__
+R86293:86316 CFML.WPLifted <> Wpgen_body def
+R86335:86339 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 86331:86331 <> q:138
+R86357:86408 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 86353:86353 <> H:139
+binder 86422:86422 <> A:140
+R86448:86465 CFML.SepLifted <> Enc class
+R86467:86467 EXAMPLES.PairingHeap.PairingHeap_ml <> A:140 var
+binder 86443:86444 <> EA:141
+R86486:86489 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R86485:86485 EXAMPLES.PairingHeap.PairingHeap_ml <> A:140 var
+R86490:86541 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 86481:86481 <> Q:142
+R106259:106266 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R86548:86599 CFML.SepBase SepBasicSetup.SepSimplArgsCredits himpl def
+R86612:86630 CFML.WPLifted <> Wptag def
+R86654:86680 CFML.WPLifted <> Wpgen_let_trm def
+R87050:87067 CFML.Semantics <> loc def
+binder 87043:87046 <> x0__:143
+R87085:87103 CFML.WPLifted <> Wptag def
+R87139:87165 CFML.WPLifted <> Wpgen_let_trm def
+R87601:87609 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 87594:87597 <> x1__:144
+R87633:87651 CFML.WPLifted <> Wptag def
+R87699:87723 CFML.WPLifted <> Wpgen_match def
+R87757:87775 CFML.WPLifted <> Wptag def
+R87835:87858 CFML.WPLifted <> Wpgen_case def
+R89020:89038 CFML.WPLifted <> Wptag def
+R89110:89133 CFML.WPLifted <> Wpgen_case def
+R105639:105657 CFML.WPLifted <> Wptag def
+R105700:105723 CFML.WPLifted <> Wpgen_done def
+R105168:105193 CFML.WPLifted <> Wpgen_negpat def
+R105247:105251 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 105242:105243 <> q1:145
+R105292:105309 Coq.Init.Logic <> not def
+R105353:105369 Coq.Init.Logic <> eq ind
+R105434:105442 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R105420:105427 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R105429:105430 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:145 var
+R105371:105374 EXAMPLES.PairingHeap.PairingHeap_ml <> x1__:144 var
+binder 89177:89177 <> A:146
+R89234:89251 CFML.SepLifted <> Enc class
+R89253:89253 EXAMPLES.PairingHeap.PairingHeap_ml <> A:146 var
+binder 89229:89230 <> EA:147
+R89341:89382 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R89340:89340 EXAMPLES.PairingHeap.PairingHeap_ml <> A:146 var
+R89383:89434 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 89298:89298 <> Q:148
+R89511:89564 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hforall def
+R89615:89619 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 89610:89611 <> q1:149
+R89662:89713 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R90116:90134 CFML.WPLifted <> Wptag def
+R90226:90252 CFML.WPLifted <> Wpgen_let_trm def
+R91238:91242 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 91233:91234 <> q2:150
+R91294:91312 CFML.WPLifted <> Wptag def
+R91416:91442 CFML.WPLifted <> Wpgen_let_trm def
+R92427:92444 CFML.Semantics <> loc def
+binder 92366:92369 <> x2__:151
+R92554:92572 CFML.WPLifted <> Wptag def
+R92688:92714 CFML.WPLifted <> Wpgen_let_trm def
+R93650:93658 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 93583:93586 <> x3__:152
+R93780:93798 CFML.WPLifted <> Wptag def
+R93926:93950 CFML.WPLifted <> Wpgen_match def
+R94024:94042 CFML.WPLifted <> Wptag def
+R94182:94205 CFML.WPLifted <> Wpgen_case def
+R97028:97046 CFML.WPLifted <> Wptag def
+R97198:97221 CFML.WPLifted <> Wpgen_case def
+R103744:103762 CFML.WPLifted <> Wptag def
+R103845:103868 CFML.WPLifted <> Wpgen_done def
+R102833:102858 CFML.WPLifted <> Wpgen_negpat def
+R103032:103036 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 102947:102948 <> q3:153
+R103117:103134 Coq.Init.Logic <> not def
+R103218:103234 Coq.Init.Logic <> eq ind
+R103339:103347 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R103325:103332 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R103334:103335 EXAMPLES.PairingHeap.PairingHeap_ml <> q3:153 var
+R103236:103239 EXAMPLES.PairingHeap.PairingHeap_ml <> x3__:152 var
+binder 97305:97305 <> A:154
+R97634:97651 CFML.SepLifted <> Enc class
+R97653:97653 EXAMPLES.PairingHeap.PairingHeap_ml <> A:154 var
+binder 97551:97552 <> EA:155
+R97897:97978 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R97896:97896 EXAMPLES.PairingHeap.PairingHeap_ml <> A:154 var
+R97979:98030 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 97814:97814 <> Q:156
+R98187:98240 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hforall def
+R98411:98415 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 98326:98327 <> q3:157
+R98576:98627 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R99310:99328 CFML.WPLifted <> Wptag def
+R99500:99526 CFML.WPLifted <> Wpgen_let_trm def
+R100766:100770 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 100671:100674 <> x4__:158
+R100948:100966 CFML.WPLifted <> Wptag def
+R101150:101172 CFML.WPLifted <> Wpgen_app def
+R101286:101304 Coq.Lists.List <> cons abbrev
+R101628:101646 Coq.Lists.List <> cons abbrev
+R101880:101897 Coq.Lists.List <> nil abbrev
+R101747:101769 CFML.SepLifted <> dyn_make constr
+R101771:101775 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R101779:101782 EXAMPLES.PairingHeap.PairingHeap_ml <> x4__:158 var
+R101403:101425 CFML.SepLifted <> dyn_make constr
+R101427:101431 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R101435:101436 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:150 var
+R101180:101190 EXAMPLES.PairingHeap.PairingHeap_ml <> merge_nodes defax
+R101174:101178 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R99617:99635 CFML.WPLifted <> Wptag def
+R99819:99841 CFML.WPLifted <> Wpgen_app def
+R99958:99976 Coq.Lists.List <> cons abbrev
+R100204:100221 Coq.Lists.List <> nil abbrev
+R100075:100097 CFML.SepLifted <> dyn_make constr
+R100099:100103 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R100107:100108 EXAMPLES.PairingHeap.PairingHeap_ml <> q3:157 var
+R99849:99862 EXAMPLES.PairingHeap.PairingHeap_ml <> merge_siblings defax
+R99843:99847 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R102519:102519 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:156 var
+R98711:98762 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R98848:98864 Coq.Init.Logic <> eq ind
+R98971:98979 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R98957:98964 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R98966:98967 EXAMPLES.PairingHeap.PairingHeap_ml <> q3:157 var
+R98866:98869 EXAMPLES.PairingHeap.PairingHeap_ml <> x3__:152 var
+R96348:96373 CFML.WPLifted <> Wpgen_negpat def
+R96449:96466 Coq.Init.Logic <> not def
+R96544:96560 Coq.Init.Logic <> eq ind
+R96653:96661 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R96645:96649 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R96562:96565 EXAMPLES.PairingHeap.PairingHeap_ml <> x3__:152 var
+binder 94283:94283 <> A:159
+R94588:94605 CFML.SepLifted <> Enc class
+R94607:94607 EXAMPLES.PairingHeap.PairingHeap_ml <> A:159 var
+binder 94511:94512 <> EA:160
+R94833:94908 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R94832:94832 EXAMPLES.PairingHeap.PairingHeap_ml <> A:159 var
+R94909:94960 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 94756:94756 <> Q:161
+R95105:95156 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R95777:95795 CFML.WPLifted <> Wptag def
+R95951:95973 CFML.WPLifted <> Wpgen_val def
+R95975:95976 EXAMPLES.PairingHeap.PairingHeap_ml <> q2:150 var
+R96132:96132 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:161 var
+R95232:95283 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R95361:95377 Coq.Init.Logic <> eq ind
+R95470:95478 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R95462:95466 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R95379:95382 EXAMPLES.PairingHeap.PairingHeap_ml <> x3__:152 var
+R93952:93955 EXAMPLES.PairingHeap.PairingHeap_ml <> x3__:152 var
+R92777:92795 CFML.WPLifted <> Wptag def
+R92923:92945 CFML.WPLifted <> Wpgen_app def
+R93051:93069 Coq.Lists.List <> cons abbrev
+R93256:93273 Coq.Lists.List <> nil abbrev
+R93140:93162 CFML.SepLifted <> dyn_make constr
+R93164:93181 CFML.Semantics <> loc def
+R93185:93188 EXAMPLES.PairingHeap.PairingHeap_ml <> x2__:151 var
+R92957:92983 CFML.Stdlib.Pervasives_ml <> infix_emark__ defax
+R92947:92955 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R91499:91517 CFML.WPLifted <> Wptag def
+R91633:91655 CFML.WPLifted <> Wpgen_app def
+R91891:91909 Coq.Lists.List <> cons abbrev
+R92069:92086 Coq.Lists.List <> nil abbrev
+R91974:91996 CFML.SepLifted <> dyn_make constr
+R91998:92002 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R92006:92007 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:149 var
+R91736:91762 CFML.WPRecord <> val_get_field def
+R91764:91771 EXAMPLES.PairingHeap.PairingHeap_ml <> sibling' def
+R91657:91674 CFML.Semantics <> loc def
+R90303:90321 CFML.WPLifted <> Wptag def
+R90425:90447 CFML.WPLifted <> Wpgen_app def
+R90521:90539 Coq.Lists.List <> cons abbrev
+R90742:90760 Coq.Lists.List <> cons abbrev
+R90912:90929 Coq.Lists.List <> nil abbrev
+R90821:90843 CFML.SepLifted <> dyn_make constr
+R90845:90849 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R90853:90854 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:149 var
+R90598:90620 CFML.SepLifted <> dyn_make constr
+R90622:90626 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R90630:90630 EXAMPLES.PairingHeap.PairingHeap_ml <> q:138 var
+R90455:90465 EXAMPLES.PairingHeap.PairingHeap_ml <> merge_nodes defax
+R90449:90453 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R105014:105014 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:148 var
+R89757:89808 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R89854:89870 Coq.Init.Logic <> eq ind
+R89937:89945 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R89923:89930 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R89932:89933 EXAMPLES.PairingHeap.PairingHeap_ml <> q1:149 var
+R89872:89875 EXAMPLES.PairingHeap.PairingHeap_ml <> x1__:144 var
+R88732:88757 CFML.WPLifted <> Wpgen_negpat def
+R88793:88810 Coq.Init.Logic <> not def
+R88848:88864 Coq.Init.Logic <> eq ind
+R88880:88888 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R88872:88876 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R88866:88869 EXAMPLES.PairingHeap.PairingHeap_ml <> x1__:144 var
+binder 87896:87896 <> A:162
+R87947:87964 CFML.SepLifted <> Enc class
+R87966:87966 EXAMPLES.PairingHeap.PairingHeap_ml <> A:162 var
+binder 87942:87943 <> EA:163
+R88042:88077 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R88041:88041 EXAMPLES.PairingHeap.PairingHeap_ml <> A:162 var
+R88078:88129 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 88005:88005 <> Q:164
+R88194:88245 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R88514:88532 CFML.WPLifted <> Wptag def
+R88571:88593 CFML.WPLifted <> Wpgen_val def
+R88595:88595 EXAMPLES.PairingHeap.PairingHeap_ml <> q:138 var
+R88636:88636 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:164 var
+R88281:88332 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R88370:88386 Coq.Init.Logic <> eq ind
+R88402:88410 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R88394:88398 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R88388:88391 EXAMPLES.PairingHeap.PairingHeap_ml <> x1__:144 var
+R87725:87728 EXAMPLES.PairingHeap.PairingHeap_ml <> x1__:144 var
+R87188:87206 CFML.WPLifted <> Wptag def
+R87254:87276 CFML.WPLifted <> Wpgen_app def
+R87342:87360 Coq.Lists.List <> cons abbrev
+R87467:87484 Coq.Lists.List <> nil abbrev
+R87391:87413 CFML.SepLifted <> dyn_make constr
+R87415:87432 CFML.Semantics <> loc def
+R87436:87439 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:143 var
+R87288:87314 CFML.Stdlib.Pervasives_ml <> infix_emark__ defax
+R87278:87286 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R86697:86715 CFML.WPLifted <> Wptag def
+R86751:86773 CFML.WPLifted <> Wpgen_app def
+R86889:86907 Coq.Lists.List <> cons abbrev
+R86946:86963 Coq.Lists.List <> nil abbrev
+R86911:86933 CFML.SepLifted <> dyn_make constr
+R86935:86939 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R86943:86943 EXAMPLES.PairingHeap.PairingHeap_ml <> q:138 var
+R86814:86840 CFML.WPRecord <> val_get_field def
+R86842:86849 EXAMPLES.PairingHeap.PairingHeap_ml <> sibling' def
+R86775:86792 CFML.Semantics <> loc def
+binder 106111:106115 <> res__:165
+R106132:106183 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hstar def
+R106195:106244 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hgc def
+R106186:106186 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:142 var
+R106188:106192 EXAMPLES.PairingHeap.PairingHeap_ml <> res__:165 var
+R86601:86601 EXAMPLES.PairingHeap.PairingHeap_ml <> H:139 var
+R106267:106287 CFML.SepLifted <> Triple def
+R106438:106438 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:142 var
+R106436:106436 EXAMPLES.PairingHeap.PairingHeap_ml <> H:139 var
+R106297:106319 CFML.SepLifted <> Trm_apps def
+R106346:106364 Coq.Lists.List <> cons abbrev
+R106403:106420 Coq.Lists.List <> nil abbrev
+R106368:106390 CFML.SepLifted <> dyn_make constr
+R106392:106396 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R106400:106400 EXAMPLES.PairingHeap.PairingHeap_ml <> q:138 var
+R106321:106334 EXAMPLES.PairingHeap.PairingHeap_ml <> merge_siblings defax
+R106461:106481 CFML.WPHeader <> ::wptactics_scope:'WPHeader_Register_CF'_x not
+R106482:106495 EXAMPLES.PairingHeap.PairingHeap_ml <> merge_siblings defax
+ax 106550:106556 <> pop_min
+R106560:106577 CFML.Semantics <> val ind
+ax 106591:106602 <> pop_min_cf__
+R106608:106631 CFML.WPLifted <> Wpgen_body def
+R106650:106667 CFML.Semantics <> loc def
+binder 106646:106646 <> p:170
+R106685:106736 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 106681:106681 <> H:171
+binder 106750:106750 <> A:172
+R106776:106793 CFML.SepLifted <> Enc class
+R106795:106795 EXAMPLES.PairingHeap.PairingHeap_ml <> A:172 var
+binder 106771:106772 <> EA:173
+R106814:106817 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R106813:106813 EXAMPLES.PairingHeap.PairingHeap_ml <> A:172 var
+R106818:106869 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 106809:106809 <> Q:174
+R126811:126818 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R106876:106927 CFML.SepBase SepBasicSetup.SepSimplArgsCredits himpl def
+R106940:106958 CFML.WPLifted <> Wptag def
+R106982:107008 CFML.WPLifted <> Wpgen_let_trm def
+R107375:107383 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 107368:107371 <> x0__:175
+R107401:107419 CFML.WPLifted <> Wptag def
+R107455:107479 CFML.WPLifted <> Wpgen_match def
+R107507:107525 CFML.WPLifted <> Wptag def
+R107573:107596 CFML.WPLifted <> Wpgen_case def
+R108562:108580 CFML.WPLifted <> Wptag def
+R108640:108663 CFML.WPLifted <> Wpgen_case def
+R126398:126416 CFML.WPLifted <> Wptag def
+R126420:126443 CFML.WPLifted <> Wpgen_done def
+R126014:126039 CFML.WPLifted <> Wpgen_negpat def
+R126086:126090 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 126082:126082 <> q:176
+R126125:126142 Coq.Init.Logic <> not def
+R126180:126196 Coq.Init.Logic <> eq ind
+R126254:126262 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R126241:126248 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R126250:126250 EXAMPLES.PairingHeap.PairingHeap_ml <> q:176 var
+R126198:126201 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:175 var
+binder 108701:108701 <> A:177
+R108752:108769 CFML.SepLifted <> Enc class
+R108771:108771 EXAMPLES.PairingHeap.PairingHeap_ml <> A:177 var
+binder 108747:108748 <> EA:178
+R108847:108882 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R108846:108846 EXAMPLES.PairingHeap.PairingHeap_ml <> A:177 var
+R108883:108934 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 108810:108810 <> Q:179
+R108999:109052 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hforall def
+R109096:109100 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 109092:109092 <> q:180
+R109137:109188 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R109548:109566 CFML.WPLifted <> Wptag def
+R109646:109672 CFML.WPLifted <> Wpgen_let_trm def
+R110442:110460 Coq.ZArith.BinInt <> Z abbrev
+binder 110438:110438 <> x:181
+R110506:110524 CFML.WPLifted <> Wptag def
+R110616:110642 CFML.WPLifted <> Wpgen_let_trm def
+R111492:111509 CFML.Semantics <> loc def
+binder 111485:111488 <> x1__:182
+R111561:111579 CFML.WPLifted <> Wptag def
+R111683:111709 CFML.WPLifted <> Wpgen_let_trm def
+R112519:112527 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 112512:112515 <> x2__:183
+R112585:112603 CFML.WPLifted <> Wptag def
+R112719:112741 CFML.WPLifted <> Wpgen_seq def
+R125022:125040 CFML.WPLifted <> Wptag def
+R125168:125190 CFML.WPLifted <> Wpgen_val def
+R125192:125192 EXAMPLES.PairingHeap.PairingHeap_ml <> x:181 var
+R112804:112822 CFML.WPLifted <> Wptag def
+R112950:112974 CFML.WPLifted <> Wpgen_match def
+R113048:113066 CFML.WPLifted <> Wptag def
+R113206:113229 CFML.WPLifted <> Wpgen_case def
+R117084:117102 CFML.WPLifted <> Wptag def
+R117254:117277 CFML.WPLifted <> Wpgen_case def
+R124087:124105 CFML.WPLifted <> Wptag def
+R124188:124211 CFML.WPLifted <> Wpgen_done def
+R123170:123195 CFML.WPLifted <> Wpgen_negpat def
+R123372:123376 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 123284:123288 <> child:184
+R123457:123474 Coq.Init.Logic <> not def
+R123558:123574 Coq.Init.Logic <> eq ind
+R123682:123690 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R123665:123672 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R123674:123678 EXAMPLES.PairingHeap.PairingHeap_ml <> child:184 var
+R123576:123579 EXAMPLES.PairingHeap.PairingHeap_ml <> x2__:183 var
+binder 117361:117361 <> A:185
+R117690:117707 CFML.SepLifted <> Enc class
+R117709:117709 EXAMPLES.PairingHeap.PairingHeap_ml <> A:185 var
+binder 117607:117608 <> EA:186
+R117953:118034 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R117952:117952 EXAMPLES.PairingHeap.PairingHeap_ml <> A:185 var
+R118035:118086 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 117870:117870 <> Q:187
+R118243:118296 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hforall def
+R118470:118474 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 118382:118386 <> child:188
+R118635:118686 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R119372:119390 CFML.WPLifted <> Wptag def
+R119562:119588 CFML.WPLifted <> Wpgen_let_trm def
+R120831:120835 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+binder 120736:120739 <> x3__:189
+R121013:121031 CFML.WPLifted <> Wptag def
+R121215:121237 CFML.WPLifted <> Wpgen_app def
+R121388:121406 Coq.Lists.List <> cons abbrev
+R121742:121760 Coq.Lists.List <> cons abbrev
+R122217:122234 Coq.Lists.List <> nil abbrev
+R121861:121883 CFML.SepLifted <> dyn_make constr
+R121885:121893 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R122013:122021 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R121997:122004 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R122006:122009 EXAMPLES.PairingHeap.PairingHeap_ml <> x3__:189 var
+R121505:121527 CFML.SepLifted <> dyn_make constr
+R121529:121546 CFML.Semantics <> loc def
+R121550:121550 EXAMPLES.PairingHeap.PairingHeap_ml <> p:170 var
+R121263:121292 CFML.Stdlib.Pervasives_ml <> infix_colon_eq__ defax
+R121239:121261 Coq.Init.Datatypes <> unit ind
+R119679:119697 CFML.WPLifted <> Wptag def
+R119881:119903 CFML.WPLifted <> Wpgen_app def
+R120020:120038 Coq.Lists.List <> cons abbrev
+R120269:120286 Coq.Lists.List <> nil abbrev
+R120137:120159 CFML.SepLifted <> dyn_make constr
+R120161:120165 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R120169:120173 EXAMPLES.PairingHeap.PairingHeap_ml <> child:188 var
+R119911:119924 EXAMPLES.PairingHeap.PairingHeap_ml <> merge_siblings defax
+R119905:119909 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R122856:122856 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:187 var
+R118770:118821 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R118907:118923 Coq.Init.Logic <> eq ind
+R119033:119041 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R119016:119023 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R119025:119029 EXAMPLES.PairingHeap.PairingHeap_ml <> child:188 var
+R118925:118928 EXAMPLES.PairingHeap.PairingHeap_ml <> x2__:183 var
+R116404:116429 CFML.WPLifted <> Wpgen_negpat def
+R116505:116522 Coq.Init.Logic <> not def
+R116600:116616 Coq.Init.Logic <> eq ind
+R116709:116717 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R116701:116705 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R116618:116621 EXAMPLES.PairingHeap.PairingHeap_ml <> x2__:183 var
+binder 113307:113307 <> A:190
+R113612:113629 CFML.SepLifted <> Enc class
+R113631:113631 EXAMPLES.PairingHeap.PairingHeap_ml <> A:190 var
+binder 113535:113536 <> EA:191
+R113857:113932 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R113856:113856 EXAMPLES.PairingHeap.PairingHeap_ml <> A:190 var
+R113933:113984 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 113780:113780 <> Q:192
+R114129:114180 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R114801:114819 CFML.WPLifted <> Wptag def
+R114975:114997 CFML.WPLifted <> Wpgen_app def
+R115134:115152 Coq.Lists.List <> cons abbrev
+R115446:115464 Coq.Lists.List <> cons abbrev
+R115857:115874 Coq.Lists.List <> nil abbrev
+R115551:115573 CFML.SepLifted <> dyn_make constr
+R115575:115583 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R115681:115689 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R115673:115677 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R115237:115259 CFML.SepLifted <> dyn_make constr
+R115261:115278 CFML.Semantics <> loc def
+R115282:115282 EXAMPLES.PairingHeap.PairingHeap_ml <> p:170 var
+R115023:115052 CFML.Stdlib.Pervasives_ml <> infix_colon_eq__ defax
+R114999:115021 Coq.Init.Datatypes <> unit ind
+R116188:116188 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:192 var
+R114256:114307 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R114385:114401 Coq.Init.Logic <> eq ind
+R114494:114502 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R114486:114490 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R114403:114406 EXAMPLES.PairingHeap.PairingHeap_ml <> x2__:183 var
+R112976:112979 EXAMPLES.PairingHeap.PairingHeap_ml <> x2__:183 var
+R111766:111784 CFML.WPLifted <> Wptag def
+R111900:111922 CFML.WPLifted <> Wpgen_app def
+R112022:112040 Coq.Lists.List <> cons abbrev
+R112215:112232 Coq.Lists.List <> nil abbrev
+R112105:112127 CFML.SepLifted <> dyn_make constr
+R112129:112146 CFML.Semantics <> loc def
+R112150:112153 EXAMPLES.PairingHeap.PairingHeap_ml <> x1__:182 var
+R111934:111960 CFML.Stdlib.Pervasives_ml <> infix_emark__ defax
+R111924:111932 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R110693:110711 CFML.WPLifted <> Wptag def
+R110815:110837 CFML.WPLifted <> Wpgen_app def
+R111053:111071 Coq.Lists.List <> cons abbrev
+R111218:111235 Coq.Lists.List <> nil abbrev
+R111130:111152 CFML.SepLifted <> dyn_make constr
+R111154:111158 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R111162:111162 EXAMPLES.PairingHeap.PairingHeap_ml <> q:180 var
+R110912:110938 CFML.WPRecord <> val_get_field def
+R110940:110945 EXAMPLES.PairingHeap.PairingHeap_ml <> child' def
+R110839:110856 CFML.Semantics <> loc def
+R109717:109735 CFML.WPLifted <> Wptag def
+R109827:109849 CFML.WPLifted <> Wpgen_app def
+R110048:110066 Coq.Lists.List <> cons abbrev
+R110201:110218 Coq.Lists.List <> nil abbrev
+R110119:110141 CFML.SepLifted <> dyn_make constr
+R110143:110147 EXAMPLES.PairingHeap.PairingHeap_ml <> node_ def
+R110151:110151 EXAMPLES.PairingHeap.PairingHeap_ml <> q:180 var
+R109919:109945 CFML.WPRecord <> val_get_field def
+R109947:109952 EXAMPLES.PairingHeap.PairingHeap_ml <> value' def
+R109851:109869 Coq.ZArith.BinInt <> Z abbrev
+R125884:125884 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:179 var
+R109226:109277 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R109317:109333 Coq.Init.Logic <> eq ind
+R109393:109401 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R109380:109387 EXAMPLES.PairingHeap.PairingHeap_ml <> Nonempty constr
+R109389:109389 EXAMPLES.PairingHeap.PairingHeap_ml <> q:180 var
+R109335:109338 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:175 var
+R108310:108335 CFML.WPLifted <> Wpgen_negpat def
+R108365:108382 Coq.Init.Logic <> not def
+R108414:108430 Coq.Init.Logic <> eq ind
+R108446:108454 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R108438:108442 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R108432:108435 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:175 var
+binder 107628:107628 <> A:193
+R107673:107690 CFML.SepLifted <> Enc class
+R107692:107692 EXAMPLES.PairingHeap.PairingHeap_ml <> A:193 var
+binder 107668:107669 <> EA:194
+R107756:107785 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R107755:107755 EXAMPLES.PairingHeap.PairingHeap_ml <> A:193 var
+R107786:107837 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hprop def
+binder 107725:107725 <> Q:195
+R107890:107941 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hwand def
+R108180:108198 CFML.WPLifted <> Wptag def
+R108202:108225 CFML.WPLifted <> Wpgen_fail def
+R108232:108232 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:195 var
+R107971:108022 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hpure def
+R108054:108070 Coq.Init.Logic <> eq ind
+R108086:108094 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+R108078:108082 EXAMPLES.PairingHeap.PairingHeap_ml <> Empty constr
+R108072:108075 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:175 var
+R107481:107484 EXAMPLES.PairingHeap.PairingHeap_ml <> x0__:175 var
+R107025:107043 CFML.WPLifted <> Wptag def
+R107079:107101 CFML.WPLifted <> Wpgen_app def
+R107161:107179 Coq.Lists.List <> cons abbrev
+R107271:107288 Coq.Lists.List <> nil abbrev
+R107204:107226 CFML.SepLifted <> dyn_make constr
+R107228:107245 CFML.Semantics <> loc def
+R107249:107249 EXAMPLES.PairingHeap.PairingHeap_ml <> p:170 var
+R107113:107139 CFML.Stdlib.Pervasives_ml <> infix_emark__ defax
+R107103:107111 EXAMPLES.PairingHeap.PairingHeap_ml <> contents_ ind
+binder 126663:126667 <> res__:196
+R126684:126735 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hstar def
+R126747:126796 CFML.SepBase SepBasicSetup.SepSimplArgsCredits hgc def
+R126738:126738 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:174 var
+R126740:126744 EXAMPLES.PairingHeap.PairingHeap_ml <> res__:196 var
+R106929:106929 EXAMPLES.PairingHeap.PairingHeap_ml <> H:171 var
+R126819:126839 CFML.SepLifted <> Triple def
+R126996:126996 EXAMPLES.PairingHeap.PairingHeap_ml <> Q:174 var
+R126994:126994 EXAMPLES.PairingHeap.PairingHeap_ml <> H:171 var
+R126849:126871 CFML.SepLifted <> Trm_apps def
+R126891:126909 Coq.Lists.List <> cons abbrev
+R126961:126978 Coq.Lists.List <> nil abbrev
+R126913:126935 CFML.SepLifted <> dyn_make constr
+R126937:126954 CFML.Semantics <> loc def
+R126958:126958 EXAMPLES.PairingHeap.PairingHeap_ml <> p:170 var
+R126873:126879 EXAMPLES.PairingHeap.PairingHeap_ml <> pop_min defax
+R127019:127039 CFML.WPHeader <> ::wptactics_scope:'WPHeader_Register_CF'_x not
+R127040:127046 EXAMPLES.PairingHeap.PairingHeap_ml <> pop_min defax
