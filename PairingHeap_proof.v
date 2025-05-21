@@ -1,11 +1,136 @@
 Set Implicit Arguments.
 From CFML Require Import WPLib.
 From CFML Require Import Stdlib.
-From EXAMPLES Require Import PairingHeap_ml MList_proof.
+Require Import PairingHeap_ml.
 From TLC Require Import LibListZ LibMultiset.
-Import SpecMListOf.
 Open Scope comp_scope.
 
+
+Notation t := Z.
+
+Inductive MTree :=
+| Leaf
+| Node (val : t) (lt : MTree) (rt : MTree).
+
+Fixpoint size (tree : MTree) : nat :=
+  match tree with
+  | Leaf => 0
+  | Node val lt rt => 1 + size lt + size rt
+  end.
+
+Fixpoint length (tree : MTree) : nat :=
+  match tree with
+  | Leaf => 0
+  | Node _ _ rt => 1 + length rt
+  end.
+
+Fixpoint Φ (tree : MTree) : Z:=
+  match tree with
+  | Leaf => 0
+  | Node val lt rt => Z.log2_up (size (Node val lt rt)) + Φ lt + Φ rt
+  end.
+
+Definition MTree_is_root (tree : MTree) :=
+  match tree with
+  | Leaf => True
+  | Node val lt rt => rt = Leaf
+  end.
+
+Fixpoint MTree_forall (tree: MTree) (p : t -> Prop) : Prop :=
+  match tree with
+  | Leaf => True
+  | Node val lt rt => p val /\ MTree_forall lt p /\ MTree_forall rt p
+  end.
+
+
+Fixpoint MHeap (tr:MTree) (p:loc) : hprop :=
+  match tr with
+  | Leaf => \[]
+  | Node x lt rt =>
+      \exists (p1 p2 p3:loc),
+          (p ~~~> `{ value' := x; child' := p1; sibling' := p2; parent' := p3 })
+    \* (MHeap lt p1)
+    \* (MHeap rt p2)
+    \* \[ MTree_forall lt (fun x' => x <= x') ]
+  end.
+                    
+(*
+Inductive Heap_Ordered : MTree -> Prop :=
+| Heap_Ordered_leaf: Heap_Ordered Leaf
+| Heap_Ordered_node:
+    forall val lt rt,
+      Heap_Ordered lt
+      -> Heap_Ordered rt
+      -> MTree_forall lt (fun x => val <= x)
+      -> Heap_Ordered (Node val lt rt).
+*)
+
+(**
+type node = {
+  mutable value : int;
+  child : contents ref;
+  sibling : contents ref;
+  parent : contents ref
+} and contents = Empty | Nonempty of node
+
+type heap = contents ref
+ **)
+
+(*
+Fixpoint Tree (tr:MTree) (q:loc) { struct tr } : hprop :=
+  match tr with
+  | Leaf => q ~~> Empty
+  | Node x lt rt =>
+      \exists (qlt qrt qpar:loc),
+          q ~~~> `{ value':= x; child' := qlt; sibling' := qrt; parent' := qpar }
+            \* qlt ~> Tree lt \* qrt ~> Tree rt
+  end.
+
+Definition Repr (tr:MTree) (q:loc) : hprop :=
+  (q ~> Tree tr) \* \[Heap_Ordered tr].
+*)
+
+
+Definition Contents (tr:MTree) (c:contents_) : hprop :=
+  match c with
+  | Empty => \[ tr = Leaf ]
+  | Nonempty p => p ~> MHeap tr \* \[ tr <> Leaf ]
+  end.
+
+
+Definition Heap (tr:MTree) (p:heap_) : hprop :=
+  \exists c, p ~~> c \* Contents tr c.
+
+Lemma Contents_isEmpty : forall (tr:MTree) (c:contents_),
+    Contents tr c ==> \[ tr = Leaf <-> c = Empty ] \* (Contents tr c).
+Proof.
+  intros.
+  unfolds Contents.
+  destruct c; xsimpl*.
+  split; congruence.
+Qed.
+
+Lemma Triple_create :
+  SPEC (create tt)
+    PRE \[]
+    POST (fun p => p ~> Heap Leaf).
+Proof.
+  xcf. xapp. xunfold Heap. unfold Contents. xsimpl*.
+Qed.
+
+Lemma Triple_isEmpty : forall (p: loc) (tr: MTree),
+  SPEC (is_empty p)
+    PRE (p ~> Heap tr)
+    POST (fun b => \[b = isTrue(tr = Leaf)] \* (p ~> Heap tr)).
+Proof.
+  xcf.
+  xunfolds Heap; => q.
+  xapp. xapp.
+  xchanges~ Contents_isEmpty.
+  intros H.
+  symmetry.
+  exact H.
+Qed.
 
 (**
 
