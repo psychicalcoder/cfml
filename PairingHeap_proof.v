@@ -3,7 +3,7 @@ From CFML Require Import WPLib.
 From CFML Require Import Stdlib.
 Require Import PairingHeap_ml.
 From TLC Require Import LibListZ LibMultiset.
-Open Scope comp_scope.
+Open Scope Z_scope.
 
 
 Notation t := Z.
@@ -42,7 +42,6 @@ Fixpoint MTree_forall (tree: MTree) (p : t -> Prop) : Prop :=
   | Node val lt rt => p val /\ MTree_forall lt p /\ MTree_forall rt p
   end.
 
-
 Fixpoint MHeap (tr:MTree) (p:loc) : hprop :=
   match tr with
   | Leaf => \[]
@@ -54,7 +53,6 @@ Fixpoint MHeap (tr:MTree) (p:loc) : hprop :=
     \* \[ MTree_forall lt (fun x' => x <= x') ]
   end.
                     
-(*
 Inductive Heap_Ordered : MTree -> Prop :=
 | Heap_Ordered_leaf: Heap_Ordered Leaf
 | Heap_Ordered_node:
@@ -63,7 +61,6 @@ Inductive Heap_Ordered : MTree -> Prop :=
       -> Heap_Ordered rt
       -> MTree_forall lt (fun x => val <= x)
       -> Heap_Ordered (Node val lt rt).
-*)
 
 (**
 type node = {
@@ -131,6 +128,96 @@ Proof.
   symmetry.
   exact H.
 Qed.
+
+Fixpoint MTree_to_MultiSet (tr:MTree) : multiset t :=
+  match tr with
+  | Leaf => \{}
+  | Node x lt rt => \{ x } \u (MTree_to_MultiSet lt) \u (MTree_to_MultiSet rt)
+  end.
+
+(*
+let merge_nodes q1 q2 =
+  if q1.value < q2.value
+    then (q2.parent := (match !(q1.child) with
+                        | Empty -> Nonempty q1
+                        | Nonempty _ -> Empty);
+q2.sibling := !(q1.child) ;
+q1.child := Nonempty q2 ;
+q1)
+
+    else (q1.parent := (match !(q2.child) with | Empty -> Nonempty q2 | Nonempty _ -> Empty);
+q1.sibling := !(q2.child) ;
+q2.child := Nonempty q1 ; q2)
+ *)
+
+Require Import Coq.ZArith.BinInt.
+
+Definition MTree_merge_node (t1 t2: MTree) : MTree :=
+  match (t1, t2) with
+  | (Leaf, _) => Leaf
+  | (_, Leaf) => Leaf
+  | (Node x1 lt1 rt1, Node x2 lt2 rt2) => 
+      if x1 <? x2 then
+        Node x1 (Node x2 lt2 lt1) rt1
+      else
+        Node x2 (Node x1 lt1 lt2) rt2
+  end.
+
+Lemma MTree_forall_if : forall tr f1 f2,
+    (forall x, f1 x -> f2 x) ->
+    MTree_forall tr f1 ->
+    MTree_forall tr f2.
+Proof.
+  intros.
+  induction tr.
+  - auto.
+  - simpl; simpl in H0; destruct H0 as [H01 [H02 H03]].
+    repeat split; auto.
+Qed.
+
+Lemma MTree_merge_node_heap_ordered : forall (tr1 tr2 tret: MTree),
+    tr1 <> Leaf -> tr2 <> Leaf ->
+    MTree_is_root tr1 -> MTree_is_root tr2 ->
+    Heap_Ordered tr1 -> Heap_Ordered tr2 ->
+    tret = (MTree_merge_node tr1 tr2) ->
+    Heap_Ordered tret.
+Proof.
+  intros.
+  subst.
+  unfold MTree_merge_node.
+  destruct tr1; destruct tr2; simpl in *.
+  - congruence.
+  - congruence.
+  - assumption.
+  - destruct (val <? val0) eqn:E.
+    + apply Z.ltb_lt in E.
+      inversion H3; subst.
+      inversion H4; subst.
+      apply Heap_Ordered_node; try auto.
+      * apply Heap_Ordered_node; try auto.
+      * simpl. repeat split.
+        -- apply Z.lt_le_incl; exact E.
+        -- apply MTree_forall_if with (f1 := (fun (x:t) => val0 <= x)) (f2 := (fun (x:t) => val <= x)).
+           { intros. lia. }
+           assumption.
+        -- assumption.
+    + apply Z.ltb_ge in E.
+      inversion H3; subst.
+      inversion H4; subst.
+      apply Heap_Ordered_node; try auto.
+      * apply Heap_Ordered_node; try auto.
+      * simpl. repeat split; try assumption.
+        -- apply MTree_forall_if with (f1 := (fun (x:t) => val <= x)) (f2 := (fun (x:t) => val0 <= x)).
+           { intros. lia. }
+           assumption.
+Qed.
+
+Lemma Triple_merge_nodes : forall (q1 q2: loc) (tr1 tr2: MTree) (x1 x2: t) (lt1 rt1 lt2 rt2: MTree),
+  (tr1 = Node x1 lt1 rt1) -> (tr2 = Node x2 lt2 rt2) ->
+  x1 < x2 ->                              
+  SPEC (merge_nodes q1 q2)
+    PRE (q1 -> Heap tr1) \* (q2 -> Heap tr2)
+    POST (fu
 
 (**
 
