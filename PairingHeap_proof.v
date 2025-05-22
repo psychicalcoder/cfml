@@ -42,6 +42,14 @@ Fixpoint MTree_forall (tree: MTree) (p : t -> Prop) : Prop :=
   | Node val lt rt => p val /\ MTree_forall lt p /\ MTree_forall rt p
   end.
 
+Lemma MTree_Forall_Leaf :
+  forall f, MTree_forall Leaf f.
+Proof.
+  intros. simpl. tauto.
+Qed.
+
+Hint Resolve MTree_Forall_Leaf.
+
 (*
 Fixpoint MHeap (tr:MTree) (p:loc) : hprop :=
   match tr with
@@ -63,6 +71,8 @@ Inductive Heap_Ordered : MTree -> Prop :=
       -> Heap_Ordered rt
       -> MTree_forall lt (fun x => val <= x)
       -> Heap_Ordered (Node val lt rt).
+
+Hint Resolve Heap_Ordered_leaf Heap_Ordered_node.
 
 (**
 type node = {
@@ -193,8 +203,7 @@ Proof.
     + apply Z.ltb_lt in E.
       inversion H3; subst.
       inversion H4; subst.
-      apply Heap_Ordered_node; try auto.
-      * apply Heap_Ordered_node; try auto.
+      apply Heap_Ordered_node; auto.
       * simpl. repeat split.
         -- apply Z.lt_le_incl; exact E.
         -- apply MTree_forall_if with (f1 := (fun (x:t) => val0 <= x)) (f2 := (fun (x:t) => val <= x)).
@@ -204,8 +213,7 @@ Proof.
     + apply Z.ltb_ge in E.
       inversion H3; subst.
       inversion H4; subst.
-      apply Heap_Ordered_node; try auto.
-      * apply Heap_Ordered_node; try auto.
+      apply Heap_Ordered_node; auto.
       * simpl. repeat split; try assumption.
         -- apply MTree_forall_if with (f1 := (fun (x:t) => val <= x)) (f2 := (fun (x:t) => val0 <= x)).
            { intros. lia. }
@@ -251,7 +259,7 @@ Proof.
   intros.
   unfold MTree_insert.
   destruct tr; simpl in *.
-  - apply Heap_Ordered_node; auto.
+  - auto.
   - subst. apply MTree_merge_node_heap_ordered with (tr1 := (Node val tr1 Leaf)) (tr2 := (Node x Leaf Leaf)).
     + discriminate.
     + discriminate.
@@ -295,7 +303,6 @@ Proof.
     * discriminate.
     * discriminate.
     * simpl. reflexivity.
-    * apply Heap_Ordered_node; try apply Heap_Ordered_leaf; simpl; auto.
 Qed.
 
 (*
@@ -332,9 +339,7 @@ Proof.
   - apply Heap_Ordered_node; assumption.
   - destruct sibl2.
     + apply MTree_merge_node_heap_ordered with (tr1 := (Node x chld Leaf)) (tr2 := (Node val sibl1 Leaf)); simpl; auto.
-      * discriminate.
-      * discriminate.
-      * apply Heap_Ordered_node; try assumption; try apply Heap_Ordered_leaf.
+      all: discriminate.
     + apply MTree_merge_node_heap_ordered with (tr1 := (MTree_merge_node (Node x chld Leaf) (Node val sibl1 Leaf))) (tr2 := (MTree_merge_sibilings val0 sibl2_1 sibl2_2)); simpl; auto.
       * unfold MTree_merge_node.
         destruct (x <? val); discriminate.
@@ -453,8 +458,14 @@ Lemma Tree_Node : forall p x lt rt,
       \exists (p1 p2 p3:loc),
           p ~~~> `{ value' := x; child' := p1; sibling' := p2; parent' := p3}
             \* (p1 ~> Tree lt) \* (p2 ~> Tree rt).
-Proof.      
+Proof.
   auto.
+Qed.
+
+Lemma Heap_Nonempty : forall p q tr,
+  p ~~> Nonempty q \* q ~> MHeap tr ==> p ~> Heap tr.
+Proof using.
+  intros. xunfold Heap. xunfold Contents. xsimpl.
 Qed.
 
 Lemma Triple_merge_nodes : forall (q1 q2: loc) (tr1 tr2: MTree) (x1 x2: t) (lt1 rt1 lt2 rt2: MTree),
@@ -487,6 +498,9 @@ Proof.
     + xsimpl*.
       intro; subst.
       xapp.
+      
+      
+      
 Admitted.
 (**
 
