@@ -42,6 +42,7 @@ Fixpoint MTree_forall (tree: MTree) (p : t -> Prop) : Prop :=
   | Node val lt rt => p val /\ MTree_forall lt p /\ MTree_forall rt p
   end.
 
+(*
 Fixpoint MHeap (tr:MTree) (p:loc) : hprop :=
   match tr with
   | Leaf => \[]
@@ -52,6 +53,7 @@ Fixpoint MHeap (tr:MTree) (p:loc) : hprop :=
     \* (MHeap rt p2)
     \* \[ MTree_forall lt (fun x' => x <= x') ]
   end.
+*)
                     
 Inductive Heap_Ordered : MTree -> Prop :=
 | Heap_Ordered_leaf: Heap_Ordered Leaf
@@ -73,19 +75,17 @@ type node = {
 type heap = contents ref
  **)
 
-(*
-Fixpoint Tree (tr:MTree) (q:loc) { struct tr } : hprop :=
+Fixpoint Tree (tr:MTree) (p:loc) { struct tr } : hprop :=
   match tr with
-  | Leaf => q ~~> Empty
+  | Leaf => p ~~> Empty
   | Node x lt rt =>
       \exists (qlt qrt qpar:loc),
-          q ~~~> `{ value':= x; child' := qlt; sibling' := qrt; parent' := qpar }
+          p ~~~> `{ value':= x; child' := qlt; sibling' := qrt; parent' := qpar }
             \* qlt ~> Tree lt \* qrt ~> Tree rt
   end.
 
-Definition Repr (tr:MTree) (q:loc) : hprop :=
-  (q ~> Tree tr) \* \[Heap_Ordered tr].
-*)
+Definition MHeap (tr:MTree) (p:loc) : hprop :=
+  (p ~> Tree tr) \* \[Heap_Ordered tr].
 
 
 Definition Contents (tr:MTree) (c:contents_) : hprop :=
@@ -158,9 +158,9 @@ Definition MTree_merge_node (t1 t2: MTree) : MTree :=
   | (_, Leaf) => Leaf
   | (Node x1 lt1 rt1, Node x2 lt2 rt2) => 
       if x1 <? x2 then
-        Node x1 (Node x2 lt2 lt1) rt1
+        Node x1 (Node x2 lt2 lt1) Leaf
       else
-        Node x2 (Node x1 lt1 lt2) rt2
+        Node x2 (Node x1 lt1 lt2) Leaf
   end.
 
 Lemma MTree_forall_if : forall tr f1 f2,
@@ -212,13 +212,282 @@ Proof.
            assumption.
 Qed.
 
+Lemma MTree_merge_node_union : forall (tr1 tr2 tret: MTree),
+    tr1 <> Leaf -> tr2 <> Leaf ->
+    MTree_is_root tr1 -> MTree_is_root tr2 ->
+    Heap_Ordered tr1 -> Heap_Ordered tr2 ->
+    MTree_to_MultiSet (MTree_merge_node tr1 tr2) = (MTree_to_MultiSet tr1) \u (MTree_to_MultiSet tr2).
+Proof.
+  intros.
+  unfold MTree_merge_node.
+  destruct tr1; destruct tr2; simpl in *.
+  - auto.
+  - congruence.
+  - congruence.
+  - subst. destruct (val <? val0) eqn:E.
+    all : simpl; repeat rewrite for_multiset_union_empty_r; permut_simpl.      
+Qed.
+
+(*
+let insert p x =
+  let rec q2 = { value = x; child = ref Empty; sibling = ref Empty; parent = ref Empty } in
+  match !p with
+  | Empty -> p := Nonempty q2
+  | Nonempty q1 -> if is_empty q1.child then q2.parent := !p; p := Nonempty (merge_nodes q1 q2)
+ *)
+
+Definition MTree_insert (tr: MTree) (x: t) : MTree :=
+  match tr with
+  | Leaf => Node x Leaf Leaf
+  | Node x' lt rt =>
+      MTree_merge_node tr (Node x Leaf Leaf)
+  end.
+
+Lemma MTree_insert_heap_ordered : forall tr x,
+    Heap_Ordered tr ->
+    MTree_is_root tr ->
+    Heap_Ordered (MTree_insert tr x).
+Proof.
+  intros.
+  unfold MTree_insert.
+  destruct tr; simpl in *.
+  - apply Heap_Ordered_node; auto.
+  - subst. apply MTree_merge_node_heap_ordered with (tr1 := (Node val tr1 Leaf)) (tr2 := (Node x Leaf Leaf)).
+    + discriminate.
+    + discriminate.
+    + simpl. reflexivity.
+    + simpl. reflexivity.
+    + assumption.
+    + apply Heap_Ordered_node.
+      * apply Heap_Ordered_leaf.
+      * apply Heap_Ordered_leaf.
+      * simpl. tauto.
+    + reflexivity.
+Qed.
+
+Lemma MTree_node_multiset : forall x m1 m2,
+    MTree_to_MultiSet (Node x m1 m2) = \{x} \u MTree_to_MultiSet m1 \u MTree_to_MultiSet m2.
+Proof.
+  intros.
+  simpl.
+  permut_simpl.
+Qed.
+
+Lemma MTree_single_multiset : forall x,
+    MTree_to_MultiSet (Node x Leaf Leaf) = \{x}.
+Proof.
+  intros. simpl. permut_simpl.
+Qed.
+
+Lemma MTree_insert_multiset_union_single : forall tr x,
+    Heap_Ordered tr -> MTree_is_root tr ->
+    MTree_to_MultiSet (MTree_insert tr x) = MTree_to_MultiSet tr \u \{ x }.
+Proof.
+  intros.
+  unfold MTree_insert.
+  destruct tr eqn: E; simpl.
+  - repeat rewrite for_multiset_union_empty_l.
+    repeat rewrite for_multiset_union_empty_r.
+    reflexivity.
+  - rewrite <- MTree_node_multiset.
+    rewrite <- MTree_single_multiset.
+    apply MTree_merge_node_union; auto.
+    * discriminate.
+    * discriminate.
+    * simpl. reflexivity.
+    * apply Heap_Ordered_node; try apply Heap_Ordered_leaf; simpl; auto.
+Qed.
+
+(*
+let rec merge_siblings q =
+  match !(q.sibling) with
+  | Empty -> q
+  | Nonempty q1 -> let q2 = merge_nodes q q1 in
+    match !(q1.sibling) with
+    | Empty -> q2
+    | Nonempty q3 -> merge_nodes q2 (merge_siblings q3)
+ *)
+
+Fixpoint MTree_merge_sibilings (x: t) (chld sibl: MTree) : MTree :=
+  match sibl with
+  | Leaf => Node x chld Leaf
+  | Node x' chld' sibl' =>
+      let q := MTree_merge_node (Node x chld Leaf) (Node x' chld' Leaf) in
+      match sibl' with
+      | Leaf => q
+      | Node x'' chld'' sibl'' =>
+          MTree_merge_node q
+            (MTree_merge_sibilings x'' chld'' sibl'')
+      end
+  end.
+
+Lemma MTree_merge_sibilings_heap_ordered :
+  forall x chld sibl,
+    Heap_Ordered (Node x chld sibl) ->
+    Heap_Ordered (MTree_merge_sibilings x chld sibl).
+Proof.
+  intros.
+  inversion H; subst.  
+  induction sibl; simpl.
+  - apply Heap_Ordered_node; assumption.
+  - destruct sibl2.
+    + apply MTree_merge_node_heap_ordered with (tr1 := (Node x chld Leaf)) (tr2 := (Node val sibl1 Leaf)); simpl; auto.
+      * discriminate.
+      * discriminate.
+      * apply Heap_Ordered_node; try assumption; try apply Heap_Ordered_leaf.
+    + apply MTree_merge_node_heap_ordered with (tr1 := (MTree_merge_node (Node x chld Leaf) (Node val sibl1 Leaf))) (tr2 := (MTree_merge_sibilings val0 sibl2_1 sibl2_2)); simpl; auto.
+      * unfold MTree_merge_node.
+        destruct (x <? val); discriminate.
+Admitted.
+
+Lemma MTree_merge_sibilings_union :
+  forall x chld sibl,
+    MTree_to_MultiSet (MTree_merge_sibilings x chld sibl) =
+      \{x} \u MTree_to_MultiSet chld \u MTree_to_MultiSet sibl.
+Proof.
+Admitted.
+
+(*
+let pop_min p =
+  match !p with
+  | Empty -> assert false
+  | Nonempty q ->
+    let x = q.value in
+    (match !(q.child) with
+    | Empty -> p := Empty
+    | Nonempty child -> p := Nonempty (merge_siblings child));
+    x
+ *)
+
+Definition MTree_pop_min (tr: MTree) : option (t * MTree) :=
+  match tr with
+  | Leaf => None
+  | Node x chld sibl =>
+      match chld with
+      | Leaf => Some (x, Leaf)
+      | Node x' chld' sibl' =>
+          Some (x, MTree_merge_sibilings x' chld' sibl')
+      end
+  end.
+
+Lemma MTree_pop_min_minimal :
+  forall (ret: t) (tr tr': MTree),
+    Heap_Ordered tr -> 
+    MTree_is_root tr ->
+    MTree_pop_min tr = Some (ret, tr') ->
+    MTree_forall tr (fun (x:t) => ret <= x).
+Proof.
+  intros.
+  destruct tr; simpl in *.
+  - congruence.
+  - subst.
+    assert (E: ret = val).
+    { destruct tr1; inversion H1; subst; auto. }
+    subst.
+    repeat split.
+    reflexivity.
+    all: inversion H; subst; auto.
+Qed.
+
+Lemma MTree_pop_min_heap :
+  forall (ret: t) (tr tr': MTree),
+    Heap_Ordered tr ->
+    MTree_is_root tr ->
+    MTree_pop_min tr = Some (ret, tr') ->
+    Heap_Ordered tr' /\ MTree_is_root tr'.
+Proof.
+  intros.
+  destruct tr; simpl in *.
+  - congruence.
+  - subst.
+    destruct tr1.
+    + inversion H1; subst.
+      simpl.
+      split.
+      apply Heap_Ordered_leaf.
+      tauto.
+    + inversion H1; subst.
+      inversion H; subst.
+      split.
+      * apply MTree_merge_sibilings_heap_ordered.
+        assumption.
+      * {
+          induction tr1_2.
+          - unfold MTree_merge_sibilings. simpl. reflexivity.
+          - simpl.
+            destruct tr1_2_2.
+            + unfold MTree_merge_node; destruct (val0 <? val); simpl; reflexivity.
+            + unfold MTree_merge_node; destruct (val0 <? val); simpl; destruct (MTree_merge_sibilings val1 tr1_2_2_1 tr1_2_2_2); simpl; try tauto.
+              destruct (val0 <? val2); simpl; reflexivity.
+              destruct (val <? val2); simpl; reflexivity.
+        }
+Qed.
+
+Lemma MTree_pop_min_union :
+  forall (ret: t) (tr tr': MTree),
+    MTree_is_root tr ->
+    MTree_pop_min tr = Some (ret, tr') ->
+    MTree_to_MultiSet tr  = MTree_to_MultiSet tr' \u \{ret}.
+Proof.
+  intros.
+  destruct tr; simpl in *.
+  - congruence.
+  - subst.
+    destruct tr1.
+    + inversion H0; subst.
+      permut_simpl.
+    + inversion H0; subst.
+      rewrite MTree_merge_sibilings_union.
+      simpl.
+      permut_simpl.
+Qed.
+  
+Lemma Tree_Leaf : forall p,
+    (p ~> Tree Leaf) = p ~~> Empty.
+Proof.
+  auto.
+Qed.
+
+Lemma Tree_Node : forall p x lt rt,
+    (p ~> Tree (Node x lt rt)) =
+      \exists (p1 p2 p3:loc),
+          p ~~~> `{ value' := x; child' := p1; sibling' := p2; parent' := p3}
+            \* (p1 ~> Tree lt) \* (p2 ~> Tree rt).
+Proof.      
+  auto.
+Qed.
+
 Lemma Triple_merge_nodes : forall (q1 q2: loc) (tr1 tr2: MTree) (x1 x2: t) (lt1 rt1 lt2 rt2: MTree),
   (tr1 = Node x1 lt1 rt1) -> (tr2 = Node x2 lt2 rt2) ->
-  x1 < x2 ->                              
+  MTree_is_root tr1 -> MTree_is_root tr2 ->                            
+  x1 < x2 ->
   SPEC (merge_nodes q1 q2)
-    PRE (q1 -> Heap tr1) \* (q2 -> Heap tr2)
-    POST (fu
+    PRE (q1 ~> MHeap tr1) \* (q2 ~> MHeap tr2)
+    POST (fun qret => qret ~> Heap (MTree_merge_node tr1 tr2)).
+Proof.
+  intros.
+  simpl in *.
+  subst.
+  xcf.
+  xunfold MHeap.
+  xunfold Tree.
+  xpull.
+  intros p1 p2 p3 HT1 p4 p5 p6 HT2.
+  xsimpl*.
+  xif; => C.
+  xapp.
 
+  destruct lt1.
+  - (* q1.child is Empty *)
+    xchange Tree_Leaf.
+    xapp.
+    xlet.
+    xcase.
+    + xval.
+    + xsimpl*.
+      intro; subst.
+      xapp.
+Admitted.
 (**
 
 Formalization of pairing heaps, covering both
@@ -637,285 +906,3 @@ Proof using.
 Qed.
 
 Hint Extern 1 (RegisterSpec pop_min) => Provide Triple_pop_min.
-
-
-
-
-(* ********************************************************************** *)
-(* ********************************************************************** *)
-(* ********************************************************************** *)
-(** * Alternative Approach, Without a Pure Tree *)
-
-From TLC Require Import LibFix.
-Module Alternative.
-
-Section TODO_finite_multisets. (* TODO complete and merge in TLC/LibMultiset *)
-Open Scope container_scope.
-Import LibMultiset.
-
-Axiom finite : forall A, multiset A -> Prop.
-Axiom finite_empty_eq : forall A (x:A),
-  finite (empty:multiset A) = True.
-Axiom finite_single_eq : forall A (x:A),
-  finite ('{x}:multiset A) = True.
-Axiom finite_union_eq : forall A (E F:multiset A),
-  finite (E \u F) = (finite E /\ finite F).
-Axiom card_union : forall A (E F:multiset A),
-  finite E ->
-  finite F ->
-  card (E \u F) = (card E + card F)%nat.
-Axiom card_single : forall A (x:A),
-  card ('{x}:multiset A) = 1%nat.
-
-Axiom card_list_union_multiset : forall E Es, (** forall A (E:multiset A) (Es:list (multiset A)), *)
-   mem E Es ->
-   card E <= card (list_union Es).
-
-End TODO_finite_multisets.
-
-Hint Rewrite finite_empty_eq finite_single_eq finite_union_eq : rew_finite.
-Tactic Notation "rew_finite" := autorewrite with rew_finite.
-Tactic Notation "rew_finite" "in" hyp(H) := autorewrite with rew_finite in H.
-Tactic Notation "rew_finite" "in" "*" := autorewrite with rew_finite in *.
-Tactic Notation "rew_finite" "*" := rew_finite; auto_star.
-
-
-(* ******************************************************* *)
-(** ** Representation predicates *)
-
-(** [in x Es E] captures the invariant for a node. *)
-
-Definition inv (x:elem) (Es:list elems) (E:elems) : Prop :=
-     Forall (foreach (is_ge x)) Es
-  /\ E = \{x} \u (list_union Es)
-  /\ finite E.
-
-(** [q ~> Repr E] is a notation for [Repr E q]. It relates a pointer [q] with the
-    multiset of items that it represents in memory, and enforces invariants.
-    Because it is recursive, we use TLC's optimal fixed point combinator to
-    define [Repr]. The decreasing measure is the cardinal of [E]. *)
-
-Definition ReprFunctional (Repr:elems->loc->hprop) (E:elems) (q:loc) : hprop :=
-  \exists (x:elem) (q':loc) (Es:list elems),
-       q ~~~>`{ value' := x; sub' := q' }
-    \* q' ~> MListOf Repr Es
-    \* \[inv x Es E].
-
-Definition Repr := FixFun2 ReprFunctional.
-
-Lemma fix_Repr : forall (E:elems) (q:loc),
-  Repr E q = ReprFunctional Repr E q.
-Proof using.
-  applys~ (FixFun2_fix (measure2 (fun E q => card E))). auto with wf.
-  unfold measure2. intros E q R1 R2 IH. unfolds.
-  applys heq_hexists; intros x.
-  applys heq_hexists; intros q'.
-  applys heq_hexists; intros Es.
-  fequals.
-  applys heq_hstar_hpure. intros (HI1&HI2&IH3). applys MListOfCongr.
-  { intros qi Ei Hi. applys IH.
-    { subst E. rewrite finite_union_eq in IH3. rewrite* card_union.
-      { rewrite card_single. lets: card_list_union_multiset Hi. math. } } }
-Qed.
-
-(** [q ~> Heap E] relates a pointer on a heap [p] with the multiset of items [E]
-    that are stored in the heap. It uses [Contents E c] as an auxiliary definition. *)
-
-Definition Contents (E:elems) (c:contents_) : hprop :=
-  match c with
-  | Empty => \[E = \{}]
-  | Nonempty p => (p ~> Repr E)
-  end.
-
-Definition Heap (E:elems) (p:heap_) : hprop :=
-  \exists c, p ~~> c \* Contents E c.
-
-
-(* ******************************************************* *)
-(** ** Paraphrase definitions as equalities *)
-
-Lemma Contents_eq : forall E c,
-  Contents E c = (match c with
-  | Empty => \[E = \{}]
-  | Nonempty p => (p ~> Repr E)
-  end).
-Proof using. auto. Qed.
-
-Lemma Heap_eq : forall p E,
-  p ~> Heap E = \exists c, p ~~> c \* Contents E c.
-Proof using. auto. Qed.
-
-Lemma Repr_eq : forall q E,
-  q ~> Repr E = \exists (x:elem) (q':loc) (Es:list elems),
-       q ~~~>`{ value' := x; sub' := q' }
-    \* q' ~> MListOf Repr Es
-    \* \[inv x Es E].
-Proof using.
-  intros. xunfold Repr at 1.
-  fold Repr. rewrite fix_Repr. auto.
-Qed.
-
-Lemma Repr_intro : forall q x q' Es,
-  Forall (foreach (is_ge x)) Es ->
-  finite (list_union Es) ->
-      q ~~~>`{ value' := x; sub' := q' } \* q' ~> MListOf Repr Es
-  ==> q ~> Repr (\{x} \u (list_union Es)).
-Proof using.
-  intros. xchange* <- (Repr_eq q). splits*. rew_finite*.
-Qed.
-
-Arguments Repr_intro : clear implicits.
-
-Lemma haffine_Repr : forall p E,
-  haffine (p ~> Repr E).
-Proof using.
-  intros. gen p. induction_wf IH: (measure (@card elems _)) E; intros.
-  unfolds measure. intros. rewrite Repr_eq.
-  do 3 (applys haffine_hexists; intros ?). applys haffine_hstar.
-  xaffine. rewrite hstar_comm. applys haffine_hstar_hpure_l. intros (I1&->&I3).
-  (* TODO: xaffine, which should systematically pull the hpure to the head *)
-  applys haffine_MListOf. intros qi Ei Hi. applys IH. rew_finite in *.
-  rewrite card_union, card_single; rew_finite in *; autos*.
-  lets: card_list_union_multiset Hi. math.
-Qed.
-
-Hint Resolve haffine_Repr : haffine.
-
-
-(* ******************************************************* *)
-(** ** Lemmas about representation predicates *)
-
-Lemma inv_not_empty : forall x Es E,
-  inv x Es E ->
-  E <> \{}.
-Proof using. introv (I1&I2&I3). subst. multiset_inv. Qed.
-
-Lemma Repr_not_empty : forall q E,
-  q ~> Repr E ==> \[E <> \{}] \* q ~> Repr E.
-Proof using.
-  intros. rewrite Repr_eq. xpull ;=> x q' Es I. lets: inv_not_empty I. xsimpl*.
-Qed.
-
-Lemma Contents_is_empty : forall c E,
-  Contents E c ==> \[c = Empty <-> E = \{}] \* Contents E c.
-Proof using.
-  intros.  unfold Contents. destruct c.
-  { xsimpl*. }
-  { xchange Repr_not_empty ;=> N. xsimpl. iff H; false. }
-Qed.
-
-Lemma Heap_Nonempty : forall p q E,
-  p ~~> Nonempty q \* q ~> Repr E ==> p ~> Heap E.
-Proof using.
-  intros. xchanges Repr_not_empty ;=> N. xunfold Heap. xsimpl.
-Qed.
-
-Lemma Heap_Empty : forall p,
-  p ~~> Empty ==> p ~> Heap \{}.
-Proof using. intros. xunfold Heap. unfold Contents. xsimpl*. Qed.
-
-
-(* ******************************************************* *)
-(** ** Verification *)
-
-Lemma Triple_create :
-  SPEC (create tt)
-    PRE \[]
-    POST (fun p => p ~> Heap \{}).
-Proof using.
-  xcf. xapp. xunfold Heap. unfold Contents. xsimpl*.
-Qed.
-
-Hint Extern 1 (RegisterSpec create) => Provide Triple_create.
-
-Lemma Triple_is_empty : forall p E,
-  SPEC (is_empty p)
-    PRE (p ~> Heap E)
-    POST (fun b => \[b = isTrue (E = \{})] \* p ~> Heap E).
-Proof using.
-  xcf. xunfolds Heap ;=> q. xapp. xapp.
-  xchanges~ Contents_is_empty.
-Qed.
-
-Hint Extern 1 (RegisterSpec (is_empty)) => Provide Triple_is_empty.
-
-Lemma merge_lemma : forall x1 x2 Es1 Es2,
-  Forall (foreach (is_ge x1)) Es1 ->
-  Forall (foreach (is_ge x2)) Es2 ->
-  x1 <= x2 ->
-  Forall (foreach (is_ge x1)) ('{x2} \u list_union Es2 :: Es1).
-Proof using.
-  introv H1 H2 Hg. constructors.
-  { applys foreach_union.
-    { applys* foreach_single. }
-    { applys* foreach_list_union. applys Forall_pred_incl H2.
-      { intros x Hx. applys* foreach_weaken. } } }
-  { eauto. }
-Qed.
-
-Lemma Triple_merge : forall q1 q2 E1 E2,
-  SPEC (merge q1 q2)
-    PRE (q1 ~> Repr E1 \* q2 ~> Repr E2)
-    POST (fun q => q ~> Repr (E1 \u E2)).
-Proof using.
-  xcf. xchange (Repr_eq q1) ;=> x1 q1' Es1 (I11&->&I13).
-  xchange (Repr_eq q2) ;=> x2 q2' Es2 (I21&->&I23).
-  rew_finite in *. xif ;=> C.
-  { xapp. xchange* (Repr_intro q2). xapp. xvals.
-    xchange (Repr_intro q1). { applys* merge_lemma. } { rew_listx. rew_finite*. }
-    xsimpl. substs*. }
-  { xapp. xchange* (Repr_intro q1). xapp. xvals.
-    xchange (Repr_intro q2). { applys* merge_lemma. } { rew_listx. rew_finite*. }
-    xsimpl. substs*. }
-Qed.
-
-Hint Extern 1 (RegisterSpec merge) => Provide Triple_merge.
-
-Lemma Triple_insert : forall p x E,
-  SPEC (insert p x)
-    PRE (p ~> Heap E)
-    POST (fun (_:unit) => p ~> Heap (E \u \{x})).
-Proof using.
-  xcf. xchange Heap_eq ;=> q. xapp ;=> l. xapp ;=> q2.
-  xchange* (Repr_intro q2); rew_listx. rew_finite*. xapp. xmatch; simpl.
-  { xpull ;=> ->. xapp. xchanges* Heap_Nonempty. }
-  { xapp ;=> r. xapp. xchanges* Heap_Nonempty. }
-Qed.
-
-Hint Extern 1 (RegisterSpec insert) => Provide Triple_insert.
-
-Lemma Triple_merge_pairs : forall l Es,
-  Es <> nil ->
-  SPEC (merge_pairs l)
-    PRE (l ~> MListOf Repr Es)
-    POST (fun q => q ~> Repr (list_union Es)).
-Proof using.
-  intros l Es. induction_wf IH: list_sub Es. intros HE.
-  xcf. xapp~ ;=> q1 E1 ES1 ->. xif ;=> C.
-  { subst. xvals*. }
-  { xapp~ ;=> q2 E2 ES2 ->. xapp ;=> r. xif ;=> C'.
-    { subst. xvals*. }
-    { xapp* IH ;=> r'. xapp ;=> r''. xsimpl*. } }
-Qed.
-
-Hint Extern 1 (RegisterSpec merge_pairs) => Provide Triple_merge_pairs.
-
-Lemma Triple_pop_min : forall p E,
-  E <> \{} ->
-  SPEC (pop_min p)
-    PRE (p ~> Heap E)
-    POST (fun x => \exists E', \[min_of E x /\ E = \{x} \u E'] \* p ~> Heap E').
-Proof using.
-  introv HE. xcf. xchange Heap_eq ;=> c. xapp.
-  destruct c as [|q]; simpl; xpull. xchange Repr_eq ;=> x q' Es (I1&I2&I3).
-  xmatch. xapp. xapp. xapp.
-  xseq (fun (_:unit) => \exists E', \[E = '{x} \u E'] \* p ~> Heap E' \* \GC).
-  { xif ;=> C2.
-    { subst. inverts I1. rew_listx. xapp. xchanges* Heap_Empty. }
-    { xapp. xapp* ;=> r. xapp. xchange Heap_Nonempty. xsimpl*. } }
-  { xpull ;=> E' ->. xvals. split~. { rewrite I2. applys~ pop_min_lemma. } }
-Qed.
-
-Hint Extern 1 (RegisterSpec pop_min) => Provide Triple_pop_min.
-
-End Alternative.
