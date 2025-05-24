@@ -89,7 +89,6 @@ Definition Tree_is_heap (tree : Tree) :=
   | Node val lt rt => rt = Leaf
   end.
 
-
 Definition Tree_merge_node (t1 t2: Tree) : Tree :=
   match (t1, t2) with
   | (Leaf, _) => t2
@@ -351,6 +350,23 @@ Proof.
   split; congruence.
 Qed.
 
+Lemma TreeRepr_Leaf : forall p,
+    (p ~> TreeRepr Leaf) = p ~~> Empty.
+Proof.
+  auto.
+Qed.
+
+Lemma TreeRepr_Node : forall p x lt rt,
+    (p ~> TreeRepr (Node x lt rt)) =
+      \exists (p1 p2 p3:loc),
+          p ~~~> `{ value' := x; child' := p1; sibling' := p2; parent' := p3}
+            \* (p1 ~> TreeRepr lt) \* (p2 ~> TreeRepr rt).
+Proof.
+  auto.
+Qed.
+
+Hint Unfold TreeRepr_Leaf TreeRepr_Node.
+
 Lemma Triple_create :
   SPEC (create tt)
     PRE \[]
@@ -524,23 +540,67 @@ Proof.
       replace (1 + size tr1 + 1) with (1 + 1 + size tr1) by lia;
       lia.
 Qed.
-  
-Lemma TreeRepr_Leaf : forall p,
-    (p ~> TreeRepr Leaf) = p ~~> Empty.
+
+Lemma Tree_nonempty_heap_is_heap : forall tr,
+    Tree_is_nonempty_heap tr -> Tree_is_heap tr.
+Proof. intros. destruct tr; simpl in *; auto. Qed.
+
+Lemma Tree_merge_node_size : forall tr1 tr2,
+    Tree_is_heap tr1 -> Tree_is_heap tr2 ->
+    size (Tree_merge_node tr1 tr2) = size tr1 + size tr2.
 Proof.
-  auto.
+  intros.
+  unfold Tree_merge_node.
+  destruct tr1; destruct tr2; simpl in *; try lia.
+  - subst.
+    destruct (val <? val0); simpl; lia.
 Qed.
 
-Lemma TreeRepr_Node : forall p x lt rt,
-    (p ~> TreeRepr (Node x lt rt)) =
-      \exists (p1 p2 p3:loc),
-          p ~~~> `{ value' := x; child' := p1; sibling' := p2; parent' := p3}
-            \* (p1 ~> TreeRepr lt) \* (p2 ~> TreeRepr rt).
+Lemma Tree_merge_node_is_heap : forall tr1 tr2,
+    Tree_is_heap tr1 -> Tree_is_heap tr2 ->
+    Tree_is_heap (Tree_merge_node tr1 tr2).
 Proof.
-  auto.
+  intros.
+  destruct tr1; destruct tr2; simpl; auto.
+  unfold Tree_merge_node.
+  destruct (val <? val0); simpl; auto.
 Qed.
 
-Hint Unfold TreeRepr_Leaf TreeRepr_Node.
+Lemma Tree_merge_sibilings_is_heap : forall x chld sibl,
+    Tree_is_heap (Tree_merge_sibilings x chld sibl).
+Proof.  
+  fix IH 3.
+  intros.
+  destruct sibl as [| x1 t1 [| x2 t21 t22]]; simpl.
+  - reflexivity.
+  - apply Tree_merge_node_is_heap; simpl; reflexivity.
+  - apply Tree_merge_node_is_heap.
+    + apply Tree_merge_node_is_heap; simpl; reflexivity.
+    + apply IH.
+Qed.
+
+Lemma Tree_merge_sibilings_size : forall x chld sibl,
+    size (Tree_merge_sibilings x chld sibl) = size (Node x chld sibl).
+Proof.
+  fix IH 3.
+  intros.
+  simpl.
+  destruct sibl as [| x1 t1 [| x2 t21 t22]]; simpl.
+  - reflexivity.
+  - rewrite Tree_merge_node_size.
+    simpl.
+    lia.
+    all: simpl; reflexivity.
+  - rewrite Tree_merge_node_size.
+    rewrite Tree_merge_node_size.
+    rewrite IH.
+    simpl.
+    lia.
+    simpl; reflexivity.
+    simpl; reflexivity.
+    apply Tree_merge_node_is_heap; simpl; auto.
+    apply Tree_merge_sibilings_is_heap.
+Qed.
 
 (*
 Lemma Triple_merge_nodes : forall (q1 q2: loc) (tr1 tr2: Tree) (x1 x2: t) (lt1 rt1 lt2 rt2: Tree),
