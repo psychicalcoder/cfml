@@ -50,6 +50,57 @@ let pop_min p =
     | Empty -> p := Empty
     | Nonempty child -> p := Nonempty (merge_siblings child));
     x
+
+let rec find_parent k =
+  match !k with
+  | Empty -> Empty 
+  | Nonempty q -> 
+      if !(q.sibling) = Empty 
+        then !(q.parent)
+    else find_parent q.sibling
+    
+let rec root k = 
+  match !k with 
+  | Empty -> assert false 
+  | Nonempty q -> 
+    if !(q.sibling) = Empty && !(q.parent) = Empty
+      then k 
+      else if !(q.parent) != Empty 
+        then root q.sibling
+        else root q.parent
+
+let left_sibling k = 
+  let rec sib_itr s = 
+    match !s with 
+    | Empty -> assert false
+    | Nonempty q -> if q.sibling = k then !s 
+          else sib_itr q.sibling 
+        in 
+  let parent = find_parent k in 
+  match parent with
+  | Empty -> assert false 
+  | Nonempty parent_node -> sib_itr parent_node.child
+
+  
+let decrease_key k d = 
+  match !k with
+  | Empty -> assert false
+  | Nonempty q -> 
+      let parent = find_parent k in 
+      match parent with 
+      | Empty -> (let _ = q.value = q.value - d in k) (*this key is the parent*)
+      | Nonempty parent_node -> (
+          if parent_node.value > q.value - d
+            then (let _ = q.value = q.value - d in root k) (*The parent node is small enough not to change things around*)
+            else if parent_node.child = k then (let _ = parent_node.child = q.sibling in let _ = q.value = q.value - d in  merge (root k) (k)) (*cut the key out of the parent*)
+            else let ls = left_sibling k in 
+              match ls with
+              | Empty -> assert false 
+              | Nonempty lsq -> (let _ = lsq.sibling = q.sibling in let _ = q.value = q.value - d in merge (root k) (k)) (*the key is not the direct child of the parent. cut it out of its left sibling*)
+      )
+
+
+
 (*
 let rec rank_siblings q  =
   match !(q.sibling) with
