@@ -131,9 +131,8 @@ Proof.
   }
 Qed.
 
-Lemma Tree_merge_node_union : forall (tr1 tr2 tret: Tree),
+Lemma Tree_merge_node_union : forall (tr1 tr2: Tree),
     Tree_is_heap tr1 -> Tree_is_heap tr2 ->
-    Heap_Ordered tr1 -> Heap_Ordered tr2 ->
     Tree_to_MSet (Tree_merge_node tr1 tr2) = (Tree_to_MSet tr1) \u (Tree_to_MSet tr2).
 Proof.
   intros.
@@ -204,28 +203,67 @@ Fixpoint Tree_merge_sibilings (x: t) (chld sibl: Tree) : Tree :=
       end
   end.
 
+Lemma Tree_merge_sibilings_is_heap :
+  forall x chld sibl,
+    Tree_is_heap (Tree_merge_sibilings x chld sibl).
+Proof.
+  intros.
+  destruct sibl as [| x1 t1 [| x2 t21 t22]]; simpl.
+  - reflexivity.
+  - unfold Tree_merge_node.
+    destruct (x <? x1); simpl; reflexivity.
+  - unfold Tree_merge_node.
+    destruct (x <? x1); destruct (Tree_merge_sibilings x2 t21 t22); simpl.
+    + reflexivity.
+    + destruct (x <? val); simpl; reflexivity.
+    + reflexivity.
+    + destruct (x1 <? val); simpl; reflexivity.
+Qed.
+
+
 Lemma Tree_merge_sibilings_heap_ordered :
   forall x chld sibl,
     Heap_Ordered (Node x chld sibl) ->
     Heap_Ordered (Tree_merge_sibilings x chld sibl).
 Proof.
+  fix IH 3.
   intros.
-  inversion H; subst.  
-  induction sibl; simpl.
-  - auto.
-  - destruct sibl2.
-    + apply Tree_merge_node_heap_ordered with (tr1 := (Node x chld Leaf)) (tr2 := (Node val sibl1 Leaf)); simpl; auto.
-    + apply Tree_merge_node_heap_ordered with (tr1 := (Tree_merge_node (Node x chld Leaf) (Node val sibl1 Leaf))) (tr2 := (Tree_merge_sibilings val0 sibl2_1 sibl2_2)); simpl; auto.
-      * unfold Tree_merge_node.
-        destruct (x <? val); simpl; reflexivity.
-Admitted.
+  destruct sibl as [| x1 t1 [| x2 t21 t22]]; simpl.
+  - exact H.
+  - apply Tree_merge_node_heap_ordered; simpl; auto.
+    + inversion H; subst.
+      apply Heap_Ordered_node; auto.
+    + inversion H; subst; assumption.
+  - apply Tree_merge_node_heap_ordered; simpl; auto.
+    + unfold Tree_merge_node; destruct (x <? x1); simpl; reflexivity.
+    + apply Tree_merge_sibilings_is_heap.
+    + inversion H; subst.
+      apply Tree_merge_node_heap_ordered; simpl; auto.
+      * inversion H4; subst; auto.
+    + apply IH.
+      inversion H; subst.
+      inversion H4; subst; assumption.
+Qed.
 
 Lemma Tree_merge_sibilings_union :
   forall x chld sibl,
     Tree_to_MSet (Tree_merge_sibilings x chld sibl) =
       \{x} \u Tree_to_MSet chld \u Tree_to_MSet sibl.
 Proof.
-Admitted.
+  fix IH 3.
+  intros.
+  destruct sibl as [| x1 t1 [| x2 t21 t22]]; simpl.
+  - reflexivity.
+  - rewrite Tree_merge_node_union; simpl; try permut_simpl; auto.
+  - rewrite Tree_merge_node_union.
+    + rewrite Tree_merge_node_union.
+      simpl.
+      rewrite IH.
+      permut_simpl.
+      all: simpl; reflexivity.
+    + unfold Tree_merge_node; destruct (x <? x1); simpl; reflexivity.
+    + apply Tree_merge_sibilings_is_heap.
+Qed.
 
 Definition Tree_pop_min (tr: Tree) : option (t * Tree) :=
   match tr with
@@ -566,19 +604,6 @@ Proof.
   destruct (val <? val0); simpl; auto.
 Qed.
 
-Lemma Tree_merge_sibilings_is_heap : forall x chld sibl,
-    Tree_is_heap (Tree_merge_sibilings x chld sibl).
-Proof.  
-  fix IH 3.
-  intros.
-  destruct sibl as [| x1 t1 [| x2 t21 t22]]; simpl.
-  - reflexivity.
-  - apply Tree_merge_node_is_heap; simpl; reflexivity.
-  - apply Tree_merge_node_is_heap.
-    + apply Tree_merge_node_is_heap; simpl; reflexivity.
-    + apply IH.
-Qed.
-
 Lemma Tree_merge_sibilings_size : forall x chld sibl,
     size (Tree_merge_sibilings x chld sibl) = size (Node x chld sibl).
 Proof.
@@ -635,3 +660,24 @@ Proof.
       xapp.    
 Admitted.
 *)
+
+Lemma Heap_eq : forall p tr,
+    p ~> Heap tr = \exists c, p ~~> c \* Contents tr c.
+Proof. auto. Qed.       
+
+Lemma Triple_insert :
+  forall (x:t) (p:loc) (tr:Tree), 
+  SPEC (insert p x)
+    PRE (p ~> Heap tr)
+    POST (fun (_:unit) => p ~> Heap (Tree_insert tr x)).
+Proof.
+  xcf.
+  xchange Heap_eq; => q.
+  xlet.
+  xlet.
+  xapp.
+  xapp; => p0.
+  xlet.
+  xapp.
+  xapp; => p1.
+Admitted.
