@@ -6,6 +6,7 @@ let y = PairingHeap.create () in
 let () = PairingHeap.insert y 1 in 
 let () = PairingHeap.insert y 2 in 
 let () = PairingHeap.insert y 3 in 
+
 let z = (PairingHeap.merge x y) in 
 let a  = PairingHeap.create () in 
 let () = PairingHeap.insert a 11 in 
@@ -23,7 +24,8 @@ let () = PairingHeap.insert e 21 in
 let () = PairingHeap.insert e 22 in 
 let () = PairingHeap.insert e 23 in
 let f = PairingHeap.merge e d in 
-let g = PairingHeap.pop_min f in
-let h = PairingHeap.pop_min f in 
-let i = PairingHeap.decrease_key b 3 in 
-PairingHeap.dot i
+(* let _ = PairingHeap.dot f in  *)
+(* let i = PairingHeap.root b in  *)
+let i = PairingHeap.decrease_key b 14 in
+PairingHeap.dot i;
+
