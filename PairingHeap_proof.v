@@ -659,7 +659,51 @@ Proof.
       intro; subst.
       xapp.    
 Admitted.
-*)
+ *)
+
+Inductive IndexedTree :=
+| IndexedTreeLeaf
+| IndexedTreeNode (idx: nat) (val: t) (child sibling: IndexedTree).
+
+
+Definition IndexedTree_merge_node (t1 t2: IndexedTree) : IndexedTree :=
+  match (t1, t2) with
+  | (IndexedTreeLeaf, _) => t2
+  | (_, IndexedTreeLeaf) => t1
+  | (IndexedTreeNode i1 x1 lt1 rt1, IndexedTreeNode i2 x2 lt2 rt2) => 
+      if x1 <? x2 then
+        IndexedTreeNode i1 x1 (IndexedTreeNode i2 x2 lt2 lt1) IndexedTreeLeaf
+      else
+        IndexedTreeNode i2 x2 (IndexedTreeNode i1 x1 lt1 lt2) IndexedTreeLeaf
+  end.
+
+Fixpoint DetachNode (heap: IndexedTree) (index: nat) : IndexedTree :=
+  match heap with
+  | IndexedTreeLeaf => IndexedTreeLeaf
+  | IndexedTreeNode idx val chld sibl =>
+      if (index =? idx) then 
+        sibl
+      else
+        IndexedTreeNode idx val (DetachNode chld index) (DetachNode sibl index)
+  end.
+
+Definition DecreaseKey (heap: IndexedTree) (decrement: t) (node: IndexedTree): IndexedTree :=
+  match node with 
+  | IndexedTreeLeaf => heap
+  | IndexedTreeNode idx val chld _ =>
+      let root := (DetachNode heap idx) in
+      IndexedTree_merge_node root (IndexedTreeNode idx (val - decrement) chld IndexedTreeLeaf)
+  end.
+
+Definition IndexedTree_insert (tr: IndexedTree) (x: t) (index: nat) : IndexedTree :=
+  match tr with
+  | IndexedTreeLeaf => IndexedTreeNode index x IndexedTreeLeaf IndexedTreeLeaf
+  | IndexedTreeNode _ _ _ _ =>
+      IndexedTree_merge_node tr (IndexedTreeNode index x IndexedTreeLeaf IndexedTreeLeaf)
+  end.
+
+Compute DecreaseKey (IndexedTree_insert (IndexedTree_insert (IndexedTree_insert IndexedTreeLeaf 30 0) 40 1) 50 2) 40 (IndexedTreeNode 2 50 IndexedTreeLeaf (IndexedTreeNode 1 40 IndexedTreeLeaf IndexedTreeLeaf)).
+
 
 Lemma Heap_eq : forall p tr,
     p ~> Heap tr = \exists c, p ~~> c \* Contents tr c.
