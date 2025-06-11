@@ -182,7 +182,7 @@ Parameter merge_nodes_cf__ :
                             CFML.WPLifted.Wpgen_let_trm (
                               @CFML.WPLifted.Wptag (
                                 (
-                                  CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
+                                  CFML.WPLifted.Wpgen_app contents_ (
                                     CFML.WPRecord.val_get_field child'
                                   ) (
                                     Coq.Lists.List.cons (
@@ -192,27 +192,46 @@ Parameter merge_nodes_cf__ :
                                 )
                               )
                             ) (
-                              fun x11__ : CFML.Semantics.loc =>
+                              fun x5__ : contents_ =>
                               @CFML.WPLifted.Wptag (
                                 (
                                   CFML.WPLifted.Wpgen_let_trm (
                                     @CFML.WPLifted.Wptag (
                                       (
-                                        CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                                          Coq.Lists.List.cons (
-                                            @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x11__
-                                          ) Coq.Lists.List.nil
-                                        )
-                                      )
-                                    )
-                                  ) (
-                                    fun x12__ : contents_ =>
-                                    @CFML.WPLifted.Wptag (
-                                      (
-                                        CFML.WPLifted.Wpgen_let_trm (
+                                        CFML.WPLifted.Wpgen_match x5__ (
                                           @CFML.WPLifted.Wptag (
                                             (
-                                              CFML.WPLifted.Wpgen_match x12__ (
+                                              CFML.WPLifted.Wpgen_case (
+                                                fun A : Type =>
+                                                fun EA : CFML.SepLifted.Enc A =>
+                                                fun Q :
+                                                  A ->
+                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                                =>
+                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                    Coq.Init.Logic.eq x5__ (
+                                                      Empty : contents_
+                                                    )
+                                                  )
+                                                ) (
+                                                  @CFML.WPLifted.Wptag (
+                                                    (
+                                                      CFML.WPLifted.Wpgen_val (
+                                                        Nonempty q1 : contents_
+                                                      )
+                                                    )
+                                                  ) _ _ Q
+                                                )
+                                              ) (
+                                                CFML.WPLifted.Wpgen_negpat (
+                                                  Coq.Init.Logic.not (
+                                                    Coq.Init.Logic.eq x5__ (
+                                                      Empty : contents_
+                                                    )
+                                                  )
+                                                )
+                                              ) (
                                                 @CFML.WPLifted.Wptag (
                                                   (
                                                     CFML.WPLifted.Wpgen_case (
@@ -224,77 +243,36 @@ Parameter merge_nodes_cf__ :
                                                         A ->
                                                         CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
                                                       =>
-                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                          Coq.Init.Logic.eq x12__ (
-                                                            Empty : contents_
-                                                          )
-                                                        )
-                                                      ) (
-                                                        @CFML.WPLifted.Wptag (
-                                                          (
-                                                            CFML.WPLifted.Wpgen_val (
-                                                              Nonempty q1 : contents_
+                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                                                        fun p0__ : node_ =>
+                                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                            Coq.Init.Logic.eq x5__ (
+                                                              Nonempty p0__ : contents_
                                                             )
                                                           )
-                                                        ) _ _ Q
+                                                        ) (
+                                                          @CFML.WPLifted.Wptag (
+                                                            (
+                                                              CFML.WPLifted.Wpgen_val (
+                                                                Empty : contents_
+                                                              )
+                                                            )
+                                                          ) _ _ Q
+                                                        )
                                                       )
                                                     ) (
                                                       CFML.WPLifted.Wpgen_negpat (
+                                                        forall p0__ : node_,
                                                         Coq.Init.Logic.not (
-                                                          Coq.Init.Logic.eq x12__ (
-                                                            Empty : contents_
+                                                          Coq.Init.Logic.eq x5__ (
+                                                            Nonempty p0__ : contents_
                                                           )
                                                         )
                                                       )
                                                     ) (
                                                       @CFML.WPLifted.Wptag (
-                                                        (
-                                                          CFML.WPLifted.Wpgen_case (
-                                                            fun A : Type =>
-                                                            fun EA :
-                                                              CFML.SepLifted.Enc A
-                                                            =>
-                                                            fun Q :
-                                                              A ->
-                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                                            =>
-                                                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                                              fun p0__ :
-                                                                node_
-                                                              =>
-                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                                  Coq.Init.Logic.eq x12__ (
-                                                                    Nonempty p0__ : contents_
-                                                                  )
-                                                                )
-                                                              ) (
-                                                                @CFML.WPLifted.Wptag (
-                                                                  (
-                                                                    CFML.WPLifted.Wpgen_val (
-                                                                      Empty : contents_
-                                                                    )
-                                                                  )
-                                                                ) _ _ Q
-                                                              )
-                                                            )
-                                                          ) (
-                                                            CFML.WPLifted.Wpgen_negpat (
-                                                              forall p0__ :
-                                                                node_,
-                                                              Coq.Init.Logic.not (
-                                                                Coq.Init.Logic.eq x12__ (
-                                                                  Nonempty p0__ : contents_
-                                                                )
-                                                              )
-                                                            )
-                                                          ) (
-                                                            @CFML.WPLifted.Wptag (
-                                                              @CFML.WPLifted.Wpgen_done
-                                                            )
-                                                          )
-                                                        )
+                                                        @CFML.WPLifted.Wpgen_done
                                                       )
                                                     )
                                                   )
@@ -302,37 +280,59 @@ Parameter merge_nodes_cf__ :
                                               )
                                             )
                                           )
+                                        )
+                                      )
+                                    )
+                                  ) (
+                                    fun x6__ : contents_ =>
+                                    @CFML.WPLifted.Wptag (
+                                      (
+                                        CFML.WPLifted.Wpgen_seq (
+                                          @CFML.WPLifted.Wptag (
+                                            (
+                                              CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit (
+                                                CFML.WPRecord.val_set_field parent'
+                                              ) (
+                                                Coq.Lists.List.cons (
+                                                  @CFML.SepLifted.dyn_make node_ _ q2
+                                                ) (
+                                                  Coq.Lists.List.cons (
+                                                    @CFML.SepLifted.dyn_make contents_ _ x6__
+                                                  ) Coq.Lists.List.nil
+                                                )
+                                              )
+                                            )
+                                          )
                                         ) (
-                                          fun x13__ : contents_ =>
                                           @CFML.WPLifted.Wptag (
                                             (
                                               CFML.WPLifted.Wpgen_let_trm (
                                                 @CFML.WPLifted.Wptag (
                                                   (
-                                                    CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                      CFML.WPRecord.val_get_field parent'
+                                                    CFML.WPLifted.Wpgen_app contents_ (
+                                                      CFML.WPRecord.val_get_field child'
                                                     ) (
                                                       Coq.Lists.List.cons (
-                                                        @CFML.SepLifted.dyn_make node_ _ q2
+                                                        @CFML.SepLifted.dyn_make node_ _ q1
                                                       ) Coq.Lists.List.nil
                                                     )
                                                   )
                                                 )
                                               ) (
-                                                fun x10__ :
-                                                  CFML.Semantics.loc
-                                                =>
+                                                fun x7__ : contents_ =>
                                                 @CFML.WPLifted.Wptag (
                                                   (
                                                     CFML.WPLifted.Wpgen_seq (
                                                       @CFML.WPLifted.Wptag (
                                                         (
-                                                          CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit Pervasives_ml.infix_colon_eq__ (
+                                                          CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit (
+                                                            CFML.WPRecord.val_set_field sibling'
+                                                          ) (
                                                             Coq.Lists.List.cons (
-                                                              @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x10__
+                                                              @CFML.SepLifted.dyn_make node_ _ q2
                                                             ) (
                                                               Coq.Lists.List.cons (
-                                                                @CFML.SepLifted.dyn_make contents_ _ x13__
+                                                                @CFML.SepLifted.dyn_make contents_ _ x7__
                                                               ) Coq.Lists.List.nil
                                                             )
                                                           )
@@ -341,128 +341,28 @@ Parameter merge_nodes_cf__ :
                                                     ) (
                                                       @CFML.WPLifted.Wptag (
                                                         (
-                                                          CFML.WPLifted.Wpgen_let_trm (
+                                                          CFML.WPLifted.Wpgen_seq (
                                                             @CFML.WPLifted.Wptag (
                                                               (
-                                                                CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                  CFML.WPRecord.val_get_field child'
+                                                                CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit (
+                                                                  CFML.WPRecord.val_set_field child'
                                                                 ) (
                                                                   Coq.Lists.List.cons (
                                                                     @CFML.SepLifted.dyn_make node_ _ q1
-                                                                  ) Coq.Lists.List.nil
+                                                                  ) (
+                                                                    Coq.Lists.List.cons (
+                                                                      @CFML.SepLifted.dyn_make contents_ _ (
+                                                                        Nonempty q2 : contents_
+                                                                      )
+                                                                    ) Coq.Lists.List.nil
+                                                                  )
                                                                 )
                                                               )
                                                             )
                                                           ) (
-                                                            fun x15__ :
-                                                              CFML.Semantics.loc
-                                                            =>
                                                             @CFML.WPLifted.Wptag (
                                                               (
-                                                                CFML.WPLifted.Wpgen_let_trm (
-                                                                  @CFML.WPLifted.Wptag (
-                                                                    (
-                                                                      CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                                                                        Coq.Lists.List.cons (
-                                                                          @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x15__
-                                                                        ) Coq.Lists.List.nil
-                                                                      )
-                                                                    )
-                                                                  )
-                                                                ) (
-                                                                  fun x16__ :
-                                                                    contents_
-                                                                  =>
-                                                                  @CFML.WPLifted.Wptag (
-                                                                    (
-                                                                      CFML.WPLifted.Wpgen_let_trm (
-                                                                        @CFML.WPLifted.Wptag (
-                                                                          (
-                                                                            CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                              CFML.WPRecord.val_get_field sibling'
-                                                                            ) (
-                                                                              Coq.Lists.List.cons (
-                                                                                @CFML.SepLifted.dyn_make node_ _ q2
-                                                                              ) Coq.Lists.List.nil
-                                                                            )
-                                                                          )
-                                                                        )
-                                                                      ) (
-                                                                        fun x14__ :
-                                                                          CFML.Semantics.loc
-                                                                        =>
-                                                                        @CFML.WPLifted.Wptag (
-                                                                          (
-                                                                            CFML.WPLifted.Wpgen_seq (
-                                                                              @CFML.WPLifted.Wptag (
-                                                                                (
-                                                                                  CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit Pervasives_ml.infix_colon_eq__ (
-                                                                                    Coq.Lists.List.cons (
-                                                                                      @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x14__
-                                                                                    ) (
-                                                                                      Coq.Lists.List.cons (
-                                                                                        @CFML.SepLifted.dyn_make contents_ _ x16__
-                                                                                      ) Coq.Lists.List.nil
-                                                                                    )
-                                                                                  )
-                                                                                )
-                                                                              )
-                                                                            ) (
-                                                                              @CFML.WPLifted.Wptag (
-                                                                                (
-                                                                                  CFML.WPLifted.Wpgen_let_trm (
-                                                                                    @CFML.WPLifted.Wptag (
-                                                                                      (
-                                                                                        CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                                          CFML.WPRecord.val_get_field child'
-                                                                                        ) (
-                                                                                          Coq.Lists.List.cons (
-                                                                                            @CFML.SepLifted.dyn_make node_ _ q1
-                                                                                          ) Coq.Lists.List.nil
-                                                                                        )
-                                                                                      )
-                                                                                    )
-                                                                                  ) (
-                                                                                    fun x17__ :
-                                                                                      CFML.Semantics.loc
-                                                                                    =>
-                                                                                    @CFML.WPLifted.Wptag (
-                                                                                      (
-                                                                                        CFML.WPLifted.Wpgen_seq (
-                                                                                          @CFML.WPLifted.Wptag (
-                                                                                            (
-                                                                                              CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit Pervasives_ml.infix_colon_eq__ (
-                                                                                                Coq.Lists.List.cons (
-                                                                                                  @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x17__
-                                                                                                ) (
-                                                                                                  Coq.Lists.List.cons (
-                                                                                                    @CFML.SepLifted.dyn_make contents_ _ (
-                                                                                                      Nonempty q2 : contents_
-                                                                                                    )
-                                                                                                  ) Coq.Lists.List.nil
-                                                                                                )
-                                                                                              )
-                                                                                            )
-                                                                                          )
-                                                                                        ) (
-                                                                                          @CFML.WPLifted.Wptag (
-                                                                                            (
-                                                                                              CFML.WPLifted.Wpgen_val q1
-                                                                                            )
-                                                                                          )
-                                                                                        )
-                                                                                      )
-                                                                                    )
-                                                                                  )
-                                                                                )
-                                                                              )
-                                                                            )
-                                                                          )
-                                                                        )
-                                                                      )
-                                                                    )
-                                                                  )
-                                                                )
+                                                                CFML.WPLifted.Wpgen_val q1
                                                               )
                                                             )
                                                           )
@@ -489,7 +389,7 @@ Parameter merge_nodes_cf__ :
                             CFML.WPLifted.Wpgen_let_trm (
                               @CFML.WPLifted.Wptag (
                                 (
-                                  CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
+                                  CFML.WPLifted.Wpgen_app contents_ (
                                     CFML.WPRecord.val_get_field child'
                                   ) (
                                     Coq.Lists.List.cons (
@@ -499,27 +399,46 @@ Parameter merge_nodes_cf__ :
                                 )
                               )
                             ) (
-                              fun x3__ : CFML.Semantics.loc =>
+                              fun x2__ : contents_ =>
                               @CFML.WPLifted.Wptag (
                                 (
                                   CFML.WPLifted.Wpgen_let_trm (
                                     @CFML.WPLifted.Wptag (
                                       (
-                                        CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                                          Coq.Lists.List.cons (
-                                            @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x3__
-                                          ) Coq.Lists.List.nil
-                                        )
-                                      )
-                                    )
-                                  ) (
-                                    fun x4__ : contents_ =>
-                                    @CFML.WPLifted.Wptag (
-                                      (
-                                        CFML.WPLifted.Wpgen_let_trm (
+                                        CFML.WPLifted.Wpgen_match x2__ (
                                           @CFML.WPLifted.Wptag (
                                             (
-                                              CFML.WPLifted.Wpgen_match x4__ (
+                                              CFML.WPLifted.Wpgen_case (
+                                                fun A : Type =>
+                                                fun EA : CFML.SepLifted.Enc A =>
+                                                fun Q :
+                                                  A ->
+                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                                =>
+                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                    Coq.Init.Logic.eq x2__ (
+                                                      Empty : contents_
+                                                    )
+                                                  )
+                                                ) (
+                                                  @CFML.WPLifted.Wptag (
+                                                    (
+                                                      CFML.WPLifted.Wpgen_val (
+                                                        Nonempty q2 : contents_
+                                                      )
+                                                    )
+                                                  ) _ _ Q
+                                                )
+                                              ) (
+                                                CFML.WPLifted.Wpgen_negpat (
+                                                  Coq.Init.Logic.not (
+                                                    Coq.Init.Logic.eq x2__ (
+                                                      Empty : contents_
+                                                    )
+                                                  )
+                                                )
+                                              ) (
                                                 @CFML.WPLifted.Wptag (
                                                   (
                                                     CFML.WPLifted.Wpgen_case (
@@ -531,77 +450,36 @@ Parameter merge_nodes_cf__ :
                                                         A ->
                                                         CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
                                                       =>
-                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                          Coq.Init.Logic.eq x4__ (
-                                                            Empty : contents_
-                                                          )
-                                                        )
-                                                      ) (
-                                                        @CFML.WPLifted.Wptag (
-                                                          (
-                                                            CFML.WPLifted.Wpgen_val (
-                                                              Nonempty q2 : contents_
+                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                                                        fun p0__ : node_ =>
+                                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                            Coq.Init.Logic.eq x2__ (
+                                                              Nonempty p0__ : contents_
                                                             )
                                                           )
-                                                        ) _ _ Q
+                                                        ) (
+                                                          @CFML.WPLifted.Wptag (
+                                                            (
+                                                              CFML.WPLifted.Wpgen_val (
+                                                                Empty : contents_
+                                                              )
+                                                            )
+                                                          ) _ _ Q
+                                                        )
                                                       )
                                                     ) (
                                                       CFML.WPLifted.Wpgen_negpat (
+                                                        forall p0__ : node_,
                                                         Coq.Init.Logic.not (
-                                                          Coq.Init.Logic.eq x4__ (
-                                                            Empty : contents_
+                                                          Coq.Init.Logic.eq x2__ (
+                                                            Nonempty p0__ : contents_
                                                           )
                                                         )
                                                       )
                                                     ) (
                                                       @CFML.WPLifted.Wptag (
-                                                        (
-                                                          CFML.WPLifted.Wpgen_case (
-                                                            fun A : Type =>
-                                                            fun EA :
-                                                              CFML.SepLifted.Enc A
-                                                            =>
-                                                            fun Q :
-                                                              A ->
-                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                                            =>
-                                                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                                              fun p0__ :
-                                                                node_
-                                                              =>
-                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                                  Coq.Init.Logic.eq x4__ (
-                                                                    Nonempty p0__ : contents_
-                                                                  )
-                                                                )
-                                                              ) (
-                                                                @CFML.WPLifted.Wptag (
-                                                                  (
-                                                                    CFML.WPLifted.Wpgen_val (
-                                                                      Empty : contents_
-                                                                    )
-                                                                  )
-                                                                ) _ _ Q
-                                                              )
-                                                            )
-                                                          ) (
-                                                            CFML.WPLifted.Wpgen_negpat (
-                                                              forall p0__ :
-                                                                node_,
-                                                              Coq.Init.Logic.not (
-                                                                Coq.Init.Logic.eq x4__ (
-                                                                  Nonempty p0__ : contents_
-                                                                )
-                                                              )
-                                                            )
-                                                          ) (
-                                                            @CFML.WPLifted.Wptag (
-                                                              @CFML.WPLifted.Wpgen_done
-                                                            )
-                                                          )
-                                                        )
+                                                        @CFML.WPLifted.Wpgen_done
                                                       )
                                                     )
                                                   )
@@ -609,35 +487,59 @@ Parameter merge_nodes_cf__ :
                                               )
                                             )
                                           )
+                                        )
+                                      )
+                                    )
+                                  ) (
+                                    fun x3__ : contents_ =>
+                                    @CFML.WPLifted.Wptag (
+                                      (
+                                        CFML.WPLifted.Wpgen_seq (
+                                          @CFML.WPLifted.Wptag (
+                                            (
+                                              CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit (
+                                                CFML.WPRecord.val_set_field parent'
+                                              ) (
+                                                Coq.Lists.List.cons (
+                                                  @CFML.SepLifted.dyn_make node_ _ q1
+                                                ) (
+                                                  Coq.Lists.List.cons (
+                                                    @CFML.SepLifted.dyn_make contents_ _ x3__
+                                                  ) Coq.Lists.List.nil
+                                                )
+                                              )
+                                            )
+                                          )
                                         ) (
-                                          fun x5__ : contents_ =>
                                           @CFML.WPLifted.Wptag (
                                             (
                                               CFML.WPLifted.Wpgen_let_trm (
                                                 @CFML.WPLifted.Wptag (
                                                   (
-                                                    CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                      CFML.WPRecord.val_get_field parent'
+                                                    CFML.WPLifted.Wpgen_app contents_ (
+                                                      CFML.WPRecord.val_get_field child'
                                                     ) (
                                                       Coq.Lists.List.cons (
-                                                        @CFML.SepLifted.dyn_make node_ _ q1
+                                                        @CFML.SepLifted.dyn_make node_ _ q2
                                                       ) Coq.Lists.List.nil
                                                     )
                                                   )
                                                 )
                                               ) (
-                                                fun x2__ : CFML.Semantics.loc =>
+                                                fun x4__ : contents_ =>
                                                 @CFML.WPLifted.Wptag (
                                                   (
                                                     CFML.WPLifted.Wpgen_seq (
                                                       @CFML.WPLifted.Wptag (
                                                         (
-                                                          CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit Pervasives_ml.infix_colon_eq__ (
+                                                          CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit (
+                                                            CFML.WPRecord.val_set_field sibling'
+                                                          ) (
                                                             Coq.Lists.List.cons (
-                                                              @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x2__
+                                                              @CFML.SepLifted.dyn_make node_ _ q1
                                                             ) (
                                                               Coq.Lists.List.cons (
-                                                                @CFML.SepLifted.dyn_make contents_ _ x5__
+                                                                @CFML.SepLifted.dyn_make contents_ _ x4__
                                                               ) Coq.Lists.List.nil
                                                             )
                                                           )
@@ -646,128 +548,28 @@ Parameter merge_nodes_cf__ :
                                                     ) (
                                                       @CFML.WPLifted.Wptag (
                                                         (
-                                                          CFML.WPLifted.Wpgen_let_trm (
+                                                          CFML.WPLifted.Wpgen_seq (
                                                             @CFML.WPLifted.Wptag (
                                                               (
-                                                                CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                  CFML.WPRecord.val_get_field child'
+                                                                CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit (
+                                                                  CFML.WPRecord.val_set_field child'
                                                                 ) (
                                                                   Coq.Lists.List.cons (
                                                                     @CFML.SepLifted.dyn_make node_ _ q2
-                                                                  ) Coq.Lists.List.nil
+                                                                  ) (
+                                                                    Coq.Lists.List.cons (
+                                                                      @CFML.SepLifted.dyn_make contents_ _ (
+                                                                        Nonempty q1 : contents_
+                                                                      )
+                                                                    ) Coq.Lists.List.nil
+                                                                  )
                                                                 )
                                                               )
                                                             )
                                                           ) (
-                                                            fun x7__ :
-                                                              CFML.Semantics.loc
-                                                            =>
                                                             @CFML.WPLifted.Wptag (
                                                               (
-                                                                CFML.WPLifted.Wpgen_let_trm (
-                                                                  @CFML.WPLifted.Wptag (
-                                                                    (
-                                                                      CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                                                                        Coq.Lists.List.cons (
-                                                                          @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x7__
-                                                                        ) Coq.Lists.List.nil
-                                                                      )
-                                                                    )
-                                                                  )
-                                                                ) (
-                                                                  fun x8__ :
-                                                                    contents_
-                                                                  =>
-                                                                  @CFML.WPLifted.Wptag (
-                                                                    (
-                                                                      CFML.WPLifted.Wpgen_let_trm (
-                                                                        @CFML.WPLifted.Wptag (
-                                                                          (
-                                                                            CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                              CFML.WPRecord.val_get_field sibling'
-                                                                            ) (
-                                                                              Coq.Lists.List.cons (
-                                                                                @CFML.SepLifted.dyn_make node_ _ q1
-                                                                              ) Coq.Lists.List.nil
-                                                                            )
-                                                                          )
-                                                                        )
-                                                                      ) (
-                                                                        fun x6__ :
-                                                                          CFML.Semantics.loc
-                                                                        =>
-                                                                        @CFML.WPLifted.Wptag (
-                                                                          (
-                                                                            CFML.WPLifted.Wpgen_seq (
-                                                                              @CFML.WPLifted.Wptag (
-                                                                                (
-                                                                                  CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit Pervasives_ml.infix_colon_eq__ (
-                                                                                    Coq.Lists.List.cons (
-                                                                                      @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x6__
-                                                                                    ) (
-                                                                                      Coq.Lists.List.cons (
-                                                                                        @CFML.SepLifted.dyn_make contents_ _ x8__
-                                                                                      ) Coq.Lists.List.nil
-                                                                                    )
-                                                                                  )
-                                                                                )
-                                                                              )
-                                                                            ) (
-                                                                              @CFML.WPLifted.Wptag (
-                                                                                (
-                                                                                  CFML.WPLifted.Wpgen_let_trm (
-                                                                                    @CFML.WPLifted.Wptag (
-                                                                                      (
-                                                                                        CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                                          CFML.WPRecord.val_get_field child'
-                                                                                        ) (
-                                                                                          Coq.Lists.List.cons (
-                                                                                            @CFML.SepLifted.dyn_make node_ _ q2
-                                                                                          ) Coq.Lists.List.nil
-                                                                                        )
-                                                                                      )
-                                                                                    )
-                                                                                  ) (
-                                                                                    fun x9__ :
-                                                                                      CFML.Semantics.loc
-                                                                                    =>
-                                                                                    @CFML.WPLifted.Wptag (
-                                                                                      (
-                                                                                        CFML.WPLifted.Wpgen_seq (
-                                                                                          @CFML.WPLifted.Wptag (
-                                                                                            (
-                                                                                              CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit Pervasives_ml.infix_colon_eq__ (
-                                                                                                Coq.Lists.List.cons (
-                                                                                                  @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x9__
-                                                                                                ) (
-                                                                                                  Coq.Lists.List.cons (
-                                                                                                    @CFML.SepLifted.dyn_make contents_ _ (
-                                                                                                      Nonempty q1 : contents_
-                                                                                                    )
-                                                                                                  ) Coq.Lists.List.nil
-                                                                                                )
-                                                                                              )
-                                                                                            )
-                                                                                          )
-                                                                                        ) (
-                                                                                          @CFML.WPLifted.Wptag (
-                                                                                            (
-                                                                                              CFML.WPLifted.Wpgen_val q2
-                                                                                            )
-                                                                                          )
-                                                                                        )
-                                                                                      )
-                                                                                    )
-                                                                                  )
-                                                                                )
-                                                                              )
-                                                                            )
-                                                                          )
-                                                                        )
-                                                                      )
-                                                                    )
-                                                                  )
-                                                                )
+                                                                CFML.WPLifted.Wpgen_val q2
                                                               )
                                                             )
                                                           )
@@ -816,8 +618,8 @@ Parameter merge : CFML.Semantics.val.
 
 Parameter merge_cf__ :
   CFML.WPLifted.Wpgen_body (
-    forall h1 : CFML.Semantics.loc,
-    forall h2 : CFML.Semantics.loc,
+    forall h1 : contents_,
+    forall h2 : contents_,
     forall H : CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop,
     forall A : Type,
     forall EA : CFML.SepLifted.Enc A,
@@ -825,35 +627,66 @@ Parameter merge_cf__ :
     CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.himpl H (
       @CFML.WPLifted.Wptag (
         (
-          CFML.WPLifted.Wpgen_let_trm (
+          CFML.WPLifted.Wpgen_match (h1, h2) (
             @CFML.WPLifted.Wptag (
               (
-                CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                  Coq.Lists.List.cons (
-                    @CFML.SepLifted.dyn_make CFML.Semantics.loc _ h2
-                  ) Coq.Lists.List.nil
-                )
-              )
-            )
-          ) (
-            fun x1__ : contents_ =>
-            @CFML.WPLifted.Wptag (
-              (
-                CFML.WPLifted.Wpgen_let_trm (
-                  @CFML.WPLifted.Wptag (
-                    (
-                      CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                        Coq.Lists.List.cons (
-                          @CFML.SepLifted.dyn_make CFML.Semantics.loc _ h1
-                        ) Coq.Lists.List.nil
+                CFML.WPLifted.Wpgen_case (
+                  fun A : Type =>
+                  fun EA : CFML.SepLifted.Enc A =>
+                  fun Q :
+                    A -> CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                  =>
+                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                    fun p0__ : contents_ =>
+                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                        Coq.Init.Logic.eq (h1, h2) ((Empty : contents_), p0__)
                       )
+                    ) (
+                      @CFML.WPLifted.Wptag ((CFML.WPLifted.Wpgen_val h2)) _ _ Q
                     )
                   )
                 ) (
-                  fun x0__ : contents_ =>
+                  CFML.WPLifted.Wpgen_negpat (
+                    forall p0__ : contents_,
+                    Coq.Init.Logic.not (
+                      Coq.Init.Logic.eq (h1, h2) ((Empty : contents_), p0__)
+                    )
+                  )
+                ) (
                   @CFML.WPLifted.Wptag (
                     (
-                      CFML.WPLifted.Wpgen_match (x0__, x1__) (
+                      CFML.WPLifted.Wpgen_case (
+                        fun A : Type =>
+                        fun EA : CFML.SepLifted.Enc A =>
+                        fun Q :
+                          A ->
+                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                        =>
+                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                          fun p0__ : contents_ =>
+                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                              Coq.Init.Logic.eq (h1, h2) (
+                                p0__,
+                                (Empty : contents_)
+                              )
+                            )
+                          ) (
+                            @CFML.WPLifted.Wptag ((CFML.WPLifted.Wpgen_val h1)) _ _ Q
+                          )
+                        )
+                      ) (
+                        CFML.WPLifted.Wpgen_negpat (
+                          forall p0__ : contents_,
+                          Coq.Init.Logic.not (
+                            Coq.Init.Logic.eq (h1, h2) (
+                              p0__,
+                              (Empty : contents_)
+                            )
+                          )
+                        )
+                      ) (
                         @CFML.WPLifted.Wptag (
                           (
                             CFML.WPLifted.Wpgen_case (
@@ -864,144 +697,60 @@ Parameter merge_cf__ :
                                 CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
                               =>
                               CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                fun p0__ : contents_ =>
-                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                    Coq.Init.Logic.eq (x0__, x1__) (
-                                      (Empty : contents_),
-                                      p0__
-                                    )
-                                  )
-                                ) (
-                                  @CFML.WPLifted.Wptag (
-                                    (CFML.WPLifted.Wpgen_val h2)
-                                  ) _ _ Q
-                                )
-                              )
-                            ) (
-                              CFML.WPLifted.Wpgen_negpat (
-                                forall p0__ : contents_,
-                                Coq.Init.Logic.not (
-                                  Coq.Init.Logic.eq (x0__, x1__) (
-                                    (Empty : contents_),
-                                    p0__
-                                  )
-                                )
-                              )
-                            ) (
-                              @CFML.WPLifted.Wptag (
-                                (
-                                  CFML.WPLifted.Wpgen_case (
-                                    fun A : Type =>
-                                    fun EA : CFML.SepLifted.Enc A =>
-                                    fun Q :
-                                      A ->
-                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                    =>
-                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                      fun p0__ : contents_ =>
-                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                          Coq.Init.Logic.eq (x0__, x1__) (
-                                            p0__,
-                                            (Empty : contents_)
-                                          )
-                                        )
-                                      ) (
-                                        @CFML.WPLifted.Wptag (
-                                          (CFML.WPLifted.Wpgen_val h1)
-                                        ) _ _ Q
-                                      )
-                                    )
-                                  ) (
-                                    CFML.WPLifted.Wpgen_negpat (
-                                      forall p0__ : contents_,
-                                      Coq.Init.Logic.not (
-                                        Coq.Init.Logic.eq (x0__, x1__) (
-                                          p0__,
-                                          (Empty : contents_)
-                                        )
+                                fun q1 : node_ =>
+                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                                  fun q2 : node_ =>
+                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                      Coq.Init.Logic.eq (h1, h2) (
+                                        (Nonempty q1 : contents_),
+                                        (Nonempty q2 : contents_)
                                       )
                                     )
                                   ) (
                                     @CFML.WPLifted.Wptag (
                                       (
-                                        CFML.WPLifted.Wpgen_case (
-                                          fun A : Type =>
-                                          fun EA : CFML.SepLifted.Enc A =>
-                                          fun Q :
-                                            A ->
-                                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                          =>
-                                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                            fun q1 : node_ =>
-                                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                              fun q2 : node_ =>
-                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                  Coq.Init.Logic.eq (x0__, x1__) (
-                                                    (Nonempty q1 : contents_),
-                                                    (Nonempty q2 : contents_)
-                                                  )
-                                                )
-                                              ) (
-                                                @CFML.WPLifted.Wptag (
-                                                  (
-                                                    CFML.WPLifted.Wpgen_let_trm (
-                                                      @CFML.WPLifted.Wptag (
-                                                        (
-                                                          CFML.WPLifted.Wpgen_app node_ merge_nodes (
-                                                            Coq.Lists.List.cons (
-                                                              @CFML.SepLifted.dyn_make node_ _ q1
-                                                            ) (
-                                                              Coq.Lists.List.cons (
-                                                                @CFML.SepLifted.dyn_make node_ _ q2
-                                                              ) Coq.Lists.List.nil
-                                                            )
-                                                          )
-                                                        )
-                                                      )
-                                                    ) (
-                                                      fun x2__ : node_ =>
-                                                      @CFML.WPLifted.Wptag (
-                                                        (
-                                                          CFML.WPLifted.Wpgen_app CFML.Semantics.loc Pervasives_ml.ref (
-                                                            Coq.Lists.List.cons (
-                                                              @CFML.SepLifted.dyn_make contents_ _ (
-                                                                Nonempty x2__ : contents_
-                                                              )
-                                                            ) Coq.Lists.List.nil
-                                                          )
-                                                        )
-                                                      )
-                                                    )
-                                                  )
-                                                ) _ _ Q
-                                              )
-                                            )
-                                          )
-                                        ) (
-                                          CFML.WPLifted.Wpgen_negpat (
-                                            forall q1 : node_,
-                                            forall q2 : node_,
-                                            Coq.Init.Logic.not (
-                                              Coq.Init.Logic.eq (x0__, x1__) (
-                                                (Nonempty q1 : contents_),
-                                                (Nonempty q2 : contents_)
-                                              )
-                                            )
-                                          )
-                                        ) (
+                                        CFML.WPLifted.Wpgen_let_trm (
                                           @CFML.WPLifted.Wptag (
-                                            @CFML.WPLifted.Wpgen_done
+                                            (
+                                              CFML.WPLifted.Wpgen_app node_ merge_nodes (
+                                                Coq.Lists.List.cons (
+                                                  @CFML.SepLifted.dyn_make node_ _ q1
+                                                ) (
+                                                  Coq.Lists.List.cons (
+                                                    @CFML.SepLifted.dyn_make node_ _ q2
+                                                  ) Coq.Lists.List.nil
+                                                )
+                                              )
+                                            )
+                                          )
+                                        ) (
+                                          fun x0__ : node_ =>
+                                          @CFML.WPLifted.Wptag (
+                                            (
+                                              CFML.WPLifted.Wpgen_val (
+                                                Nonempty x0__ : contents_
+                                              )
+                                            )
                                           )
                                         )
                                       )
-                                    )
+                                    ) _ _ Q
                                   )
                                 )
                               )
-                            )
+                            ) (
+                              CFML.WPLifted.Wpgen_negpat (
+                                forall q1 : node_,
+                                forall q2 : node_,
+                                Coq.Init.Logic.not (
+                                  Coq.Init.Logic.eq (h1, h2) (
+                                    (Nonempty q1 : contents_),
+                                    (Nonempty q2 : contents_)
+                                  )
+                                )
+                              )
+                            ) (@CFML.WPLifted.Wptag (@CFML.WPLifted.Wpgen_done))
                           )
                         )
                       )
@@ -1019,8 +768,8 @@ Parameter merge_cf__ :
     ) ->
     CFML.SepLifted.Triple (
       CFML.SepLifted.Trm_apps merge (
-        Coq.Lists.List.cons (@CFML.SepLifted.dyn_make CFML.Semantics.loc _ h1) (
-          Coq.Lists.List.cons (@CFML.SepLifted.dyn_make CFML.Semantics.loc _ h2) Coq.Lists.List.nil
+        Coq.Lists.List.cons (@CFML.SepLifted.dyn_make contents_ _ h1) (
+          Coq.Lists.List.cons (@CFML.SepLifted.dyn_make contents_ _ h2) Coq.Lists.List.nil
         )
       )
     ) H Q
@@ -1044,81 +793,26 @@ Parameter insert_cf__ :
           CFML.WPLifted.Wpgen_let_trm (
             @CFML.WPLifted.Wptag (
               (
-                CFML.WPLifted.Wpgen_let_trm (
-                  @CFML.WPLifted.Wptag (
-                    (
-                      CFML.WPLifted.Wpgen_app CFML.Semantics.loc Pervasives_ml.ref (
+                CFML.WPRecord.Wpgen_record_new (
+                  fun q2 : CFML.Semantics.loc =>
+                  Coq.Lists.List.cons (
+                    value',
+                    @CFML.SepLifted.dyn_make Coq.ZArith.BinInt.Z _ x
+                  ) (
+                    Coq.Lists.List.cons (
+                      child',
+                      @CFML.SepLifted.dyn_make contents_ _ (Empty : contents_)
+                    ) (
+                      Coq.Lists.List.cons (
+                        sibling',
+                        @CFML.SepLifted.dyn_make contents_ _ (Empty : contents_)
+                      ) (
                         Coq.Lists.List.cons (
+                          parent',
                           @CFML.SepLifted.dyn_make contents_ _ (
                             Empty : contents_
                           )
                         ) Coq.Lists.List.nil
-                      )
-                    )
-                  )
-                ) (
-                  fun x0__ : CFML.Semantics.loc =>
-                  @CFML.WPLifted.Wptag (
-                    (
-                      CFML.WPLifted.Wpgen_let_trm (
-                        @CFML.WPLifted.Wptag (
-                          (
-                            CFML.WPLifted.Wpgen_app CFML.Semantics.loc Pervasives_ml.ref (
-                              Coq.Lists.List.cons (
-                                @CFML.SepLifted.dyn_make contents_ _ (
-                                  Empty : contents_
-                                )
-                              ) Coq.Lists.List.nil
-                            )
-                          )
-                        )
-                      ) (
-                        fun x1__ : CFML.Semantics.loc =>
-                        @CFML.WPLifted.Wptag (
-                          (
-                            CFML.WPLifted.Wpgen_let_trm (
-                              @CFML.WPLifted.Wptag (
-                                (
-                                  CFML.WPLifted.Wpgen_app CFML.Semantics.loc Pervasives_ml.ref (
-                                    Coq.Lists.List.cons (
-                                      @CFML.SepLifted.dyn_make contents_ _ (
-                                        Empty : contents_
-                                      )
-                                    ) Coq.Lists.List.nil
-                                  )
-                                )
-                              )
-                            ) (
-                              fun x2__ : CFML.Semantics.loc =>
-                              @CFML.WPLifted.Wptag (
-                                (
-                                  CFML.WPRecord.Wpgen_record_new (
-                                    fun _ : CFML.Semantics.loc =>
-                                    Coq.Lists.List.cons (
-                                      value',
-                                      @CFML.SepLifted.dyn_make Coq.ZArith.BinInt.Z _ x
-                                    ) (
-                                      Coq.Lists.List.cons (
-                                        child',
-                                        @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x2__
-                                      ) (
-                                        Coq.Lists.List.cons (
-                                          sibling',
-                                          @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x1__
-                                        ) (
-                                          Coq.Lists.List.cons (
-                                            parent',
-                                            @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x0__
-                                          ) Coq.Lists.List.nil
-                                        )
-                                      )
-                                    )
-                                  )
-                                )
-                              )
-                            )
-                          )
-                        )
                       )
                     )
                   )
@@ -1140,10 +834,10 @@ Parameter insert_cf__ :
                     )
                   )
                 ) (
-                  fun x3__ : contents_ =>
+                  fun x0__ : contents_ =>
                   @CFML.WPLifted.Wptag (
                     (
-                      CFML.WPLifted.Wpgen_match x3__ (
+                      CFML.WPLifted.Wpgen_match x0__ (
                         @CFML.WPLifted.Wptag (
                           (
                             CFML.WPLifted.Wpgen_case (
@@ -1155,7 +849,7 @@ Parameter insert_cf__ :
                               =>
                               CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
                                 CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                  Coq.Init.Logic.eq x3__ (Empty : contents_)
+                                  Coq.Init.Logic.eq x0__ (Empty : contents_)
                                 )
                               ) (
                                 @CFML.WPLifted.Wptag (
@@ -1177,7 +871,7 @@ Parameter insert_cf__ :
                             ) (
                               CFML.WPLifted.Wpgen_negpat (
                                 Coq.Init.Logic.not (
-                                  Coq.Init.Logic.eq x3__ (Empty : contents_)
+                                  Coq.Init.Logic.eq x0__ (Empty : contents_)
                                 )
                               )
                             ) (
@@ -1194,7 +888,7 @@ Parameter insert_cf__ :
                                       fun q1 : node_ =>
                                       CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
                                         CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                          Coq.Init.Logic.eq x3__ (
+                                          Coq.Init.Logic.eq x0__ (
                                             Nonempty q1 : contents_
                                           )
                                         )
@@ -1204,7 +898,7 @@ Parameter insert_cf__ :
                                             CFML.WPLifted.Wpgen_let_trm (
                                               @CFML.WPLifted.Wptag (
                                                 (
-                                                  CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
+                                                  CFML.WPLifted.Wpgen_app contents_ (
                                                     CFML.WPRecord.val_get_field child'
                                                   ) (
                                                     Coq.Lists.List.cons (
@@ -1214,71 +908,71 @@ Parameter insert_cf__ :
                                                 )
                                               )
                                             ) (
-                                              fun x4__ : CFML.Semantics.loc =>
+                                              fun x1__ : contents_ =>
                                               @CFML.WPLifted.Wptag (
                                                 (
                                                   CFML.WPLifted.Wpgen_let_trm (
                                                     @CFML.WPLifted.Wptag (
                                                       (
-                                                        CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.bool is_empty (
+                                                        CFML.WPLifted.Wpgen_app CFML.Semantics.loc Pervasives_ml.ref (
                                                           Coq.Lists.List.cons (
-                                                            @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x4__
+                                                            @CFML.SepLifted.dyn_make contents_ _ x1__
                                                           ) Coq.Lists.List.nil
                                                         )
                                                       )
                                                     )
                                                   ) (
-                                                    fun x5__ :
-                                                      Coq.Init.Datatypes.bool
+                                                    fun x2__ :
+                                                      CFML.Semantics.loc
                                                     =>
                                                     @CFML.WPLifted.Wptag (
                                                       (
-                                                        CFML.WPLifted.Wpgen_seq (
+                                                        CFML.WPLifted.Wpgen_let_trm (
                                                           @CFML.WPLifted.Wptag (
                                                             (
-                                                              CFML.WPLifted.Wpgen_if x5__ (
+                                                              CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.bool is_empty (
+                                                                Coq.Lists.List.cons (
+                                                                  @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x2__
+                                                                ) Coq.Lists.List.nil
+                                                              )
+                                                            )
+                                                          )
+                                                        ) (
+                                                          fun x3__ :
+                                                            Coq.Init.Datatypes.bool
+                                                          =>
+                                                          @CFML.WPLifted.Wptag (
+                                                            (
+                                                              CFML.WPLifted.Wpgen_seq (
                                                                 @CFML.WPLifted.Wptag (
                                                                   (
-                                                                    CFML.WPLifted.Wpgen_let_trm (
-                                                                      @CFML.WPLifted.Wptag (
-                                                                        (
-                                                                          CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                                                                            Coq.Lists.List.cons (
-                                                                              @CFML.SepLifted.dyn_make CFML.Semantics.loc _ p
-                                                                            ) Coq.Lists.List.nil
-                                                                          )
-                                                                        )
-                                                                      )
-                                                                    ) (
-                                                                      fun x7__ :
-                                                                        contents_
-                                                                      =>
+                                                                    CFML.WPLifted.Wpgen_if x3__ (
                                                                       @CFML.WPLifted.Wptag (
                                                                         (
                                                                           CFML.WPLifted.Wpgen_let_trm (
                                                                             @CFML.WPLifted.Wptag (
                                                                               (
-                                                                                CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                                  CFML.WPRecord.val_get_field parent'
-                                                                                ) (
+                                                                                CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
                                                                                   Coq.Lists.List.cons (
-                                                                                    @CFML.SepLifted.dyn_make node_ _ q2
+                                                                                    @CFML.SepLifted.dyn_make CFML.Semantics.loc _ p
                                                                                   ) Coq.Lists.List.nil
                                                                                 )
                                                                               )
                                                                             )
                                                                           ) (
-                                                                            fun x6__ :
-                                                                              CFML.Semantics.loc
+                                                                            fun x4__ :
+                                                                              contents_
                                                                             =>
                                                                             @CFML.WPLifted.Wptag (
                                                                               (
-                                                                                CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit Pervasives_ml.infix_colon_eq__ (
+                                                                                CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit (
+                                                                                  CFML.WPRecord.val_set_field parent'
+                                                                                ) (
                                                                                   Coq.Lists.List.cons (
-                                                                                    @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x6__
+                                                                                    @CFML.SepLifted.dyn_make node_ _ q2
                                                                                   ) (
                                                                                     Coq.Lists.List.cons (
-                                                                                      @CFML.SepLifted.dyn_make contents_ _ x7__
+                                                                                      @CFML.SepLifted.dyn_make contents_ _ x4__
                                                                                     ) Coq.Lists.List.nil
                                                                                   )
                                                                                 )
@@ -1287,52 +981,52 @@ Parameter insert_cf__ :
                                                                           )
                                                                         )
                                                                       )
-                                                                    )
-                                                                  )
-                                                                )
-                                                              ) (
-                                                                @CFML.WPLifted.Wptag (
-                                                                  (
-                                                                    CFML.WPLifted.Wpgen_val (
-                                                                      Coq.Init.Datatypes.tt : Coq.Init.Datatypes.unit
-                                                                    )
-                                                                  )
-                                                                )
-                                                              )
-                                                            )
-                                                          )
-                                                        ) (
-                                                          @CFML.WPLifted.Wptag (
-                                                            (
-                                                              CFML.WPLifted.Wpgen_let_trm (
-                                                                @CFML.WPLifted.Wptag (
-                                                                  (
-                                                                    CFML.WPLifted.Wpgen_app node_ merge_nodes (
-                                                                      Coq.Lists.List.cons (
-                                                                        @CFML.SepLifted.dyn_make node_ _ q1
-                                                                      ) (
-                                                                        Coq.Lists.List.cons (
-                                                                          @CFML.SepLifted.dyn_make node_ _ q2
-                                                                        ) Coq.Lists.List.nil
+                                                                    ) (
+                                                                      @CFML.WPLifted.Wptag (
+                                                                        (
+                                                                          CFML.WPLifted.Wpgen_val (
+                                                                            Coq.Init.Datatypes.tt : Coq.Init.Datatypes.unit
+                                                                          )
+                                                                        )
                                                                       )
                                                                     )
                                                                   )
                                                                 )
                                                               ) (
-                                                                fun x8__ :
-                                                                  node_
-                                                                =>
                                                                 @CFML.WPLifted.Wptag (
                                                                   (
-                                                                    CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit Pervasives_ml.infix_colon_eq__ (
-                                                                      Coq.Lists.List.cons (
-                                                                        @CFML.SepLifted.dyn_make CFML.Semantics.loc _ p
-                                                                      ) (
-                                                                        Coq.Lists.List.cons (
-                                                                          @CFML.SepLifted.dyn_make contents_ _ (
-                                                                            Nonempty x8__ : contents_
+                                                                    CFML.WPLifted.Wpgen_let_trm (
+                                                                      @CFML.WPLifted.Wptag (
+                                                                        (
+                                                                          CFML.WPLifted.Wpgen_app node_ merge_nodes (
+                                                                            Coq.Lists.List.cons (
+                                                                              @CFML.SepLifted.dyn_make node_ _ q1
+                                                                            ) (
+                                                                              Coq.Lists.List.cons (
+                                                                                @CFML.SepLifted.dyn_make node_ _ q2
+                                                                              ) Coq.Lists.List.nil
+                                                                            )
                                                                           )
-                                                                        ) Coq.Lists.List.nil
+                                                                        )
+                                                                      )
+                                                                    ) (
+                                                                      fun x5__ :
+                                                                        node_
+                                                                      =>
+                                                                      @CFML.WPLifted.Wptag (
+                                                                        (
+                                                                          CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit Pervasives_ml.infix_colon_eq__ (
+                                                                            Coq.Lists.List.cons (
+                                                                              @CFML.SepLifted.dyn_make CFML.Semantics.loc _ p
+                                                                            ) (
+                                                                              Coq.Lists.List.cons (
+                                                                                @CFML.SepLifted.dyn_make contents_ _ (
+                                                                                  Nonempty x5__ : contents_
+                                                                                )
+                                                                              ) Coq.Lists.List.nil
+                                                                            )
+                                                                          )
+                                                                        )
                                                                       )
                                                                     )
                                                                   )
@@ -1355,7 +1049,7 @@ Parameter insert_cf__ :
                                     CFML.WPLifted.Wpgen_negpat (
                                       forall q1 : node_,
                                       Coq.Init.Logic.not (
-                                        Coq.Init.Logic.eq x3__ (
+                                        Coq.Init.Logic.eq x0__ (
                                           Nonempty q1 : contents_
                                         )
                                       )
@@ -1409,7 +1103,7 @@ Parameter merge_siblings_cf__ :
           CFML.WPLifted.Wpgen_let_trm (
             @CFML.WPLifted.Wptag (
               (
-                CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
+                CFML.WPLifted.Wpgen_app contents_ (
                   CFML.WPRecord.val_get_field sibling'
                 ) (
                   Coq.Lists.List.cons (@CFML.SepLifted.dyn_make node_ _ q) Coq.Lists.List.nil
@@ -1417,24 +1111,33 @@ Parameter merge_siblings_cf__ :
               )
             )
           ) (
-            fun x0__ : CFML.Semantics.loc =>
+            fun x0__ : contents_ =>
             @CFML.WPLifted.Wptag (
               (
-                CFML.WPLifted.Wpgen_let_trm (
+                CFML.WPLifted.Wpgen_match x0__ (
                   @CFML.WPLifted.Wptag (
                     (
-                      CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                        Coq.Lists.List.cons (
-                          @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x0__
-                        ) Coq.Lists.List.nil
-                      )
-                    )
-                  )
-                ) (
-                  fun x1__ : contents_ =>
-                  @CFML.WPLifted.Wptag (
-                    (
-                      CFML.WPLifted.Wpgen_match x1__ (
+                      CFML.WPLifted.Wpgen_case (
+                        fun A : Type =>
+                        fun EA : CFML.SepLifted.Enc A =>
+                        fun Q :
+                          A ->
+                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                        =>
+                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                            Coq.Init.Logic.eq x0__ (Empty : contents_)
+                          )
+                        ) (
+                          @CFML.WPLifted.Wptag ((CFML.WPLifted.Wpgen_val q)) _ _ Q
+                        )
+                      ) (
+                        CFML.WPLifted.Wpgen_negpat (
+                          Coq.Init.Logic.not (
+                            Coq.Init.Logic.eq x0__ (Empty : contents_)
+                          )
+                        )
+                      ) (
                         @CFML.WPLifted.Wptag (
                           (
                             CFML.WPLifted.Wpgen_case (
@@ -1444,207 +1147,154 @@ Parameter merge_siblings_cf__ :
                                 A ->
                                 CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
                               =>
-                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                  Coq.Init.Logic.eq x1__ (Empty : contents_)
-                                )
-                              ) (
-                                @CFML.WPLifted.Wptag (
-                                  (CFML.WPLifted.Wpgen_val q)
-                                ) _ _ Q
-                              )
-                            ) (
-                              CFML.WPLifted.Wpgen_negpat (
-                                Coq.Init.Logic.not (
-                                  Coq.Init.Logic.eq x1__ (Empty : contents_)
-                                )
-                              )
-                            ) (
-                              @CFML.WPLifted.Wptag (
-                                (
-                                  CFML.WPLifted.Wpgen_case (
-                                    fun A : Type =>
-                                    fun EA : CFML.SepLifted.Enc A =>
-                                    fun Q :
-                                      A ->
-                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                    =>
-                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                      fun q1 : node_ =>
-                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                          Coq.Init.Logic.eq x1__ (
-                                            Nonempty q1 : contents_
+                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                                fun q1 : node_ =>
+                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                    Coq.Init.Logic.eq x0__ (
+                                      Nonempty q1 : contents_
+                                    )
+                                  )
+                                ) (
+                                  @CFML.WPLifted.Wptag (
+                                    (
+                                      CFML.WPLifted.Wpgen_let_trm (
+                                        @CFML.WPLifted.Wptag (
+                                          (
+                                            CFML.WPLifted.Wpgen_app node_ merge_nodes (
+                                              Coq.Lists.List.cons (
+                                                @CFML.SepLifted.dyn_make node_ _ q
+                                              ) (
+                                                Coq.Lists.List.cons (
+                                                  @CFML.SepLifted.dyn_make node_ _ q1
+                                                ) Coq.Lists.List.nil
+                                              )
+                                            )
                                           )
                                         )
                                       ) (
+                                        fun q2 : node_ =>
                                         @CFML.WPLifted.Wptag (
                                           (
                                             CFML.WPLifted.Wpgen_let_trm (
                                               @CFML.WPLifted.Wptag (
                                                 (
-                                                  CFML.WPLifted.Wpgen_app node_ merge_nodes (
+                                                  CFML.WPLifted.Wpgen_app contents_ (
+                                                    CFML.WPRecord.val_get_field sibling'
+                                                  ) (
                                                     Coq.Lists.List.cons (
-                                                      @CFML.SepLifted.dyn_make node_ _ q
-                                                    ) (
-                                                      Coq.Lists.List.cons (
-                                                        @CFML.SepLifted.dyn_make node_ _ q1
-                                                      ) Coq.Lists.List.nil
-                                                    )
+                                                      @CFML.SepLifted.dyn_make node_ _ q1
+                                                    ) Coq.Lists.List.nil
                                                   )
                                                 )
                                               )
                                             ) (
-                                              fun q2 : node_ =>
+                                              fun x1__ : contents_ =>
                                               @CFML.WPLifted.Wptag (
                                                 (
-                                                  CFML.WPLifted.Wpgen_let_trm (
+                                                  CFML.WPLifted.Wpgen_match x1__ (
                                                     @CFML.WPLifted.Wptag (
                                                       (
-                                                        CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                          CFML.WPRecord.val_get_field sibling'
+                                                        CFML.WPLifted.Wpgen_case (
+                                                          fun A : Type =>
+                                                          fun EA :
+                                                            CFML.SepLifted.Enc A
+                                                          =>
+                                                          fun Q :
+                                                            A ->
+                                                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                                          =>
+                                                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                              Coq.Init.Logic.eq x1__ (
+                                                                Empty : contents_
+                                                              )
+                                                            )
+                                                          ) (
+                                                            @CFML.WPLifted.Wptag (
+                                                              (
+                                                                CFML.WPLifted.Wpgen_val q2
+                                                              )
+                                                            ) _ _ Q
+                                                          )
                                                         ) (
-                                                          Coq.Lists.List.cons (
-                                                            @CFML.SepLifted.dyn_make node_ _ q1
-                                                          ) Coq.Lists.List.nil
-                                                        )
-                                                      )
-                                                    )
-                                                  ) (
-                                                    fun x2__ :
-                                                      CFML.Semantics.loc
-                                                    =>
-                                                    @CFML.WPLifted.Wptag (
-                                                      (
-                                                        CFML.WPLifted.Wpgen_let_trm (
-                                                          @CFML.WPLifted.Wptag (
-                                                            (
-                                                              CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                                                                Coq.Lists.List.cons (
-                                                                  @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x2__
-                                                                ) Coq.Lists.List.nil
+                                                          CFML.WPLifted.Wpgen_negpat (
+                                                            Coq.Init.Logic.not (
+                                                              Coq.Init.Logic.eq x1__ (
+                                                                Empty : contents_
                                                               )
                                                             )
                                                           )
                                                         ) (
-                                                          fun x3__ :
-                                                            contents_
-                                                          =>
                                                           @CFML.WPLifted.Wptag (
                                                             (
-                                                              CFML.WPLifted.Wpgen_match x3__ (
-                                                                @CFML.WPLifted.Wptag (
-                                                                  (
-                                                                    CFML.WPLifted.Wpgen_case (
-                                                                      fun A :
-                                                                        Type
-                                                                      =>
-                                                                      fun EA :
-                                                                        CFML.SepLifted.Enc A
-                                                                      =>
-                                                                      fun Q :
-                                                                        A ->
-                                                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                                                      =>
-                                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                                          Coq.Init.Logic.eq x3__ (
-                                                                            Empty : contents_
-                                                                          )
-                                                                        )
-                                                                      ) (
-                                                                        @CFML.WPLifted.Wptag (
-                                                                          (
-                                                                            CFML.WPLifted.Wpgen_val q2
-                                                                          )
-                                                                        ) _ _ Q
-                                                                      )
-                                                                    ) (
-                                                                      CFML.WPLifted.Wpgen_negpat (
-                                                                        Coq.Init.Logic.not (
-                                                                          Coq.Init.Logic.eq x3__ (
-                                                                            Empty : contents_
-                                                                          )
-                                                                        )
-                                                                      )
-                                                                    ) (
-                                                                      @CFML.WPLifted.Wptag (
-                                                                        (
-                                                                          CFML.WPLifted.Wpgen_case (
-                                                                            fun A :
-                                                                              Type
-                                                                            =>
-                                                                            fun EA :
-                                                                              CFML.SepLifted.Enc A
-                                                                            =>
-                                                                            fun Q :
-                                                                              A ->
-                                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                                                            =>
-                                                                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                                                              fun q3 :
-                                                                                node_
-                                                                              =>
-                                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                                                  Coq.Init.Logic.eq x3__ (
-                                                                                    Nonempty q3 : contents_
-                                                                                  )
-                                                                                )
-                                                                              ) (
-                                                                                @CFML.WPLifted.Wptag (
-                                                                                  (
-                                                                                    CFML.WPLifted.Wpgen_let_trm (
-                                                                                      @CFML.WPLifted.Wptag (
-                                                                                        (
-                                                                                          CFML.WPLifted.Wpgen_app node_ merge_siblings (
-                                                                                            Coq.Lists.List.cons (
-                                                                                              @CFML.SepLifted.dyn_make node_ _ q3
-                                                                                            ) Coq.Lists.List.nil
-                                                                                          )
-                                                                                        )
-                                                                                      )
-                                                                                    ) (
-                                                                                      fun x4__ :
-                                                                                        node_
-                                                                                      =>
-                                                                                      @CFML.WPLifted.Wptag (
-                                                                                        (
-                                                                                          CFML.WPLifted.Wpgen_app node_ merge_nodes (
-                                                                                            Coq.Lists.List.cons (
-                                                                                              @CFML.SepLifted.dyn_make node_ _ q2
-                                                                                            ) (
-                                                                                              Coq.Lists.List.cons (
-                                                                                                @CFML.SepLifted.dyn_make node_ _ x4__
-                                                                                              ) Coq.Lists.List.nil
-                                                                                            )
-                                                                                          )
-                                                                                        )
-                                                                                      )
-                                                                                    )
-                                                                                  )
-                                                                                ) _ _ Q
-                                                                              )
-                                                                            )
-                                                                          ) (
-                                                                            CFML.WPLifted.Wpgen_negpat (
-                                                                              forall q3 :
-                                                                                node_,
-                                                                              Coq.Init.Logic.not (
-                                                                                Coq.Init.Logic.eq x3__ (
-                                                                                  Nonempty q3 : contents_
-                                                                                )
-                                                                              )
-                                                                            )
-                                                                          ) (
-                                                                            @CFML.WPLifted.Wptag (
-                                                                              @CFML.WPLifted.Wpgen_done
-                                                                            )
-                                                                          )
-                                                                        )
+                                                              CFML.WPLifted.Wpgen_case (
+                                                                fun A : Type =>
+                                                                fun EA :
+                                                                  CFML.SepLifted.Enc A
+                                                                =>
+                                                                fun Q :
+                                                                  A ->
+                                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                                                =>
+                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                                                                  fun q3 :
+                                                                    node_
+                                                                  =>
+                                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                                      Coq.Init.Logic.eq x1__ (
+                                                                        Nonempty q3 : contents_
                                                                       )
                                                                     )
+                                                                  ) (
+                                                                    @CFML.WPLifted.Wptag (
+                                                                      (
+                                                                        CFML.WPLifted.Wpgen_let_trm (
+                                                                          @CFML.WPLifted.Wptag (
+                                                                            (
+                                                                              CFML.WPLifted.Wpgen_app node_ merge_siblings (
+                                                                                Coq.Lists.List.cons (
+                                                                                  @CFML.SepLifted.dyn_make node_ _ q3
+                                                                                ) Coq.Lists.List.nil
+                                                                              )
+                                                                            )
+                                                                          )
+                                                                        ) (
+                                                                          fun x2__ :
+                                                                            node_
+                                                                          =>
+                                                                          @CFML.WPLifted.Wptag (
+                                                                            (
+                                                                              CFML.WPLifted.Wpgen_app node_ merge_nodes (
+                                                                                Coq.Lists.List.cons (
+                                                                                  @CFML.SepLifted.dyn_make node_ _ q2
+                                                                                ) (
+                                                                                  Coq.Lists.List.cons (
+                                                                                    @CFML.SepLifted.dyn_make node_ _ x2__
+                                                                                  ) Coq.Lists.List.nil
+                                                                                )
+                                                                              )
+                                                                            )
+                                                                          )
+                                                                        )
+                                                                      )
+                                                                    ) _ _ Q
                                                                   )
+                                                                )
+                                                              ) (
+                                                                CFML.WPLifted.Wpgen_negpat (
+                                                                  forall q3 :
+                                                                    node_,
+                                                                  Coq.Init.Logic.not (
+                                                                    Coq.Init.Logic.eq x1__ (
+                                                                      Nonempty q3 : contents_
+                                                                    )
+                                                                  )
+                                                                )
+                                                              ) (
+                                                                @CFML.WPLifted.Wptag (
+                                                                  @CFML.WPLifted.Wpgen_done
                                                                 )
                                                               )
                                                             )
@@ -1657,26 +1307,22 @@ Parameter merge_siblings_cf__ :
                                               )
                                             )
                                           )
-                                        ) _ _ Q
-                                      )
-                                    )
-                                  ) (
-                                    CFML.WPLifted.Wpgen_negpat (
-                                      forall q1 : node_,
-                                      Coq.Init.Logic.not (
-                                        Coq.Init.Logic.eq x1__ (
-                                          Nonempty q1 : contents_
                                         )
                                       )
                                     )
-                                  ) (
-                                    @CFML.WPLifted.Wptag (
-                                      @CFML.WPLifted.Wpgen_done
-                                    )
+                                  ) _ _ Q
+                                )
+                              )
+                            ) (
+                              CFML.WPLifted.Wpgen_negpat (
+                                forall q1 : node_,
+                                Coq.Init.Logic.not (
+                                  Coq.Init.Logic.eq x0__ (
+                                    Nonempty q1 : contents_
                                   )
                                 )
                               )
-                            )
+                            ) (@CFML.WPLifted.Wptag (@CFML.WPLifted.Wpgen_done))
                           )
                         )
                       )
@@ -1790,7 +1436,7 @@ Parameter pop_min_cf__ :
                                             CFML.WPLifted.Wpgen_let_trm (
                                               @CFML.WPLifted.Wptag (
                                                 (
-                                                  CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
+                                                  CFML.WPLifted.Wpgen_app contents_ (
                                                     CFML.WPRecord.val_get_field child'
                                                   ) (
                                                     Coq.Lists.List.cons (
@@ -1800,27 +1446,56 @@ Parameter pop_min_cf__ :
                                                 )
                                               )
                                             ) (
-                                              fun x1__ : CFML.Semantics.loc =>
+                                              fun x1__ : contents_ =>
                                               @CFML.WPLifted.Wptag (
                                                 (
-                                                  CFML.WPLifted.Wpgen_let_trm (
+                                                  CFML.WPLifted.Wpgen_seq (
                                                     @CFML.WPLifted.Wptag (
                                                       (
-                                                        CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                                                          Coq.Lists.List.cons (
-                                                            @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x1__
-                                                          ) Coq.Lists.List.nil
-                                                        )
-                                                      )
-                                                    )
-                                                  ) (
-                                                    fun x2__ : contents_ =>
-                                                    @CFML.WPLifted.Wptag (
-                                                      (
-                                                        CFML.WPLifted.Wpgen_seq (
+                                                        CFML.WPLifted.Wpgen_match x1__ (
                                                           @CFML.WPLifted.Wptag (
                                                             (
-                                                              CFML.WPLifted.Wpgen_match x2__ (
+                                                              CFML.WPLifted.Wpgen_case (
+                                                                fun A : Type =>
+                                                                fun EA :
+                                                                  CFML.SepLifted.Enc A
+                                                                =>
+                                                                fun Q :
+                                                                  A ->
+                                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                                                =>
+                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                                    Coq.Init.Logic.eq x1__ (
+                                                                      Empty : contents_
+                                                                    )
+                                                                  )
+                                                                ) (
+                                                                  @CFML.WPLifted.Wptag (
+                                                                    (
+                                                                      CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit Pervasives_ml.infix_colon_eq__ (
+                                                                        Coq.Lists.List.cons (
+                                                                          @CFML.SepLifted.dyn_make CFML.Semantics.loc _ p
+                                                                        ) (
+                                                                          Coq.Lists.List.cons (
+                                                                            @CFML.SepLifted.dyn_make contents_ _ (
+                                                                              Empty : contents_
+                                                                            )
+                                                                          ) Coq.Lists.List.nil
+                                                                        )
+                                                                      )
+                                                                    )
+                                                                  ) _ _ Q
+                                                                )
+                                                              ) (
+                                                                CFML.WPLifted.Wpgen_negpat (
+                                                                  Coq.Init.Logic.not (
+                                                                    Coq.Init.Logic.eq x1__ (
+                                                                      Empty : contents_
+                                                                    )
+                                                                  )
+                                                                )
+                                                              ) (
                                                                 @CFML.WPLifted.Wptag (
                                                                   (
                                                                     CFML.WPLifted.Wpgen_case (
@@ -1834,114 +1509,66 @@ Parameter pop_min_cf__ :
                                                                         A ->
                                                                         CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
                                                                       =>
-                                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                                          Coq.Init.Logic.eq x2__ (
-                                                                            Empty : contents_
-                                                                          )
-                                                                        )
-                                                                      ) (
-                                                                        @CFML.WPLifted.Wptag (
-                                                                          (
-                                                                            CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit Pervasives_ml.infix_colon_eq__ (
-                                                                              Coq.Lists.List.cons (
-                                                                                @CFML.SepLifted.dyn_make CFML.Semantics.loc _ p
-                                                                              ) (
-                                                                                Coq.Lists.List.cons (
-                                                                                  @CFML.SepLifted.dyn_make contents_ _ (
-                                                                                    Empty : contents_
-                                                                                  )
-                                                                                ) Coq.Lists.List.nil
-                                                                              )
+                                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                                                                        fun child :
+                                                                          node_
+                                                                        =>
+                                                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                                            Coq.Init.Logic.eq x1__ (
+                                                                              Nonempty child : contents_
                                                                             )
                                                                           )
-                                                                        ) _ _ Q
+                                                                        ) (
+                                                                          @CFML.WPLifted.Wptag (
+                                                                            (
+                                                                              CFML.WPLifted.Wpgen_let_trm (
+                                                                                @CFML.WPLifted.Wptag (
+                                                                                  (
+                                                                                    CFML.WPLifted.Wpgen_app node_ merge_siblings (
+                                                                                      Coq.Lists.List.cons (
+                                                                                        @CFML.SepLifted.dyn_make node_ _ child
+                                                                                      ) Coq.Lists.List.nil
+                                                                                    )
+                                                                                  )
+                                                                                )
+                                                                              ) (
+                                                                                fun x2__ :
+                                                                                  node_
+                                                                                =>
+                                                                                @CFML.WPLifted.Wptag (
+                                                                                  (
+                                                                                    CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit Pervasives_ml.infix_colon_eq__ (
+                                                                                      Coq.Lists.List.cons (
+                                                                                        @CFML.SepLifted.dyn_make CFML.Semantics.loc _ p
+                                                                                      ) (
+                                                                                        Coq.Lists.List.cons (
+                                                                                          @CFML.SepLifted.dyn_make contents_ _ (
+                                                                                            Nonempty x2__ : contents_
+                                                                                          )
+                                                                                        ) Coq.Lists.List.nil
+                                                                                      )
+                                                                                    )
+                                                                                  )
+                                                                                )
+                                                                              )
+                                                                            )
+                                                                          ) _ _ Q
+                                                                        )
                                                                       )
                                                                     ) (
                                                                       CFML.WPLifted.Wpgen_negpat (
+                                                                        forall child :
+                                                                          node_,
                                                                         Coq.Init.Logic.not (
-                                                                          Coq.Init.Logic.eq x2__ (
-                                                                            Empty : contents_
+                                                                          Coq.Init.Logic.eq x1__ (
+                                                                            Nonempty child : contents_
                                                                           )
                                                                         )
                                                                       )
                                                                     ) (
                                                                       @CFML.WPLifted.Wptag (
-                                                                        (
-                                                                          CFML.WPLifted.Wpgen_case (
-                                                                            fun A :
-                                                                              Type
-                                                                            =>
-                                                                            fun EA :
-                                                                              CFML.SepLifted.Enc A
-                                                                            =>
-                                                                            fun Q :
-                                                                              A ->
-                                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                                                            =>
-                                                                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                                                              fun child :
-                                                                                node_
-                                                                              =>
-                                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                                                  Coq.Init.Logic.eq x2__ (
-                                                                                    Nonempty child : contents_
-                                                                                  )
-                                                                                )
-                                                                              ) (
-                                                                                @CFML.WPLifted.Wptag (
-                                                                                  (
-                                                                                    CFML.WPLifted.Wpgen_let_trm (
-                                                                                      @CFML.WPLifted.Wptag (
-                                                                                        (
-                                                                                          CFML.WPLifted.Wpgen_app node_ merge_siblings (
-                                                                                            Coq.Lists.List.cons (
-                                                                                              @CFML.SepLifted.dyn_make node_ _ child
-                                                                                            ) Coq.Lists.List.nil
-                                                                                          )
-                                                                                        )
-                                                                                      )
-                                                                                    ) (
-                                                                                      fun x3__ :
-                                                                                        node_
-                                                                                      =>
-                                                                                      @CFML.WPLifted.Wptag (
-                                                                                        (
-                                                                                          CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit Pervasives_ml.infix_colon_eq__ (
-                                                                                            Coq.Lists.List.cons (
-                                                                                              @CFML.SepLifted.dyn_make CFML.Semantics.loc _ p
-                                                                                            ) (
-                                                                                              Coq.Lists.List.cons (
-                                                                                                @CFML.SepLifted.dyn_make contents_ _ (
-                                                                                                  Nonempty x3__ : contents_
-                                                                                                )
-                                                                                              ) Coq.Lists.List.nil
-                                                                                            )
-                                                                                          )
-                                                                                        )
-                                                                                      )
-                                                                                    )
-                                                                                  )
-                                                                                ) _ _ Q
-                                                                              )
-                                                                            )
-                                                                          ) (
-                                                                            CFML.WPLifted.Wpgen_negpat (
-                                                                              forall child :
-                                                                                node_,
-                                                                              Coq.Init.Logic.not (
-                                                                                Coq.Init.Logic.eq x2__ (
-                                                                                  Nonempty child : contents_
-                                                                                )
-                                                                              )
-                                                                            )
-                                                                          ) (
-                                                                            @CFML.WPLifted.Wptag (
-                                                                              @CFML.WPLifted.Wpgen_done
-                                                                            )
-                                                                          )
-                                                                        )
+                                                                        @CFML.WPLifted.Wpgen_done
                                                                       )
                                                                     )
                                                                   )
@@ -1949,13 +1576,13 @@ Parameter pop_min_cf__ :
                                                               )
                                                             )
                                                           )
-                                                        ) (
-                                                          @CFML.WPLifted.Wptag (
-                                                            (
-                                                              CFML.WPLifted.Wpgen_val x
-                                                            )
-                                                          )
                                                         )
+                                                      )
+                                                    )
+                                                  ) (
+                                                    @CFML.WPLifted.Wptag (
+                                                      (
+                                                        CFML.WPLifted.Wpgen_val x
                                                       )
                                                     )
                                                   )
@@ -2007,7 +1634,7 @@ Parameter find_parent : CFML.Semantics.val.
 
 Parameter find_parent_cf__ :
   CFML.WPLifted.Wpgen_body (
-    forall k : CFML.Semantics.loc,
+    forall k : contents_,
     forall H : CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop,
     forall A : Type,
     forall EA : CFML.SepLifted.Enc A,
@@ -2015,21 +1642,29 @@ Parameter find_parent_cf__ :
     CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.himpl H (
       @CFML.WPLifted.Wptag (
         (
-          CFML.WPLifted.Wpgen_let_trm (
+          CFML.WPLifted.Wpgen_match k (
             @CFML.WPLifted.Wptag (
               (
-                CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                  Coq.Lists.List.cons (
-                    @CFML.SepLifted.dyn_make CFML.Semantics.loc _ k
-                  ) Coq.Lists.List.nil
-                )
-              )
-            )
-          ) (
-            fun x0__ : contents_ =>
-            @CFML.WPLifted.Wptag (
-              (
-                CFML.WPLifted.Wpgen_match x0__ (
+                CFML.WPLifted.Wpgen_case (
+                  fun A : Type =>
+                  fun EA : CFML.SepLifted.Enc A =>
+                  fun Q :
+                    A -> CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                  =>
+                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                      Coq.Init.Logic.eq k (Empty : contents_)
+                    )
+                  ) (
+                    @CFML.WPLifted.Wptag (
+                      (CFML.WPLifted.Wpgen_val (Empty : contents_))
+                    ) _ _ Q
+                  )
+                ) (
+                  CFML.WPLifted.Wpgen_negpat (
+                    Coq.Init.Logic.not (Coq.Init.Logic.eq k (Empty : contents_))
+                  )
+                ) (
                   @CFML.WPLifted.Wptag (
                     (
                       CFML.WPLifted.Wpgen_case (
@@ -2039,156 +1674,86 @@ Parameter find_parent_cf__ :
                           A ->
                           CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
                         =>
-                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                            Coq.Init.Logic.eq x0__ (Empty : contents_)
-                          )
-                        ) (
-                          @CFML.WPLifted.Wptag (
-                            (CFML.WPLifted.Wpgen_val (Empty : contents_))
-                          ) _ _ Q
-                        )
-                      ) (
-                        CFML.WPLifted.Wpgen_negpat (
-                          Coq.Init.Logic.not (
-                            Coq.Init.Logic.eq x0__ (Empty : contents_)
-                          )
-                        )
-                      ) (
-                        @CFML.WPLifted.Wptag (
-                          (
-                            CFML.WPLifted.Wpgen_case (
-                              fun A : Type =>
-                              fun EA : CFML.SepLifted.Enc A =>
-                              fun Q :
-                                A ->
-                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                              =>
-                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                fun q : node_ =>
-                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                    Coq.Init.Logic.eq x0__ (
-                                      Nonempty q : contents_
+                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                          fun q : node_ =>
+                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                              Coq.Init.Logic.eq k (Nonempty q : contents_)
+                            )
+                          ) (
+                            @CFML.WPLifted.Wptag (
+                              (
+                                CFML.WPLifted.Wpgen_let_trm (
+                                  @CFML.WPLifted.Wptag (
+                                    (
+                                      CFML.WPLifted.Wpgen_app contents_ (
+                                        CFML.WPRecord.val_get_field sibling'
+                                      ) (
+                                        Coq.Lists.List.cons (
+                                          @CFML.SepLifted.dyn_make node_ _ q
+                                        ) Coq.Lists.List.nil
+                                      )
                                     )
                                   )
                                 ) (
+                                  fun x0__ : contents_ =>
                                   @CFML.WPLifted.Wptag (
                                     (
                                       CFML.WPLifted.Wpgen_let_trm (
                                         @CFML.WPLifted.Wptag (
                                           (
-                                            CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                              CFML.WPRecord.val_get_field sibling'
-                                            ) (
+                                            CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.bool Pervasives_ml.infix_eq__ (
                                               Coq.Lists.List.cons (
-                                                @CFML.SepLifted.dyn_make node_ _ q
-                                              ) Coq.Lists.List.nil
+                                                @CFML.SepLifted.dyn_make contents_ _ x0__
+                                              ) (
+                                                Coq.Lists.List.cons (
+                                                  @CFML.SepLifted.dyn_make contents_ _ (
+                                                    Empty : contents_
+                                                  )
+                                                ) Coq.Lists.List.nil
+                                              )
                                             )
                                           )
                                         )
                                       ) (
-                                        fun x1__ : CFML.Semantics.loc =>
+                                        fun x1__ : Coq.Init.Datatypes.bool =>
                                         @CFML.WPLifted.Wptag (
                                           (
-                                            CFML.WPLifted.Wpgen_let_trm (
+                                            CFML.WPLifted.Wpgen_if x1__ (
                                               @CFML.WPLifted.Wptag (
                                                 (
-                                                  CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
+                                                  CFML.WPLifted.Wpgen_app contents_ (
+                                                    CFML.WPRecord.val_get_field parent'
+                                                  ) (
                                                     Coq.Lists.List.cons (
-                                                      @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x1__
+                                                      @CFML.SepLifted.dyn_make node_ _ q
                                                     ) Coq.Lists.List.nil
                                                   )
                                                 )
                                               )
                                             ) (
-                                              fun x2__ : contents_ =>
                                               @CFML.WPLifted.Wptag (
                                                 (
                                                   CFML.WPLifted.Wpgen_let_trm (
                                                     @CFML.WPLifted.Wptag (
                                                       (
-                                                        CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.bool Pervasives_ml.infix_eq__ (
+                                                        CFML.WPLifted.Wpgen_app contents_ (
+                                                          CFML.WPRecord.val_get_field sibling'
+                                                        ) (
                                                           Coq.Lists.List.cons (
-                                                            @CFML.SepLifted.dyn_make contents_ _ x2__
-                                                          ) (
-                                                            Coq.Lists.List.cons (
-                                                              @CFML.SepLifted.dyn_make contents_ _ (
-                                                                Empty : contents_
-                                                              )
-                                                            ) Coq.Lists.List.nil
-                                                          )
+                                                            @CFML.SepLifted.dyn_make node_ _ q
+                                                          ) Coq.Lists.List.nil
                                                         )
                                                       )
                                                     )
                                                   ) (
-                                                    fun x3__ :
-                                                      Coq.Init.Datatypes.bool
-                                                    =>
+                                                    fun x2__ : contents_ =>
                                                     @CFML.WPLifted.Wptag (
                                                       (
-                                                        CFML.WPLifted.Wpgen_if x3__ (
-                                                          @CFML.WPLifted.Wptag (
-                                                            (
-                                                              CFML.WPLifted.Wpgen_let_trm (
-                                                                @CFML.WPLifted.Wptag (
-                                                                  (
-                                                                    CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                      CFML.WPRecord.val_get_field parent'
-                                                                    ) (
-                                                                      Coq.Lists.List.cons (
-                                                                        @CFML.SepLifted.dyn_make node_ _ q
-                                                                      ) Coq.Lists.List.nil
-                                                                    )
-                                                                  )
-                                                                )
-                                                              ) (
-                                                                fun x5__ :
-                                                                  CFML.Semantics.loc
-                                                                =>
-                                                                @CFML.WPLifted.Wptag (
-                                                                  (
-                                                                    CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                                                                      Coq.Lists.List.cons (
-                                                                        @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x5__
-                                                                      ) Coq.Lists.List.nil
-                                                                    )
-                                                                  )
-                                                                )
-                                                              )
-                                                            )
-                                                          )
-                                                        ) (
-                                                          @CFML.WPLifted.Wptag (
-                                                            (
-                                                              CFML.WPLifted.Wpgen_let_trm (
-                                                                @CFML.WPLifted.Wptag (
-                                                                  (
-                                                                    CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                      CFML.WPRecord.val_get_field sibling'
-                                                                    ) (
-                                                                      Coq.Lists.List.cons (
-                                                                        @CFML.SepLifted.dyn_make node_ _ q
-                                                                      ) Coq.Lists.List.nil
-                                                                    )
-                                                                  )
-                                                                )
-                                                              ) (
-                                                                fun x4__ :
-                                                                  CFML.Semantics.loc
-                                                                =>
-                                                                @CFML.WPLifted.Wptag (
-                                                                  (
-                                                                    CFML.WPLifted.Wpgen_app contents_ find_parent (
-                                                                      Coq.Lists.List.cons (
-                                                                        @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x4__
-                                                                      ) Coq.Lists.List.nil
-                                                                    )
-                                                                  )
-                                                                )
-                                                              )
-                                                            )
-                                                          )
+                                                        CFML.WPLifted.Wpgen_app contents_ find_parent (
+                                                          Coq.Lists.List.cons (
+                                                            @CFML.SepLifted.dyn_make contents_ _ x2__
+                                                          ) Coq.Lists.List.nil
                                                         )
                                                       )
                                                     )
@@ -2200,22 +1765,20 @@ Parameter find_parent_cf__ :
                                         )
                                       )
                                     )
-                                  ) _ _ Q
-                                )
-                              )
-                            ) (
-                              CFML.WPLifted.Wpgen_negpat (
-                                forall q : node_,
-                                Coq.Init.Logic.not (
-                                  Coq.Init.Logic.eq x0__ (
-                                    Nonempty q : contents_
                                   )
                                 )
                               )
-                            ) (@CFML.WPLifted.Wptag (@CFML.WPLifted.Wpgen_done))
+                            ) _ _ Q
                           )
                         )
-                      )
+                      ) (
+                        CFML.WPLifted.Wpgen_negpat (
+                          forall q : node_,
+                          Coq.Init.Logic.not (
+                            Coq.Init.Logic.eq k (Nonempty q : contents_)
+                          )
+                        )
+                      ) (@CFML.WPLifted.Wptag (@CFML.WPLifted.Wpgen_done))
                     )
                   )
                 )
@@ -2230,7 +1793,7 @@ Parameter find_parent_cf__ :
     ) ->
     CFML.SepLifted.Triple (
       CFML.SepLifted.Trm_apps find_parent (
-        Coq.Lists.List.cons (@CFML.SepLifted.dyn_make CFML.Semantics.loc _ k) Coq.Lists.List.nil
+        Coq.Lists.List.cons (@CFML.SepLifted.dyn_make contents_ _ k) Coq.Lists.List.nil
       )
     ) H Q
   ).
@@ -2241,7 +1804,7 @@ Parameter root : CFML.Semantics.val.
 
 Parameter root_cf__ :
   CFML.WPLifted.Wpgen_body (
-    forall k : CFML.Semantics.loc,
+    forall k : contents_,
     forall H : CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop,
     forall A : Type,
     forall EA : CFML.SepLifted.Enc A,
@@ -2249,21 +1812,25 @@ Parameter root_cf__ :
     CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.himpl H (
       @CFML.WPLifted.Wptag (
         (
-          CFML.WPLifted.Wpgen_let_trm (
+          CFML.WPLifted.Wpgen_match k (
             @CFML.WPLifted.Wptag (
               (
-                CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                  Coq.Lists.List.cons (
-                    @CFML.SepLifted.dyn_make CFML.Semantics.loc _ k
-                  ) Coq.Lists.List.nil
-                )
-              )
-            )
-          ) (
-            fun x0__ : contents_ =>
-            @CFML.WPLifted.Wptag (
-              (
-                CFML.WPLifted.Wpgen_match x0__ (
+                CFML.WPLifted.Wpgen_case (
+                  fun A : Type =>
+                  fun EA : CFML.SepLifted.Enc A =>
+                  fun Q :
+                    A -> CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                  =>
+                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                      Coq.Init.Logic.eq k (Empty : contents_)
+                    )
+                  ) (@CFML.WPLifted.Wptag (@CFML.WPLifted.Wpgen_fail) _ _ Q)
+                ) (
+                  CFML.WPLifted.Wpgen_negpat (
+                    Coq.Init.Logic.not (Coq.Init.Logic.eq k (Empty : contents_))
+                  )
+                ) (
                   @CFML.WPLifted.Wptag (
                     (
                       CFML.WPLifted.Wpgen_case (
@@ -2273,122 +1840,199 @@ Parameter root_cf__ :
                           A ->
                           CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
                         =>
-                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                            Coq.Init.Logic.eq x0__ (Empty : contents_)
-                          )
-                        ) (
-                          @CFML.WPLifted.Wptag (@CFML.WPLifted.Wpgen_fail) _ _ Q
-                        )
-                      ) (
-                        CFML.WPLifted.Wpgen_negpat (
-                          Coq.Init.Logic.not (
-                            Coq.Init.Logic.eq x0__ (Empty : contents_)
-                          )
-                        )
-                      ) (
-                        @CFML.WPLifted.Wptag (
-                          (
-                            CFML.WPLifted.Wpgen_case (
-                              fun A : Type =>
-                              fun EA : CFML.SepLifted.Enc A =>
-                              fun Q :
-                                A ->
-                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                              =>
-                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                fun q : node_ =>
-                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                    Coq.Init.Logic.eq x0__ (
-                                      Nonempty q : contents_
+                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                          fun q : node_ =>
+                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                              Coq.Init.Logic.eq k (Nonempty q : contents_)
+                            )
+                          ) (
+                            @CFML.WPLifted.Wptag (
+                              (
+                                CFML.WPLifted.Wpgen_let_trm (
+                                  @CFML.WPLifted.Wptag (
+                                    (
+                                      CFML.WPLifted.Wpgen_app contents_ (
+                                        CFML.WPRecord.val_get_field sibling'
+                                      ) (
+                                        Coq.Lists.List.cons (
+                                          @CFML.SepLifted.dyn_make node_ _ q
+                                        ) Coq.Lists.List.nil
+                                      )
                                     )
                                   )
                                 ) (
+                                  fun x0__ : contents_ =>
                                   @CFML.WPLifted.Wptag (
                                     (
                                       CFML.WPLifted.Wpgen_let_trm (
                                         @CFML.WPLifted.Wptag (
                                           (
-                                            CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                              CFML.WPRecord.val_get_field sibling'
-                                            ) (
+                                            CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.bool Pervasives_ml.infix_eq__ (
                                               Coq.Lists.List.cons (
-                                                @CFML.SepLifted.dyn_make node_ _ q
-                                              ) Coq.Lists.List.nil
+                                                @CFML.SepLifted.dyn_make contents_ _ x0__
+                                              ) (
+                                                Coq.Lists.List.cons (
+                                                  @CFML.SepLifted.dyn_make contents_ _ (
+                                                    Empty : contents_
+                                                  )
+                                                ) Coq.Lists.List.nil
+                                              )
                                             )
                                           )
                                         )
                                       ) (
-                                        fun x1__ : CFML.Semantics.loc =>
+                                        fun x1__ : Coq.Init.Datatypes.bool =>
                                         @CFML.WPLifted.Wptag (
                                           (
                                             CFML.WPLifted.Wpgen_let_trm (
                                               @CFML.WPLifted.Wptag (
                                                 (
-                                                  CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                                                    Coq.Lists.List.cons (
-                                                      @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x1__
-                                                    ) Coq.Lists.List.nil
-                                                  )
-                                                )
-                                              )
-                                            ) (
-                                              fun x2__ : contents_ =>
-                                              @CFML.WPLifted.Wptag (
-                                                (
-                                                  CFML.WPLifted.Wpgen_let_trm (
-                                                    @CFML.WPLifted.Wptag (
-                                                      (
-                                                        CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.bool Pervasives_ml.infix_eq__ (
-                                                          Coq.Lists.List.cons (
-                                                            @CFML.SepLifted.dyn_make contents_ _ x2__
-                                                          ) (
-                                                            Coq.Lists.List.cons (
-                                                              @CFML.SepLifted.dyn_make contents_ _ (
-                                                                Empty : contents_
-                                                              )
-                                                            ) Coq.Lists.List.nil
-                                                          )
-                                                        )
-                                                      )
-                                                    )
-                                                  ) (
-                                                    fun x3__ :
-                                                      Coq.Init.Datatypes.bool
-                                                    =>
+                                                  CFML.WPLifted.Wpgen_if x1__ (
                                                     @CFML.WPLifted.Wptag (
                                                       (
                                                         CFML.WPLifted.Wpgen_let_trm (
                                                           @CFML.WPLifted.Wptag (
                                                             (
-                                                              CFML.WPLifted.Wpgen_if x3__ (
+                                                              CFML.WPLifted.Wpgen_app contents_ (
+                                                                CFML.WPRecord.val_get_field parent'
+                                                              ) (
+                                                                Coq.Lists.List.cons (
+                                                                  @CFML.SepLifted.dyn_make node_ _ q
+                                                                ) Coq.Lists.List.nil
+                                                              )
+                                                            )
+                                                          )
+                                                        ) (
+                                                          fun x4__ :
+                                                            contents_
+                                                          =>
+                                                          @CFML.WPLifted.Wptag (
+                                                            (
+                                                              CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.bool Pervasives_ml.infix_eq__ (
+                                                                Coq.Lists.List.cons (
+                                                                  @CFML.SepLifted.dyn_make contents_ _ x4__
+                                                                ) (
+                                                                  Coq.Lists.List.cons (
+                                                                    @CFML.SepLifted.dyn_make contents_ _ (
+                                                                      Empty : contents_
+                                                                    )
+                                                                  ) Coq.Lists.List.nil
+                                                                )
+                                                              )
+                                                            )
+                                                          )
+                                                        )
+                                                      )
+                                                    )
+                                                  ) (
+                                                    @CFML.WPLifted.Wptag (
+                                                      (
+                                                        CFML.WPLifted.Wpgen_val (
+                                                          Coq.Init.Datatypes.false : Coq.Init.Datatypes.bool
+                                                        )
+                                                      )
+                                                    )
+                                                  )
+                                                )
+                                              )
+                                            ) (
+                                              fun x5__ :
+                                                Coq.Init.Datatypes.bool
+                                              =>
+                                              @CFML.WPLifted.Wptag (
+                                                (
+                                                  CFML.WPLifted.Wpgen_if x5__ (
+                                                    @CFML.WPLifted.Wptag (
+                                                      (
+                                                        CFML.WPLifted.Wpgen_val k
+                                                      )
+                                                    )
+                                                  ) (
+                                                    @CFML.WPLifted.Wptag (
+                                                      (
+                                                        CFML.WPLifted.Wpgen_let_trm (
+                                                          @CFML.WPLifted.Wptag (
+                                                            (
+                                                              CFML.WPLifted.Wpgen_app contents_ (
+                                                                CFML.WPRecord.val_get_field parent'
+                                                              ) (
+                                                                Coq.Lists.List.cons (
+                                                                  @CFML.SepLifted.dyn_make node_ _ q
+                                                                ) Coq.Lists.List.nil
+                                                              )
+                                                            )
+                                                          )
+                                                        ) (
+                                                          fun x6__ :
+                                                            contents_
+                                                          =>
+                                                          @CFML.WPLifted.Wptag (
+                                                            (
+                                                              CFML.WPLifted.Wpgen_let_trm (
                                                                 @CFML.WPLifted.Wptag (
                                                                   (
-                                                                    CFML.WPLifted.Wpgen_let_trm (
-                                                                      @CFML.WPLifted.Wptag (
-                                                                        (
-                                                                          CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                            CFML.WPRecord.val_get_field parent'
-                                                                          ) (
-                                                                            Coq.Lists.List.cons (
-                                                                              @CFML.SepLifted.dyn_make node_ _ q
-                                                                            ) Coq.Lists.List.nil
+                                                                    CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.bool Pervasives_ml.infix_eq__ (
+                                                                      Coq.Lists.List.cons (
+                                                                        @CFML.SepLifted.dyn_make contents_ _ x6__
+                                                                      ) (
+                                                                        Coq.Lists.List.cons (
+                                                                          @CFML.SepLifted.dyn_make contents_ _ (
+                                                                            Empty : contents_
                                                                           )
-                                                                        )
+                                                                        ) Coq.Lists.List.nil
                                                                       )
-                                                                    ) (
-                                                                      fun x7__ :
-                                                                        CFML.Semantics.loc
-                                                                      =>
+                                                                    )
+                                                                  )
+                                                                )
+                                                              ) (
+                                                                fun x7__ :
+                                                                  Coq.Init.Datatypes.bool
+                                                                =>
+                                                                @CFML.WPLifted.Wptag (
+                                                                  (
+                                                                    CFML.WPLifted.Wpgen_if x7__ (
                                                                       @CFML.WPLifted.Wptag (
                                                                         (
                                                                           CFML.WPLifted.Wpgen_let_trm (
                                                                             @CFML.WPLifted.Wptag (
                                                                               (
-                                                                                CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
+                                                                                CFML.WPLifted.Wpgen_app contents_ (
+                                                                                  CFML.WPRecord.val_get_field sibling'
+                                                                                ) (
                                                                                   Coq.Lists.List.cons (
-                                                                                    @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x7__
+                                                                                    @CFML.SepLifted.dyn_make node_ _ q
+                                                                                  ) Coq.Lists.List.nil
+                                                                                )
+                                                                              )
+                                                                            )
+                                                                          ) (
+                                                                            fun x9__ :
+                                                                              contents_
+                                                                            =>
+                                                                            @CFML.WPLifted.Wptag (
+                                                                              (
+                                                                                CFML.WPLifted.Wpgen_app contents_ root (
+                                                                                  Coq.Lists.List.cons (
+                                                                                    @CFML.SepLifted.dyn_make contents_ _ x9__
+                                                                                  ) Coq.Lists.List.nil
+                                                                                )
+                                                                              )
+                                                                            )
+                                                                          )
+                                                                        )
+                                                                      )
+                                                                    ) (
+                                                                      @CFML.WPLifted.Wptag (
+                                                                        (
+                                                                          CFML.WPLifted.Wpgen_let_trm (
+                                                                            @CFML.WPLifted.Wptag (
+                                                                              (
+                                                                                CFML.WPLifted.Wpgen_app contents_ (
+                                                                                  CFML.WPRecord.val_get_field parent'
+                                                                                ) (
+                                                                                  Coq.Lists.List.cons (
+                                                                                    @CFML.SepLifted.dyn_make node_ _ q
                                                                                   ) Coq.Lists.List.nil
                                                                                 )
                                                                               )
@@ -2399,172 +2043,10 @@ Parameter root_cf__ :
                                                                             =>
                                                                             @CFML.WPLifted.Wptag (
                                                                               (
-                                                                                CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.bool Pervasives_ml.infix_eq__ (
+                                                                                CFML.WPLifted.Wpgen_app contents_ root (
                                                                                   Coq.Lists.List.cons (
                                                                                     @CFML.SepLifted.dyn_make contents_ _ x8__
-                                                                                  ) (
-                                                                                    Coq.Lists.List.cons (
-                                                                                      @CFML.SepLifted.dyn_make contents_ _ (
-                                                                                        Empty : contents_
-                                                                                      )
-                                                                                    ) Coq.Lists.List.nil
-                                                                                  )
-                                                                                )
-                                                                              )
-                                                                            )
-                                                                          )
-                                                                        )
-                                                                      )
-                                                                    )
-                                                                  )
-                                                                )
-                                                              ) (
-                                                                @CFML.WPLifted.Wptag (
-                                                                  (
-                                                                    CFML.WPLifted.Wpgen_val (
-                                                                      Coq.Init.Datatypes.false : Coq.Init.Datatypes.bool
-                                                                    )
-                                                                  )
-                                                                )
-                                                              )
-                                                            )
-                                                          )
-                                                        ) (
-                                                          fun x9__ :
-                                                            Coq.Init.Datatypes.bool
-                                                          =>
-                                                          @CFML.WPLifted.Wptag (
-                                                            (
-                                                              CFML.WPLifted.Wpgen_if x9__ (
-                                                                @CFML.WPLifted.Wptag (
-                                                                  (
-                                                                    CFML.WPLifted.Wpgen_val k
-                                                                  )
-                                                                )
-                                                              ) (
-                                                                @CFML.WPLifted.Wptag (
-                                                                  (
-                                                                    CFML.WPLifted.Wpgen_let_trm (
-                                                                      @CFML.WPLifted.Wptag (
-                                                                        (
-                                                                          CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                            CFML.WPRecord.val_get_field parent'
-                                                                          ) (
-                                                                            Coq.Lists.List.cons (
-                                                                              @CFML.SepLifted.dyn_make node_ _ q
-                                                                            ) Coq.Lists.List.nil
-                                                                          )
-                                                                        )
-                                                                      )
-                                                                    ) (
-                                                                      fun x10__ :
-                                                                        CFML.Semantics.loc
-                                                                      =>
-                                                                      @CFML.WPLifted.Wptag (
-                                                                        (
-                                                                          CFML.WPLifted.Wpgen_let_trm (
-                                                                            @CFML.WPLifted.Wptag (
-                                                                              (
-                                                                                CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                                                                                  Coq.Lists.List.cons (
-                                                                                    @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x10__
                                                                                   ) Coq.Lists.List.nil
-                                                                                )
-                                                                              )
-                                                                            )
-                                                                          ) (
-                                                                            fun x11__ :
-                                                                              contents_
-                                                                            =>
-                                                                            @CFML.WPLifted.Wptag (
-                                                                              (
-                                                                                CFML.WPLifted.Wpgen_let_trm (
-                                                                                  @CFML.WPLifted.Wptag (
-                                                                                    (
-                                                                                      CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.bool Pervasives_ml.infix_emark_eq__ (
-                                                                                        Coq.Lists.List.cons (
-                                                                                          @CFML.SepLifted.dyn_make contents_ _ x11__
-                                                                                        ) (
-                                                                                          Coq.Lists.List.cons (
-                                                                                            @CFML.SepLifted.dyn_make contents_ _ (
-                                                                                              Empty : contents_
-                                                                                            )
-                                                                                          ) Coq.Lists.List.nil
-                                                                                        )
-                                                                                      )
-                                                                                    )
-                                                                                  )
-                                                                                ) (
-                                                                                  fun x12__ :
-                                                                                    Coq.Init.Datatypes.bool
-                                                                                  =>
-                                                                                  @CFML.WPLifted.Wptag (
-                                                                                    (
-                                                                                      CFML.WPLifted.Wpgen_if x12__ (
-                                                                                        @CFML.WPLifted.Wptag (
-                                                                                          (
-                                                                                            CFML.WPLifted.Wpgen_let_trm (
-                                                                                              @CFML.WPLifted.Wptag (
-                                                                                                (
-                                                                                                  CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                                                    CFML.WPRecord.val_get_field sibling'
-                                                                                                  ) (
-                                                                                                    Coq.Lists.List.cons (
-                                                                                                      @CFML.SepLifted.dyn_make node_ _ q
-                                                                                                    ) Coq.Lists.List.nil
-                                                                                                  )
-                                                                                                )
-                                                                                              )
-                                                                                            ) (
-                                                                                              fun x14__ :
-                                                                                                CFML.Semantics.loc
-                                                                                              =>
-                                                                                              @CFML.WPLifted.Wptag (
-                                                                                                (
-                                                                                                  CFML.WPLifted.Wpgen_app CFML.Semantics.loc root (
-                                                                                                    Coq.Lists.List.cons (
-                                                                                                      @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x14__
-                                                                                                    ) Coq.Lists.List.nil
-                                                                                                  )
-                                                                                                )
-                                                                                              )
-                                                                                            )
-                                                                                          )
-                                                                                        )
-                                                                                      ) (
-                                                                                        @CFML.WPLifted.Wptag (
-                                                                                          (
-                                                                                            CFML.WPLifted.Wpgen_let_trm (
-                                                                                              @CFML.WPLifted.Wptag (
-                                                                                                (
-                                                                                                  CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                                                    CFML.WPRecord.val_get_field parent'
-                                                                                                  ) (
-                                                                                                    Coq.Lists.List.cons (
-                                                                                                      @CFML.SepLifted.dyn_make node_ _ q
-                                                                                                    ) Coq.Lists.List.nil
-                                                                                                  )
-                                                                                                )
-                                                                                              )
-                                                                                            ) (
-                                                                                              fun x13__ :
-                                                                                                CFML.Semantics.loc
-                                                                                              =>
-                                                                                              @CFML.WPLifted.Wptag (
-                                                                                                (
-                                                                                                  CFML.WPLifted.Wpgen_app CFML.Semantics.loc root (
-                                                                                                    Coq.Lists.List.cons (
-                                                                                                      @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x13__
-                                                                                                    ) Coq.Lists.List.nil
-                                                                                                  )
-                                                                                                )
-                                                                                              )
-                                                                                            )
-                                                                                          )
-                                                                                        )
-                                                                                      )
-                                                                                    )
-                                                                                  )
                                                                                 )
                                                                               )
                                                                             )
@@ -2588,22 +2070,20 @@ Parameter root_cf__ :
                                         )
                                       )
                                     )
-                                  ) _ _ Q
-                                )
-                              )
-                            ) (
-                              CFML.WPLifted.Wpgen_negpat (
-                                forall q : node_,
-                                Coq.Init.Logic.not (
-                                  Coq.Init.Logic.eq x0__ (
-                                    Nonempty q : contents_
                                   )
                                 )
                               )
-                            ) (@CFML.WPLifted.Wptag (@CFML.WPLifted.Wpgen_done))
+                            ) _ _ Q
                           )
                         )
-                      )
+                      ) (
+                        CFML.WPLifted.Wpgen_negpat (
+                          forall q : node_,
+                          Coq.Init.Logic.not (
+                            Coq.Init.Logic.eq k (Nonempty q : contents_)
+                          )
+                        )
+                      ) (@CFML.WPLifted.Wptag (@CFML.WPLifted.Wpgen_done))
                     )
                   )
                 )
@@ -2618,7 +2098,7 @@ Parameter root_cf__ :
     ) ->
     CFML.SepLifted.Triple (
       CFML.SepLifted.Trm_apps root (
-        Coq.Lists.List.cons (@CFML.SepLifted.dyn_make CFML.Semantics.loc _ k) Coq.Lists.List.nil
+        Coq.Lists.List.cons (@CFML.SepLifted.dyn_make contents_ _ k) Coq.Lists.List.nil
       )
     ) H Q
   ).
@@ -2629,7 +2109,7 @@ Parameter left_sibling : CFML.Semantics.val.
 
 Parameter left_sibling_cf__ :
   CFML.WPLifted.Wpgen_body (
-    forall k : CFML.Semantics.loc,
+    forall k : contents_,
     forall H : CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop,
     forall A : Type,
     forall EA : CFML.SepLifted.Enc A,
@@ -2646,7 +2126,7 @@ Parameter left_sibling_cf__ :
               CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
                 CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
                   CFML.WPLifted.Wpgen_body (
-                    forall s : CFML.Semantics.loc,
+                    forall s : contents_,
                     forall H :
                       CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop,
                     forall A : Type,
@@ -2656,21 +2136,32 @@ Parameter left_sibling_cf__ :
                     CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.himpl H (
                       @CFML.WPLifted.Wptag (
                         (
-                          CFML.WPLifted.Wpgen_let_trm (
+                          CFML.WPLifted.Wpgen_match s (
                             @CFML.WPLifted.Wptag (
                               (
-                                CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                                  Coq.Lists.List.cons (
-                                    @CFML.SepLifted.dyn_make CFML.Semantics.loc _ s
-                                  ) Coq.Lists.List.nil
-                                )
-                              )
-                            )
-                          ) (
-                            fun x0__ : contents_ =>
-                            @CFML.WPLifted.Wptag (
-                              (
-                                CFML.WPLifted.Wpgen_match x0__ (
+                                CFML.WPLifted.Wpgen_case (
+                                  fun A : Type =>
+                                  fun EA : CFML.SepLifted.Enc A =>
+                                  fun Q :
+                                    A ->
+                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                  =>
+                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                      Coq.Init.Logic.eq s (Empty : contents_)
+                                    )
+                                  ) (
+                                    @CFML.WPLifted.Wptag (
+                                      @CFML.WPLifted.Wpgen_fail
+                                    ) _ _ Q
+                                  )
+                                ) (
+                                  CFML.WPLifted.Wpgen_negpat (
+                                    Coq.Init.Logic.not (
+                                      Coq.Init.Logic.eq s (Empty : contents_)
+                                    )
+                                  )
+                                ) (
                                   @CFML.WPLifted.Wptag (
                                     (
                                       CFML.WPLifted.Wpgen_case (
@@ -2680,122 +2171,84 @@ Parameter left_sibling_cf__ :
                                           A ->
                                           CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
                                         =>
-                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                            Coq.Init.Logic.eq x0__ (
-                                              Empty : contents_
+                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                                          fun q : node_ =>
+                                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                              Coq.Init.Logic.eq s (
+                                                Nonempty q : contents_
+                                              )
                                             )
-                                          )
-                                        ) (
-                                          @CFML.WPLifted.Wptag (
-                                            @CFML.WPLifted.Wpgen_fail
-                                          ) _ _ Q
-                                        )
-                                      ) (
-                                        CFML.WPLifted.Wpgen_negpat (
-                                          Coq.Init.Logic.not (
-                                            Coq.Init.Logic.eq x0__ (
-                                              Empty : contents_
-                                            )
-                                          )
-                                        )
-                                      ) (
-                                        @CFML.WPLifted.Wptag (
-                                          (
-                                            CFML.WPLifted.Wpgen_case (
-                                              fun A : Type =>
-                                              fun EA : CFML.SepLifted.Enc A =>
-                                              fun Q :
-                                                A ->
-                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                              =>
-                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                                fun q : node_ =>
-                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                    Coq.Init.Logic.eq x0__ (
-                                                      Nonempty q : contents_
+                                          ) (
+                                            @CFML.WPLifted.Wptag (
+                                              (
+                                                CFML.WPLifted.Wpgen_let_trm (
+                                                  @CFML.WPLifted.Wptag (
+                                                    (
+                                                      CFML.WPLifted.Wpgen_app contents_ (
+                                                        CFML.WPRecord.val_get_field sibling'
+                                                      ) (
+                                                        Coq.Lists.List.cons (
+                                                          @CFML.SepLifted.dyn_make node_ _ q
+                                                        ) Coq.Lists.List.nil
+                                                      )
                                                     )
                                                   )
                                                 ) (
+                                                  fun x0__ : contents_ =>
                                                   @CFML.WPLifted.Wptag (
                                                     (
                                                       CFML.WPLifted.Wpgen_let_trm (
                                                         @CFML.WPLifted.Wptag (
                                                           (
-                                                            CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                              CFML.WPRecord.val_get_field sibling'
-                                                            ) (
+                                                            CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.bool Pervasives_ml.infix_eq__ (
                                                               Coq.Lists.List.cons (
-                                                                @CFML.SepLifted.dyn_make node_ _ q
-                                                              ) Coq.Lists.List.nil
+                                                                @CFML.SepLifted.dyn_make contents_ _ x0__
+                                                              ) (
+                                                                Coq.Lists.List.cons (
+                                                                  @CFML.SepLifted.dyn_make contents_ _ k
+                                                                ) Coq.Lists.List.nil
+                                                              )
                                                             )
                                                           )
                                                         )
                                                       ) (
                                                         fun x1__ :
-                                                          CFML.Semantics.loc
+                                                          Coq.Init.Datatypes.bool
                                                         =>
                                                         @CFML.WPLifted.Wptag (
                                                           (
-                                                            CFML.WPLifted.Wpgen_let_trm (
+                                                            CFML.WPLifted.Wpgen_if x1__ (
                                                               @CFML.WPLifted.Wptag (
                                                                 (
-                                                                  CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.bool Pervasives_ml.infix_eq__ (
-                                                                    Coq.Lists.List.cons (
-                                                                      @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x1__
-                                                                    ) (
-                                                                      Coq.Lists.List.cons (
-                                                                        @CFML.SepLifted.dyn_make CFML.Semantics.loc _ k
-                                                                      ) Coq.Lists.List.nil
-                                                                    )
-                                                                  )
+                                                                  CFML.WPLifted.Wpgen_val s
                                                                 )
                                                               )
                                                             ) (
-                                                              fun x2__ :
-                                                                Coq.Init.Datatypes.bool
-                                                              =>
                                                               @CFML.WPLifted.Wptag (
                                                                 (
-                                                                  CFML.WPLifted.Wpgen_if x2__ (
+                                                                  CFML.WPLifted.Wpgen_let_trm (
                                                                     @CFML.WPLifted.Wptag (
                                                                       (
-                                                                        CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
+                                                                        CFML.WPLifted.Wpgen_app contents_ (
+                                                                          CFML.WPRecord.val_get_field sibling'
+                                                                        ) (
                                                                           Coq.Lists.List.cons (
-                                                                            @CFML.SepLifted.dyn_make CFML.Semantics.loc _ s
+                                                                            @CFML.SepLifted.dyn_make node_ _ q
                                                                           ) Coq.Lists.List.nil
                                                                         )
                                                                       )
                                                                     )
                                                                   ) (
+                                                                    fun x2__ :
+                                                                      contents_
+                                                                    =>
                                                                     @CFML.WPLifted.Wptag (
                                                                       (
-                                                                        CFML.WPLifted.Wpgen_let_trm (
-                                                                          @CFML.WPLifted.Wptag (
-                                                                            (
-                                                                              CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                                CFML.WPRecord.val_get_field sibling'
-                                                                              ) (
-                                                                                Coq.Lists.List.cons (
-                                                                                  @CFML.SepLifted.dyn_make node_ _ q
-                                                                                ) Coq.Lists.List.nil
-                                                                              )
-                                                                            )
-                                                                          )
-                                                                        ) (
-                                                                          fun x3__ :
-                                                                            CFML.Semantics.loc
-                                                                          =>
-                                                                          @CFML.WPLifted.Wptag (
-                                                                            (
-                                                                              CFML.WPLifted.Wpgen_app contents_ sib_itr (
-                                                                                Coq.Lists.List.cons (
-                                                                                  @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x3__
-                                                                                ) Coq.Lists.List.nil
-                                                                              )
-                                                                            )
-                                                                          )
+                                                                        CFML.WPLifted.Wpgen_app contents_ sib_itr (
+                                                                          Coq.Lists.List.cons (
+                                                                            @CFML.SepLifted.dyn_make contents_ _ x2__
+                                                                          ) Coq.Lists.List.nil
                                                                         )
                                                                       )
                                                                     )
@@ -2807,24 +2260,24 @@ Parameter left_sibling_cf__ :
                                                         )
                                                       )
                                                     )
-                                                  ) _ _ Q
-                                                )
-                                              )
-                                            ) (
-                                              CFML.WPLifted.Wpgen_negpat (
-                                                forall q : node_,
-                                                Coq.Init.Logic.not (
-                                                  Coq.Init.Logic.eq x0__ (
-                                                    Nonempty q : contents_
                                                   )
                                                 )
                                               )
-                                            ) (
-                                              @CFML.WPLifted.Wptag (
-                                                @CFML.WPLifted.Wpgen_done
-                                              )
+                                            ) _ _ Q
+                                          )
+                                        )
+                                      ) (
+                                        CFML.WPLifted.Wpgen_negpat (
+                                          forall q : node_,
+                                          Coq.Init.Logic.not (
+                                            Coq.Init.Logic.eq s (
+                                              Nonempty q : contents_
                                             )
                                           )
+                                        )
+                                      ) (
+                                        @CFML.WPLifted.Wptag (
+                                          @CFML.WPLifted.Wpgen_done
                                         )
                                       )
                                     )
@@ -2844,7 +2297,7 @@ Parameter left_sibling_cf__ :
                     CFML.SepLifted.Triple (
                       CFML.SepLifted.Trm_apps sib_itr (
                         Coq.Lists.List.cons (
-                          @CFML.SepLifted.dyn_make CFML.Semantics.loc _ s
+                          @CFML.SepLifted.dyn_make contents_ _ s
                         ) Coq.Lists.List.nil
                       )
                     ) H Q
@@ -2858,7 +2311,7 @@ Parameter left_sibling_cf__ :
                         (
                           CFML.WPLifted.Wpgen_app contents_ find_parent (
                             Coq.Lists.List.cons (
-                              @CFML.SepLifted.dyn_make CFML.Semantics.loc _ k
+                              @CFML.SepLifted.dyn_make contents_ _ k
                             ) Coq.Lists.List.nil
                           )
                         )
@@ -2920,7 +2373,7 @@ Parameter left_sibling_cf__ :
                                                 CFML.WPLifted.Wpgen_let_trm (
                                                   @CFML.WPLifted.Wptag (
                                                     (
-                                                      CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
+                                                      CFML.WPLifted.Wpgen_app contents_ (
                                                         CFML.WPRecord.val_get_field child'
                                                       ) (
                                                         Coq.Lists.List.cons (
@@ -2930,14 +2383,12 @@ Parameter left_sibling_cf__ :
                                                     )
                                                   )
                                                 ) (
-                                                  fun x4__ :
-                                                    CFML.Semantics.loc
-                                                  =>
+                                                  fun x3__ : contents_ =>
                                                   @CFML.WPLifted.Wptag (
                                                     (
                                                       CFML.WPLifted.Wpgen_app contents_ sib_itr (
                                                         Coq.Lists.List.cons (
-                                                          @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x4__
+                                                          @CFML.SepLifted.dyn_make contents_ _ x3__
                                                         ) Coq.Lists.List.nil
                                                       )
                                                     )
@@ -2983,7 +2434,7 @@ Parameter left_sibling_cf__ :
     ) ->
     CFML.SepLifted.Triple (
       CFML.SepLifted.Trm_apps left_sibling (
-        Coq.Lists.List.cons (@CFML.SepLifted.dyn_make CFML.Semantics.loc _ k) Coq.Lists.List.nil
+        Coq.Lists.List.cons (@CFML.SepLifted.dyn_make contents_ _ k) Coq.Lists.List.nil
       )
     ) H Q
   ).
@@ -2994,7 +2445,7 @@ Parameter decrease_key : CFML.Semantics.val.
 
 Parameter decrease_key_cf__ :
   CFML.WPLifted.Wpgen_body (
-    forall k : CFML.Semantics.loc,
+    forall k : contents_,
     forall d : Coq.ZArith.BinInt.Z,
     forall H : CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop,
     forall A : Type,
@@ -3003,21 +2454,25 @@ Parameter decrease_key_cf__ :
     CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.himpl H (
       @CFML.WPLifted.Wptag (
         (
-          CFML.WPLifted.Wpgen_let_trm (
+          CFML.WPLifted.Wpgen_match k (
             @CFML.WPLifted.Wptag (
               (
-                CFML.WPLifted.Wpgen_app contents_ Pervasives_ml.infix_emark__ (
-                  Coq.Lists.List.cons (
-                    @CFML.SepLifted.dyn_make CFML.Semantics.loc _ k
-                  ) Coq.Lists.List.nil
-                )
-              )
-            )
-          ) (
-            fun x0__ : contents_ =>
-            @CFML.WPLifted.Wptag (
-              (
-                CFML.WPLifted.Wpgen_match x0__ (
+                CFML.WPLifted.Wpgen_case (
+                  fun A : Type =>
+                  fun EA : CFML.SepLifted.Enc A =>
+                  fun Q :
+                    A -> CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                  =>
+                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                      Coq.Init.Logic.eq k (Empty : contents_)
+                    )
+                  ) (@CFML.WPLifted.Wptag (@CFML.WPLifted.Wpgen_fail) _ _ Q)
+                ) (
+                  CFML.WPLifted.Wpgen_negpat (
+                    Coq.Init.Logic.not (Coq.Init.Logic.eq k (Empty : contents_))
+                  )
+                ) (
                   @CFML.WPLifted.Wptag (
                     (
                       CFML.WPLifted.Wpgen_case (
@@ -3027,73 +2482,64 @@ Parameter decrease_key_cf__ :
                           A ->
                           CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
                         =>
-                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                            Coq.Init.Logic.eq x0__ (Empty : contents_)
-                          )
-                        ) (
-                          @CFML.WPLifted.Wptag (@CFML.WPLifted.Wpgen_fail) _ _ Q
-                        )
-                      ) (
-                        CFML.WPLifted.Wpgen_negpat (
-                          Coq.Init.Logic.not (
-                            Coq.Init.Logic.eq x0__ (Empty : contents_)
-                          )
-                        )
-                      ) (
-                        @CFML.WPLifted.Wptag (
-                          (
-                            CFML.WPLifted.Wpgen_case (
-                              fun A : Type =>
-                              fun EA : CFML.SepLifted.Enc A =>
-                              fun Q :
-                                A ->
-                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                              =>
-                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                fun q : node_ =>
-                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                    Coq.Init.Logic.eq x0__ (
-                                      Nonempty q : contents_
+                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                          fun q : node_ =>
+                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                              Coq.Init.Logic.eq k (Nonempty q : contents_)
+                            )
+                          ) (
+                            @CFML.WPLifted.Wptag (
+                              (
+                                CFML.WPLifted.Wpgen_let_trm (
+                                  @CFML.WPLifted.Wptag (
+                                    (
+                                      CFML.WPLifted.Wpgen_app contents_ find_parent (
+                                        Coq.Lists.List.cons (
+                                          @CFML.SepLifted.dyn_make contents_ _ k
+                                        ) Coq.Lists.List.nil
+                                      )
                                     )
                                   )
                                 ) (
+                                  fun parent : contents_ =>
                                   @CFML.WPLifted.Wptag (
                                     (
-                                      CFML.WPLifted.Wpgen_let_trm (
+                                      CFML.WPLifted.Wpgen_match parent (
                                         @CFML.WPLifted.Wptag (
                                           (
-                                            CFML.WPLifted.Wpgen_app contents_ find_parent (
-                                              Coq.Lists.List.cons (
-                                                @CFML.SepLifted.dyn_make CFML.Semantics.loc _ k
-                                              ) Coq.Lists.List.nil
-                                            )
-                                          )
-                                        )
-                                      ) (
-                                        fun parent : contents_ =>
-                                        @CFML.WPLifted.Wptag (
-                                          (
-                                            CFML.WPLifted.Wpgen_match parent (
-                                              @CFML.WPLifted.Wptag (
-                                                (
-                                                  CFML.WPLifted.Wpgen_case (
-                                                    fun A : Type =>
-                                                    fun EA :
-                                                      CFML.SepLifted.Enc A
-                                                    =>
-                                                    fun Q :
-                                                      A ->
-                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                                    =>
-                                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                        Coq.Init.Logic.eq parent (
-                                                          Empty : contents_
+                                            CFML.WPLifted.Wpgen_case (
+                                              fun A : Type =>
+                                              fun EA : CFML.SepLifted.Enc A =>
+                                              fun Q :
+                                                A ->
+                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                              =>
+                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                  Coq.Init.Logic.eq parent (
+                                                    Empty : contents_
+                                                  )
+                                                )
+                                              ) (
+                                                @CFML.WPLifted.Wptag (
+                                                  (
+                                                    CFML.WPLifted.Wpgen_let_trm (
+                                                      @CFML.WPLifted.Wptag (
+                                                        (
+                                                          CFML.WPLifted.Wpgen_app Coq.ZArith.BinInt.Z (
+                                                            CFML.WPRecord.val_get_field value'
+                                                          ) (
+                                                            Coq.Lists.List.cons (
+                                                              @CFML.SepLifted.dyn_make node_ _ q
+                                                            ) Coq.Lists.List.nil
+                                                          )
                                                         )
                                                       )
                                                     ) (
+                                                      fun x1__ :
+                                                        Coq.ZArith.BinInt.Z
+                                                      =>
                                                       @CFML.WPLifted.Wptag (
                                                         (
                                                           CFML.WPLifted.Wpgen_let_trm (
@@ -3109,83 +2555,62 @@ Parameter decrease_key_cf__ :
                                                               )
                                                             )
                                                           ) (
-                                                            fun x2__ :
+                                                            fun x0__ :
                                                               Coq.ZArith.BinInt.Z
                                                             =>
                                                             @CFML.WPLifted.Wptag (
                                                               (
-                                                                CFML.WPLifted.Wpgen_let_trm (
-                                                                  @CFML.WPLifted.Wptag (
-                                                                    (
-                                                                      CFML.WPLifted.Wpgen_app Coq.ZArith.BinInt.Z (
-                                                                        CFML.WPRecord.val_get_field value'
-                                                                      ) (
-                                                                        Coq.Lists.List.cons (
-                                                                          @CFML.SepLifted.dyn_make node_ _ q
-                                                                        ) Coq.Lists.List.nil
-                                                                      )
-                                                                    )
+                                                                CFML.WPLifted.Wpgen_let_val (
+                                                                  (fun x__ y__ : Coq.ZArith.BinInt.Z => TLC.LibReflect.isTrue (Coq.Init.Logic.eq x__ y__)) x0__ (
+                                                                    Coq.ZArith.BinInt.Z.sub x1__ d
                                                                   )
                                                                 ) (
-                                                                  fun x1__ :
-                                                                    Coq.ZArith.BinInt.Z
+                                                                  fun x2__ :
+                                                                    Coq.Init.Datatypes.bool
                                                                   =>
                                                                   @CFML.WPLifted.Wptag (
                                                                     (
-                                                                      CFML.WPLifted.Wpgen_let_val (
-                                                                        (fun x__ y__ : Coq.ZArith.BinInt.Z => TLC.LibReflect.isTrue (Coq.Init.Logic.eq x__ y__)) x1__ (
-                                                                          Coq.ZArith.BinInt.Z.sub x2__ d
-                                                                        )
-                                                                      ) (
-                                                                        fun x3__ :
-                                                                          Coq.Init.Datatypes.bool
-                                                                        =>
+                                                                      CFML.WPLifted.Wpgen_match x2__ (
                                                                         @CFML.WPLifted.Wptag (
                                                                           (
-                                                                            CFML.WPLifted.Wpgen_match x3__ (
-                                                                              @CFML.WPLifted.Wptag (
-                                                                                (
-                                                                                  CFML.WPLifted.Wpgen_case (
-                                                                                    fun A :
-                                                                                      Type
-                                                                                    =>
-                                                                                    fun EA :
-                                                                                      CFML.SepLifted.Enc A
-                                                                                    =>
-                                                                                    fun Q :
-                                                                                      A ->
-                                                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                                                                    =>
-                                                                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                                                                      fun p0__ :
-                                                                                        Coq.Init.Datatypes.bool
-                                                                                      =>
-                                                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                                                          Coq.Init.Logic.eq x3__ p0__
-                                                                                        )
-                                                                                      ) (
-                                                                                        @CFML.WPLifted.Wptag (
-                                                                                          (
-                                                                                            CFML.WPLifted.Wpgen_val k
-                                                                                          )
-                                                                                        ) _ _ Q
-                                                                                      )
-                                                                                    )
-                                                                                  ) (
-                                                                                    CFML.WPLifted.Wpgen_negpat (
-                                                                                      forall p0__ :
-                                                                                        Coq.Init.Datatypes.bool,
-                                                                                      Coq.Init.Logic.not (
-                                                                                        Coq.Init.Logic.eq x3__ p0__
-                                                                                      )
-                                                                                    )
-                                                                                  ) (
-                                                                                    @CFML.WPLifted.Wptag (
-                                                                                      @CFML.WPLifted.Wpgen_done
-                                                                                    )
+                                                                            CFML.WPLifted.Wpgen_case (
+                                                                              fun A :
+                                                                                Type
+                                                                              =>
+                                                                              fun EA :
+                                                                                CFML.SepLifted.Enc A
+                                                                              =>
+                                                                              fun Q :
+                                                                                A ->
+                                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                                                              =>
+                                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                                                                                fun p0__ :
+                                                                                  Coq.Init.Datatypes.bool
+                                                                                =>
+                                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                                                    Coq.Init.Logic.eq x2__ p0__
                                                                                   )
+                                                                                ) (
+                                                                                  @CFML.WPLifted.Wptag (
+                                                                                    (
+                                                                                      CFML.WPLifted.Wpgen_val k
+                                                                                    )
+                                                                                  ) _ _ Q
                                                                                 )
+                                                                              )
+                                                                            ) (
+                                                                              CFML.WPLifted.Wpgen_negpat (
+                                                                                forall p0__ :
+                                                                                  Coq.Init.Datatypes.bool,
+                                                                                Coq.Init.Logic.not (
+                                                                                  Coq.Init.Logic.eq x2__ p0__
+                                                                                )
+                                                                              )
+                                                                            ) (
+                                                                              @CFML.WPLifted.Wptag (
+                                                                                @CFML.WPLifted.Wpgen_done
                                                                               )
                                                                             )
                                                                           )
@@ -3198,39 +2623,58 @@ Parameter decrease_key_cf__ :
                                                             )
                                                           )
                                                         )
-                                                      ) _ _ Q
-                                                    )
-                                                  ) (
-                                                    CFML.WPLifted.Wpgen_negpat (
-                                                      Coq.Init.Logic.not (
-                                                        Coq.Init.Logic.eq parent (
-                                                          Empty : contents_
-                                                        )
                                                       )
                                                     )
-                                                  ) (
-                                                    @CFML.WPLifted.Wptag (
-                                                      (
-                                                        CFML.WPLifted.Wpgen_case (
-                                                          fun A : Type =>
-                                                          fun EA :
-                                                            CFML.SepLifted.Enc A
-                                                          =>
-                                                          fun Q :
-                                                            A ->
-                                                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                                          =>
-                                                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                                            fun parent_node :
-                                                              node_
-                                                            =>
-                                                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                                Coq.Init.Logic.eq parent (
-                                                                  Nonempty parent_node : contents_
+                                                  )
+                                                ) _ _ Q
+                                              )
+                                            ) (
+                                              CFML.WPLifted.Wpgen_negpat (
+                                                Coq.Init.Logic.not (
+                                                  Coq.Init.Logic.eq parent (
+                                                    Empty : contents_
+                                                  )
+                                                )
+                                              )
+                                            ) (
+                                              @CFML.WPLifted.Wptag (
+                                                (
+                                                  CFML.WPLifted.Wpgen_case (
+                                                    fun A : Type =>
+                                                    fun EA :
+                                                      CFML.SepLifted.Enc A
+                                                    =>
+                                                    fun Q :
+                                                      A ->
+                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                                    =>
+                                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                                                      fun parent_node : node_ =>
+                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                          Coq.Init.Logic.eq parent (
+                                                            Nonempty parent_node : contents_
+                                                          )
+                                                        )
+                                                      ) (
+                                                        @CFML.WPLifted.Wptag (
+                                                          (
+                                                            CFML.WPLifted.Wpgen_let_trm (
+                                                              @CFML.WPLifted.Wptag (
+                                                                (
+                                                                  CFML.WPLifted.Wpgen_app Coq.ZArith.BinInt.Z (
+                                                                    CFML.WPRecord.val_get_field value'
+                                                                  ) (
+                                                                    Coq.Lists.List.cons (
+                                                                      @CFML.SepLifted.dyn_make node_ _ q
+                                                                    ) Coq.Lists.List.nil
+                                                                  )
                                                                 )
                                                               )
                                                             ) (
+                                                              fun x4__ :
+                                                                Coq.ZArith.BinInt.Z
+                                                              =>
                                                               @CFML.WPLifted.Wptag (
                                                                 (
                                                                   CFML.WPLifted.Wpgen_let_trm (
@@ -3240,139 +2684,111 @@ Parameter decrease_key_cf__ :
                                                                           CFML.WPRecord.val_get_field value'
                                                                         ) (
                                                                           Coq.Lists.List.cons (
-                                                                            @CFML.SepLifted.dyn_make node_ _ q
+                                                                            @CFML.SepLifted.dyn_make node_ _ parent_node
                                                                           ) Coq.Lists.List.nil
                                                                         )
                                                                       )
                                                                     )
                                                                   ) (
-                                                                    fun x5__ :
+                                                                    fun x3__ :
                                                                       Coq.ZArith.BinInt.Z
                                                                     =>
                                                                     @CFML.WPLifted.Wptag (
                                                                       (
-                                                                        CFML.WPLifted.Wpgen_let_trm (
-                                                                          @CFML.WPLifted.Wptag (
-                                                                            (
-                                                                              CFML.WPLifted.Wpgen_app Coq.ZArith.BinInt.Z (
-                                                                                CFML.WPRecord.val_get_field value'
-                                                                              ) (
-                                                                                Coq.Lists.List.cons (
-                                                                                  @CFML.SepLifted.dyn_make node_ _ parent_node
-                                                                                ) Coq.Lists.List.nil
-                                                                              )
-                                                                            )
+                                                                        CFML.WPLifted.Wpgen_if (
+                                                                          (fun x__ y__ : Coq.ZArith.BinInt.Z => TLC.LibReflect.isTrue (@TLC.LibOrder.lt _ (@TLC.LibOrder.lt_of_le Coq.ZArith.BinInt.Z TLC.LibInt.le_int_inst) x__ y__)) x3__ (
+                                                                            Coq.ZArith.BinInt.Z.sub x4__ d
                                                                           )
                                                                         ) (
-                                                                          fun x4__ :
-                                                                            Coq.ZArith.BinInt.Z
-                                                                          =>
                                                                           @CFML.WPLifted.Wptag (
                                                                             (
-                                                                              CFML.WPLifted.Wpgen_if (
-                                                                                (fun x__ y__ : Coq.ZArith.BinInt.Z => TLC.LibReflect.isTrue (@TLC.LibOrder.gt _ (@TLC.LibOrder.gt_of_le _ TLC.LibInt.le_int_inst) x__ y__)) x4__ (
-                                                                                  Coq.ZArith.BinInt.Z.sub x5__ d
+                                                                              CFML.WPLifted.Wpgen_let_trm (
+                                                                                @CFML.WPLifted.Wptag (
+                                                                                  (
+                                                                                    CFML.WPLifted.Wpgen_app Coq.ZArith.BinInt.Z (
+                                                                                      CFML.WPRecord.val_get_field value'
+                                                                                    ) (
+                                                                                      Coq.Lists.List.cons (
+                                                                                        @CFML.SepLifted.dyn_make node_ _ q
+                                                                                      ) Coq.Lists.List.nil
+                                                                                    )
+                                                                                  )
                                                                                 )
                                                                               ) (
+                                                                                fun x19__ :
+                                                                                  Coq.ZArith.BinInt.Z
+                                                                                =>
                                                                                 @CFML.WPLifted.Wptag (
                                                                                   (
                                                                                     CFML.WPLifted.Wpgen_let_trm (
                                                                                       @CFML.WPLifted.Wptag (
                                                                                         (
-                                                                                          CFML.WPLifted.Wpgen_app Coq.ZArith.BinInt.Z (
-                                                                                            CFML.WPRecord.val_get_field value'
+                                                                                          CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit (
+                                                                                            CFML.WPRecord.val_set_field value'
                                                                                           ) (
                                                                                             Coq.Lists.List.cons (
                                                                                               @CFML.SepLifted.dyn_make node_ _ q
-                                                                                            ) Coq.Lists.List.nil
+                                                                                            ) (
+                                                                                              Coq.Lists.List.cons (
+                                                                                                @CFML.SepLifted.dyn_make Coq.ZArith.BinInt.Z _ (
+                                                                                                  Coq.ZArith.BinInt.Z.sub x19__ d
+                                                                                                )
+                                                                                              ) Coq.Lists.List.nil
+                                                                                            )
                                                                                           )
                                                                                         )
                                                                                       )
                                                                                     ) (
-                                                                                      fun x23__ :
-                                                                                        Coq.ZArith.BinInt.Z
+                                                                                      fun x20__ :
+                                                                                        Coq.Init.Datatypes.unit
                                                                                       =>
                                                                                       @CFML.WPLifted.Wptag (
                                                                                         (
-                                                                                          CFML.WPLifted.Wpgen_let_trm (
+                                                                                          CFML.WPLifted.Wpgen_match x20__ (
                                                                                             @CFML.WPLifted.Wptag (
                                                                                               (
-                                                                                                CFML.WPLifted.Wpgen_app Coq.ZArith.BinInt.Z (
-                                                                                                  CFML.WPRecord.val_get_field value'
-                                                                                                ) (
-                                                                                                  Coq.Lists.List.cons (
-                                                                                                    @CFML.SepLifted.dyn_make node_ _ q
-                                                                                                  ) Coq.Lists.List.nil
-                                                                                                )
-                                                                                              )
-                                                                                            )
-                                                                                          ) (
-                                                                                            fun x22__ :
-                                                                                              Coq.ZArith.BinInt.Z
-                                                                                            =>
-                                                                                            @CFML.WPLifted.Wptag (
-                                                                                              (
-                                                                                                CFML.WPLifted.Wpgen_let_val (
-                                                                                                  (fun x__ y__ : Coq.ZArith.BinInt.Z => TLC.LibReflect.isTrue (Coq.Init.Logic.eq x__ y__)) x22__ (
-                                                                                                    Coq.ZArith.BinInt.Z.sub x23__ d
-                                                                                                  )
-                                                                                                ) (
-                                                                                                  fun x24__ :
-                                                                                                    Coq.Init.Datatypes.bool
+                                                                                                CFML.WPLifted.Wpgen_case (
+                                                                                                  fun A :
+                                                                                                    Type
                                                                                                   =>
-                                                                                                  @CFML.WPLifted.Wptag (
-                                                                                                    (
-                                                                                                      CFML.WPLifted.Wpgen_match x24__ (
-                                                                                                        @CFML.WPLifted.Wptag (
-                                                                                                          (
-                                                                                                            CFML.WPLifted.Wpgen_case (
-                                                                                                              fun A :
-                                                                                                                Type
-                                                                                                              =>
-                                                                                                              fun EA :
-                                                                                                                CFML.SepLifted.Enc A
-                                                                                                              =>
-                                                                                                              fun Q :
-                                                                                                                A ->
-                                                                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                                                                                              =>
-                                                                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                                                                                                fun p0__ :
-                                                                                                                  Coq.Init.Datatypes.bool
-                                                                                                                =>
-                                                                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                                                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                                                                                    Coq.Init.Logic.eq x24__ p0__
-                                                                                                                  )
-                                                                                                                ) (
-                                                                                                                  @CFML.WPLifted.Wptag (
-                                                                                                                    (
-                                                                                                                      CFML.WPLifted.Wpgen_app CFML.Semantics.loc root (
-                                                                                                                        Coq.Lists.List.cons (
-                                                                                                                          @CFML.SepLifted.dyn_make CFML.Semantics.loc _ k
-                                                                                                                        ) Coq.Lists.List.nil
-                                                                                                                      )
-                                                                                                                    )
-                                                                                                                  ) _ _ Q
-                                                                                                                )
-                                                                                                              )
-                                                                                                            ) (
-                                                                                                              CFML.WPLifted.Wpgen_negpat (
-                                                                                                                forall p0__ :
-                                                                                                                  Coq.Init.Datatypes.bool,
-                                                                                                                Coq.Init.Logic.not (
-                                                                                                                  Coq.Init.Logic.eq x24__ p0__
-                                                                                                                )
-                                                                                                              )
-                                                                                                            ) (
-                                                                                                              @CFML.WPLifted.Wptag (
-                                                                                                                @CFML.WPLifted.Wpgen_done
-                                                                                                              )
-                                                                                                            )
+                                                                                                  fun EA :
+                                                                                                    CFML.SepLifted.Enc A
+                                                                                                  =>
+                                                                                                  fun Q :
+                                                                                                    A ->
+                                                                                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                                                                                  =>
+                                                                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                                                                                                    fun p0__ :
+                                                                                                      Coq.Init.Datatypes.unit
+                                                                                                    =>
+                                                                                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                                                                        Coq.Init.Logic.eq x20__ p0__
+                                                                                                      )
+                                                                                                    ) (
+                                                                                                      @CFML.WPLifted.Wptag (
+                                                                                                        (
+                                                                                                          CFML.WPLifted.Wpgen_app contents_ root (
+                                                                                                            Coq.Lists.List.cons (
+                                                                                                              @CFML.SepLifted.dyn_make contents_ _ k
+                                                                                                            ) Coq.Lists.List.nil
                                                                                                           )
                                                                                                         )
-                                                                                                      )
+                                                                                                      ) _ _ Q
                                                                                                     )
+                                                                                                  )
+                                                                                                ) (
+                                                                                                  CFML.WPLifted.Wpgen_negpat (
+                                                                                                    forall p0__ :
+                                                                                                      Coq.Init.Datatypes.unit,
+                                                                                                    Coq.Init.Logic.not (
+                                                                                                      Coq.Init.Logic.eq x20__ p0__
+                                                                                                    )
+                                                                                                  )
+                                                                                                ) (
+                                                                                                  @CFML.WPLifted.Wptag (
+                                                                                                    @CFML.WPLifted.Wpgen_done
                                                                                                   )
                                                                                                 )
                                                                                               )
@@ -3383,276 +2799,131 @@ Parameter decrease_key_cf__ :
                                                                                     )
                                                                                   )
                                                                                 )
+                                                                              )
+                                                                            )
+                                                                          )
+                                                                        ) (
+                                                                          @CFML.WPLifted.Wptag (
+                                                                            (
+                                                                              CFML.WPLifted.Wpgen_let_trm (
+                                                                                @CFML.WPLifted.Wptag (
+                                                                                  (
+                                                                                    CFML.WPLifted.Wpgen_app contents_ (
+                                                                                      CFML.WPRecord.val_get_field child'
+                                                                                    ) (
+                                                                                      Coq.Lists.List.cons (
+                                                                                        @CFML.SepLifted.dyn_make node_ _ parent_node
+                                                                                      ) Coq.Lists.List.nil
+                                                                                    )
+                                                                                  )
+                                                                                )
                                                                               ) (
+                                                                                fun x5__ :
+                                                                                  contents_
+                                                                                =>
                                                                                 @CFML.WPLifted.Wptag (
                                                                                   (
                                                                                     CFML.WPLifted.Wpgen_let_trm (
                                                                                       @CFML.WPLifted.Wptag (
                                                                                         (
-                                                                                          CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                                            CFML.WPRecord.val_get_field child'
-                                                                                          ) (
-                                                                                            Coq.Lists.List.cons (
-                                                                                              @CFML.SepLifted.dyn_make node_ _ parent_node
-                                                                                            ) Coq.Lists.List.nil
-                                                                                          )
-                                                                                        )
-                                                                                      )
-                                                                                    ) (
-                                                                                      fun x6__ :
-                                                                                        CFML.Semantics.loc
-                                                                                      =>
-                                                                                      @CFML.WPLifted.Wptag (
-                                                                                        (
-                                                                                          CFML.WPLifted.Wpgen_let_trm (
+                                                                                          CFML.WPLifted.Wpgen_match x5__ (
                                                                                             @CFML.WPLifted.Wptag (
                                                                                               (
-                                                                                                CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.bool Pervasives_ml.infix_eq__ (
-                                                                                                  Coq.Lists.List.cons (
-                                                                                                    @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x6__
+                                                                                                CFML.WPLifted.Wpgen_case (
+                                                                                                  fun A :
+                                                                                                    Type
+                                                                                                  =>
+                                                                                                  fun EA :
+                                                                                                    CFML.SepLifted.Enc A
+                                                                                                  =>
+                                                                                                  fun Q :
+                                                                                                    A ->
+                                                                                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                                                                                  =>
+                                                                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                                                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                                                                      Coq.Init.Logic.eq x5__ (
+                                                                                                        Empty : contents_
+                                                                                                      )
+                                                                                                    )
                                                                                                   ) (
-                                                                                                    Coq.Lists.List.cons (
-                                                                                                      @CFML.SepLifted.dyn_make CFML.Semantics.loc _ k
-                                                                                                    ) Coq.Lists.List.nil
+                                                                                                    @CFML.WPLifted.Wptag (
+                                                                                                      @CFML.WPLifted.Wpgen_fail
+                                                                                                    ) _ _ Q
                                                                                                   )
-                                                                                                )
-                                                                                              )
-                                                                                            )
-                                                                                          ) (
-                                                                                            fun x7__ :
-                                                                                              Coq.Init.Datatypes.bool
-                                                                                            =>
-                                                                                            @CFML.WPLifted.Wptag (
-                                                                                              (
-                                                                                                CFML.WPLifted.Wpgen_if x7__ (
+                                                                                                ) (
+                                                                                                  CFML.WPLifted.Wpgen_negpat (
+                                                                                                    Coq.Init.Logic.not (
+                                                                                                      Coq.Init.Logic.eq x5__ (
+                                                                                                        Empty : contents_
+                                                                                                      )
+                                                                                                    )
+                                                                                                  )
+                                                                                                ) (
                                                                                                   @CFML.WPLifted.Wptag (
                                                                                                     (
-                                                                                                      CFML.WPLifted.Wpgen_let_trm (
-                                                                                                        @CFML.WPLifted.Wptag (
-                                                                                                          (
-                                                                                                            CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                                                              CFML.WPRecord.val_get_field sibling'
-                                                                                                            ) (
-                                                                                                              Coq.Lists.List.cons (
-                                                                                                                @CFML.SepLifted.dyn_make node_ _ q
-                                                                                                              ) Coq.Lists.List.nil
-                                                                                                            )
-                                                                                                          )
-                                                                                                        )
-                                                                                                      ) (
-                                                                                                        fun x16__ :
-                                                                                                          CFML.Semantics.loc
+                                                                                                      CFML.WPLifted.Wpgen_case (
+                                                                                                        fun A :
+                                                                                                          Type
                                                                                                         =>
-                                                                                                        @CFML.WPLifted.Wptag (
-                                                                                                          (
-                                                                                                            CFML.WPLifted.Wpgen_let_trm (
-                                                                                                              @CFML.WPLifted.Wptag (
-                                                                                                                (
-                                                                                                                  CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                                                                    CFML.WPRecord.val_get_field child'
-                                                                                                                  ) (
-                                                                                                                    Coq.Lists.List.cons (
-                                                                                                                      @CFML.SepLifted.dyn_make node_ _ parent_node
-                                                                                                                    ) Coq.Lists.List.nil
-                                                                                                                  )
-                                                                                                                )
+                                                                                                        fun EA :
+                                                                                                          CFML.SepLifted.Enc A
+                                                                                                        =>
+                                                                                                        fun Q :
+                                                                                                          A ->
+                                                                                                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                                                                                        =>
+                                                                                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                                                                                                          fun child :
+                                                                                                            node_
+                                                                                                          =>
+                                                                                                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                                                                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                                                                              Coq.Init.Logic.eq x5__ (
+                                                                                                                Nonempty child : contents_
                                                                                                               )
-                                                                                                            ) (
-                                                                                                              fun x15__ :
-                                                                                                                CFML.Semantics.loc
-                                                                                                              =>
-                                                                                                              @CFML.WPLifted.Wptag (
-                                                                                                                (
-                                                                                                                  CFML.WPLifted.Wpgen_let_trm (
-                                                                                                                    @CFML.WPLifted.Wptag (
-                                                                                                                      (
-                                                                                                                        CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.bool Pervasives_ml.infix_eq__ (
-                                                                                                                          Coq.Lists.List.cons (
-                                                                                                                            @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x15__
-                                                                                                                          ) (
-                                                                                                                            Coq.Lists.List.cons (
-                                                                                                                              @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x16__
-                                                                                                                            ) Coq.Lists.List.nil
-                                                                                                                          )
-                                                                                                                        )
+                                                                                                            )
+                                                                                                          ) (
+                                                                                                            @CFML.WPLifted.Wptag (
+                                                                                                              (
+                                                                                                                CFML.WPLifted.Wpgen_let_trm (
+                                                                                                                  @CFML.WPLifted.Wptag (
+                                                                                                                    (
+                                                                                                                      CFML.WPLifted.Wpgen_app Coq.ZArith.BinInt.Z (
+                                                                                                                        CFML.WPRecord.val_get_field value'
+                                                                                                                      ) (
+                                                                                                                        Coq.Lists.List.cons (
+                                                                                                                          @CFML.SepLifted.dyn_make node_ _ q
+                                                                                                                        ) Coq.Lists.List.nil
                                                                                                                       )
                                                                                                                     )
-                                                                                                                  ) (
-                                                                                                                    fun x17__ :
-                                                                                                                      Coq.Init.Datatypes.bool
-                                                                                                                    =>
-                                                                                                                    @CFML.WPLifted.Wptag (
-                                                                                                                      (
-                                                                                                                        CFML.WPLifted.Wpgen_match x17__ (
-                                                                                                                          @CFML.WPLifted.Wptag (
-                                                                                                                            (
-                                                                                                                              CFML.WPLifted.Wpgen_case (
-                                                                                                                                fun A :
-                                                                                                                                  Type
-                                                                                                                                =>
-                                                                                                                                fun EA :
-                                                                                                                                  CFML.SepLifted.Enc A
-                                                                                                                                =>
-                                                                                                                                fun Q :
-                                                                                                                                  A ->
-                                                                                                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                                                                                                                =>
-                                                                                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                                                                                                                  fun p0__ :
-                                                                                                                                    Coq.Init.Datatypes.bool
-                                                                                                                                  =>
-                                                                                                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                                                                                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                                                                                                      Coq.Init.Logic.eq x17__ p0__
-                                                                                                                                    )
-                                                                                                                                  ) (
-                                                                                                                                    @CFML.WPLifted.Wptag (
-                                                                                                                                      (
-                                                                                                                                        CFML.WPLifted.Wpgen_let_trm (
-                                                                                                                                          @CFML.WPLifted.Wptag (
-                                                                                                                                            (
-                                                                                                                                              CFML.WPLifted.Wpgen_app Coq.ZArith.BinInt.Z (
-                                                                                                                                                CFML.WPRecord.val_get_field value'
-                                                                                                                                              ) (
-                                                                                                                                                Coq.Lists.List.cons (
-                                                                                                                                                  @CFML.SepLifted.dyn_make node_ _ q
-                                                                                                                                                ) Coq.Lists.List.nil
-                                                                                                                                              )
-                                                                                                                                            )
-                                                                                                                                          )
-                                                                                                                                        ) (
-                                                                                                                                          fun x19__ :
-                                                                                                                                            Coq.ZArith.BinInt.Z
-                                                                                                                                          =>
-                                                                                                                                          @CFML.WPLifted.Wptag (
-                                                                                                                                            (
-                                                                                                                                              CFML.WPLifted.Wpgen_let_trm (
-                                                                                                                                                @CFML.WPLifted.Wptag (
-                                                                                                                                                  (
-                                                                                                                                                    CFML.WPLifted.Wpgen_app Coq.ZArith.BinInt.Z (
-                                                                                                                                                      CFML.WPRecord.val_get_field value'
-                                                                                                                                                    ) (
-                                                                                                                                                      Coq.Lists.List.cons (
-                                                                                                                                                        @CFML.SepLifted.dyn_make node_ _ q
-                                                                                                                                                      ) Coq.Lists.List.nil
-                                                                                                                                                    )
-                                                                                                                                                  )
-                                                                                                                                                )
-                                                                                                                                              ) (
-                                                                                                                                                fun x18__ :
-                                                                                                                                                  Coq.ZArith.BinInt.Z
-                                                                                                                                                =>
-                                                                                                                                                @CFML.WPLifted.Wptag (
-                                                                                                                                                  (
-                                                                                                                                                    CFML.WPLifted.Wpgen_let_val (
-                                                                                                                                                      (fun x__ y__ : Coq.ZArith.BinInt.Z => TLC.LibReflect.isTrue (Coq.Init.Logic.eq x__ y__)) x18__ (
-                                                                                                                                                        Coq.ZArith.BinInt.Z.sub x19__ d
-                                                                                                                                                      )
-                                                                                                                                                    ) (
-                                                                                                                                                      fun x20__ :
-                                                                                                                                                        Coq.Init.Datatypes.bool
-                                                                                                                                                      =>
-                                                                                                                                                      @CFML.WPLifted.Wptag (
-                                                                                                                                                        (
-                                                                                                                                                          CFML.WPLifted.Wpgen_match x20__ (
-                                                                                                                                                            @CFML.WPLifted.Wptag (
-                                                                                                                                                              (
-                                                                                                                                                                CFML.WPLifted.Wpgen_case (
-                                                                                                                                                                  fun A :
-                                                                                                                                                                    Type
-                                                                                                                                                                  =>
-                                                                                                                                                                  fun EA :
-                                                                                                                                                                    CFML.SepLifted.Enc A
-                                                                                                                                                                  =>
-                                                                                                                                                                  fun Q :
-                                                                                                                                                                    A ->
-                                                                                                                                                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                                                                                                                                                  =>
-                                                                                                                                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                                                                                                                                                    fun p0__ :
-                                                                                                                                                                      Coq.Init.Datatypes.bool
-                                                                                                                                                                    =>
-                                                                                                                                                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                                                                                                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                                                                                                                                        Coq.Init.Logic.eq x20__ p0__
-                                                                                                                                                                      )
-                                                                                                                                                                    ) (
-                                                                                                                                                                      @CFML.WPLifted.Wptag (
-                                                                                                                                                                        (
-                                                                                                                                                                          CFML.WPLifted.Wpgen_let_trm (
-                                                                                                                                                                            @CFML.WPLifted.Wptag (
-                                                                                                                                                                              (
-                                                                                                                                                                                CFML.WPLifted.Wpgen_app CFML.Semantics.loc root (
-                                                                                                                                                                                  Coq.Lists.List.cons (
-                                                                                                                                                                                    @CFML.SepLifted.dyn_make CFML.Semantics.loc _ k
-                                                                                                                                                                                  ) Coq.Lists.List.nil
-                                                                                                                                                                                )
-                                                                                                                                                                              )
-                                                                                                                                                                            )
-                                                                                                                                                                          ) (
-                                                                                                                                                                            fun x21__ :
-                                                                                                                                                                              CFML.Semantics.loc
-                                                                                                                                                                            =>
-                                                                                                                                                                            @CFML.WPLifted.Wptag (
-                                                                                                                                                                              (
-                                                                                                                                                                                CFML.WPLifted.Wpgen_app CFML.Semantics.loc merge (
-                                                                                                                                                                                  Coq.Lists.List.cons (
-                                                                                                                                                                                    @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x21__
-                                                                                                                                                                                  ) (
-                                                                                                                                                                                    Coq.Lists.List.cons (
-                                                                                                                                                                                      @CFML.SepLifted.dyn_make CFML.Semantics.loc _ k
-                                                                                                                                                                                    ) Coq.Lists.List.nil
-                                                                                                                                                                                  )
-                                                                                                                                                                                )
-                                                                                                                                                                              )
-                                                                                                                                                                            )
-                                                                                                                                                                          )
-                                                                                                                                                                        )
-                                                                                                                                                                      ) _ _ Q
-                                                                                                                                                                    )
-                                                                                                                                                                  )
-                                                                                                                                                                ) (
-                                                                                                                                                                  CFML.WPLifted.Wpgen_negpat (
-                                                                                                                                                                    forall p0__ :
-                                                                                                                                                                      Coq.Init.Datatypes.bool,
-                                                                                                                                                                    Coq.Init.Logic.not (
-                                                                                                                                                                      Coq.Init.Logic.eq x20__ p0__
-                                                                                                                                                                    )
-                                                                                                                                                                  )
-                                                                                                                                                                ) (
-                                                                                                                                                                  @CFML.WPLifted.Wptag (
-                                                                                                                                                                    @CFML.WPLifted.Wpgen_done
-                                                                                                                                                                  )
-                                                                                                                                                                )
-                                                                                                                                                              )
-                                                                                                                                                            )
-                                                                                                                                                          )
-                                                                                                                                                        )
-                                                                                                                                                      )
-                                                                                                                                                    )
-                                                                                                                                                  )
-                                                                                                                                                )
-                                                                                                                                              )
-                                                                                                                                            )
-                                                                                                                                          )
-                                                                                                                                        )
-                                                                                                                                      )
-                                                                                                                                    ) _ _ Q
-                                                                                                                                  )
-                                                                                                                                )
-                                                                                                                              ) (
-                                                                                                                                CFML.WPLifted.Wpgen_negpat (
-                                                                                                                                  forall p0__ :
-                                                                                                                                    Coq.Init.Datatypes.bool,
-                                                                                                                                  Coq.Init.Logic.not (
-                                                                                                                                    Coq.Init.Logic.eq x17__ p0__
-                                                                                                                                  )
-                                                                                                                                )
-                                                                                                                              ) (
-                                                                                                                                @CFML.WPLifted.Wptag (
-                                                                                                                                  @CFML.WPLifted.Wpgen_done
-                                                                                                                                )
-                                                                                                                              )
+                                                                                                                  )
+                                                                                                                ) (
+                                                                                                                  fun x7__ :
+                                                                                                                    Coq.ZArith.BinInt.Z
+                                                                                                                  =>
+                                                                                                                  @CFML.WPLifted.Wptag (
+                                                                                                                    (
+                                                                                                                      CFML.WPLifted.Wpgen_let_trm (
+                                                                                                                        @CFML.WPLifted.Wptag (
+                                                                                                                          (
+                                                                                                                            CFML.WPLifted.Wpgen_app Coq.ZArith.BinInt.Z (
+                                                                                                                              CFML.WPRecord.val_get_field value'
+                                                                                                                            ) (
+                                                                                                                              Coq.Lists.List.cons (
+                                                                                                                                @CFML.SepLifted.dyn_make node_ _ child
+                                                                                                                              ) Coq.Lists.List.nil
+                                                                                                                            )
+                                                                                                                          )
+                                                                                                                        )
+                                                                                                                      ) (
+                                                                                                                        fun x6__ :
+                                                                                                                          Coq.ZArith.BinInt.Z
+                                                                                                                        =>
+                                                                                                                        @CFML.WPLifted.Wptag (
+                                                                                                                          (
+                                                                                                                            CFML.WPLifted.Wpgen_val (
+                                                                                                                              (fun x__ y__ : Coq.ZArith.BinInt.Z => TLC.LibReflect.isTrue (Coq.Init.Logic.eq x__ y__)) x6__ x7__
                                                                                                                             )
                                                                                                                           )
                                                                                                                         )
@@ -3661,32 +2932,82 @@ Parameter decrease_key_cf__ :
                                                                                                                   )
                                                                                                                 )
                                                                                                               )
+                                                                                                            ) _ _ Q
+                                                                                                          )
+                                                                                                        )
+                                                                                                      ) (
+                                                                                                        CFML.WPLifted.Wpgen_negpat (
+                                                                                                          forall child :
+                                                                                                            node_,
+                                                                                                          Coq.Init.Logic.not (
+                                                                                                            Coq.Init.Logic.eq x5__ (
+                                                                                                              Nonempty child : contents_
                                                                                                             )
                                                                                                           )
+                                                                                                        )
+                                                                                                      ) (
+                                                                                                        @CFML.WPLifted.Wptag (
+                                                                                                          @CFML.WPLifted.Wpgen_done
                                                                                                         )
                                                                                                       )
                                                                                                     )
                                                                                                   )
+                                                                                                )
+                                                                                              )
+                                                                                            )
+                                                                                          )
+                                                                                        )
+                                                                                      )
+                                                                                    ) (
+                                                                                      fun x8__ :
+                                                                                        Coq.Init.Datatypes.bool
+                                                                                      =>
+                                                                                      @CFML.WPLifted.Wptag (
+                                                                                        (
+                                                                                          CFML.WPLifted.Wpgen_if x8__ (
+                                                                                            @CFML.WPLifted.Wptag (
+                                                                                              (
+                                                                                                CFML.WPLifted.Wpgen_let_trm (
+                                                                                                  @CFML.WPLifted.Wptag (
+                                                                                                    (
+                                                                                                      CFML.WPLifted.Wpgen_app contents_ (
+                                                                                                        CFML.WPRecord.val_get_field sibling'
+                                                                                                      ) (
+                                                                                                        Coq.Lists.List.cons (
+                                                                                                          @CFML.SepLifted.dyn_make node_ _ q
+                                                                                                        ) Coq.Lists.List.nil
+                                                                                                      )
+                                                                                                    )
+                                                                                                  )
                                                                                                 ) (
+                                                                                                  fun x14__ :
+                                                                                                    contents_
+                                                                                                  =>
                                                                                                   @CFML.WPLifted.Wptag (
                                                                                                     (
                                                                                                       CFML.WPLifted.Wpgen_let_trm (
                                                                                                         @CFML.WPLifted.Wptag (
                                                                                                           (
-                                                                                                            CFML.WPLifted.Wpgen_app contents_ left_sibling (
+                                                                                                            CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit (
+                                                                                                              CFML.WPRecord.val_set_field child'
+                                                                                                            ) (
                                                                                                               Coq.Lists.List.cons (
-                                                                                                                @CFML.SepLifted.dyn_make CFML.Semantics.loc _ k
-                                                                                                              ) Coq.Lists.List.nil
+                                                                                                                @CFML.SepLifted.dyn_make node_ _ parent_node
+                                                                                                              ) (
+                                                                                                                Coq.Lists.List.cons (
+                                                                                                                  @CFML.SepLifted.dyn_make contents_ _ x14__
+                                                                                                                ) Coq.Lists.List.nil
+                                                                                                              )
                                                                                                             )
                                                                                                           )
                                                                                                         )
                                                                                                       ) (
-                                                                                                        fun ls :
-                                                                                                          contents_
+                                                                                                        fun x15__ :
+                                                                                                          Coq.Init.Datatypes.unit
                                                                                                         =>
                                                                                                         @CFML.WPLifted.Wptag (
                                                                                                           (
-                                                                                                            CFML.WPLifted.Wpgen_match ls (
+                                                                                                            CFML.WPLifted.Wpgen_match x15__ (
                                                                                                               @CFML.WPLifted.Wptag (
                                                                                                                 (
                                                                                                                   CFML.WPLifted.Wpgen_case (
@@ -3700,282 +3021,127 @@ Parameter decrease_key_cf__ :
                                                                                                                       A ->
                                                                                                                       CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
                                                                                                                     =>
-                                                                                                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                                                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                                                                                        Coq.Init.Logic.eq ls (
-                                                                                                                          Empty : contents_
+                                                                                                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                                                                                                                      fun p0__ :
+                                                                                                                        Coq.Init.Datatypes.unit
+                                                                                                                      =>
+                                                                                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                                                                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                                                                                          Coq.Init.Logic.eq x15__ p0__
                                                                                                                         )
-                                                                                                                      )
-                                                                                                                    ) (
-                                                                                                                      @CFML.WPLifted.Wptag (
-                                                                                                                        @CFML.WPLifted.Wpgen_fail
-                                                                                                                      ) _ _ Q
-                                                                                                                    )
-                                                                                                                  ) (
-                                                                                                                    CFML.WPLifted.Wpgen_negpat (
-                                                                                                                      Coq.Init.Logic.not (
-                                                                                                                        Coq.Init.Logic.eq ls (
-                                                                                                                          Empty : contents_
-                                                                                                                        )
-                                                                                                                      )
-                                                                                                                    )
-                                                                                                                  ) (
-                                                                                                                    @CFML.WPLifted.Wptag (
-                                                                                                                      (
-                                                                                                                        CFML.WPLifted.Wpgen_case (
-                                                                                                                          fun A :
-                                                                                                                            Type
-                                                                                                                          =>
-                                                                                                                          fun EA :
-                                                                                                                            CFML.SepLifted.Enc A
-                                                                                                                          =>
-                                                                                                                          fun Q :
-                                                                                                                            A ->
-                                                                                                                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                                                                                                          =>
-                                                                                                                          CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                                                                                                            fun lsq :
-                                                                                                                              node_
-                                                                                                                            =>
-                                                                                                                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                                                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                                                                                                Coq.Init.Logic.eq ls (
-                                                                                                                                  Nonempty lsq : contents_
+                                                                                                                      ) (
+                                                                                                                        @CFML.WPLifted.Wptag (
+                                                                                                                          (
+                                                                                                                            CFML.WPLifted.Wpgen_let_trm (
+                                                                                                                              @CFML.WPLifted.Wptag (
+                                                                                                                                (
+                                                                                                                                  CFML.WPLifted.Wpgen_app Coq.ZArith.BinInt.Z (
+                                                                                                                                    CFML.WPRecord.val_get_field value'
+                                                                                                                                  ) (
+                                                                                                                                    Coq.Lists.List.cons (
+                                                                                                                                      @CFML.SepLifted.dyn_make node_ _ q
+                                                                                                                                    ) Coq.Lists.List.nil
+                                                                                                                                  )
                                                                                                                                 )
                                                                                                                               )
                                                                                                                             ) (
+                                                                                                                              fun x16__ :
+                                                                                                                                Coq.ZArith.BinInt.Z
+                                                                                                                              =>
                                                                                                                               @CFML.WPLifted.Wptag (
                                                                                                                                 (
                                                                                                                                   CFML.WPLifted.Wpgen_let_trm (
                                                                                                                                     @CFML.WPLifted.Wptag (
                                                                                                                                       (
-                                                                                                                                        CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                                                                                          CFML.WPRecord.val_get_field sibling'
+                                                                                                                                        CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit (
+                                                                                                                                          CFML.WPRecord.val_set_field value'
                                                                                                                                         ) (
                                                                                                                                           Coq.Lists.List.cons (
                                                                                                                                             @CFML.SepLifted.dyn_make node_ _ q
-                                                                                                                                          ) Coq.Lists.List.nil
+                                                                                                                                          ) (
+                                                                                                                                            Coq.Lists.List.cons (
+                                                                                                                                              @CFML.SepLifted.dyn_make Coq.ZArith.BinInt.Z _ (
+                                                                                                                                                Coq.ZArith.BinInt.Z.sub x16__ d
+                                                                                                                                              )
+                                                                                                                                            ) Coq.Lists.List.nil
+                                                                                                                                          )
                                                                                                                                         )
                                                                                                                                       )
                                                                                                                                     )
                                                                                                                                   ) (
-                                                                                                                                    fun x9__ :
-                                                                                                                                      CFML.Semantics.loc
+                                                                                                                                    fun x17__ :
+                                                                                                                                      Coq.Init.Datatypes.unit
                                                                                                                                     =>
                                                                                                                                     @CFML.WPLifted.Wptag (
                                                                                                                                       (
-                                                                                                                                        CFML.WPLifted.Wpgen_let_trm (
+                                                                                                                                        CFML.WPLifted.Wpgen_match x17__ (
                                                                                                                                           @CFML.WPLifted.Wptag (
                                                                                                                                             (
-                                                                                                                                              CFML.WPLifted.Wpgen_app CFML.Semantics.loc (
-                                                                                                                                                CFML.WPRecord.val_get_field sibling'
-                                                                                                                                              ) (
-                                                                                                                                                Coq.Lists.List.cons (
-                                                                                                                                                  @CFML.SepLifted.dyn_make node_ _ lsq
-                                                                                                                                                ) Coq.Lists.List.nil
-                                                                                                                                              )
-                                                                                                                                            )
-                                                                                                                                          )
-                                                                                                                                        ) (
-                                                                                                                                          fun x8__ :
-                                                                                                                                            CFML.Semantics.loc
-                                                                                                                                          =>
-                                                                                                                                          @CFML.WPLifted.Wptag (
-                                                                                                                                            (
-                                                                                                                                              CFML.WPLifted.Wpgen_let_trm (
-                                                                                                                                                @CFML.WPLifted.Wptag (
-                                                                                                                                                  (
-                                                                                                                                                    CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.bool Pervasives_ml.infix_eq__ (
-                                                                                                                                                      Coq.Lists.List.cons (
-                                                                                                                                                        @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x8__
-                                                                                                                                                      ) (
-                                                                                                                                                        Coq.Lists.List.cons (
-                                                                                                                                                          @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x9__
-                                                                                                                                                        ) Coq.Lists.List.nil
-                                                                                                                                                      )
-                                                                                                                                                    )
-                                                                                                                                                  )
-                                                                                                                                                )
-                                                                                                                                              ) (
-                                                                                                                                                fun x10__ :
-                                                                                                                                                  Coq.Init.Datatypes.bool
+                                                                                                                                              CFML.WPLifted.Wpgen_case (
+                                                                                                                                                fun A :
+                                                                                                                                                  Type
                                                                                                                                                 =>
-                                                                                                                                                @CFML.WPLifted.Wptag (
-                                                                                                                                                  (
-                                                                                                                                                    CFML.WPLifted.Wpgen_match x10__ (
-                                                                                                                                                      @CFML.WPLifted.Wptag (
-                                                                                                                                                        (
-                                                                                                                                                          CFML.WPLifted.Wpgen_case (
-                                                                                                                                                            fun A :
-                                                                                                                                                              Type
-                                                                                                                                                            =>
-                                                                                                                                                            fun EA :
-                                                                                                                                                              CFML.SepLifted.Enc A
-                                                                                                                                                            =>
-                                                                                                                                                            fun Q :
-                                                                                                                                                              A ->
-                                                                                                                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                                                                                                                                            =>
-                                                                                                                                                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                                                                                                                                              fun p0__ :
-                                                                                                                                                                Coq.Init.Datatypes.bool
-                                                                                                                                                              =>
-                                                                                                                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                                                                                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                                                                                                                                  Coq.Init.Logic.eq x10__ p0__
+                                                                                                                                                fun EA :
+                                                                                                                                                  CFML.SepLifted.Enc A
+                                                                                                                                                =>
+                                                                                                                                                fun Q :
+                                                                                                                                                  A ->
+                                                                                                                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                                                                                                                                =>
+                                                                                                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                                                                                                                                                  fun p0__ :
+                                                                                                                                                    Coq.Init.Datatypes.unit
+                                                                                                                                                  =>
+                                                                                                                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                                                                                                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                                                                                                                      Coq.Init.Logic.eq x17__ p0__
+                                                                                                                                                    )
+                                                                                                                                                  ) (
+                                                                                                                                                    @CFML.WPLifted.Wptag (
+                                                                                                                                                      (
+                                                                                                                                                        CFML.WPLifted.Wpgen_let_trm (
+                                                                                                                                                          @CFML.WPLifted.Wptag (
+                                                                                                                                                            (
+                                                                                                                                                              CFML.WPLifted.Wpgen_app contents_ root (
+                                                                                                                                                                Coq.Lists.List.cons (
+                                                                                                                                                                  @CFML.SepLifted.dyn_make contents_ _ k
+                                                                                                                                                                ) Coq.Lists.List.nil
+                                                                                                                                                              )
+                                                                                                                                                            )
+                                                                                                                                                          )
+                                                                                                                                                        ) (
+                                                                                                                                                          fun x18__ :
+                                                                                                                                                            contents_
+                                                                                                                                                          =>
+                                                                                                                                                          @CFML.WPLifted.Wptag (
+                                                                                                                                                            (
+                                                                                                                                                              CFML.WPLifted.Wpgen_app contents_ merge (
+                                                                                                                                                                Coq.Lists.List.cons (
+                                                                                                                                                                  @CFML.SepLifted.dyn_make contents_ _ x18__
+                                                                                                                                                                ) (
+                                                                                                                                                                  Coq.Lists.List.cons (
+                                                                                                                                                                    @CFML.SepLifted.dyn_make contents_ _ k
+                                                                                                                                                                  ) Coq.Lists.List.nil
                                                                                                                                                                 )
-                                                                                                                                                              ) (
-                                                                                                                                                                @CFML.WPLifted.Wptag (
-                                                                                                                                                                  (
-                                                                                                                                                                    CFML.WPLifted.Wpgen_let_trm (
-                                                                                                                                                                      @CFML.WPLifted.Wptag (
-                                                                                                                                                                        (
-                                                                                                                                                                          CFML.WPLifted.Wpgen_app Coq.ZArith.BinInt.Z (
-                                                                                                                                                                            CFML.WPRecord.val_get_field value'
-                                                                                                                                                                          ) (
-                                                                                                                                                                            Coq.Lists.List.cons (
-                                                                                                                                                                              @CFML.SepLifted.dyn_make node_ _ q
-                                                                                                                                                                            ) Coq.Lists.List.nil
-                                                                                                                                                                          )
-                                                                                                                                                                        )
-                                                                                                                                                                      )
-                                                                                                                                                                    ) (
-                                                                                                                                                                      fun x12__ :
-                                                                                                                                                                        Coq.ZArith.BinInt.Z
-                                                                                                                                                                      =>
-                                                                                                                                                                      @CFML.WPLifted.Wptag (
-                                                                                                                                                                        (
-                                                                                                                                                                          CFML.WPLifted.Wpgen_let_trm (
-                                                                                                                                                                            @CFML.WPLifted.Wptag (
-                                                                                                                                                                              (
-                                                                                                                                                                                CFML.WPLifted.Wpgen_app Coq.ZArith.BinInt.Z (
-                                                                                                                                                                                  CFML.WPRecord.val_get_field value'
-                                                                                                                                                                                ) (
-                                                                                                                                                                                  Coq.Lists.List.cons (
-                                                                                                                                                                                    @CFML.SepLifted.dyn_make node_ _ q
-                                                                                                                                                                                  ) Coq.Lists.List.nil
-                                                                                                                                                                                )
-                                                                                                                                                                              )
-                                                                                                                                                                            )
-                                                                                                                                                                          ) (
-                                                                                                                                                                            fun x11__ :
-                                                                                                                                                                              Coq.ZArith.BinInt.Z
-                                                                                                                                                                            =>
-                                                                                                                                                                            @CFML.WPLifted.Wptag (
-                                                                                                                                                                              (
-                                                                                                                                                                                CFML.WPLifted.Wpgen_let_val (
-                                                                                                                                                                                  (fun x__ y__ : Coq.ZArith.BinInt.Z => TLC.LibReflect.isTrue (Coq.Init.Logic.eq x__ y__)) x11__ (
-                                                                                                                                                                                    Coq.ZArith.BinInt.Z.sub x12__ d
-                                                                                                                                                                                  )
-                                                                                                                                                                                ) (
-                                                                                                                                                                                  fun x13__ :
-                                                                                                                                                                                    Coq.Init.Datatypes.bool
-                                                                                                                                                                                  =>
-                                                                                                                                                                                  @CFML.WPLifted.Wptag (
-                                                                                                                                                                                    (
-                                                                                                                                                                                      CFML.WPLifted.Wpgen_match x13__ (
-                                                                                                                                                                                        @CFML.WPLifted.Wptag (
-                                                                                                                                                                                          (
-                                                                                                                                                                                            CFML.WPLifted.Wpgen_case (
-                                                                                                                                                                                              fun A :
-                                                                                                                                                                                                Type
-                                                                                                                                                                                              =>
-                                                                                                                                                                                              fun EA :
-                                                                                                                                                                                                CFML.SepLifted.Enc A
-                                                                                                                                                                                              =>
-                                                                                                                                                                                              fun Q :
-                                                                                                                                                                                                A ->
-                                                                                                                                                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
-                                                                                                                                                                                              =>
-                                                                                                                                                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
-                                                                                                                                                                                                fun p0__ :
-                                                                                                                                                                                                  Coq.Init.Datatypes.bool
-                                                                                                                                                                                                =>
-                                                                                                                                                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
-                                                                                                                                                                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
-                                                                                                                                                                                                    Coq.Init.Logic.eq x13__ p0__
-                                                                                                                                                                                                  )
-                                                                                                                                                                                                ) (
-                                                                                                                                                                                                  @CFML.WPLifted.Wptag (
-                                                                                                                                                                                                    (
-                                                                                                                                                                                                      CFML.WPLifted.Wpgen_let_trm (
-                                                                                                                                                                                                        @CFML.WPLifted.Wptag (
-                                                                                                                                                                                                          (
-                                                                                                                                                                                                            CFML.WPLifted.Wpgen_app CFML.Semantics.loc root (
-                                                                                                                                                                                                              Coq.Lists.List.cons (
-                                                                                                                                                                                                                @CFML.SepLifted.dyn_make CFML.Semantics.loc _ k
-                                                                                                                                                                                                              ) Coq.Lists.List.nil
-                                                                                                                                                                                                            )
-                                                                                                                                                                                                          )
-                                                                                                                                                                                                        )
-                                                                                                                                                                                                      ) (
-                                                                                                                                                                                                        fun x14__ :
-                                                                                                                                                                                                          CFML.Semantics.loc
-                                                                                                                                                                                                        =>
-                                                                                                                                                                                                        @CFML.WPLifted.Wptag (
-                                                                                                                                                                                                          (
-                                                                                                                                                                                                            CFML.WPLifted.Wpgen_app CFML.Semantics.loc merge (
-                                                                                                                                                                                                              Coq.Lists.List.cons (
-                                                                                                                                                                                                                @CFML.SepLifted.dyn_make CFML.Semantics.loc _ x14__
-                                                                                                                                                                                                              ) (
-                                                                                                                                                                                                                Coq.Lists.List.cons (
-                                                                                                                                                                                                                  @CFML.SepLifted.dyn_make CFML.Semantics.loc _ k
-                                                                                                                                                                                                                ) Coq.Lists.List.nil
-                                                                                                                                                                                                              )
-                                                                                                                                                                                                            )
-                                                                                                                                                                                                          )
-                                                                                                                                                                                                        )
-                                                                                                                                                                                                      )
-                                                                                                                                                                                                    )
-                                                                                                                                                                                                  ) _ _ Q
-                                                                                                                                                                                                )
-                                                                                                                                                                                              )
-                                                                                                                                                                                            ) (
-                                                                                                                                                                                              CFML.WPLifted.Wpgen_negpat (
-                                                                                                                                                                                                forall p0__ :
-                                                                                                                                                                                                  Coq.Init.Datatypes.bool,
-                                                                                                                                                                                                Coq.Init.Logic.not (
-                                                                                                                                                                                                  Coq.Init.Logic.eq x13__ p0__
-                                                                                                                                                                                                )
-                                                                                                                                                                                              )
-                                                                                                                                                                                            ) (
-                                                                                                                                                                                              @CFML.WPLifted.Wptag (
-                                                                                                                                                                                                @CFML.WPLifted.Wpgen_done
-                                                                                                                                                                                              )
-                                                                                                                                                                                            )
-                                                                                                                                                                                          )
-                                                                                                                                                                                        )
-                                                                                                                                                                                      )
-                                                                                                                                                                                    )
-                                                                                                                                                                                  )
-                                                                                                                                                                                )
-                                                                                                                                                                              )
-                                                                                                                                                                            )
-                                                                                                                                                                          )
-                                                                                                                                                                        )
-                                                                                                                                                                      )
-                                                                                                                                                                    )
-                                                                                                                                                                  )
-                                                                                                                                                                ) _ _ Q
                                                                                                                                                               )
-                                                                                                                                                            )
-                                                                                                                                                          ) (
-                                                                                                                                                            CFML.WPLifted.Wpgen_negpat (
-                                                                                                                                                              forall p0__ :
-                                                                                                                                                                Coq.Init.Datatypes.bool,
-                                                                                                                                                              Coq.Init.Logic.not (
-                                                                                                                                                                Coq.Init.Logic.eq x10__ p0__
-                                                                                                                                                              )
-                                                                                                                                                            )
-                                                                                                                                                          ) (
-                                                                                                                                                            @CFML.WPLifted.Wptag (
-                                                                                                                                                              @CFML.WPLifted.Wpgen_done
                                                                                                                                                             )
                                                                                                                                                           )
                                                                                                                                                         )
                                                                                                                                                       )
-                                                                                                                                                    )
+                                                                                                                                                    ) _ _ Q
                                                                                                                                                   )
+                                                                                                                                                )
+                                                                                                                                              ) (
+                                                                                                                                                CFML.WPLifted.Wpgen_negpat (
+                                                                                                                                                  forall p0__ :
+                                                                                                                                                    Coq.Init.Datatypes.unit,
+                                                                                                                                                  Coq.Init.Logic.not (
+                                                                                                                                                    Coq.Init.Logic.eq x17__ p0__
+                                                                                                                                                  )
+                                                                                                                                                )
+                                                                                                                                              ) (
+                                                                                                                                                @CFML.WPLifted.Wptag (
+                                                                                                                                                  @CFML.WPLifted.Wpgen_done
                                                                                                                                                 )
                                                                                                                                               )
                                                                                                                                             )
@@ -3985,25 +3151,344 @@ Parameter decrease_key_cf__ :
                                                                                                                                     )
                                                                                                                                   )
                                                                                                                                 )
-                                                                                                                              ) _ _ Q
-                                                                                                                            )
-                                                                                                                          )
-                                                                                                                        ) (
-                                                                                                                          CFML.WPLifted.Wpgen_negpat (
-                                                                                                                            forall lsq :
-                                                                                                                              node_,
-                                                                                                                            Coq.Init.Logic.not (
-                                                                                                                              Coq.Init.Logic.eq ls (
-                                                                                                                                Nonempty lsq : contents_
                                                                                                                               )
                                                                                                                             )
                                                                                                                           )
-                                                                                                                        ) (
-                                                                                                                          @CFML.WPLifted.Wptag (
-                                                                                                                            @CFML.WPLifted.Wpgen_done
+                                                                                                                        ) _ _ Q
+                                                                                                                      )
+                                                                                                                    )
+                                                                                                                  ) (
+                                                                                                                    CFML.WPLifted.Wpgen_negpat (
+                                                                                                                      forall p0__ :
+                                                                                                                        Coq.Init.Datatypes.unit,
+                                                                                                                      Coq.Init.Logic.not (
+                                                                                                                        Coq.Init.Logic.eq x15__ p0__
+                                                                                                                      )
+                                                                                                                    )
+                                                                                                                  ) (
+                                                                                                                    @CFML.WPLifted.Wptag (
+                                                                                                                      @CFML.WPLifted.Wpgen_done
+                                                                                                                    )
+                                                                                                                  )
+                                                                                                                )
+                                                                                                              )
+                                                                                                            )
+                                                                                                          )
+                                                                                                        )
+                                                                                                      )
+                                                                                                    )
+                                                                                                  )
+                                                                                                )
+                                                                                              )
+                                                                                            )
+                                                                                          ) (
+                                                                                            @CFML.WPLifted.Wptag (
+                                                                                              (
+                                                                                                CFML.WPLifted.Wpgen_let_trm (
+                                                                                                  @CFML.WPLifted.Wptag (
+                                                                                                    (
+                                                                                                      CFML.WPLifted.Wpgen_app contents_ left_sibling (
+                                                                                                        Coq.Lists.List.cons (
+                                                                                                          @CFML.SepLifted.dyn_make contents_ _ k
+                                                                                                        ) Coq.Lists.List.nil
+                                                                                                      )
+                                                                                                    )
+                                                                                                  )
+                                                                                                ) (
+                                                                                                  fun ls :
+                                                                                                    contents_
+                                                                                                  =>
+                                                                                                  @CFML.WPLifted.Wptag (
+                                                                                                    (
+                                                                                                      CFML.WPLifted.Wpgen_match ls (
+                                                                                                        @CFML.WPLifted.Wptag (
+                                                                                                          (
+                                                                                                            CFML.WPLifted.Wpgen_case (
+                                                                                                              fun A :
+                                                                                                                Type
+                                                                                                              =>
+                                                                                                              fun EA :
+                                                                                                                CFML.SepLifted.Enc A
+                                                                                                              =>
+                                                                                                              fun Q :
+                                                                                                                A ->
+                                                                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                                                                                              =>
+                                                                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                                                                                  Coq.Init.Logic.eq ls (
+                                                                                                                    Empty : contents_
+                                                                                                                  )
+                                                                                                                )
+                                                                                                              ) (
+                                                                                                                @CFML.WPLifted.Wptag (
+                                                                                                                  @CFML.WPLifted.Wpgen_fail
+                                                                                                                ) _ _ Q
+                                                                                                              )
+                                                                                                            ) (
+                                                                                                              CFML.WPLifted.Wpgen_negpat (
+                                                                                                                Coq.Init.Logic.not (
+                                                                                                                  Coq.Init.Logic.eq ls (
+                                                                                                                    Empty : contents_
+                                                                                                                  )
+                                                                                                                )
+                                                                                                              )
+                                                                                                            ) (
+                                                                                                              @CFML.WPLifted.Wptag (
+                                                                                                                (
+                                                                                                                  CFML.WPLifted.Wpgen_case (
+                                                                                                                    fun A :
+                                                                                                                      Type
+                                                                                                                    =>
+                                                                                                                    fun EA :
+                                                                                                                      CFML.SepLifted.Enc A
+                                                                                                                    =>
+                                                                                                                    fun Q :
+                                                                                                                      A ->
+                                                                                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                                                                                                    =>
+                                                                                                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                                                                                                                      fun lsq :
+                                                                                                                        node_
+                                                                                                                      =>
+                                                                                                                      CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                                                                                        CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                                                                                          Coq.Init.Logic.eq ls (
+                                                                                                                            Nonempty lsq : contents_
                                                                                                                           )
                                                                                                                         )
+                                                                                                                      ) (
+                                                                                                                        @CFML.WPLifted.Wptag (
+                                                                                                                          (
+                                                                                                                            CFML.WPLifted.Wpgen_let_trm (
+                                                                                                                              @CFML.WPLifted.Wptag (
+                                                                                                                                (
+                                                                                                                                  CFML.WPLifted.Wpgen_app contents_ (
+                                                                                                                                    CFML.WPRecord.val_get_field sibling'
+                                                                                                                                  ) (
+                                                                                                                                    Coq.Lists.List.cons (
+                                                                                                                                      @CFML.SepLifted.dyn_make node_ _ q
+                                                                                                                                    ) Coq.Lists.List.nil
+                                                                                                                                  )
+                                                                                                                                )
+                                                                                                                              )
+                                                                                                                            ) (
+                                                                                                                              fun x9__ :
+                                                                                                                                contents_
+                                                                                                                              =>
+                                                                                                                              @CFML.WPLifted.Wptag (
+                                                                                                                                (
+                                                                                                                                  CFML.WPLifted.Wpgen_let_trm (
+                                                                                                                                    @CFML.WPLifted.Wptag (
+                                                                                                                                      (
+                                                                                                                                        CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit (
+                                                                                                                                          CFML.WPRecord.val_set_field sibling'
+                                                                                                                                        ) (
+                                                                                                                                          Coq.Lists.List.cons (
+                                                                                                                                            @CFML.SepLifted.dyn_make node_ _ lsq
+                                                                                                                                          ) (
+                                                                                                                                            Coq.Lists.List.cons (
+                                                                                                                                              @CFML.SepLifted.dyn_make contents_ _ x9__
+                                                                                                                                            ) Coq.Lists.List.nil
+                                                                                                                                          )
+                                                                                                                                        )
+                                                                                                                                      )
+                                                                                                                                    )
+                                                                                                                                  ) (
+                                                                                                                                    fun x10__ :
+                                                                                                                                      Coq.Init.Datatypes.unit
+                                                                                                                                    =>
+                                                                                                                                    @CFML.WPLifted.Wptag (
+                                                                                                                                      (
+                                                                                                                                        CFML.WPLifted.Wpgen_match x10__ (
+                                                                                                                                          @CFML.WPLifted.Wptag (
+                                                                                                                                            (
+                                                                                                                                              CFML.WPLifted.Wpgen_case (
+                                                                                                                                                fun A :
+                                                                                                                                                  Type
+                                                                                                                                                =>
+                                                                                                                                                fun EA :
+                                                                                                                                                  CFML.SepLifted.Enc A
+                                                                                                                                                =>
+                                                                                                                                                fun Q :
+                                                                                                                                                  A ->
+                                                                                                                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                                                                                                                                =>
+                                                                                                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                                                                                                                                                  fun p0__ :
+                                                                                                                                                    Coq.Init.Datatypes.unit
+                                                                                                                                                  =>
+                                                                                                                                                  CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                                                                                                                    CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                                                                                                                      Coq.Init.Logic.eq x10__ p0__
+                                                                                                                                                    )
+                                                                                                                                                  ) (
+                                                                                                                                                    @CFML.WPLifted.Wptag (
+                                                                                                                                                      (
+                                                                                                                                                        CFML.WPLifted.Wpgen_let_trm (
+                                                                                                                                                          @CFML.WPLifted.Wptag (
+                                                                                                                                                            (
+                                                                                                                                                              CFML.WPLifted.Wpgen_app Coq.ZArith.BinInt.Z (
+                                                                                                                                                                CFML.WPRecord.val_get_field value'
+                                                                                                                                                              ) (
+                                                                                                                                                                Coq.Lists.List.cons (
+                                                                                                                                                                  @CFML.SepLifted.dyn_make node_ _ q
+                                                                                                                                                                ) Coq.Lists.List.nil
+                                                                                                                                                              )
+                                                                                                                                                            )
+                                                                                                                                                          )
+                                                                                                                                                        ) (
+                                                                                                                                                          fun x11__ :
+                                                                                                                                                            Coq.ZArith.BinInt.Z
+                                                                                                                                                          =>
+                                                                                                                                                          @CFML.WPLifted.Wptag (
+                                                                                                                                                            (
+                                                                                                                                                              CFML.WPLifted.Wpgen_let_trm (
+                                                                                                                                                                @CFML.WPLifted.Wptag (
+                                                                                                                                                                  (
+                                                                                                                                                                    CFML.WPLifted.Wpgen_app Coq.Init.Datatypes.unit (
+                                                                                                                                                                      CFML.WPRecord.val_set_field value'
+                                                                                                                                                                    ) (
+                                                                                                                                                                      Coq.Lists.List.cons (
+                                                                                                                                                                        @CFML.SepLifted.dyn_make node_ _ q
+                                                                                                                                                                      ) (
+                                                                                                                                                                        Coq.Lists.List.cons (
+                                                                                                                                                                          @CFML.SepLifted.dyn_make Coq.ZArith.BinInt.Z _ (
+                                                                                                                                                                            Coq.ZArith.BinInt.Z.sub x11__ d
+                                                                                                                                                                          )
+                                                                                                                                                                        ) Coq.Lists.List.nil
+                                                                                                                                                                      )
+                                                                                                                                                                    )
+                                                                                                                                                                  )
+                                                                                                                                                                )
+                                                                                                                                                              ) (
+                                                                                                                                                                fun x12__ :
+                                                                                                                                                                  Coq.Init.Datatypes.unit
+                                                                                                                                                                =>
+                                                                                                                                                                @CFML.WPLifted.Wptag (
+                                                                                                                                                                  (
+                                                                                                                                                                    CFML.WPLifted.Wpgen_match x12__ (
+                                                                                                                                                                      @CFML.WPLifted.Wptag (
+                                                                                                                                                                        (
+                                                                                                                                                                          CFML.WPLifted.Wpgen_case (
+                                                                                                                                                                            fun A :
+                                                                                                                                                                              Type
+                                                                                                                                                                            =>
+                                                                                                                                                                            fun EA :
+                                                                                                                                                                              CFML.SepLifted.Enc A
+                                                                                                                                                                            =>
+                                                                                                                                                                            fun Q :
+                                                                                                                                                                              A ->
+                                                                                                                                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hprop
+                                                                                                                                                                            =>
+                                                                                                                                                                            CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hforall (
+                                                                                                                                                                              fun p0__ :
+                                                                                                                                                                                Coq.Init.Datatypes.unit
+                                                                                                                                                                              =>
+                                                                                                                                                                              CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hwand (
+                                                                                                                                                                                CFML.SepBase.SepBasicSetup.SepSimplArgsCredits.hpure (
+                                                                                                                                                                                  Coq.Init.Logic.eq x12__ p0__
+                                                                                                                                                                                )
+                                                                                                                                                                              ) (
+                                                                                                                                                                                @CFML.WPLifted.Wptag (
+                                                                                                                                                                                  (
+                                                                                                                                                                                    CFML.WPLifted.Wpgen_let_trm (
+                                                                                                                                                                                      @CFML.WPLifted.Wptag (
+                                                                                                                                                                                        (
+                                                                                                                                                                                          CFML.WPLifted.Wpgen_app contents_ root (
+                                                                                                                                                                                            Coq.Lists.List.cons (
+                                                                                                                                                                                              @CFML.SepLifted.dyn_make contents_ _ k
+                                                                                                                                                                                            ) Coq.Lists.List.nil
+                                                                                                                                                                                          )
+                                                                                                                                                                                        )
+                                                                                                                                                                                      )
+                                                                                                                                                                                    ) (
+                                                                                                                                                                                      fun x13__ :
+                                                                                                                                                                                        contents_
+                                                                                                                                                                                      =>
+                                                                                                                                                                                      @CFML.WPLifted.Wptag (
+                                                                                                                                                                                        (
+                                                                                                                                                                                          CFML.WPLifted.Wpgen_app contents_ merge (
+                                                                                                                                                                                            Coq.Lists.List.cons (
+                                                                                                                                                                                              @CFML.SepLifted.dyn_make contents_ _ x13__
+                                                                                                                                                                                            ) (
+                                                                                                                                                                                              Coq.Lists.List.cons (
+                                                                                                                                                                                                @CFML.SepLifted.dyn_make contents_ _ k
+                                                                                                                                                                                              ) Coq.Lists.List.nil
+                                                                                                                                                                                            )
+                                                                                                                                                                                          )
+                                                                                                                                                                                        )
+                                                                                                                                                                                      )
+                                                                                                                                                                                    )
+                                                                                                                                                                                  )
+                                                                                                                                                                                ) _ _ Q
+                                                                                                                                                                              )
+                                                                                                                                                                            )
+                                                                                                                                                                          ) (
+                                                                                                                                                                            CFML.WPLifted.Wpgen_negpat (
+                                                                                                                                                                              forall p0__ :
+                                                                                                                                                                                Coq.Init.Datatypes.unit,
+                                                                                                                                                                              Coq.Init.Logic.not (
+                                                                                                                                                                                Coq.Init.Logic.eq x12__ p0__
+                                                                                                                                                                              )
+                                                                                                                                                                            )
+                                                                                                                                                                          ) (
+                                                                                                                                                                            @CFML.WPLifted.Wptag (
+                                                                                                                                                                              @CFML.WPLifted.Wpgen_done
+                                                                                                                                                                            )
+                                                                                                                                                                          )
+                                                                                                                                                                        )
+                                                                                                                                                                      )
+                                                                                                                                                                    )
+                                                                                                                                                                  )
+                                                                                                                                                                )
+                                                                                                                                                              )
+                                                                                                                                                            )
+                                                                                                                                                          )
+                                                                                                                                                        )
+                                                                                                                                                      )
+                                                                                                                                                    ) _ _ Q
+                                                                                                                                                  )
+                                                                                                                                                )
+                                                                                                                                              ) (
+                                                                                                                                                CFML.WPLifted.Wpgen_negpat (
+                                                                                                                                                  forall p0__ :
+                                                                                                                                                    Coq.Init.Datatypes.unit,
+                                                                                                                                                  Coq.Init.Logic.not (
+                                                                                                                                                    Coq.Init.Logic.eq x10__ p0__
+                                                                                                                                                  )
+                                                                                                                                                )
+                                                                                                                                              ) (
+                                                                                                                                                @CFML.WPLifted.Wptag (
+                                                                                                                                                  @CFML.WPLifted.Wpgen_done
+                                                                                                                                                )
+                                                                                                                                              )
+                                                                                                                                            )
+                                                                                                                                          )
+                                                                                                                                        )
+                                                                                                                                      )
+                                                                                                                                    )
+                                                                                                                                  )
+                                                                                                                                )
+                                                                                                                              )
+                                                                                                                            )
+                                                                                                                          )
+                                                                                                                        ) _ _ Q
                                                                                                                       )
+                                                                                                                    )
+                                                                                                                  ) (
+                                                                                                                    CFML.WPLifted.Wpgen_negpat (
+                                                                                                                      forall lsq :
+                                                                                                                        node_,
+                                                                                                                      Coq.Init.Logic.not (
+                                                                                                                        Coq.Init.Logic.eq ls (
+                                                                                                                          Nonempty lsq : contents_
+                                                                                                                        )
+                                                                                                                      )
+                                                                                                                    )
+                                                                                                                  ) (
+                                                                                                                    @CFML.WPLifted.Wptag (
+                                                                                                                      @CFML.WPLifted.Wpgen_done
                                                                                                                     )
                                                                                                                   )
                                                                                                                 )
@@ -4031,25 +3516,25 @@ Parameter decrease_key_cf__ :
                                                                     )
                                                                   )
                                                                 )
-                                                              ) _ _ Q
-                                                            )
-                                                          )
-                                                        ) (
-                                                          CFML.WPLifted.Wpgen_negpat (
-                                                            forall parent_node :
-                                                              node_,
-                                                            Coq.Init.Logic.not (
-                                                              Coq.Init.Logic.eq parent (
-                                                                Nonempty parent_node : contents_
                                                               )
                                                             )
                                                           )
-                                                        ) (
-                                                          @CFML.WPLifted.Wptag (
-                                                            @CFML.WPLifted.Wpgen_done
-                                                          )
+                                                        ) _ _ Q
+                                                      )
+                                                    )
+                                                  ) (
+                                                    CFML.WPLifted.Wpgen_negpat (
+                                                      forall parent_node :
+                                                        node_,
+                                                      Coq.Init.Logic.not (
+                                                        Coq.Init.Logic.eq parent (
+                                                          Nonempty parent_node : contents_
                                                         )
                                                       )
+                                                    )
+                                                  ) (
+                                                    @CFML.WPLifted.Wptag (
+                                                      @CFML.WPLifted.Wpgen_done
                                                     )
                                                   )
                                                 )
@@ -4059,22 +3544,20 @@ Parameter decrease_key_cf__ :
                                         )
                                       )
                                     )
-                                  ) _ _ Q
-                                )
-                              )
-                            ) (
-                              CFML.WPLifted.Wpgen_negpat (
-                                forall q : node_,
-                                Coq.Init.Logic.not (
-                                  Coq.Init.Logic.eq x0__ (
-                                    Nonempty q : contents_
                                   )
                                 )
                               )
-                            ) (@CFML.WPLifted.Wptag (@CFML.WPLifted.Wpgen_done))
+                            ) _ _ Q
                           )
                         )
-                      )
+                      ) (
+                        CFML.WPLifted.Wpgen_negpat (
+                          forall q : node_,
+                          Coq.Init.Logic.not (
+                            Coq.Init.Logic.eq k (Nonempty q : contents_)
+                          )
+                        )
+                      ) (@CFML.WPLifted.Wptag (@CFML.WPLifted.Wpgen_done))
                     )
                   )
                 )
@@ -4089,7 +3572,7 @@ Parameter decrease_key_cf__ :
     ) ->
     CFML.SepLifted.Triple (
       CFML.SepLifted.Trm_apps decrease_key (
-        Coq.Lists.List.cons (@CFML.SepLifted.dyn_make CFML.Semantics.loc _ k) (
+        Coq.Lists.List.cons (@CFML.SepLifted.dyn_make contents_ _ k) (
           Coq.Lists.List.cons (@CFML.SepLifted.dyn_make Coq.ZArith.BinInt.Z _ d) Coq.Lists.List.nil
         )
       )

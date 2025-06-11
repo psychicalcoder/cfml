@@ -362,14 +362,51 @@ Fixpoint TreeRepr (tr:Tree) (p:loc) { struct tr } : hprop :=
   match tr with
   | Leaf => p ~~> Empty
   | Node x lt rt =>
-      \exists (qlt qrt qpar:loc),
-          p ~~~> `{ value':= x; child' := qlt; sibling' := qrt; parent' := qpar }
+      \exists (q: node_) ( qlt qrt qpar:loc),
+          p ~~> Nonempty q \*
+          q ~~~> `{ value':= x; child' := qlt; sibling' := qrt; parent' := qpar }
             \* qlt ~>  TreeRepr lt \* qrt ~> TreeRepr rt
   end.
 
 Definition Repr (tr:Tree) (p:loc) : hprop :=
   (p ~> TreeRepr tr) \* \[Heap_Ordered tr].
 
+Lemma Triple_create :
+  SPEC (create tt)
+    PRE \[]
+    POST (fun p => p ~> Repr Leaf).
+Proof.
+  xcf. xapp. xunfold Repr. xsimpl*. 
+Qed.
+
+Lemma Leaf_isEmpty : forall (p: loc),
+    TreeRepr Leaf p ==> p ~~> Empty.
+Proof.
+  intros.
+  xsimpl*.
+Qed.
+
+Lemma Triple_isEmpty : forall (p: loc) (tr: Tree),
+  SPEC (is_empty p)
+    PRE (p ~> Repr tr)
+    POST (fun b => \[b = isTrue(tr = Leaf)] \* (p ~> Repr tr)).
+Proof.
+  xcf.
+  xunfolds Repr; => H.
+  destruct tr.
+  - xunfolds TreeRepr.
+    xapp.
+    xapp.
+    xsimpl*.
+  - xunfolds TreeRepr.
+    introv.
+    xapp.
+    xapp.
+    xsimpl*.
+    split; congruence.
+Qed.
+
+(* 
 Definition Contents (tr:Tree) (c:contents_) : hprop :=
   match c with
   | Empty => \[ tr = Leaf ]
@@ -378,15 +415,7 @@ Definition Contents (tr:Tree) (c:contents_) : hprop :=
 
 Definition Heap (tr:Tree) (p:heap_) : hprop :=
   \exists c, p ~~> c \* Contents tr c.
-
-Lemma Contents_isEmpty : forall (tr:Tree) (c:contents_),
-    Contents tr c ==> \[ tr = Leaf <-> c = Empty ] \* (Contents tr c).
-Proof.
-  intros.
-  unfolds Contents.
-  destruct c; xsimpl*.
-  split; congruence.
-Qed.
+*)
 
 Lemma TreeRepr_Leaf : forall p,
     (p ~> TreeRepr Leaf) = p ~~> Empty.
@@ -396,36 +425,15 @@ Qed.
 
 Lemma TreeRepr_Node : forall p x lt rt,
     (p ~> TreeRepr (Node x lt rt)) =
-      \exists (p1 p2 p3:loc),
-          p ~~~> `{ value' := x; child' := p1; sibling' := p2; parent' := p3}
-            \* (p1 ~> TreeRepr lt) \* (p2 ~> TreeRepr rt).
+      \exists (q: node_) ( qlt qrt qpar:loc),
+          p ~~> Nonempty q \*
+            q ~~~> `{ value':= x; child' := qlt; sibling' := qrt; parent' := qpar }
+            \* qlt ~>  TreeRepr lt \* qrt ~> TreeRepr rt.
 Proof.
   auto.
 Qed.
 
 Hint Unfold TreeRepr_Leaf TreeRepr_Node.
-
-Lemma Triple_create :
-  SPEC (create tt)
-    PRE \[]
-    POST (fun p => p ~> Heap Leaf).
-Proof.
-  xcf. xapp. xunfold Heap. unfold Contents. xsimpl*.
-Qed.
-
-Lemma Triple_isEmpty : forall (p: loc) (tr: Tree),
-  SPEC (is_empty p)
-    PRE (p ~> Heap tr)
-    POST (fun b => \[b = isTrue(tr = Leaf)] \* (p ~> Heap tr)).
-Proof.
-  xcf.
-  xunfolds Heap; => q.
-  xapp. xapp.
-  xchanges~ Contents_isEmpty.
-  intros H.
-  symmetry.
-  exact H.
-Qed.
 
 Lemma Φ_Leaf :
   Φ Leaf = 0.
@@ -704,24 +712,13 @@ Definition IndexedTree_insert (tr: IndexedTree) (x: t) (index: nat) : IndexedTre
 
 Compute DecreaseKey (IndexedTree_insert (IndexedTree_insert (IndexedTree_insert IndexedTreeLeaf 30 0) 40 1) 50 2) 40 (IndexedTreeNode 2 50 IndexedTreeLeaf (IndexedTreeNode 1 40 IndexedTreeLeaf IndexedTreeLeaf)).
 
-
-Lemma Heap_eq : forall p tr,
-    p ~> Heap tr = \exists c, p ~~> c \* Contents tr c.
-Proof. auto. Qed.       
-
 Lemma Triple_insert :
   forall (x:t) (p:loc) (tr:Tree), 
   SPEC (insert p x)
-    PRE (p ~> Heap tr)
-    POST (fun (_:unit) => p ~> Heap (Tree_insert tr x)).
+    PRE (p ~> Repr tr)
+    POST (fun (_:unit) => p ~> Repr (Tree_insert tr x)).
 Proof.
   xcf.
-  xchange Heap_eq; => q.
-  xlet.
-  xlet.
   xapp.
-  xapp; => p0.
-  xlet.
-  xapp.
-  xapp; => p1.
+  intro.
 Admitted.

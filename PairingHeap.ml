@@ -1,4 +1,3 @@
-
 type node = {
   mutable value : int;
   mutable child : contents;
@@ -12,7 +11,7 @@ let create () =
   ref Empty
 
 let is_empty p =
-  p = Empty
+  !p = Empty
 
 let merge_nodes q1 q2 =
   if q1.value < q2.value
@@ -29,7 +28,7 @@ let insert p x =
   let rec q2 = { value = x; child = Empty; sibling = Empty; parent = Empty } in
   match !p with
   | Empty -> p := Nonempty q2
-  | Nonempty q1 -> if is_empty q1.child then q2.parent <- !p; p := Nonempty (merge_nodes q1 q2)
+  | Nonempty q1 -> if is_empty (ref q1.child) then q2.parent <- !p; p := Nonempty (merge_nodes q1 q2)
 
 let rec merge_siblings q =
   match q.sibling with
@@ -61,7 +60,7 @@ let rec root k =
   match k with 
   | Empty -> assert false 
   | Nonempty q -> 
-    print_endline (Printf.sprintf "q.value: %d" q.value);
+     (*print_endline (Printf.sprintf "q.value: %d" q.value);*)
     if (q.sibling) = Empty && (q.parent) = Empty
       then k 
       else if (q.parent) = Empty 
@@ -90,9 +89,9 @@ let decrease_key k d =
       | Nonempty parent_node -> 
         (
           if parent_node.value < (q.value - d)
-            then (let _ = q.value <- q.value - d in root k) (*The parent node is small enough not to change things around*)
-            else if match parent_node.child with | Empty -> assert false | Nonempty child -> child.value = q.value then let _ = print_endline "here2" in (let _ = parent_node.child <- q.sibling in let _ = q.value <- q.value - d in merge (root k) (k)) (*cut the key out of the parent*)
-            else let _ = print_endline "here3" in let ls = left_sibling k in 
+          then (let _ = q.value <- q.value - d in root k) (*The parent node is small enough not to change things around*)
+          else if match parent_node.child with | Empty -> assert false | Nonempty child -> child.value = q.value then (*let _ = print_endline "here2" in *) (let _ = parent_node.child <- q.sibling in let _ = q.value <- q.value - d in merge (root k) (k)) (*cut the key out of the parent*)
+          else (* let _ = print_endline "here3" in *) let ls = left_sibling k in 
               match ls with
               | Empty -> assert false 
               | Nonempty lsq -> (let _ = lsq.sibling <- (q.sibling) in let _ = q.value <- q.value - d in merge (root k) (k)) (*the key is not the direct child of the parent. cut it out of its left sibling*)
@@ -100,7 +99,7 @@ let decrease_key k d =
 
 
 
-
+(*
 let rec rank_siblings q  =
   match q.sibling with
   | Empty -> Printf.sprintf "%d}\n" q.value
@@ -130,3 +129,5 @@ let dot h =
         | Empty -> ""
         | Nonempty daddy -> Printf.sprintf "%d -> %d [label=\"parent\"]\n" v daddy.value)
     ) in print_endline (Printf.sprintf "digraph {\n%s}" (ranks q ^ (recurser q.child q.value false))) 
+
+ *)
