@@ -712,6 +712,14 @@ Hint Extern 1 (RegisterSpec create) => Provide Triple_create.
 
 Hint Extern 1 (RegisterSpec (is_empty)) => Provide Triple_isEmpty.
 
+(********************)
+(* Proof.           *)
+(*   intros.        *)
+(*   xunfolds Repr. *)
+(*   auto.          *)
+(* Qed.             *)
+(********************)
+
 Lemma Triple_insert :
   forall (x:t) (p:loc) (tr:Tree), 
   SPEC (insert p x)
@@ -740,5 +748,5 @@ Proof.
     xapp.
     xapp.
     intro pchld.
-    destruct chld.
-    + 
+    inversion H; subst.
+Admitted.
