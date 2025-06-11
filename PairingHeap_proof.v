@@ -712,14 +712,6 @@ Hint Extern 1 (RegisterSpec create) => Provide Triple_create.
 
 Hint Extern 1 (RegisterSpec (is_empty)) => Provide Triple_isEmpty.
 
-(********************)
-(* Proof.           *)
-(*   intros.        *)
-(*   xunfolds Repr. *)
-(*   auto.          *)
-(* Qed.             *)
-(********************)
-
 Lemma Helper : forall (p:loc) (c:contents_) (tr: Tree),
     Heap_Ordered tr -> p ~~> c \* TreeRepr tr c ==> p ~> Repr tr.
 Proof.
@@ -758,10 +750,14 @@ Proof.
     xchange Helper pchld chld tr1.
     assumption.
     xapp.
-    xseq (pchld ~> Repr tr1 \*
+    (* we currently don't care about the parent pointer *)
+    xseq (\exists (c:contents_), pchld ~> Repr tr1 \*
        n ~~~> `{ value' := val; child' := chld; sibling' := sibl; parent' := parent} \*
        p ~~> Nonempty n \*
-       r ~~~> `{ value' := x; child' := Empty; sibling' := Empty; parent' := Empty} \* TreeRepr tr2 sibl).
-    { admit. }
-    { admit. }
+       r ~~~> `{ value' := x; child' := Empty; sibling' := Empty; parent' := c} \* TreeRepr tr2 sibl).
+    { xif; intro E; subst.
+      + xapp. xapp. xsimpl.
+      + xval. xsimpl.
+    }
+    { xpull. introv. admit.}
 Admitted.
