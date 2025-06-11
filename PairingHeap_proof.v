@@ -358,32 +358,25 @@ type node = {
 type heap = contents ref
  **)
 
-Fixpoint TreeRepr (tr:Tree) (p:loc) { struct tr } : hprop :=
+Fixpoint TreeRepr (tr:Tree) (c: contents_) { struct tr } : hprop :=
   match tr with
-  | Leaf => p ~~> Empty
+  | Leaf => \[ c = Empty ]
   | Node x lt rt =>
-      \exists (q: node_) ( qlt qrt qpar:loc),
-          p ~~> Nonempty q \*
-          q ~~~> `{ value':= x; child' := qlt; sibling' := qrt; parent' := qpar }
-            \* qlt ~>  TreeRepr lt \* qrt ~> TreeRepr rt
+      \exists (q: node_) (chld sibl parent: contents_),
+          \[ c = Nonempty q ] \*
+          q ~~~> `{ value':= x; child' := chld; sibling' := sibl; parent' := parent }
+            \* TreeRepr lt chld \* TreeRepr rt sibl
   end.
 
 Definition Repr (tr:Tree) (p:loc) : hprop :=
-  (p ~> TreeRepr tr) \* \[Heap_Ordered tr].
+  \exists c, p ~~> c \* TreeRepr tr c \* \[Heap_Ordered tr].
 
 Lemma Triple_create :
   SPEC (create tt)
     PRE \[]
     POST (fun p => p ~> Repr Leaf).
 Proof.
-  xcf. xapp. xunfold Repr. xsimpl*. 
-Qed.
-
-Lemma Leaf_isEmpty : forall (p: loc),
-    TreeRepr Leaf p ==> p ~~> Empty.
-Proof.
-  intros.
-  xsimpl*.
+  xcf. xapp. xunfold Repr. xunfold TreeRepr. xsimpl. all: auto.
 Qed.
 
 Lemma Triple_isEmpty : forall (p: loc) (tr: Tree),
@@ -392,14 +385,15 @@ Lemma Triple_isEmpty : forall (p: loc) (tr: Tree),
     POST (fun b => \[b = isTrue(tr = Leaf)] \* (p ~> Repr tr)).
 Proof.
   xcf.
-  xunfolds Repr; => H.
+  xunfolds Repr; => c H.
   destruct tr.
-  - xunfolds TreeRepr.
+  - xunfolds TreeRepr; => H2; subst.  
     xapp.
     xapp.
     xsimpl*.
   - xunfolds TreeRepr.
     introv.
+    intro H2; subst.
     xapp.
     xapp.
     xsimpl*.
@@ -417,6 +411,7 @@ Definition Heap (tr:Tree) (p:heap_) : hprop :=
   \exists c, p ~~> c \* Contents tr c.
 *)
 
+(*
 Lemma TreeRepr_Leaf : forall p,
     (p ~> TreeRepr Leaf) = p ~~> Empty.
 Proof.
@@ -434,6 +429,7 @@ Proof.
 Qed.
 
 Hint Unfold TreeRepr_Leaf TreeRepr_Node.
+*)
 
 Lemma Φ_Leaf :
   Φ Leaf = 0.
@@ -712,6 +708,10 @@ Definition IndexedTree_insert (tr: IndexedTree) (x: t) (index: nat) : IndexedTre
 
 Compute DecreaseKey (IndexedTree_insert (IndexedTree_insert (IndexedTree_insert IndexedTreeLeaf 30 0) 40 1) 50 2) 40 (IndexedTreeNode 2 50 IndexedTreeLeaf (IndexedTreeNode 1 40 IndexedTreeLeaf IndexedTreeLeaf)).
 
+Hint Extern 1 (RegisterSpec create) => Provide Triple_create.
+
+Hint Extern 1 (RegisterSpec (is_empty)) => Provide Triple_isEmpty.
+
 Lemma Triple_insert :
   forall (x:t) (p:loc) (tr:Tree), 
   SPEC (insert p x)
@@ -720,5 +720,25 @@ Lemma Triple_insert :
 Proof.
   xcf.
   xapp.
-  intro.
-Admitted.
+  introv.
+  destruct tr.
+  - xunfold Repr.
+    xunfold Repr.
+    xunfold TreeRepr.
+    xpull*.
+    intros c H H2; subst.
+    xapp.
+    xcase.
+    xapp.
+    xsimpl*.
+  - xunfolds Repr.
+    xunfolds Repr.
+    xunfolds TreeRepr.
+    intros c H n chld sibl parent H2; subst.
+    xapp.
+    xmatch.
+    xapp.
+    xapp.
+    intro pchld.
+    destruct chld.
+    + 
