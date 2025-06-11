@@ -720,6 +720,12 @@ Hint Extern 1 (RegisterSpec (is_empty)) => Provide Triple_isEmpty.
 (* Qed.             *)
 (********************)
 
+Lemma Helper : forall (p:loc) (c:contents_) (tr: Tree),
+    Heap_Ordered tr -> p ~~> c \* TreeRepr tr c ==> p ~> Repr tr.
+Proof.
+  intros. xunfolds Repr. assumption.
+Qed.
+
 Lemma Triple_insert :
   forall (x:t) (p:loc) (tr:Tree), 
   SPEC (insert p x)
@@ -749,4 +755,13 @@ Proof.
     xapp.
     intro pchld.
     inversion H; subst.
+    xchange Helper pchld chld tr1.
+    assumption.
+    xapp.
+    xseq (pchld ~> Repr tr1 \*
+       n ~~~> `{ value' := val; child' := chld; sibling' := sibl; parent' := parent} \*
+       p ~~> Nonempty n \*
+       r ~~~> `{ value' := x; child' := Empty; sibling' := Empty; parent' := Empty} \* TreeRepr tr2 sibl).
+    { admit. }
+    { admit. }
 Admitted.
