@@ -61,7 +61,7 @@ Fixpoint Tree_to_MSet (tr:Tree) : multiset t :=
   | Leaf => \{}
   | Node x lt rt => \{ x } \u (Tree_to_MSet lt) \u (Tree_to_MSet rt)
   end.
-                    
+
 Inductive Heap_Ordered : Tree -> Prop :=
 | Heap_Ordered_leaf: Heap_Ordered Leaf
 | Heap_Ordered_node:
@@ -93,7 +93,7 @@ Definition Tree_merge_node (t1 t2: Tree) : Tree :=
   match (t1, t2) with
   | (Leaf, _) => t2
   | (_, Leaf) => t1
-  | (Node x1 lt1 rt1, Node x2 lt2 rt2) => 
+  | (Node x1 lt1 rt1, Node x2 lt2 rt2) =>
       if x1 <? x2 then
         Node x1 (Node x2 lt2 lt1) Leaf
       else
@@ -278,7 +278,7 @@ Definition Tree_pop_min (tr: Tree) : option (t * Tree) :=
 
 Lemma Tree_pop_min_minimal :
   forall (ret: t) (tr tr': Tree),
-    Heap_Ordered tr -> 
+    Heap_Ordered tr ->
     Tree_is_nonempty_heap tr ->
     Tree_pop_min tr = Some (ret, tr') ->
     Tree_Forall tr (fun (x:t) => ret <= x).
@@ -387,7 +387,7 @@ Proof.
   xcf.
   xunfolds Repr; => c H.
   destruct tr.
-  - xunfolds TreeRepr; => H2; subst.  
+  - xunfolds TreeRepr; => H2; subst.
     xapp.
     xapp.
     xsimpl*.
@@ -400,7 +400,7 @@ Proof.
     split; congruence.
 Qed.
 
-(* 
+(*
 Definition Contents (tr:Tree) (c:contents_) : hprop :=
   match c with
   | Empty => \[ tr = Leaf ]
@@ -442,7 +442,7 @@ Proof.
   intros.
   destruct tr1; destruct tr2; simpl; try lia.
   { unfold Tree_merge_node.
-    simpl in *; subst.    
+    simpl in *; subst.
     destruct (val <? val0); simpl; lia.
   }
 Qed.
@@ -464,7 +464,7 @@ Proof.
   assert ((1+x+y) <= (1+x)*(1+y)).
   {
     lia.
-  }  
+  }
   assert (Z.log2_up (1 + x + y) <=  Z.log2_up ((1 + x) * (1 + y))).
   {
     apply Z.log2_up_le_mono.
@@ -631,25 +631,49 @@ Proof.
     apply Tree_merge_siblings_is_heap.
 Qed.
 
-(*
+
+Print merge_nodes.
+
+
+Definition InstanceRepr (tr:Tree) (c: contents_) : hprop :=
+  \exists p, p ~~> c \* TreeRepr tr c \* \[Heap_Ordered tr].
+
+
+(* Definition OldRepr (E:elems) (q:loc) : hprop :=
+  \exists n, q ~> Tree n \* \[inv n E]. *)
+
+(* Lemma Triple_merge_nodes : forall q1 q2 E1 E2,
+  SPEC (merge_nodes q1 q2)
+    (* PRE q1 ~> Repr E1 \* q2 ~> Repr E2 *)
+    PRE \[]
+    POST (fun q => q ~> Repr (Tree_merge_node tr1 tr2)). *)
 Lemma Triple_merge_nodes : forall (q1 q2: loc) (tr1 tr2: Tree) (x1 x2: t) (lt1 rt1 lt2 rt2: Tree),
   (tr1 = Node x1 lt1 rt1) -> (tr2 = Node x2 lt2 rt2) ->
-  Tree_is_root tr1 -> Tree_is_root tr2 ->                            
   x1 < x2 ->
   SPEC (merge_nodes q1 q2)
-    PRE (q1 ~> MHeap tr1) \* (q2 ~> MHeap tr2)
-    POST (fun qret => qret ~> Heap (Tree_merge_node tr1 tr2)).
+    PRE  (q1 ~> Repr tr1) \* (q2 ~> Repr tr2)
+    POST (fun qret => qret ~> Repr (Tree_merge_node tr1 tr2)).
+
 Proof.
   intros.
   simpl in *.
   subst.
   xcf.
-  xunfold MHeap.
-  xunfold Tree.
+  xunfold Repr.
+  xunfold TreeRepr.
   xpull.
-  intros p1 p2 p3 HT1 p4 p5 p6 HT2.
+  intros.
+  (* intros p1 p2 p3 HT1 p4 p5 p6 HT2. *)
   xsimpl*.
-  xif; => C.
+  subst.
+  xlet.
+  xapp
+  subst.
+  xval.
+  xapp.
+
+  xsimpl*.
+  xif. => C.
   xapp.
 
   destruct lt1.
@@ -661,9 +685,7 @@ Proof.
     + xval.
     + xsimpl*.
       intro; subst.
-      xapp.    
-Admitted.
- *)
+      xapp.
 
 Inductive IndexedTree :=
 | IndexedTreeLeaf
@@ -674,7 +696,7 @@ Definition IndexedTree_merge_node (t1 t2: IndexedTree) : IndexedTree :=
   match (t1, t2) with
   | (IndexedTreeLeaf, _) => t2
   | (_, IndexedTreeLeaf) => t1
-  | (IndexedTreeNode i1 x1 lt1 rt1, IndexedTreeNode i2 x2 lt2 rt2) => 
+  | (IndexedTreeNode i1 x1 lt1 rt1, IndexedTreeNode i2 x2 lt2 rt2) =>
       if x1 <? x2 then
         IndexedTreeNode i1 x1 (IndexedTreeNode i2 x2 lt2 lt1) IndexedTreeLeaf
       else
@@ -685,14 +707,14 @@ Fixpoint DetachNode (heap: IndexedTree) (index: nat) : IndexedTree :=
   match heap with
   | IndexedTreeLeaf => IndexedTreeLeaf
   | IndexedTreeNode idx val chld sibl =>
-      if (index =? idx) then 
+      if (index =? idx) then
         sibl
       else
         IndexedTreeNode idx val (DetachNode chld index) (DetachNode sibl index)
   end.
 
 Definition DecreaseKey (heap: IndexedTree) (decrement: t) (node: IndexedTree): IndexedTree :=
-  match node with 
+  match node with
   | IndexedTreeLeaf => heap
   | IndexedTreeNode idx val chld _ =>
       let root := (DetachNode heap idx) in
@@ -718,8 +740,9 @@ Proof.
   intros. xunfolds Repr. assumption.
 Qed.
 
+
 Lemma Triple_insert :
-  forall (x:t) (p:loc) (tr:Tree), 
+  forall (x:t) (p:loc) (tr:Tree),
   SPEC (insert p x)
     PRE (p ~> Repr tr)
     POST (fun (_:unit) => p ~> Repr (Tree_insert tr x)).
@@ -754,10 +777,10 @@ Proof.
     xseq (\exists (c:contents_), pchld ~> Repr tr1 \*
        n ~~~> `{ value' := val; child' := chld; sibling' := sibl; parent' := parent} \*
        p ~~> Nonempty n \*
-       r ~~~> `{ value' := x; child' := Empty; sibling' := Empty; parent' := c} \* TreeRepr tr2 sibl).
+       r ~~~> `{ value' := x; child' := Empty; sibling' := Empty; parent' := c} \* TreeFtr2 sibl).
     { xif; intro E; subst.
       + xapp. xapp. xsimpl.
       + xval. xsimpl.
     }
-    { xpull. introv. admit.}
-Admitted.
+    (* { xpull. introv. admit.} *)
+(* Admitted. *)
