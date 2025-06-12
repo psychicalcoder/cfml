@@ -631,12 +631,29 @@ Proof.
     apply Tree_merge_siblings_is_heap.
 Qed.
 
-
-Print merge_nodes.
-
-
 Definition InstanceRepr (tr:Tree) (c: contents_) : hprop :=
   \exists p, p ~~> c \* TreeRepr tr c \* \[Heap_Ordered tr].
+
+Definition NodeRepr (x:t) (chld sibl parent: contents_) (tchld tsibl:Tree) (n: node_): hprop :=
+  n ~~~> `{ value':= x; child' := chld; sibling' := sibl; parent' := parent }
+    \* TreeRepr tchld chld \* TreeRepr tsibl sibl.
+
+Lemma Triple_merge_node :
+  forall (q1 q2: node_) (x1 x2 x':t) (tchld1 tchld2 tchld':Tree),
+    (Node x' tchld' Leaf) = Tree_merge_node (Node x1 tchld1 Leaf) (Node x2 tchld2 Leaf) -> 
+    SPEC (merge_nodes q1 q2)
+      PRE (\exists chld1 chld2,
+               (q1 ~> NodeRepr x1 chld1 Empty Empty tchld1 Leaf)
+                 \* (q2 ~> NodeRepr x2 chld2 Empty Empty tchld2 Leaf)
+                 \* \[ Heap_Ordered (Node x1 tchld1 Leaf) ]
+                 \* \[ Heap_Ordered (Node x2 tchld2 Leaf) ] )
+      POST (fun qret => \exists chld', qret ~> NodeRepr x' chld' Empty Empty tchld' Leaf
+                                    \* \[ Heap_Ordered (Node x' tchld' Leaf) ]).
+Proof.
+  intros.
+  xcf. xpull.
+  intros.
+  xunfolds NodeRepr.
 
 
 (* Definition OldRepr (E:elems) (q:loc) : hprop :=
